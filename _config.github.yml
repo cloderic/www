@@ -1,0 +1,23 @@
+safe: true
+pygments: true
+lsi: false
+
+name: Crowds control
+#url: http://www.crowdscontrol.net/
+url: https://cloderic.github.com/
+
+#analytics: |
+#  <script type="text/javascript">
+#    var _gaq = _gaq || [];
+#    _gaq.push(['_setAccount', 'UA-3838411-6']);
+#    _gaq.push(['_setDomainName', 'crowdscontrol.net']);
+#    _gaq.push(['_setAllowHash', false]);
+#    _gaq.push(['_trackPageview']);
+#    (function() {
+#    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+#    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+#    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+#    })();
+#  </script>
+
+analytics: 

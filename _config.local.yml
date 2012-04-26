@@ -1,0 +1,11 @@
+safe: true
+pygments: true
+lsi: false
+exclude: README.md
+
+server: true
+server_port: 5103
+
+name: Crowds control
+url: http://localhost:5103/
+analytics: 

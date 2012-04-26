@@ -1,10 +1,11 @@
 safe: true
 pygments: true
 lsi: false
+exclude: README.md
 
 name: Crowds control
 #url: http://www.crowdscontrol.net/
-url: https://cloderic.github.com/
+url: http://cloderic.github.com/
 
 #analytics: |
 #  <script type="text/javascript">

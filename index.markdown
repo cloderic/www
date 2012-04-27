@@ -3,10 +3,6 @@ layout: default
 title: home
 ---
 
-### About ###
-
-New home of crowds control !
-
 {% assign first_post = site.posts.first %}
 ##<a href="{{ first_post.url }}">{{ first_post.title }}</a>##
 

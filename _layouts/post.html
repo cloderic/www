@@ -6,17 +6,11 @@ layout: default
 <h1-sub>
 	{{ page.date | date_to_long_string }}
 	{% if page.next.url %}
-	 	//
-	 {% endif %}
-	{% if page.next.url %}
+		//
 		<a href="{{ page.next.url }}" rel="next" title="{{ page.next.title }}">next</a>
 	{% endif %}
-	{% if page.next.url %}
-		{% if page.previous.url %}
-			//
-		{% endif %}
-	{% endif %}
 	{% if page.previous.url %}
+		//
 		<a href="{{ page.previous.url }}" rel="previous" title="{{ page.previous.title }}">previous</a>
 	{% endif %}
 </h1-sub>

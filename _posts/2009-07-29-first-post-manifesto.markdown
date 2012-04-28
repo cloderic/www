@@ -2,6 +2,8 @@
 layout: post
 title: First post - Manifesto
 permalink: /wordpress
+tags:
+	- blog life
 ---
 
 For some times now I have wanted to create some kind of "pro" blog but I never took the time, until now. I'm going to SIGGRAPH for the first time next week and I want a place where I can report some of what I'll learn there. So here we go !

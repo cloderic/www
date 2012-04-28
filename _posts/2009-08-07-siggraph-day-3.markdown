@@ -2,6 +2,10 @@
 layout: post
 title: "SIGGRAPH: day 3"
 permalink: /wordpress-4
+tags:
+    - conference
+    - CGI
+    - animation
 ---
 
 Wednesday had been quite a busy day for me, I started the day at 8:30 for a group of technical papers presentation called "Motion Synthesis and Editing". I'm really not a specialists but it was in interesting, there was three presented papers: 

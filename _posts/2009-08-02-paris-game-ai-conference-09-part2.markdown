@@ -2,6 +2,9 @@
 layout: post
 title: Paris Game AI Conference '09 (part 2)
 permalink: /wordpress-1
+tags:
+    - game AI
+    - conference
 ---
 In this second part I'll talk about the presentations of day two.
 

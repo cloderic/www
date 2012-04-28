@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SIGGRAPH: day 4"
-permalink: /wordpress-4
+permalink: /wordpress-5
 ---
 
 This Thursday was my 4th day for this SIGGRAPH, it was also the last day for the exhibition. After a little sleepover my day started by the fist session of technical papers dedicated to character animations, really interesting but quite complex for my bad skills in the domain.

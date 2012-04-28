@@ -6,7 +6,7 @@ permalink: /wordpress-2
 
 I'm happy to be at SIGGRAPH this year, throughout the week I'll try to post little reports of what I've done there. After a very long trip (3 flight and a delay of 2h30 at Atlanta), Stéphane and I arrived at our hotel in New Orleans just in time to dinner and go to bed.
 
-### Day 1 - First conference day. ###
+## Day 1 - First conference day. ##
 The conference start badly for me, my registration form had been lost but the payment had been made... 2 hours later and a few call (thanks Stéphane) to France and I was in, excited like a kid at he zoo ! The first session I attended was featuring the ACM SIGGRAPH award and the keynote of Randy Thom a famous sound designer. The awards was given to great researcher and artists, no one I knew except Rob Cook, the guy who created Pixar's Renderman, he got The Steven Anson Coons Award. The keynote by Randy Thom was quite a disappointment, this guy, who has participated in tons of movies, chose to talk about "Designing a Movie for Sound" by presenting the work of others: Apocalypse now and Wall-E. The keynote was essentially excerpts from those 2 movies, interviews of people who had worked on (From the DVD bonuses concrning Wall-E) and common sense.
 
 ![ACM crap]({{ site.url }}images/posts/2009/acm-crap.jpeg)

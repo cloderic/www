@@ -67,29 +67,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 36px;
+  padding-bottom: 10px;
+  font-size: 32px;
   font-weight: 700;
+  background: url('../images/bg_hr.png') repeat-x bottom;
+}
+
+h1-sub {
+  font-weight: 300;
+  position: relative;
+  top: -15px;
 }
 
 h2 {
   padding-bottom: 10px;
-  font-size: 32px;
+  font-size: 24px;
   background: url('../images/bg_hr.png') repeat-x bottom;
 }
 
 h3 {
-  font-size: 24px;
-}
-
-h4 {
   font-size: 21px;
 }
 
-h5 {
+h4 {
   font-size: 18px;
 }
 
-h6 {
+h5 {
   font-size: 16px;
 }
 
@@ -250,6 +254,7 @@ header h1 {
   color: #fff;
   font-size: 42px;
   font-weight: 700;
+  background: none;
   text-shadow: #111 0px 0px 10px;
 }
 
@@ -284,6 +289,8 @@ header h2 {
   z-index: 10;
   width: 200px;
   padding: 10px 10px 10px 10px;
+  margin-left: 20px;
+  margin-bottom: -40px;
   background: #0090ff;
   font-weight: 700;
   box-shadow: 0 0 10px rgba(0,0,0,.5);

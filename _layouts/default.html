@@ -24,15 +24,25 @@
 			<header class="inner">
 				<!--<a id="forkme_banner" href="https://github.com/cloderic/cloderic.github.com">Fork Me on GitHub</a>-->
 		
-				<h1 id="project_title">{{ site.name }}</h1>
-				<h2 id="project_tagline">{{ site.tagline }}</h2>
+				<h1>{{ site.name }}</h1>
+				<h2>{{ site.tagline }}</h2>
 			</header>
 		</div>
 
 		<div id="main_content_wrap" class="outer">
-			<section id="main_content" class="inner">
-				{{ content }}
-			</section>
+			<div class="inner">
+				<section id="sidebar">
+					<p><a href="https://github.com/cloderic/cloderic.github.com">Fork Me on GitHub</a></p>
+					<p><a href="https://www.twitter.com/clodericmars">Follow me on twitter</a></p>
+					<p><a href="https://github.com/cloderic/cloderic.github.com">Fork Me on GitHub</a></p>
+					<p><a href="https://www.twitter.com/clodericmars">Follow me on twitter</a></p>
+					<p><a href="https://github.com/cloderic/cloderic.github.com">Fork Me on GitHub</a></p>
+					<p><a href="https://www.twitter.com/clodericmars">Follow me on twitter</a></p>
+				</section>
+				<section id="main_content">
+					{{ content }}
+				</section>
+			</div>
 		</div>
 		
 		<div id="footer_wrap" class="outer">

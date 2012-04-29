@@ -3,8 +3,8 @@ layout: post
 title: Paris Game AI Conference '09 (part 1)
 permalink: /wordpress-0
 tags:
-- game AI
-- conference
+ - "game AI"
+ - conference
 ---
 
 The Paris Game AI Conference took place on June 10th and 11th at the CNAM. It was organised by AiGameDev.com. OK it a little too late for a proper but whatever :) I needed a first real post for the blog ! Almost 200 people from Europe had came to this free event and I had the privilege to be one of them (I was the only one available in the team). The schedule was quite interesting and it was a first for me, quite exciting ! Here's a quick report about my time there. 

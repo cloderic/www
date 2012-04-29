@@ -4,7 +4,11 @@
 		<meta charset='utf-8' />
 		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
 		<meta name="description" content="{{ site.name }}" />
-		<title>{{ site.name }} - {{ page.title }}</title>
+		{% if page.title %}
+			<title>{{ site.name }} - {{ page.title }}</title>
+		{% else %}
+			<title>{{ site.name }}</title>
+		{% endif %}
 		<link rel="stylesheet" type="text/css" media="screen" href="{{ site.url }}css/stylesheet.css">
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
@@ -32,12 +36,7 @@
 		<div id="main_content_wrap" class="outer">
 			<div class="inner">
 				<section id="sidebar">
-					<p><a href="https://github.com/cloderic/cloderic.github.com">Fork Me on GitHub</a></p>
-					<p><a href="https://www.twitter.com/clodericmars">Follow me on twitter</a></p>
-					<p><a href="https://github.com/cloderic/cloderic.github.com">Fork Me on GitHub</a></p>
-					<p><a href="https://www.twitter.com/clodericmars">Follow me on twitter</a></p>
-					<p><a href="https://github.com/cloderic/cloderic.github.com">Fork Me on GitHub</a></p>
-					<p><a href="https://www.twitter.com/clodericmars">Follow me on twitter</a></p>
+					{% include sidebar.html %}
 				</section>
 				<section id="main_content">
 					{{ content }}

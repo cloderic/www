@@ -1,6 +1,11 @@
-/*******************************************************************************
-Theme derived from "Slate Theme for Github Pages" by Jason Costello, @jsncostello
-*******************************************************************************/
+---
+layout: nil
+---
+
+/*
+  Theme for {{ site.name }} ({{ site.url }})
+  derived from "Slate Theme for Github Pages" by Jason Costello, @jsncostello
+*/
 
 @import url(pygment_trac.css);
 
@@ -50,8 +55,8 @@ a:focus {
 /* basic styles */
 body {
   box-sizing: border-box;
-  color:#373737;
-  background: #212121;
+  color:{{ site.colors.dark_light }};
+  background: {{ site.colors.dark }};
   font-size: 16px;
   font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -61,7 +66,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
   font-weight: 700;
-  color:#222222;
+  color:{{ site.colors.dark_light }};
   font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
   letter-spacing: -1px;
 }
@@ -77,12 +82,19 @@ h1-sub {
   font-weight: 300;
   position: relative;
   top: -15px;
+  margin-bottom: -15px;
 }
 
 h2 {
   padding-bottom: 10px;
   font-size: 24px;
-  background: url('../images/bg_hr.png') repeat-x bottom;
+}
+
+h2-sub {
+  font-weight: 300;
+  position: relative;
+  top: -30px;
+  margin-bottom: -30px;
 }
 
 h3 {
@@ -104,7 +116,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #007edf;
+  color: {{ site.colors.primary }};
   text-shadow: none;
 
   transition: color 0.5s ease;
@@ -124,13 +136,14 @@ img {
   margin: 10px auto;
   max-width: 80%;
   padding: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  background: {{ site.colors.light }};
+  box-shadow: 0 0 10px {{ site.colors.dark_light }};
 }
 
 pre, code {
   width: 100%;
   color: #222;
-  background-color: #fff;
+  background-color: {{ site.colors.light }};
 
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 14px;
@@ -143,14 +156,14 @@ pre, code {
 pre {
   width: 100%;
   padding: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  box-shadow: 0 0 10px {{ site.colors.dark_light }};
   overflow: auto;
 }
 
 code {
   padding: 3px;
   margin: 0 3px;
-  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  box-shadow: 0 0 10px {{ site.colors.dark_light }};
 }
 
 pre code {
@@ -162,7 +175,7 @@ blockquote {
   color: #666;
   margin-bottom: 20px;
   padding: 0 0 0 20px;
-  border-left: 3px solid #bbb;
+  border-left: 3px solid {{ site.colors.dark_light }};
 }
 
 ul, ol, dl {
@@ -201,7 +214,7 @@ hr {
 }
 
 table {
-  border: 1px solid #373737;
+  border: 1px solid {{ site.colors.dark_light }};
   margin-bottom: 20px;
   text-align: left;
  }
@@ -209,17 +222,17 @@ table {
 th {
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 10px;
-  background: #373737;
+  background: {{ site.colors.dark_light }};
   color: #fff;
  }
 
 td {
   padding: 10px;
-  border: 1px solid #373737;
+  border: 1px solid {{ site.colors.dark_light }};
  }
 
 form {
-  background: #f2f2f2;
+  background: {{ site.colors.light }};
   padding: 20px;
 }
 
@@ -237,12 +250,12 @@ form {
 
 /* header */
 #header_wrap {
-  background: #212121;
-  background: -moz-linear-gradient(top, #373737, #212121);
-  background: -webkit-linear-gradient(top, #373737, #212121);
-  background: -ms-linear-gradient(top, #373737, #212121);
-  background: -o-linear-gradient(top, #373737, #212121);
-  background: linear-gradient(top, #373737, #212121);
+  background: {{ site.colors.dark }};
+  background: -moz-linear-gradient(top, {{ site.colors.dark_light }}, {{ site.colors.dark }});
+  background: -webkit-linear-gradient(top, {{ site.colors.dark_light }}, {{ site.colors.dark }});
+  background: -ms-linear-gradient(top, {{ site.colors.dark_light }}, {{ site.colors.dark }});
+  background: -o-linear-gradient(top, {{ site.colors.dark_light }}, {{ site.colors.dark }});
+  background: linear-gradient(top, {{ site.colors.dark_light }}, {{ site.colors.dark }});
 }
 
 #header_wrap .inner {
@@ -251,34 +264,53 @@ form {
 
 header h1 {
   margin: 0;
-  color: #fff;
+  color: {{ site.colors.light }};
   font-size: 42px;
   font-weight: 700;
   background: none;
-  text-shadow: #111 0px 0px 10px;
+  text-shadow: {{ site.colors.dark_light }} 0px 0px 10px;
 }
 
 header h2 {
-  color: #fff;
+  color: {{ site.colors.light }};
   font-size: 24px;
   font-weight: 300;
   background: none;
-  text-shadow: #111 0px 0px 10px;
+  text-shadow: {{ site.colors.dark_light }} 0px 0px 10px;
 }
 
 /* main content */
 #main_content_wrap {
-  background: #f2f2f2;
-  border-top: 1px solid #111;
-  border-bottom: 1px solid #111;
+  background: {{ site.colors.light }};
+  border-top: 1px solid {{ site.colors.dark_light }};
+  border-bottom: 1px solid {{ site.colors.dark_light }};
 }
 
 #main_content {
 }
 
 #main_content a:hover {
-  color: #0069ba;
-  text-shadow: #0090ff 0px 0px 2px;
+  color: {{ site.colors.primary_dark }};
+  text-shadow: {{ site.colors.primary }} 0px 0px 2px;
+}
+
+/* post listing */
+#posts_listing img {
+  max-height: 150px;
+  max-width: 150px;
+  float: left;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#posts_listing hr {
+  clear:left;
+}
+
+#posts_listing p {
+  margin-top: -20px;
+  margin-bottom: 10px;
 }
 
 /* sidebar */
@@ -291,33 +323,58 @@ header h2 {
   padding: 10px 10px 10px 10px;
   margin-left: 20px;
   margin-bottom: -40px;
-  background: #0090ff;
-  font-weight: 700;
-  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  background: {{ site.colors.primary }};
+  box-shadow: 0 0 10px {{ site.colors.dark_light }};
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+#sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4, #sidebar h5, #sidebar h6 {
+  margin: 0;
+  color: {{ site.colors.light }};
+}
+
+#sidebar h1 {
+  padding-bottom: 0px;
+  font-size: 32px;
+  background: none;
+}
+
+#sidebar img {
+  float: left;
+  margin: 5px;
+  padding: 2px;
 }
 
 #sidebar p {
-  color: #fff; 
+  color: {{ site.colors.light }};
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #sidebar a {
-  color: #f2f2f2; 
+  color: {{ site.colors.dark_light }}; 
+}
+
+#sidebar a:hover {
+  color: {{ site.colors.dark_light }};
+  text-shadow: {{ site.colors.primary_dark }} 0px 0px 2px;
 }
 
 /* footer */
 #footer_wrap {
-  background: #212121;
+  background: {{ site.colors.dark }};
 }
 
 footer p {
-  color: #f2f2f2;
+  color: {{ site.colors.light }};
 }
 
 footer a:hover {
-  color: #43adff;
-  text-shadow: #0090ff 0px 0px 2px;
+  color: {{ site.colors.primary_light }};
+  text-shadow: {{ site.colors.primary }} 0px 0px 2px;
 }
 
 /* adaptation to small screens */

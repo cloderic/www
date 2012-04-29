@@ -3,8 +3,8 @@ layout: post
 title: First day at SIGGRAPH
 permalink: /wordpress-2
 tags:
-	- conference
-	- CGI
+- conference
+- CGI
 ---
 
 I'm happy to be at SIGGRAPH this year, throughout the week I'll try to post little reports of what I've done there. After a very long trip (3 flight and a delay of 2h30 at Atlanta), Stéphane and I arrived at our hotel in New Orleans just in time to dinner and go to bed.

@@ -3,9 +3,9 @@ layout: post
 title: "SIGGRAPH: second day"
 permalink: /wordpress-3
 tags:
-    - conference
-    - CGI
-    - development
+- conference
+- CGI
+- development
 ---
 
 This tuesday was the second day of my first SIGGRAPH, not so great though... Let's evacuate the disappointments:

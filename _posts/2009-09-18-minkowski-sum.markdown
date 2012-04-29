@@ -1,0 +1,18 @@
+---
+layout: post
+title: "Minkowski sum"
+permalink: /wordpress-6
+tags:
+ - geometry
+ - maths
+ - slides
+---
+Since the end of my master's internship I hadn't really followed what was going on in the academic world about autonomous agent steering. I've done some catchup lately ; this post is a preamble to some article report I'm planning to do.  Here it is, a few slides about the Minkowski sum, a fun geometric function used notably in motion planning.
+
+<object id="embedded" width="425" height="355" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
+<param name="allowFullScreen" value="true" />
+<param name="allowScriptAccess" value="always" />
+<param name="src" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=minkowskisum-090917170955-phpapp02&amp;stripped_title=minkowski-sum-on-2d-geometry" />
+<param name="allowfullscreen" value="true" /><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=minkowskisum-090917170955-phpapp02&amp;stripped_title=minkowski-sum-on-2d-geometry" type="application/x-shockwave-flash" width="425" height="355"></embed>
+</object>
+<script src="http://b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>

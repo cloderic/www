@@ -140,6 +140,15 @@ img {
   box-shadow: 0 0 10px {{ site.colors.dark_light }};
 }
 
+#embedded {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  padding: 5px;
+  background: {{ site.colors.light }};
+  box-shadow: 0 0 10px {{ site.colors.dark_light }};
+}
+
 pre, code {
   width: 100%;
   color: #222;
@@ -284,9 +293,6 @@ header h2 {
   background: {{ site.colors.light }};
   border-top: 1px solid {{ site.colors.dark_light }};
   border-bottom: 1px solid {{ site.colors.dark_light }};
-}
-
-#main_content {
 }
 
 #main_content a:hover {

@@ -288,6 +288,15 @@ header h2 {
   text-shadow: {{ site.colors.dark_light }} 0px 0px 10px;
 }
 
+header a {
+  color: {{ site.colors.light }};
+}
+
+header a:hover {
+  color: {{ site.colors.primary }};
+  text-shadow: {{ site.colors.dark_light }} 0px 0px 2px;
+}
+
 /* main content */
 #main_content_wrap {
   background: {{ site.colors.light }};

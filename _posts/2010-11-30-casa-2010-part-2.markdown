@@ -1,0 +1,44 @@
+---
+layout: post
+title: "CASA 2010 report (part 2)"
+permalink: /casa-2010-report-part-2
+tags:
+ - conference
+ - "crowd simulation"
+---
+
+I've been pretty lazy on this blog this past months... Anyway here's the end of the CASA report.
+## Crowd Simulation Workshop ##
+There was many presentations during that day, more or less interesting, a few of them staid in my mind since then. The first one was titled *"On the interface between steering and animation for autonomous characters"* and was presented by [Petros Faloutsos](http://www.cs.ucla.edu/~pfal/Petros_Faloutsos/Main.html).
+
+The authors worked on a problem that every one trying to work on autonomous characters has to face: how to obtain a smooth animation *AND* an efficient steering behavior (particularly collision avoidance).
+
+As a matter of fact the two problematics are solved separately with, most of the time, a top-down approach:
+- the steering part is solved in 2D using sliding discs to represent entities, the decision being velocity changes;
+- the animation engine then chooses the best motion to match the computed velocity.
+
+In 'dumb' mode steering can compute velocities that are unattainable using available motion which results in foot sliding and awkward motions. When less dumb, steering has access to a velocity model describing which velocities are valid, this model can be provided directly from the animation engine. But in order to be manageable in terms of computation complexity, this velocity model is often simplistic and the animation problems still occur.
+
+The approach presented here is quite different, no more disc motion planning, but a footprint planner. Constrained by bio-mechanical rules expressing the distance between the two feet, their sizes as well as the pedestrian body size, the planner place footprints in order to reach a goal and avoid collision. The presented videos was impressive, but the 'real' paper still have to be published, Faloutsos was talking about SIGGRAPH Asia but it [seems](http://kesen.realtimerendering.com/siga2010Papers.htm) they didn't make it.
+
+The following presentation I'd like to focus on is Jan Ondrej *"Collision avoidance from synthetic vision"*.
+
+Jan is a Phd Student working under the supervision of [Julien Pettré](http://www.irisa.fr/bunraku/GENS/jpettre/) in the [Bunraku](http://www.irisa.fr/bunraku/) research group, of which Golaem spun off. This presentation was in fact a real-conditions rehearsal of Jan SIGGRAPH presentation of (his paper)[http://www.irisa.fr/bunraku/GENS/jpettre/pdf/SIGGRAPH2010.pdf].
+
+The presented work is quite unique, it propose to solve collision avoidance problem using vision algorithm. A low resolution render of simplified geometry is computed for each entity from its point of view, the result is used by a rather simple algorithm to compute a collision free velocity. And, yes, its quite efficient, and the resulting planning is good (perhaps too good to be human-like, though), anyway let's see the result.
+
+<object id="embedded" width="640" height="385">
+<param name="movie" value="http://www.youtube.com/v/586qhaDwr24?fs=1&amp;hl=fr_FR&amp;hd=1&amp;color1=0x3a3a3a&amp;color2=0x999999" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" /><embed src="http://www.youtube.com/v/586qhaDwr24?fs=1&amp;hl=fr_FR&amp;hd=1&amp;color1=0x3a3a3a&amp;color2=0x999999" type="application/x-shockwave-flash" width="640" height="385"></embed>
+</object>
+
+My major take away on this is the inherent advantage of this kind of vision based algorithm: visibility occlusions handling for free (entities hiding each other, walls of difference heights...). What is costly using traditional geometry queries is almost free here thanks to the render phase. I hope I'll be able to experiment with this soon !
+
+The rest of the workshop features other interesting talk about various aspects of crowd simulations including:
+- An overview of [Legion](http://www.legion.com/legion-software) software;
+- A presentation of the work done by Disney Imagineering R&D department and [SpirOps](http://www.spirops.com/) on crowd simulation in theme parks;
+- An overview of Ming Lin's [UNC Gamma group](http://gamma.cs.unc.edu/) work;
+- Various presentation about Dublin [Trinity college GV2](http://gv2.cs.tcd.ie/)'s work on a populated virtual Dublin.
+
+An interesting workshop and the chance to meet the cream of crowd simulation researchers !

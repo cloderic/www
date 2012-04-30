@@ -150,8 +150,7 @@ img {
 }
 
 pre, code {
-  width: 100%;
-  color: #222;
+  color: {{ site.colors.dark }};
   background-color: {{ site.colors.light }};
 
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
@@ -163,7 +162,6 @@ pre, code {
 }
 
 pre {
-  width: 100%;
   padding: 10px;
   box-shadow: 0 0 10px {{ site.colors.dark_light }};
   overflow: auto;

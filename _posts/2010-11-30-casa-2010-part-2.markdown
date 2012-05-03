@@ -23,14 +23,14 @@ The approach presented here is quite different, no more disc motion planning, bu
 
 The following presentation I'd like to focus on is Jan Ondrej *"Collision avoidance from synthetic vision"*.
 
-Jan is a Phd Student working under the supervision of [Julien Pettré](http://www.irisa.fr/bunraku/GENS/jpettre/) in the [Bunraku](http://www.irisa.fr/bunraku/) research group, of which Golaem spun off. This presentation was in fact a real-conditions rehearsal of Jan SIGGRAPH presentation of (his paper)[http://www.irisa.fr/bunraku/GENS/jpettre/pdf/SIGGRAPH2010.pdf].
+Jan is a Phd Student working under the supervision of [Julien Pettré](http://www.irisa.fr/bunraku/GENS/jpettre/) in the [Bunraku](http://www.irisa.fr/bunraku/) research group, of which Golaem spun off. This presentation was in fact a real-conditions rehearsal of Jan SIGGRAPH presentation of [his paper](http://www.irisa.fr/bunraku/GENS/jpettre/pdf/SIGGRAPH2010.pdf).
 
 The presented work is quite unique, it propose to solve collision avoidance problem using vision algorithm. A low resolution render of simplified geometry is computed for each entity from its point of view, the result is used by a rather simple algorithm to compute a collision free velocity. And, yes, its quite efficient, and the resulting planning is good (perhaps too good to be human-like, though), anyway let's see the result.
 
 <object id="embedded" width="640" height="385">
-<param name="movie" value="http://www.youtube.com/v/586qhaDwr24?fs=1&amp;hl=fr_FR&amp;hd=1&amp;color1=0x3a3a3a&amp;color2=0x999999" />
-<param name="allowFullScreen" value="true" />
-<param name="allowscriptaccess" value="always" /><embed src="http://www.youtube.com/v/586qhaDwr24?fs=1&amp;hl=fr_FR&amp;hd=1&amp;color1=0x3a3a3a&amp;color2=0x999999" type="application/x-shockwave-flash" width="640" height="385"></embed>
+<param name="movie" value="http://www.youtube.com/v/586qhaDwr24?fs=1&amp;hl=fr_FR&amp;hd=1&amp;color1=0x3a3a3a&amp;color2=0x999999"/>
+<param name="allowFullScreen" value="true"/>
+<param name="allowscriptaccess" value="always"/><embed src="http://www.youtube.com/v/586qhaDwr24?fs=1&amp;hl=fr_FR&amp;hd=1&amp;color1=0x3a3a3a&amp;color2=0x999999" type="application/x-shockwave-flash" width="640" height="385"></embed>
 </object>
 
 My major take away on this is the inherent advantage of this kind of vision based algorithm: visibility occlusions handling for free (entities hiding each other, walls of difference heights...). What is costly using traditional geometry queries is almost free here thanks to the render phase. I hope I'll be able to experiment with this soon !

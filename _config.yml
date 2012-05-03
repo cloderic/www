@@ -16,9 +16,10 @@ gravatar: 60ff8db3de74fdd9c6d1313f2f4965de
 colors:
   light: "#f2f2f2"
   dark: "#212121"
-  dark_light: "#373737"
+  shadow: "#373737"
   primary: "#0090ff"
-  primary_light: "#43adff"
-  primary_dark: "#0069ba"
+  primary_shadow: "#43adff"
+  secondary: "#ffb300"
+  secondary_shadow: "#d99800"
 
 permalink: /blog/:year-:month-:day-:title

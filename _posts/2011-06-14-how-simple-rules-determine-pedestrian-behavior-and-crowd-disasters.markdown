@@ -1,0 +1,22 @@
+---
+layout: post
+title: "How simple rules determine pedestrian behavior and crowd disasters"
+permalink: /how-simple-rules-determine-pedestrian-behavio
+img: "images/posts/2011/antibousculade.jpeg"
+tags:
+ - article
+ - crowd
+---
+
+Reading french magazine Marianne this week-end, I was intrigued by a small short talking about the work of two CNRS researchers on crowd dynamics.
+
+![L'outil autibousculade]({{ site.url }}images/posts/2011/antibousculade.jpeg)
+
+Knowing the prior work of those two researchers (Medhi Moussaïd and Guy Theraulaz), in particular on small social groups (see my [group navigation state-of-the-art report]({{ site.url }}pages/group-navigation.html).
+
+This article present an cognitive science approach to autonomous navigation based on observation and experimentation. It is quite similar to some of [Julien Pettré's work](http://www.irisa.fr/bunraku/GENS/jpettre/pdf/SCA2009.pdf).
+To compute the motion of entities, the presented model relies on two simple heuristics computing the direction and the speed of the movement depending on the distance to collision for the available directions. To this "intentionnal" movements, a contact force is added to take into account the occurence of unavoidable collision in high density cases. This addition is interesting as it save the main model from handling those difficult cases ; I should try this!
+
+In the prior art section, the authors compare heuristic base model (such as theirs) to force base model (such as the social forces by Dirk Helbing, on of the authors). They say, and having implemented social forces I agree, that these models are hard to tune and ahve inherent flaws because they model reaction of one-on-one interactions and doesn't provide a valid solution to combine those forces. Those models are alos very dependent on the framerate due to their integrative nature. This prior art section is really incomplete though, they doesn't talk about other experiment based models (such as Julien Pettré's) nor about geometric methods which are really popular (RVO and co.). Their method is not compared to these approaches. I'll read [Medhi Moussaïd Phd Thesis](href="http://mehdimoussaid.com/TheseMoussaid.pdf) (in french) to see if the comparison work is done in it.
+
+Anyway, and to go back to Marianne's article, I'm impressed by the communication work that's been done as they're cited by general public press (another article in [Les Echos](http://www.lesechos.fr/innovation/technologies/0201429911498-un-nouveau-modele-de-simulation-de-foules-175868.php) was just published)!

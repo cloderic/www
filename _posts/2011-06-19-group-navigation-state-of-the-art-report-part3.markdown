@@ -9,3 +9,4 @@ tags:
 ---
 
 *The full article is available [here]({{ site.url }}pages/group-navigation-state-of-the-art-report.html).*
+

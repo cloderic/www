@@ -22,7 +22,7 @@ There's a particular excerpt I particularly liked from the interview of Philip G
 > 
 > *\[...\]*
 > 
-> I want them [computer science students] to be able to sit with the publisher of an online community or an e-commerce site and say "OK, I've looked at your business and your goals; here are some ideas that we can bring in from these 10 other sites that I built, these 100 other sites that I've used." And be an equal partner in the design, not just a coder.
+> I want them \[computer science students\] to be able to sit with the publisher of an online community or an e-commerce site and say "OK, I've looked at your business and your goals; here are some ideas that we can bring in from these 10 other sites that I built, these 100 other sites that I've used." And be an equal partner in the design, not just a coder.
 > 
 > *\[...\]*
 > 

@@ -7,6 +7,6 @@ tags:
  - book
 ---
 
-*Originally a response to [@MikkoMononen](https://twitter.com/#!/mikkomononen)*
+*Originally a response to [@MikkoMononen](https://twitter.com/mikkomononen)*
 
 ![The Dutch Book]({{ site.url }}images/posts/2010/the-dutch-book.jpg "The Dutch Book")

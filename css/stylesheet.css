@@ -396,6 +396,7 @@ header a {
 /* footer */
 #footer_wrap {
   background: {{ site.colors.dark }};
+  clear: both;
 }
 
 footer p {

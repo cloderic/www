@@ -55,7 +55,7 @@ a:focus {
 /* basic styles */
 body {
   box-sizing: border-box;
-  color:{{ site.colors.shadow }};
+  color:{{ site.colors.dark }};
   background: {{ site.colors.dark }};
   font-size: 16px;
   font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
@@ -162,7 +162,6 @@ img {
 }
 
 pre, code {
-  color: {{ site.colors.dark }};
   background-color: {{ site.colors.light }};
 
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
@@ -180,14 +179,11 @@ pre {
 }
 
 code {
-  padding: 3px;
-  margin: 0 3px;
-  box-shadow: 0 0 10px {{ site.colors.shadow }};
+  margin: 0 1px;
 }
 
 pre code {
   display: block;
-  box-shadow: none;
 }
 
 blockquote {

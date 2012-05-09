@@ -1,17 +1,23 @@
 safe: true
 pygments: true
-lsi: true
+lsi: false
 exclude: README.md localServer.sh
 
-#url: http://localhost:5103/
-url: http://cloderic.github.com/
-#url: http://www.crowdscontrol.net/
+#url: http://localhost:5103
+url: http://cloderic.github.com
+#url: http://www.crowdscontrol.net
 
 name: Crowds control
 tagline: Artificially intelligent, virtually real
 author: Clodéric Mars
 mail: cloderic.mars@gmail.com
 gravatar: 60ff8db3de74fdd9c6d1313f2f4965de
+
+feeds:
+#  rss: http://localhost:5103/feeds/rss.xml
+#  atom: http://localhost:5103/feeds/atom.xml
+  rss: http://cloderic.github.com/feeds/rss.xml
+  atom: http://cloderic.github.com/feeds/atom.xml
 
 colors:
   light: "#f2f2f2"

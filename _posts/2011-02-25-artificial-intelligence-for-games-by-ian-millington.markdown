@@ -11,4 +11,4 @@ tags:
 
 [@MJKlaim](http://twitter.com/mjklaim) i've got this one. In fact, im trying to get an overview on what's actually implemented in the real world. 
 
-![Artificial Intelligence for games]({{ site.url }}images/posts/2011/artificial-intelligence-for-games.jpeg)
+![Artificial Intelligence for games]({{ site.url }}/images/posts/2011/artificial-intelligence-for-games.jpeg)

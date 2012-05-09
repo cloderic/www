@@ -7,7 +7,7 @@ tags:
  - flocking
 ---
 
-I'm so trendy,&nbsp;I now have a brand new [github account](https://github.com/cloderic)!
+I'm so trendy, I now have a brand new [github account](https://github.com/cloderic)!
 
 I'm using it both as a git repo for my WebGL experiments and, thanks to their well thought [pages](http://pages.github.com/) feature as a hosting facility for the project itself. You can check this awesome work at [paperplane.crowdscontrol.net](http://paperplane.crowdscontrol.net/). Stable versions of the project will be published there.
 

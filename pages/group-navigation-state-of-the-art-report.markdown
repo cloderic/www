@@ -11,6 +11,6 @@ title: "Group navigation state-of-the-art report"
 
 <iframe id="embedded" width="100%" height="700" scrolling="no" frameborder="0" src="http://www.scribd.com/embeds/60334555/content?start_page=1&amp;view_mode=list&amp;access_key=key-83cg73q9nriwndmn56c"></iframe>
 
- [1]: {{ site.url }}group-navigation-state-of-the-art-report-part		"Group navigation State-of-the-art report - Part 1"
- [2]: {{ site.url }}group-navigation-state-of-the-art-report-part-0		"Group navigation State-of-the-art report - Part 2"
- [3]: {{ site.url }}group-navigation-state-of-the-art-report-part-90260	"Group navigation State-of-the-art report - Part 3"
+ [1]: {{ site.url }}/group-navigation-state-of-the-art-report-part		"Group navigation State-of-the-art report - Part 1"
+ [2]: {{ site.url }}/group-navigation-state-of-the-art-report-part-0		"Group navigation State-of-the-art report - Part 2"
+ [3]: {{ site.url }}/group-navigation-state-of-the-art-report-part-90260	"Group navigation State-of-the-art report - Part 3"

@@ -14,7 +14,7 @@ Autonomous agents navigation is a very wide topic applied to a wide range of spe
 Each of these fields has its definitions of a *valid* human-like characters and while the artistic aspect is very important in games or animation it is not for military simulations for exemple. Validations methods are numerous and each is suited for a few parameters only:
 - Motion captured data in labs can be used to check agents trajectories and velocities in various scenarios (cf. [Julien Pettré work](http://www.irisa.fr/bunraku/GENS/jpettre/));
 
-![Navigation motion capture]({{ site.url }}images/posts/2010/validation-bunraku.jpeg)
+![Navigation motion capture]({{ site.url }}/images/posts/2010/validation-bunraku.jpeg)
 
 - Survey can evaluate various visual aspects of virtual humans (cf. [Rachel McDonnell work](http://gv2.cs.tcd.ie/mcdonner/));
 - Real world video footage can be treated to validate a simulation output;

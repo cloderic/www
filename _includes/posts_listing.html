@@ -1,7 +1,7 @@
 <div id="posts_listing">
 {% for post in site.posts limit: 5 %}
 	{% if post.img %}
-<img src="{{ site.url }}{{ post.img }}"/> 
+<img src="{{ site.url }}/{{ post.img }}"/> 
 	{% endif %}
 <h2><a href="{{ post.url }}"> {{ post.title }} </a></h2>
 <h2-sub> {{ post.date | date_to_string }} </h2-sub>

@@ -8,7 +8,7 @@ tags:
  - navigation
 ---
 
-*The full article is available [here]({{ site.url }}pages/group-navigation-state-of-the-art-report.html).*
+*The full article is available [here]({{ site.url }}/pages/group-navigation-state-of-the-art-report.html).*
 
 ## Stay grouped! ##
 
@@ -20,7 +20,7 @@ In most modern navigation engine, the simulated entities are autonomous, their b
 
 #### Flocking ####
 
-![Reynold's flocking steering behaviors]({{ site.url }}images/posts/2011/flocking-steering-behaviors.jpg)
+![Reynold's flocking steering behaviors]({{ site.url }}/images/posts/2011/flocking-steering-behaviors.jpg)
 
 At the core of Reynolds' work (Reynolds 1987; 1999), three steering behaviors allows entities to flock. For any given entity in the group, separation makes him move apart too close neighbors, alignment makes him go in the same direction as other members and cohesion makes him move towards the group's COM (center of mass). These simple behaviors allow the emergence of a flock. Others took inspiration from this work and adapt it to their architecture using voting steering behaviors (Hostetler and Kearney 2002) or relying on specific environment abstraction such as grids (Loscos, Marchal, and Meyer 2003) or roadmaps (O Burchan Bayazit, Lien, and Amato 2003; Kamphuis and Overmars 2004).
 
@@ -32,7 +32,7 @@ In order to take into account social relations between members of the group, Qiu
 
 #### More rigid formations ####
 
-![Attachment sites]({{ site.url }}images/posts/2011/attachment-sites.jpg)
+![Attachment sites]({{ site.url }}/images/posts/2011/attachment-sites.jpg)
 
 Local rules can also exhibit a more strict formation. Taking inspiration from molecular crystals, Balch and Hybinette designed the attachment sites method (Balch and Hybinette 2000). Each entity, given its desired formation, computes several attachment sites on its neighbors and steers to reach the nearest available. The resulting formation arrangement is a direct result of the attachment sites position and it can scale to any number of group members. But as the attachment rules are local, no control on the formation overall shape is possible.
 

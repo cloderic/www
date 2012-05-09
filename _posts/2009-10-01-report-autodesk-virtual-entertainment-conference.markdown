@@ -21,7 +21,7 @@ The focus of the talk was the character "Elika" from the [Ubisoft's 2008 version
 
 ## But their relationship was completely artificial ##
 
-![Prince of Persia - 1]({{ site.url }}images/posts/2009/pop_1.png)
+![Prince of Persia - 1]({{ site.url }}/images/posts/2009/pop_1.png)
 
 After a few character design considerations, the first topic was the AI used to tell Elika how to move around the prince. Its main objectives on this are :
 
@@ -33,7 +33,7 @@ Basically, what is used is a set of rules taking the state of the prince as inpu
 
 To give the player a feel on what's the relation between the character, a set of rules are added ; the more friendly they are, the more Elika will look at the prince and be near him.
 
-![Prince of Persia - 2]({{ site.url }}images/posts/2009/pop_2.png)
+![Prince of Persia - 2]({{ site.url }}/images/posts/2009/pop_2.png)
 
 ## All they needed was good animations ##
 
@@ -44,7 +44,7 @@ OK, so here comes Autodesk and their realtime inverse kinematic solver, HumanIK,
  
 The IK solver is used on the prince and Elika, it is pretty efficient as it doesn't has any impact on the framerate. The speaker concluded on Human IK praising its easy configuration despite the huge amount of tweakable parameters.
 
-![Prince of Persia - 3]({{ site.url }}images/posts/2009/pop_3.png)
+![Prince of Persia - 3]({{ site.url }}/images/posts/2009/pop_3.png)
 
 Before concluding the talk, one last problematic was addressed: how are handled the situation were one characters prevent the moving of the other. But as the rest of the talk, this topic was treated too quickly. I did not had the time to wonder in which cases the AI couldn't prevent this that the talk was finished.
 

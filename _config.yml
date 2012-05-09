@@ -1,6 +1,6 @@
 safe: true
 pygments: true
-lsi: false
+lsi: true
 exclude: README.md localServer.sh
 
 #url: http://localhost:5103

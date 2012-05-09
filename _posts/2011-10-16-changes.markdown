@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Changes"
+permalink: /changes
+tags:
+ - career
+ - Golaem
+ - Masa
+---
+
+I've been pretty busy this past few months, busy sending resume, cover letters and doing interviews.
+
+Let's go back in time a little bit, in March my girlfriend and I moved from Rennes to Paris (actually Versailles) for her new work. As I didn't want to quit my current job at Golaem (and they didn't want me to leave) we decided I was to work remotly from home and come back to Rennes ~2 times per month. I was able to work quite efficiently but quickly felt isolated working alone in my home office.
+
+In late June, I knew this wasn't working for me. From July, I worked from a Golaem's partner office in Paris. This solved the social isolation problem, but as I didn't worked at all with my officemates, I still had no work interaction beside some mails and IM. I know lots of people work this way without any problem but it seems I personally need to have real time work interactions to keep me motivated.
+
+Anyway, I started looking for a job and now I've found a pretty good one! In January, I'll be lead developper at [Masa Group](http://www.masagroup.net/) working on high level AI technology.
+
+PS. I've converted my "Group navigation state-of-the-art" report to Latex and created a github repository to make the sources openly available, check it [here](https://github.com/cloderic/Group-navigation-state-of-the-art-report)!

@@ -403,6 +403,14 @@ footer p {
   color: {{ site.colors.light }};
 }
 
+footer img {
+  float: left;
+  margin: 5px;
+  padding: 0px;
+  background: none;
+  box-shadow: none;
+}
+
 /* adaptation to small screens */
 
 @media screen and (max-width: 480px) {

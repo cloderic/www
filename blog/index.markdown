@@ -15,5 +15,7 @@ title: blog
 ## {{ post.date | date: '%Y' }} ## 
 		{% endif %}
 	{% endunless %}
- - {{ post.date | date_to_string }} - [{{ post.title }}]({{ post.url }})
+
+### [{{ post.title }}]({{ post.url }}) ###
+{{ post.date | date_to_string }}
 {% endfor %}

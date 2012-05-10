@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 
 {% assign next_post = page.next %}
@@ -9,12 +10,10 @@ layout: default
 <h1-sub>
 	{{ page.date | date_to_long_string }}
 	{% if next_post %}
-		//
-		<a href="{{ next_post.url }}" rel="next" title="{{ next_post.title }}">next</a>
+		// <a href="{{ next_post.url }}" rel="next" title="{{ next_post.title }}">next</a>
 	{% endif %}
 	{% if previous_post %}
-		//
-		<a href="{{ previous_post.url }}" rel="previous" title="{{ previous_post.title }}">previous</a>
+		// <a href="{{ previous_post.url }}" rel="previous" title="{{ previous_post.title }}">previous</a>
 	{% endif %}
 </h1-sub>
 
@@ -34,3 +33,14 @@ layout: default
 	{% endif %}
 {% endfor %}
 </ul>
+
+{% if page.comments %}
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+{% endif %}

@@ -10,6 +10,9 @@ tagline: Artificially intelligent, virtually real
 author: Clodéric Mars
 mail: cloderic.mars@gmail.com
 gravatar: 60ff8db3de74fdd9c6d1313f2f4965de
+disqus: "crowdscontrol"
+
+analytics: true
 
 feeds:
   rss: /feeds/rss.xml

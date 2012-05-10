@@ -327,6 +327,12 @@ header a {
   margin-bottom: 10px;
 }
 
+/* disqus thread */
+#disqus_thread img {
+  box-shadow: none;
+  background: none;
+}
+
 /* sidebar */
 #sidebar {
   float: right;

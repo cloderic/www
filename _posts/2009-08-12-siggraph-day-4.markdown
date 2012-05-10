@@ -2,7 +2,7 @@
 layout: post
 title: "SIGGRAPH: day 4"
 permalink: /wordpress-5
-img: "images/posts/2009/new-orleans-dragon.jpeg"
+img: "/images/posts/2009/new-orleans-dragon.jpeg"
 tags:
  - conference
  - animation
@@ -27,4 +27,4 @@ The afternoon, I explored the third floor : modern art, scientific posters and j
  
 This thursday night was the official reception night: New Orleans Mardi Gras, fanfare and buffet.
 
-![Musician]({{ site.url }}/images/posts/2009/new-orleans-musician.jpeg)
+![Musician](/images/posts/2009/new-orleans-musician.jpeg)

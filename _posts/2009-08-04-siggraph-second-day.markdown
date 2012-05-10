@@ -2,7 +2,7 @@
 layout: post
 title: "SIGGRAPH: second day"
 permalink: /wordpress-3
-img: "images/posts/2009/teapot.jpeg"
+img: "/images/posts/2009/teapot.jpeg"
 tags:
  - conference
  - CGI
@@ -22,6 +22,6 @@ On the bright side:
      - "We don't know but the official statement is that its Intel best interest if you use it."
  - I got two Pixar's renderman teapots !
  
- ![Teapots]({{ site.url }}/images/posts/2009/teapot.jpeg)
+ ![Teapots](/images/posts/2009/teapot.jpeg)
  
  Day two is over.

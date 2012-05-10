@@ -2,7 +2,7 @@
 layout: post
 title: "Golaem Crowd launch"
 permalink: /golaem-crowd-launches
-img: "images/posts/2011/alesia.jpeg"
+img: "/images/posts/2011/alesia.jpeg"
 tags:
  - Golaem
  - Autodesk
@@ -10,7 +10,7 @@ tags:
  - crowd
 ---
 
-![Golaem Crowd]({{ site.url }}/images/posts/2011/alesia.jpeg)
+![Golaem Crowd](/images/posts/2011/alesia.jpeg)
 
 For the past few months we've been working at Golaem on our new product: Golaem Crowd, a Maya plugin dedicated to crowd simulation for the VFX and animation market. While I didn't work on the Maya integration, my work on Golaem Path (navigation mesh generation and navigation behaviors) is a major part of the software and provides much added value.
 

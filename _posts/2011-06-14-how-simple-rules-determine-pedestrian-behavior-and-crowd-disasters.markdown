@@ -2,7 +2,7 @@
 layout: post
 title: "How simple rules determine pedestrian behavior and crowd disasters"
 permalink: /how-simple-rules-determine-pedestrian-behavio
-img: "images/posts/2011/antibousculade.jpeg"
+img: "/images/posts/2011/antibousculade.jpeg"
 tags:
  - article
  - crowd
@@ -10,9 +10,9 @@ tags:
 
 Reading french magazine Marianne this week-end, I was intrigued by a small short talking about the work of two CNRS researchers on crowd dynamics.
 
-![L'outil autibousculade]({{ site.url }}/images/posts/2011/antibousculade.jpeg)
+![L'outil autibousculade](/images/posts/2011/antibousculade.jpeg)
 
-Knowing the prior work of those two researchers (Medhi Moussaïd and Guy Theraulaz), in particular on small social groups (see my [group navigation state-of-the-art report]({{ site.url }}/pages/group-navigation.html).
+Knowing the prior work of those two researchers (Medhi Moussaïd and Guy Theraulaz), in particular on small social groups (see my [group navigation state-of-the-art report](/pages/group-navigation.html).
 
 This article present an cognitive science approach to autonomous navigation based on observation and experimentation. It is quite similar to some of [Julien Pettré's work](http://www.irisa.fr/bunraku/GENS/jpettre/pdf/SCA2009.pdf).
 To compute the motion of entities, the presented model relies on two simple heuristics computing the direction and the speed of the movement depending on the distance to collision for the available directions. To this "intentionnal" movements, a contact force is added to take into account the occurence of unavoidable collision in high density cases. This addition is interesting as it save the main model from handling those difficult cases ; I should try this!

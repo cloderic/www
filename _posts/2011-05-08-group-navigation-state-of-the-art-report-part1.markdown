@@ -2,13 +2,13 @@
 layout: post
 title: "Group navigation state-of-the-art report - Part 1, Introduction and Taxonomy"
 permalink: /group-navigation-state-of-the-art-report-part
-img: "images/posts/2011/sheeps-herd.jpg"
+img: "/images/posts/2011/sheeps-herd.jpg"
 tags:
  - "state-of-the-art report"
  - navigation
 ---
 
-*The full article is available [here]({{ site.url }}/pages/group-navigation-state-of-the-art-report.html).*
+*The full article is available [here](/pages/group-navigation-state-of-the-art-report.html).*
 
 ## Introduction ##
 
@@ -22,19 +22,19 @@ Before we talk velocity, steering behaviors and gradient descent, let's first pr
 
 ### Flocks ###
 
-![Sheeps herd]({{ site.url }}/images/posts/2011/sheeps-herd.jpg)
+![Sheeps herd](/images/posts/2011/sheeps-herd.jpg)
 
 A flock is primarily a group of bird traveling together but it can be applied to other animal species as well as humans (e.g. a flock of school children is crossing the street to the swimming pool). Entities in a flock travel at roughly the same speed and form a cohesive group without strict arrangement. In what must be the two most cited articles in the field (Reynolds 1987; 1999), Reynolds studied empirically how flocks members move relatively to each others. With simple behaviors he was able to recreate a flock of autonomous entities, we'll dig into more details in part 2.
 
 ### Formation ###
 
-![Bastille day]({{ site.url }}/images/posts/2011/bastille-day.jpg)
+![Bastille day](/images/posts/2011/bastille-day.jpg)
  
 While flocks do not follow more rules than the cohesion of the group, formations are a kind of group arrangement where members need to enforce strict rules. Both in a combat or a parade, the spatial arrangement, i.e. the relative positions of members, is designed for a precise purpose, tactic or aesthetic; it is the first rule that needs to be followed. Secondly, in a combat context, formation gets much of its usefulness from overlapping fields of fire and sight, that's why the orientation is another rule to be followed (Dawson 2002). The last rule is to assign entities having the right role to the right slot: archers at the back, footsoldiers facing the enemy. As navigation and military simulation are important for real time strategy games, interesting and working solutions has been developed early: Dave Pottinger, who worked on the Age of Empire series, presented his in a Gamasutra article (Pottinger 1999).
   
 ### Small Social Groups ###
 
-![Groups of 2, 3 and 4 from video corpus]({{ site.url }}/images/posts/2011/social-groups.jpg)
+![Groups of 2, 3 and 4 from video corpus](/images/posts/2011/social-groups.jpg)
  
 Beyond amorphous flocks and rigid military formations, groups that are more common in our everyday life are small and their spatial configuration is the result of social factors and crowd density. Two recent survey focuses on those small social groups (Moussaïd et al. 2010; Peters, Ennis, and O'Sullivan 2009), they lead to the same conclusions.
   

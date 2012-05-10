@@ -2,7 +2,7 @@
 layout: post
 title: "\"Founders at work\": testimonials from the history of IT"
 permalink: /founders-at-work-testimonials-from-the-histor
-img: "images/posts/2011/founders-at-work.jpeg"
+img: "/images/posts/2011/founders-at-work.jpeg"
 tags:
  - book
  - startup
@@ -14,7 +14,7 @@ First, it is a valuable resource concerning IT History, a topic I am fond of. As
 
 Second, this books shows that there's no magic recipe for a successful product or business. Some founders are technology enthusiasts, some are driven by money only, some wanted to succeed, some just wanted to have fun. This results in very different companies almost all achieving some success.
 
-![Founders at work]({{ site.url }}/images/posts/2011/founders-at-work.jpeg)
+![Founders at work](/images/posts/2011/founders-at-work.jpeg)
 
 There's a particular excerpt I particularly liked from the interview of Philip Greenspun, co-founder of ArsDigita, it sums up what are my thought on the job of software engineer (and why I insist not to be a programmer).
 

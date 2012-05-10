@@ -2,13 +2,13 @@
 layout: post
 title: "Group navigation state-of-the-art report - Part 3, Who's in charge?"
 permalink: /group-navigation-state-of-the-art-report-part-90260
-img: "images/posts/2011/formations-linear-interpolation.jpg"
+img: "/images/posts/2011/formations-linear-interpolation.jpg"
 tags:
  - state-of-the-art report
  - navigation
 ---
 
-*The full article is available [here]({{ site.url }}/pages/group-navigation-state-of-the-art-report.html).*
+*The full article is available [here](/pages/group-navigation-state-of-the-art-report.html).*
 
 
 ## Who's in charge? ##
@@ -40,7 +40,7 @@ The most important aspect of group level path planning is to choose how to take 
 
 Once the path is computed, the path following process is able to provide local steering orders resulting in the entity following the path. Adapted to groups, this process makes the anchor follow the path. In some work (Bayazit et al. 2003; Pottinger 1999), the group level path following is also responsible for environment aware formation adaptation, allowing the formation to change when the clearance to obstacles changes. The following figure shows how a formation change allows a group to pass through a narrow passage more smoothly.
 
-![Passing through a narrow passage using naive or follow-the-leader approach]({{ site.url }}/images/posts/2011/narrow-passage.jpg)
+![Passing through a narrow passage using naive or follow-the-leader approach](/images/posts/2011/narrow-passage.jpg)
 
 ### Collision Avoidance ###
 
@@ -48,7 +48,7 @@ Groups tend to stay coherent when navigating between obstacles and among other p
 
 Schuerman et al. consider the bulk of the group as a disc allowing them to use RVO (Schuerman et al. 2010; van den Berg et al. 2008). The resulting collision avoidance is very conservative as the disc is, most of time greatly overestimating the real footprint of the group. Karamouzas and Overmars adapted their own collision avoidance algorithm, based on velocity space sampling and sweep collision test, to work on the oriented bounding box of the group (Karamouzas and Overmars 2010a; 2010b). They further extend the algorithm by allowing formation adaptation. In practice, they generate samples based on velocity changes and formation changes interpolating the current formation with a library of valid formation. Each sample is weighted depending on its distance from the desired velocity and the desired formation and its time to collision. The number of candidate formations is limited to 15 as there's 5 possible formations and 3 interpolations computed per formation. These limits lower the number of considered samples, preserving the performances of the algorithm.
 
-![Linear interpolation between formations]({{ site.url }}/images/posts/2011/formations-linear-interpolation.jpg)
+![Linear interpolation between formations](/images/posts/2011/formations-linear-interpolation.jpg)
 
 Peters et al. rule based navigation method is able to handle both formation adaptation and group splitting which is not supported by the previously described methods (Peters et al. 2009). Unfortunately the article doesn't provide many details on the algorithm.
  

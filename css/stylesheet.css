@@ -72,6 +72,15 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+h1-sub, h2-sub, h3-sub, h4-sub, h5-sub, h6-sub {
+  font-weight: 300;
+  font-size: 14px;
+  position: relative;
+  top: -15px;
+  margin-bottom: -15px;
+  line-height: 1.2;
+}
+
 h1 {
   padding-bottom: 10px;
   font-size: 32px;
@@ -80,25 +89,8 @@ h1 {
   line-height: 1.5;
 }
 
-h1-sub {
-  font-weight: 300;
-  position: relative;
-  top: -15px;
-  margin-bottom: -15px;
-  line-height: 1.2;
-}
-
 h2 {
-  padding-bottom: 10px;
   font-size: 24px;
-}
-
-h2-sub {
-  font-weight: 300;
-  position: relative;
-  top: -15px;
-  margin-bottom: -15px;
-  line-height: 1.2;
 }
 
 h3 {
@@ -263,6 +255,10 @@ form {
   margin: 0 auto;
 }
 
+.clear_left {
+  clear: left;
+}
+
 /* header */
 #header_wrap {
   background: {{ site.colors.dark }};
@@ -308,8 +304,17 @@ header a {
   border-bottom: 1px solid {{ site.colors.shadow }};
 }
 
-/* post listing */
-#posts_listing img {
+/* post excerpt */
+h1, h2, h3, h4, h5, h6 {
+  margin: 5px 0;
+}
+
+#posts_excerpt h1-sub, h2-sub, h3-sub, h4-sub, h5-sub, h6-sub {
+  top: -5px;
+  margin-bottom: -5px;
+}
+
+#posts_excerpt img {
   max-height: 150px;
   max-width: 150px;
   float: left;
@@ -318,11 +323,7 @@ header a {
   margin-bottom: 10px;
 }
 
-#posts_listing hr {
-  clear:left;
-}
-
-#posts_listing p {
+#posts_excerpt p {
   margin-top: 0px;
   margin-bottom: 10px;
 }

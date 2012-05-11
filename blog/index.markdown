@@ -16,6 +16,8 @@ title: blog
 		{% endif %}
 	{% endunless %}
 
-### [{{ post.title }}]({{ post.url }}) ###
-{{ post.date | date_to_string }}
+{% assign level = 4 %}
+{% assign short = true %}
+{% include post_excerpt.html %}
+
 {% endfor %}

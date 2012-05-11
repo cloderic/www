@@ -4,6 +4,13 @@ title:
 ---
 
 # Latest posts #
-{% assign posts = site.posts %}
-{% assign count = 5 %}
-{% include posts_listing.html %}
+{% for post in site.posts limit: 5 %}
+
+{% assign level = 2 %}
+{% include post_excerpt.html %}
+
+{% unless forloop.last %}
+------------------------
+{% endunless %}
+
+{% endfor %}

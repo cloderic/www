@@ -4,7 +4,7 @@ title: "Group navigation state-of-the-art report - Part 2, Stay Grouped!"
 permalink: /group-navigation-state-of-the-art-report-part-0
 img: "/images/posts/2011/flocking-steering-behaviors.jpg"
 tags:
- - state-of-the-art report
+ - paper
  - navigation
 ---
 

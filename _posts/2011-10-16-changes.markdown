@@ -3,9 +3,8 @@ layout: post
 title: "Changes"
 permalink: /changes
 tags:
- - career
- - Golaem
- - Masa
+ - golaem
+ - masa
 ---
 
 I've been pretty busy this past few months, busy sending resume, cover letters and doing interviews.

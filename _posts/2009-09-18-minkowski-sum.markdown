@@ -4,8 +4,6 @@ title: "Minkowski sum"
 permalink: /wordpress-6
 tags:
  - geometry
- - maths
- - slides
 ---
 Since the end of my master's internship I hadn't really followed what was going on in the academic world about autonomous agent steering. I've done some catchup lately ; this post is a preamble to some article report I'm planning to do.  Here it is, a few slides about the Minkowski sum, a fun geometric function used notably in motion planning.
 

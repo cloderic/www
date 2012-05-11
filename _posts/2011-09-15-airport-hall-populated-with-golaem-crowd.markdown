@@ -3,7 +3,8 @@ layout: post
 title: "Airport hall populated with Golaem Crowd"
 permalink: /airport-hall-populated-with-golaem-crowd
 tags:
- - "Golaem Crowd"
+ - golaem
+ - crowd_simulation
  - navigation
 ---
 

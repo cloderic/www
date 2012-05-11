@@ -1,0 +1,18 @@
+<h1> {{ page.title }} </h1>
+<h1-sub>{{ posts | size }} posts since {{ posts.last.date | date: '%B %Y' }}</h1-sub>
+{% for post in posts %}
+	{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+	{% if forloop.first %}
+<h2> {{ year }} </h2>
+	{% else %}
+		{% if year != previous_year %}
+<hr class="clear_left">
+<h2> {{ year }} </h2>
+		{% endif %}
+	{% endif %}
+
+	{% assign level = 3 %}
+	{% assign short = false %}
+{% include post_excerpt.html %}
+	{% assign previous_year = year %}
+{% endfor %}

@@ -4,8 +4,8 @@ title: "How simple rules determine pedestrian behavior and crowd disasters"
 permalink: /how-simple-rules-determine-pedestrian-behavio
 img: "/images/posts/2011/antibousculade.jpeg"
 tags:
- - article
- - crowd
+ - paper
+ - crowd_simulation
 ---
 
 Reading french magazine Marianne this week-end, I was intrigued by a small short talking about the work of two CNRS researchers on crowd dynamics.

@@ -3,8 +3,7 @@ layout: post
 title: "Learning WebGL"
 permalink: /learning-webgl
 tags:
- - WebGL
- - flocking
+ - webgl
 ---
 
 So this is my new home project, I'm learning WebGL.

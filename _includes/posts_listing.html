@@ -1,9 +1,0 @@
-<div id="posts_listing">
-{% for post in posts limit: count %}
-	{% assign level = 2 %}
-	{% include posts_listing.html %}
-	{% unless forloop.last %}
-<hr>
-	{% endunless %}
-{% endfor %}
-</div>

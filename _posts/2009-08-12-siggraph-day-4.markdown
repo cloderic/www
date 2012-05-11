@@ -6,7 +6,6 @@ img: "/images/posts/2009/new-orleans-dragon.jpeg"
 tags:
  - conference
  - animation
- - CGI
 ---
 
 This Thursday was my 4th day for this SIGGRAPH, it was also the last day for the exhibition. After a little sleepover my day started by the fist session of technical papers dedicated to character animations, really interesting but quite complex for my bad skills in the domain.

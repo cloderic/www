@@ -4,10 +4,8 @@ title: "Golaem Crowd launch"
 permalink: /golaem-crowd-launches
 img: "/images/posts/2011/alesia.jpeg"
 tags:
- - Golaem
- - Autodesk
- - "vfx/animation"
- - crowd
+ - golaem
+ - crowd_simulation
 ---
 
 ![Golaem Crowd](/images/posts/2011/alesia.jpeg)

@@ -5,10 +5,8 @@ permalink: /wordpress-7
 img: "/images/posts/2009/pop_1.png"
 tags:
  - animation
- - Autodesk
  - conference
- - game AI
- - IK
+ - ai
 ---
 
 Tonight, Autodesk gave a "virtual conference" featuring talks about their products, live-broadcasted, for free on their site. I virtually attended to the portion I was interested in : Ubisoft talking about AI and animation in Prince of Persia.

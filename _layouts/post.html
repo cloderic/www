@@ -9,13 +9,10 @@ comments: true
 <h1>{{ page.title }}</h1>
 <h1-sub>
 	{{ page.date | date_to_long_string }}
-	{% if next_post %}
-		// <a href="{{ next_post.url }}" rel="next" title="{{ next_post.title }}">next</a>
-	{% endif %}
-	{% if previous_post %}
-		// <a href="{{ previous_post.url }}" rel="previous" title="{{ previous_post.title }}">previous</a>
-	{% endif %}
-		// <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}">reaching for Disqus...</a>
+	{% for tag in page.tags %}
+		// <a href="/tags/{{ tag }}">{{ tag | replace:'_', ' ' }}</a>
+	{% endfor %}
+	// <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}">reaching for Disqus...</a>
 </h1-sub>
 
 {{ content }}

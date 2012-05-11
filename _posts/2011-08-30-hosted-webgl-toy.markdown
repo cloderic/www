@@ -3,8 +3,7 @@ layout: post
 title: "Hosted WebGL Toy"
 permalink: /hosted-webgl-toy
 tags:
- - WebGL
- - flocking
+ - webgl
 ---
 
 I'm so trendy, I now have a brand new [github account](https://github.com/cloderic)!

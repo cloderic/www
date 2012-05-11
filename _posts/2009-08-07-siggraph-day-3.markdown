@@ -4,7 +4,6 @@ title: "SIGGRAPH: day 3"
 permalink: /wordpress-4
 tags:
  - conference
- - CGI
  - animation
 ---
 

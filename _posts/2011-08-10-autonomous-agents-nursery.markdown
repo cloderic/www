@@ -3,7 +3,7 @@ layout: post
 title: "Autonomous agents nursery"
 permalink: /autonomous-agents-nursery
 tags:
- - "Golaem Crowd"
+ - golaem
 ---
 
 Finally, we've got some Golaem Crowd animated eye candy to show to the world !

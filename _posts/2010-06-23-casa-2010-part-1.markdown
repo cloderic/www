@@ -4,7 +4,7 @@ title: "CASA 2010 report (part 1)"
 permalink: /wordpress-11
 tags:
  - conference
- - "functional crowds"
+ - crowd_simulation
  - navigation
 ---
 

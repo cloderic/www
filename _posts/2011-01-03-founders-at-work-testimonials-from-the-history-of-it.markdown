@@ -5,7 +5,7 @@ permalink: /founders-at-work-testimonials-from-the-histor
 img: "/images/posts/2011/founders-at-work.jpeg"
 tags:
  - book
- - startup
+ - development
 ---
 
 I've finished reading ["Founders at work"](http://www.foundersatwork.com/) by Jessica Livingston during the past holidays. It's been a very interesting read. There's two reasons why I liked this book.

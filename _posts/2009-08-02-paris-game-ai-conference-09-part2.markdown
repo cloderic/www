@@ -3,7 +3,7 @@ layout: post
 title: Paris Game AI Conference '09 (part 2)
 permalink: /wordpress-1
 tags:
-- game AI
+- ai
 - conference
 ---
 

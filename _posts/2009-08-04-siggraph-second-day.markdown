@@ -5,7 +5,6 @@ permalink: /wordpress-3
 img: "/images/posts/2009/teapot.jpeg"
 tags:
  - conference
- - CGI
  - development
 ---
 

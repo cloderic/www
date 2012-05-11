@@ -4,8 +4,7 @@ title: "ml-class"
 permalink: /ml-class
 img: "/images/posts/2011/ml-class.png"
 tags:
- - courses
- - "machine learning"
+ - machine_learning
 ---
 
 I've been pretty busy lately following the wonderful [machine learning Stanford open course](http://www.ml-class.org/) of professor [Andrew Ng](http://ai.stanford.edu/~ang/).

@@ -78,7 +78,7 @@ h1-sub, h2-sub, h3-sub, h4-sub, h5-sub, h6-sub {
   position: relative;
   top: -15px;
   margin-bottom: -15px;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 h1 {

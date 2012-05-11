@@ -4,7 +4,8 @@ title: "CASA 2010 report (part 2)"
 permalink: /casa-2010-report-part-2
 tags:
  - conference
- - "crowd simulation"
+ - crowd_simulation
+ - navigation
 ---
 
 I've been pretty lazy on this blog this past months... Anyway here's the end of the CASA report.

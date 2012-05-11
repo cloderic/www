@@ -4,8 +4,7 @@ title: "On crowd simulation validation"
 permalink: /on-crowd-simulation-validation
 img: "/images/posts/2010/validation-bunraku.jpeg"
 tags:
- - "crowd simulation"
- - validation
+ - crowd_simulation
 ---
 
 *This is a response to Mikko's [latest post](http://digestingduck.blogspot.com/2010/12/style-vs-technique.html) in more than 140 characters...*

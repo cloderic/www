@@ -4,7 +4,7 @@ title: "Group navigation state-of-the-art report - Part 1, Introduction and Taxo
 permalink: /group-navigation-state-of-the-art-report-part
 img: "/images/posts/2011/sheeps-herd.jpg"
 tags:
- - "state-of-the-art report"
+ - paper
  - navigation
 ---
 

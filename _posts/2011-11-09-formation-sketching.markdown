@@ -5,7 +5,7 @@ permalink: /group-navigation-report
 img: "/images/posts/2011/sketched-formations.jpg"
 tags:
  - navigation
- - "state-of-the-art"
+ - paper
 ---
 
 ![ml-class doodle](/images/posts/2011/sketched-formations.jpg)

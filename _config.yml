@@ -27,4 +27,10 @@ colors:
   secondary: "#ffb300"
   secondary_shadow: "#d99800"
 
+tag_descriptors:
+  - tag: navigation
+    title: Navigation
+  - tag: conference
+    title: Conferences
+
 permalink: /blog/:year-:month-:day-:title

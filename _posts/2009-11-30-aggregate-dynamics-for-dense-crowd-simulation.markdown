@@ -3,9 +3,8 @@ layout: post
 title: "Aggregate Dynamics for Dense Crowd Simulation"
 permalink: /wordpress-9
 tags:
- - article
- - bibliography
- - crowd
+ - paper
+ - crowd_simulation
  - navigation
 ---
 

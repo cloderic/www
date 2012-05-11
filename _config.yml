@@ -15,8 +15,7 @@ disqus: "crowdscontrol"
 analytics: true
 
 feeds:
-  rss: /feeds/rss.xml
-  atom: /feeds/atom.xml
+  rss: http://feeds.feedburner.com/crowdscontrol
 
 colors:
   light: "#f2f2f2"
@@ -26,11 +25,5 @@ colors:
   primary_shadow: "#43adff"
   secondary: "#ffb300"
   secondary_shadow: "#d99800"
-
-tag_descriptors:
-  - tag: navigation
-    title: Navigation
-  - tag: conference
-    title: Conferences
 
 permalink: /blog/:year-:month-:day-:title

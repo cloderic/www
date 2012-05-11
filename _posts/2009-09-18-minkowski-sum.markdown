@@ -13,4 +13,3 @@ Since the end of my master's internship I hadn't really followed what was going 
 <param name="src" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=minkowskisum-090917170955-phpapp02&amp;stripped_title=minkowski-sum-on-2d-geometry" />
 <param name="allowfullscreen" value="true" /><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=minkowskisum-090917170955-phpapp02&amp;stripped_title=minkowski-sum-on-2d-geometry" type="application/x-shockwave-flash" width="425" height="355"></embed>
 </object>
-<script src="http://b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>

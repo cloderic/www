@@ -1,7 +1,7 @@
 safe: true
 pygments: true
 lsi: true
-exclude: README.md localServer.sh
+exclude: README.md localServer.sh project.chproj
 
 url: http://www.crowdscontrol.net
 

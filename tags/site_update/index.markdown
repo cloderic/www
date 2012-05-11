@@ -1,6 +1,6 @@
 ---
 layout: tag
-title: AI
+title: Site Updates
 ---
 
 {% assign posts = site.tags.site_update %}

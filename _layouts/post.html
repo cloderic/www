@@ -17,14 +17,6 @@ comments: true
 
 {{ content }}
 
-<hr>
-<h2>Related Posts</h2>
-{% for post in site.related_posts limit:3 %}
-	{% assign level = 3 %}
-	{% assign short = false %}
-	{% include post_excerpt.html %}
-{% endfor %}
-
 {% if page.comments %}
 <hr>
 <div id="disqus_thread"></div>

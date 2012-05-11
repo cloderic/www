@@ -8,7 +8,7 @@ tags:
  - navigation
 ---
 
-*The full article is available [here](/pages/group-navigation-state-of-the-art-report.html).*
+*The full article is available [here](/group-navigation-state-of-the-art-report).*
 
 ## Stay grouped! ##
 

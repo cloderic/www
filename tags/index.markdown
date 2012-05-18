@@ -13,7 +13,7 @@ title: Tags
 - [Golaem ({{ site.tags.golaem | size }} posts)](/tags/golaem)
 - [Machine Learning ({{ site.tags.machine_learning | size }} posts)](/tags/machine_learning)
 - [Masa ({{ site.tags.masa | size }} posts)](/tags/masa)
-- [Navigation ({{ site.tags.navigation | size }} posts)](/tags/navgation)
+- [Navigation ({{ site.tags.navigation | size }} posts)](/tags/navigation)
 - [Papers ({{ site.tags.paper | size }} posts)](/tags/paper)
 - [Site Updates ({{ site.tags.site_update | size }} posts)](/tags/site_update)
 - [WebGL ({{ site.tags.webgl | size }} posts)](/tags/webgl)

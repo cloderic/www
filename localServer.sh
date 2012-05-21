@@ -1,2 +1,2 @@
 #!/bin/sh
-jekyll --auto --server 5103
+jekyll --url http://localhost:5103 --auto --server 5103

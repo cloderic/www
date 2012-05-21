@@ -12,7 +12,7 @@ comments: true
 	{% for tag in page.tags %}
 		// <a href="/tags/{{ tag }}">{{ tag | replace:'_', ' ' }}</a>
 	{% endfor %}
-	// <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}">reaching for Disqus...</a>
+	// <a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{ page.url }}">reaching for Disqus...</a>
 </h1-sub>
 
 {{ content }}

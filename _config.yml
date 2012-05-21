@@ -1,6 +1,6 @@
 safe: true
 pygments: true
-lsi: true
+lsi: false
 exclude: README.md localServer.sh project.chproj CNAME
 
 url: http://www.crowdscontrol.net

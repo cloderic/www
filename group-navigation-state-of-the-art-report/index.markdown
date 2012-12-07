@@ -3,6 +3,8 @@ layout: default
 title: "Group navigation state-of-the-art report" 
 ---
 
+[*Download*](./Group-Navigation-State-of-the-art-report.pdf)
+
 ## History ##
 
 - 21 Jun 2011 - First complete version of the report as it was published in three parts on the blog ([Part 1][1], [Part 2][2], & [Part 3][3]).

@@ -15,5 +15,6 @@ title: Tags
 - [Masa ({{ site.tags.masa | size }} posts)](/tags/masa)
 - [Navigation ({{ site.tags.navigation | size }} posts)](/tags/navigation)
 - [Papers ({{ site.tags.paper | size }} posts)](/tags/paper)
+- [Recast/Detour ({{ site.tags.recastdetour | size }} posts)](/tags/recastdetour)
 - [Site Updates ({{ site.tags.site_update | size }} posts)](/tags/site_update)
 - [WebGL ({{ site.tags.webgl | size }} posts)](/tags/webgl)

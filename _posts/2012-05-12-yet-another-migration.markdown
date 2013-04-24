@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Yet another migration"
-img: "https://a248.e.akamai.net/assets.github.com/images/modules/about_page/octocat.png?1334862345"
+img: "/images/posts/2012/octocat.png"
 tags:
  - site_update
 ---

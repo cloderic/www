@@ -11,7 +11,7 @@ This long overdue post is about my takeaway from this year's GDC AI Summit, I tr
 
 # Spatially located data #
 
-One key part of an AI system is to have meaningful data for the decision-making to take place. In most of the games genres, it is very important to have spatially located data and to be able to extract from these meaningful data. 
+One key part of an AI system is to have meaningful data as input to the decision-making. In most of the games genres, it is very important to have spatially located data and to be able to extract from these meaningful data. 
 
 Several talks focused on this area:
 
@@ -78,11 +78,11 @@ The presentation was really interesting, it focused on how to achieve the long t
 
 During the development of [City Conquest](http://www.intelligenceenginestudios.com/cityconquest.htm) the team took baby steps in that direction by implementing Genetically evolved generations of AI players that would test the game over night whenever a change to the rule occurred. The analysis of the taken sequence of actions allowed the team to tweak the balancing of the game.
 
-## Off the Beaten Path: Non-Traditional Uses of AI - [The Restaurant Game](http://web.media.mit.edu/~jorkin/restaurant/) by Jeff Orkin ##
+## Off the Beaten Path: Non-Traditional Uses of AI - [The Restaurant Game](http://web.media.mit.edu/~jorkin/research/) by Jeff Orkin ##
 
-Jeff Orkin started his talk by asserting that, in general, AI is a content problem, the behavior of a NPC is content. For it to be better by an order of magnitude, speeding more time on creating the content won't work as **Human imagination is a limited resource**. His idea is to base future AI on actual players behavior (an idea a friend of mine explored in his [phd thesis](http://tel.archives-ouvertes.fr/docs/00/66/70/72/PDF/tence-thesis.pdf)), record these and replay fragments of the played patterns when it fits. In short, for him, the future AI engine is a search engine. 
+Jeff Orkin started his talk by asserting that, in general, AI is a content problem, the behavior of a NPC is content. For it to be better by an order of magnitude, spending more time on creating the content won't work as **"Human imagination is a limited resource"**. His idea is to base future AI on actual players behavior (an idea a friend of mine explored in his [phd thesis](http://tel.archives-ouvertes.fr/docs/00/66/70/72/PDF/tence-thesis.pdf)), record these and replay fragments of the played patterns when it fits. In short, for him, the future AI engine is a search engine. 
 
-To validate this approach he did an experiment with a simple restaurant game featuring the interaction between a customer and a waitress. He recorded thousands of play sessions, and crowd sourced the annotation of these transcripts (over 400 h of work). In the final game, the player is the customer, the system tries to match his action to one of the transcripts and play the reaction of the waitress. With 167 different ways of asking for the bill, variety is not a problem and thanks to the manual annotation the waitress' mood can be configured for a different experience each time. 
+To validate this approach he did an experiment with a simple restaurant game featuring the interaction between a customer and a waitress. He recorded thousands of play sessions, and crowd sourced the annotation of these transcripts (over 450h of work). In the final game, the player is the customer, the system tries to match his action to one of the transcripts and play the reaction of the waitress. With 167 different ways of asking for the bill, variety is no longer an issue and thanks to the manual annotation the waitress' mood can be configured for a different experience each time. 
 
 These two talks were really interesting and shows that their promise is not so crazy, I believe we will get to this kind of AI in the next decade.
 

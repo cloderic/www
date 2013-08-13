@@ -1,7 +1,7 @@
 safe: true
 pygments: true
 lsi: false
-exclude: ["README.md", "localServer.sh", "crowds-control.sublime-project", "CNAME"]
+exclude: ["README.md", "localServer.sh", "crowds-control.sublime-project", "CNAME", "Gemfile", ".travis.yml"]
 
 url: http://www.crowdscontrol.net
 

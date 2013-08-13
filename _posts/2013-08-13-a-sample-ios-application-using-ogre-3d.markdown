@@ -4,6 +4,7 @@ title: "A sample iOS application using Ogre 3D"
 img: "/images/posts/2013/ios-ogre.jpg"
 tags:
  - development
+ - masa
 ---
 
 I'm currently working on an iOS demo of [MASA LIFE](http://www.masalife.net), the AI middleware I'm developping; in fact I'm porting the demo we did for this year's GDC to iOS. It is called *PaperArena*, and it is a small capture the flag tank game showcasing the kind of AI you can develop with LIFE. This demo was originally developped for Windows using [Ogre 3D](http://www.ogre3d.org/).

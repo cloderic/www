@@ -1,12 +1,12 @@
 safe: true
 pygments: true
 lsi: false
-exclude: README.md localServer.sh project.chproj CNAME
+exclude: ["README.md", "localServer.sh", "crowds-control.sublime-project", "CNAME"]
 
 url: http://www.crowdscontrol.net
 
 name: Crowds Control
-tagline: Artificially intelligent, virtually real
+tagline: "Artificially intelligent, virtually real"
 author: Clodéric Mars
 mail: cloderic.mars@gmail.com
 gravatar: 60ff8db3de74fdd9c6d1313f2f4965de

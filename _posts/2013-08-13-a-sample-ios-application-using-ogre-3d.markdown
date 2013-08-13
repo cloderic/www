@@ -98,4 +98,6 @@ On top of that, this sample application uses `CoreMotion` for accelerometer/gyro
 
 I'm sure I've done some bad stuff and that there is a much simpler way of doing all that. Experts of iOS, experts of Ogre, please let me know, I'll update the application accordingly!
 
+If you are going to GDC Europe next week (19/08/13 and 20/08/13), drop by and say hi (booth #170 on the GDC expor floor). If all goes well for me, you should be able to play PaperArena on an iPad!
+
 

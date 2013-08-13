@@ -14,4 +14,4 @@ Anyway this is a great showcase for the navigation engine I've been developing s
 
 Please enjoy !
 
-<iframe id="embedded" width="560" height="315" src="http://www.youtube.com/embed/pqQOfKR_Cw8?rel=0&hd=1" frameborder="0"> </iframe>
+<iframe id="embedded" width="560" height="315" src="http://www.youtube.com/embed/pqQOfKR_Cw8?rel=0&amp;hd=1" frameborder="0"> </iframe>

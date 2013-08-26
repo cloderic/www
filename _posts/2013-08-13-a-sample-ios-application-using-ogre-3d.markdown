@@ -45,26 +45,40 @@ The view controller `start` method initializes the `OgreApplication`, the C++ in
 {% highlight objective-c linenos %}
 - (void)startWithWindow:(UIWindow*) window
 {
-    UIView* view = self.view;
-    unsigned int width  = view.frame.size.width;
-    unsigned int height = view.frame.size.height;
+    unsigned int width  = self.view.frame.size.width;
+    unsigned int height = self.view.frame.size.height;
     
     mOgreView = [[OgreView alloc] initWithFrame:CGRectMake(0,0,width,height)];
-    
+    [self.view addSubview:mOgreView];
+
     mApplication.start(window, mOgreView, self, width, height);
     
+    // Linking the ogre view to the render window
+    mOgreView.mRenderWindow = mApplication.mRenderWindow;
+
+    // Ogre has created an EAGL2ViewController for the provided mOgreView
+    // and assigned it as the root view controller of the window
+    //
+    // Let's first retrieve it
+    UIViewController* ogreViewController = window.rootViewController;
+    
+    // I want to be the actual root view controller
     window.rootViewController = self;
     
-    [view addSubview:mOgreView];
-    [view sendSubviewToBack:mOgreView];
+    // But i want to add a child link with the ogre one
+    [self addChildViewController:ogreViewController];
+    
+    // add the ogre view as a sub view
+    [self.view addSubview:mOgreView];
+    [self.view sendSubviewToBack:mOgreView];
 }
 {% endhighlight %}
 
-On line 7, a sub-view is created, that is the one actually used by Ogre. I would have preferred to be able to directly create such view in the interface builder and even get rid of the parent view but it seems Ogre messes up with the view controller, as a result I was never able to do it properly.
+On line 6, a sub-view is created, that is the one actually used by Ogre. I would have preferred to be able to directly create such view in the interface builder and even get rid of the parent view but it Ogre creates its own view controller for it (which I failed to replace) and I wanted to keep my own.
 
 This view uses the custom class `OgreView` ([.h](https://github.com/cloderic/ios-ogre/blob/ff401891fcdc4e4ffd7e071cddce71d35fd9e067/OgreView.h), [.mm](https://github.com/cloderic/ios-ogre/blob/ff401891fcdc4e4ffd7e071cddce71d35fd9e067/OgreView.mm)) that "mimicks" what Ogre is expected as a view, ie. the not exported `EAGL2View` ([.h](https://bitbucket.org/sinbad/ogre/src/baa48feb22e9f35088b521d336678847a9a71504/RenderSystems/GLES2/include/EAGL/OgreEAGL2View.h?at=v1-8), [.mm](https://bitbucket.org/sinbad/ogre/src/baa48feb22e9f35088b521d336678847a9a71504/RenderSystems/GLES2/src/EAGL/OgreEAGL2View.mm?at=v1-8)).
 
-On line 9, the root view controller of the window is reset because it has been messed up during Ogre's initialization. 
+On line 18, Ogre's created view controller is retrieved, `self` then takes back its place as `window`'s root view controller and a parenting link is created between the two view controllers (should help propagating OS events).
 
 Finally, the Ogre view is attached to the main view and sent to the back for other sub-views to be visible.
 
@@ -80,7 +94,9 @@ void OgreApplication::start(void* uiWindow, void* uiView, void* uiViewController
     
     Ogre::NameValuePairList params;
     params["colourDepth"] = "32";
-    params["contentScalingFactor"] = 2.0;
+    params["contentScalingFactor"] = "2.0";
+    params["FSAA"] = "16";
+    params["Video Mode"] = Ogre::StringConverter::toString(width) + "x" + Ogre::StringConverter::toString(height);
     params["externalWindowHandle"] = Ogre::StringConverter::toString((unsigned long)uiWindow);
     params["externalViewHandle"] = Ogre::StringConverter::toString((unsigned long)uiView);
     params["externalViewController"] = Ogre::StringConverter::toString((unsigned long)uiViewController);
@@ -101,4 +117,8 @@ I'm sure I've done some bad stuff and that there is a much simpler way of doing 
 
 If you are going to GDC Europe next week (19/08/13 and 20/08/13), drop by and say hi (booth #170 on the GDC expor floor). If all goes well for me, you should be able to play PaperArena on an iPad!
 
+## Update - 26/8/13 ##
 
+I've updated both the code on github and the post. I was previously setting `params["externalViewController"]` instead of `params["externalViewControllerHandle"]` which is the actual good name for the parameters. That was in fact the reason why this piece of code was working.
+
+Furthermore I have discovered that the system doesn't handle well screen orientation when starting in non portrait mode (e.g. when you set the valid orientations from the settings of the app). This needs further investigation.

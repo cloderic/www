@@ -1,0 +1,43 @@
+---
+layout: post
+title: "Contributions to Recast/Detour"
+img: "/images/posts/2013/masa-life-logo.png"
+tags:
+ - recastdetour
+ - masa
+ - navigation
+---
+
+In a previous [post]({% post_url 2013-03-21-recast-detour-in-masa-life %}) I've announced that, as a part of our work on [MASA LIFE](http://www.masalife.net), the team will work with Recast/Detour and that we would release our updates to the community.
+
+This have been effective since the beginning of the summer and we're just releasing today a new version which is the first to be used in a released version of MASA LIFE, the upcoming (if all goes well, this week) v1.2. Our work is available on github at <https://github.com/masagroup/recastdetour>.
+
+# Introduced features #
+
+## Modular *crowd* framework ##
+
+`DetourCrowd` was a rather monolithical, we redesigned a large part of its basic framework with two goals in mind: modularity and usage safety. In the process we introduced several new concepts:
+
+- **Navigation behaviors**, self-contained navigation algorithms defining how agents take movement decisions, eg. how they update their velocity (cf. the [user documentation](http://masagroup.github.io/recastdetour/group__behavior.html)), such behavior is assigned to each agent and used to update it, the existing path following and collision avoidance algorithms were encapsulated in navigation behaviors;
+
+- **Indirect agents access**, forbidding direct read or write to `dtAgent`, introducing explicit fetch/push queries based on the agent's `id`, as a result it is easier to make checks (are we out of the navmesh?) and the users always safely manipulate data (cf. the [user documentation](http://masagroup.github.io/recastdetour/group__crowd.html));
+
+- Modular **Update loop**, allowing more complex update strategy by supporting the update of part of the crowd in different steps, environment, velocity and position (cf. the [user documentation](http://masagroup.github.io/recastdetour/group__crowd.html)).
+
+## Navigation tests ##
+
+We introduced unit tests on 'DetourCrowd' in order to test the new features we introduced. We chose to use [Catch](https://github.com/philsquared/Catch) mainly because it is dependency free and with an active community.
+
+Additionally we created a simple framework to create *functional* visual tests for navigation based on JSON configuration files.
+
+# Known issues #
+
+This fork is still very young and several issues are remaining. The most important being:
+
+- Bad usage of the pathfinding queue in the path following behavior;
+- *Dumb* neighbors retrieving, we had to remove the previous proximity grid that couldn't work properly with multi-level scenes;
+- Removal of the navigation test features from the *RecastDemo* application, we didn't took the time to port them to the new framework.
+
+Once we are fully happy with our state, we'll send a pull request to Mikko and make these updates part of the "main" repository. In the meantime contributions and issue reporting are welcome!
+
+We have nice features in the MASA LIFE pipe that will surely lead to new contributions. I'll keep the community in touch on this blog or on the [Recast Google Group](https://groups.google.com/forum/?fromgroups#!forum/recastnavigation).

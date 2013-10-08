@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Contributions to Recast/Detour"
-img: "/images/posts/2013/masa-life-logo.png"
+img: "/images/posts/2013/recastdetour-fork.png"
 tags:
  - recastdetour
  - masa

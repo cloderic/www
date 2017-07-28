@@ -1,29 +1,25 @@
-safe: true
-pygments: true
-lsi: false
-exclude: ["README.md", "localServer.sh", "crowds-control.sublime-*", "CNAME", "Gemfile", ".travis.yml"]
+title: Clodéric Mars
+email: cloderic.mars@gmail.com
+description: >
+  Personal landing page for Clodéric Mars - CTO @ craft ai
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://cloderic.com"
+twitter_username: cloderic
+github_username: cloderic
 
-url: http://www.crowdscontrol.net
+# Build settings
+markdown: kramdown
+plugins_dir:
+  - jekyll-feed
 
-name: Crowds Control
-tagline: "Artificially intelligent, virtually real"
-author: Clodéric Mars
-mail: cloderic.mars@gmail.com
-gravatar: 60ff8db3de74fdd9c6d1313f2f4965de
-disqus: "crowdscontrol"
-
-analytics: true
-
-feeds:
-  rss: http://feeds.feedburner.com/crowdscontrol
-
-colors:
-  light: "#f2f2f2"
-  dark: "#212121"
-  shadow: "#373737"
-  primary: "#0090ff"
-  primary_shadow: "#43adff"
-  secondary: "#ffb300"
-  secondary_shadow: "#d99800"
-
-permalink: /blog/:year-:month-:day-:title
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

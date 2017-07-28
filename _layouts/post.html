@@ -1,30 +1,7 @@
 ---
 layout: default
-comments: true
 ---
 
-{% assign next_post = page.next %}
-{% assign previous_post = page.previous %}
-
 <h1>{{ page.title }}</h1>
-<h1-sub>
-	{{ page.date | date_to_long_string }}
-	{% for tag in page.tags %}
-		// <a href="/tags/{{ tag }}">{{ tag | replace:'_', ' ' }}</a>
-	{% endfor %}
-	// <a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{ page.url }}">reaching for Disqus...</a>
-</h1-sub>
 
 {{ content }}
-
-{% if page.comments %}
-<hr>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-	(function() {
-		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();
-</script>
-{% endif %}

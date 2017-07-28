@@ -2,6 +2,6 @@
 layout: default
 ---
 
-# Blah #
+# {{ site.title }} #
 
-## Blah blah ##
+**Work in progress**

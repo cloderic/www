@@ -3,7 +3,7 @@ email: cloderic.mars@gmail.com
 description: >
   Personal landing page for Clodéric Mars - CTO @ craft ai
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://cloderic.com"
+url: "http://www.crowdscontrol.net"
 twitter_username: cloderic
 github_username: cloderic
 
@@ -12,14 +12,5 @@ markdown: kramdown
 gems:
   - jekyll-redirect-from
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# 3rd party services
+ga_tracking_code: UA-3838411-6

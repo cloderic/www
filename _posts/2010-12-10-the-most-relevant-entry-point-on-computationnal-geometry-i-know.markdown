@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "The most relevant entry point on computational geometry I know"
-permalink: /mikkomononen-im-currently-reading-this-book-t
+redirect_from:
+ - /mikkomononen-im-currently-reading-this-book-t
 img: "/images/posts/2010/the-dutch-book.jpg"
 tags:
  - book

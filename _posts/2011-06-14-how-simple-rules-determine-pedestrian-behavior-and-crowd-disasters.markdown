@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "How simple rules determine pedestrian behavior and crowd disasters"
-permalink: /how-simple-rules-determine-pedestrian-behavio
+redirect_from:
+ - /how-simple-rules-determine-pedestrian-behavio
 img: "/images/posts/2011/antibousculade.jpeg"
 tags:
  - paper

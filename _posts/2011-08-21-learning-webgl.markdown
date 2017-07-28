@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Learning WebGL"
-permalink: /learning-webgl
+redirect_from:
+ - /learning-webgl
 tags:
  - webgl
 ---

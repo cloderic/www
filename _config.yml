@@ -9,8 +9,8 @@ github_username: cloderic
 
 # Build settings
 markdown: kramdown
-plugins_dir:
-  - jekyll-feed
+gems:
+  - jekyll-redirect-from
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "ml-class"
-permalink: /ml-class
+redirect_from:
+ - /ml-class
 img: "/images/posts/2011/ml-class.png"
 tags:
  - machine_learning

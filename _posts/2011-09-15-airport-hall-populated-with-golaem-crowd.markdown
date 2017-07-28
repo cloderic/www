@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Airport hall populated with Golaem Crowd"
-permalink: /airport-hall-populated-with-golaem-crowd
+redirect_from:
+ - /airport-hall-populated-with-golaem-crowd
 tags:
  - golaem
  - crowd_simulation

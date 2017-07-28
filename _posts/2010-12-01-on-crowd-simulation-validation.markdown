@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "On crowd simulation validation"
-permalink: /on-crowd-simulation-validation
+redirect_from:
+ - /on-crowd-simulation-validation
 img: "/images/posts/2010/validation-bunraku.jpeg"
 tags:
  - crowd_simulation

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Golaem Crowd launch"
-permalink: /golaem-crowd-launches
+redirect_from:
+ - /golaem-crowd-launches
 img: "/images/posts/2011/alesia.jpeg"
 tags:
  - golaem

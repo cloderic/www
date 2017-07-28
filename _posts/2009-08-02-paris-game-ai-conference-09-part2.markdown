@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Paris Game AI Conference '09 (part 2)
-permalink: /wordpress-1
+redirect_from:
+ - /wordpress-1
 tags:
 - ai
 - conference
@@ -30,6 +31,6 @@ Whereas almost every other talk was about action game where the aim of the AI wa
 Another good talk talking about things that works in the real world on a released game.
 
 ### Building Navigation Meshes by Voxelization - Mikko Mononen, Recoil Games ###
-This talk was the one I expected the most, but I have so much to say about Mikko's work on Recast and Detour that it will be the subject of another post. 
+This talk was the one I expected the most, but I have so much to say about Mikko's work on Recast and Detour that it will be the subject of another post.
 
 That's it for the report of the first conference I ever attend to ! The official report is [here](http://aigamedev.com/open/coverage/paris09-report/), much more interesting than mine (I'm very proud to be cited the end of the article). Thanks Alex and the volunteers for the conference ! Thanks too to the drunk czech student who talk all the evening about linguistic, I had a good laugh !

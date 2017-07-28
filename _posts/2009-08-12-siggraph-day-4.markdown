@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "SIGGRAPH: day 4"
-permalink: /wordpress-5
+redirect_from:
+ - /wordpress-5
 img: "/images/posts/2009/new-orleans-dragon.jpeg"
 tags:
  - conference
@@ -13,17 +14,17 @@ This Thursday was my 4th day for this SIGGRAPH, it was also the last day for the
  - **Optimal Gait and Form for Animal Locomotion,** is a method able to automatically generate the morphology and the motion for any animal having any number of legs. The animal is described using cylinders of variable sizes and some constraints. Their method is able to recreate belivable horse, giraffes, etc... They can even create motions for imaginary animal with 5 legs (the video is watchable here).
  - **Performance-Based Control Interface for Character Animation.** The work presented here is quite impressive and could be immediatly applied to game consoles. The authors original observations is that with the current trend for motion-driven games inputs (wii, project natal...), soon we'll be able to match exactly the character's motions to the player's. But in some cases (climbing a ladder, jumping on a trampoline), the user can't reproduce the movements in his living room. The presented method is able to match the player's motions type to a type of character's motion while keeping as much 1 to 1 motion mapping as possible. On the ladder example, the arms and hip motions of the players can be mapped directly on the character while the rest is taken from offline recorded motions.
  - **Detail-Preserving Continuum Simulation of Straight Hair.** I must admit I did not pay that much attention to this talk...
- 
+
  ![Dragons]({{ site.url }}/images/posts/2009/new-orleans-dragon.jpeg)
- 
+
 The following session I attended was called "Effects Omelette": 4 talks about various movies special effects.
  - People from Disney animation talked about how they setup the production pipeline of Bolt in order to produce only one movie in 2D and stereoscopic 3D.
  - "Virtual" taylors from Pixar gave a talk about how they designed the characters clothes in Up. Pretty interesting to see how they "virtualized" traditionnal tayloring techniques in order to get realistic looking clothes.
  - One of the technical guys who had worked on Up talked about the net simulations he designed (in fact it was the same piece of work that was used for the ballon canopy).
  - Finally, Digital Domain presented how they simulate the Eiffel tower collapsing in GI Joe, introducing their talk by "The movie has been released last week, surprisingly it has some good reviews !"...
- 
+
 The afternoon, I explored the third floor : modern art, scientific posters and japanese presenting weird, but interesting, "emerging technologies". I then attended to a production session about how they 3d-printed every faces in "Coraline", very impressive ! But it was quite a paradox to learn that, for the faces, the created 3d models, animated them for lip synching and facial expression and then printed every frame to recreate, in stop motion, those animations.
- 
+
 This thursday night was the official reception night: New Orleans Mardi Gras, fanfare and buffet.
 
 ![Musician](/images/posts/2009/new-orleans-musician.jpeg)

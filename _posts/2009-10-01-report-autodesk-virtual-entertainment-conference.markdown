@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Report: Autodesk virtual entertainment conference"
-permalink: /wordpress-7
+redirect_from:
+ - /wordpress-7
 img: "/images/posts/2009/pop_1.png"
 tags:
  - animation
@@ -26,7 +27,7 @@ After a few character design considerations, the first topic was the AI used to 
  - Elika must not harm the 3 Cs (character, control, camera) that is provoking collisions with the prince, occluding the camera...
  - The AI has to make sure Elika appears on the screen as much as possible as naturally as possible (no teleporting, avoid getting stuck...) ;
  - As the social relation between the two characters evolve during the game (from strangers to friends), the behavior of Elika must reflect this.
- 
+
 Basically, what is used is a set of rules taking the state of the prince as input and outputting goals for the placement (for example distances, materialized by the circles in the first screenshot). Very few details are given on this.
 
 To give the player a feel on what's the relation between the character, a set of rules are added ; the more friendly they are, the more Elika will look at the prince and be near him.
@@ -39,7 +40,7 @@ OK, so here comes Autodesk and their realtime inverse kinematic solver, HumanIK,
 
  - Ground the characters, that is apply kinematic constraints for each foot to be layed on the ground without colliding with it. It seemed this IK wasn't applied during movements as the feet where colliding with the ground when the prince was running on a slope.
  - Retarget the hands during acrobatics, for example putting the hands in the holds while climbing.
- 
+
 The IK solver is used on the prince and Elika, it is pretty efficient as it doesn't has any impact on the framerate. The speaker concluded on Human IK praising its easy configuration despite the huge amount of tweakable parameters.
 
 ![Prince of Persia - 3](/images/posts/2009/pop_3.png)

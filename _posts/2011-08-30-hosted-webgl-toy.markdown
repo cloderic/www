@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Hosted WebGL Toy"
-permalink: /hosted-webgl-toy
+redirect_from:
+ - /hosted-webgl-toy
 tags:
  - webgl
 ---

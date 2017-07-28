@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Group navigation state-of-the-art report - Part 1, Introduction and Taxonomy"
-permalink: /group-navigation-state-of-the-art-report-part
+redirect_from:
+ - /group-navigation-state-of-the-art-report-part
 img: "/images/posts/2011/sheeps-herd.jpg"
 tags:
  - paper
@@ -29,21 +30,21 @@ A flock is primarily a group of bird traveling together but it can be applied to
 ### Formation ###
 
 ![Bastille day](/images/posts/2011/bastille-day.jpg)
- 
+
 While flocks do not follow more rules than the cohesion of the group, formations are a kind of group arrangement where members need to enforce strict rules. Both in a combat or a parade, the spatial arrangement, i.e. the relative positions of members, is designed for a precise purpose, tactic or aesthetic; it is the first rule that needs to be followed. Secondly, in a combat context, formation gets much of its usefulness from overlapping fields of fire and sight, that's why the orientation is another rule to be followed (Dawson 2002). The last rule is to assign entities having the right role to the right slot: archers at the back, footsoldiers facing the enemy. As navigation and military simulation are important for real time strategy games, interesting and working solutions has been developed early: Dave Pottinger, who worked on the Age of Empire series, presented his in a Gamasutra article (Pottinger 1999).
-  
+
 ### Small Social Groups ###
 
 ![Groups of 2, 3 and 4 from video corpus](/images/posts/2011/social-groups.jpg)
- 
+
 Beyond amorphous flocks and rigid military formations, groups that are more common in our everyday life are small and their spatial configuration is the result of social factors and crowd density. Two recent survey focuses on those small social groups (Moussaïd et al. 2010; Peters, Ennis, and O'Sullivan 2009), they lead to the same conclusions.
-  
+
 The two studies were conducted from videos taken at public spaces (in France and Ireland). Their observations show that: there are more groups than single pedestrians, groups of more than four are very rare and most of the groups are, indeed, pairs.
-  
+
 More interesting, it appears the formation adopted by the observed groups is influenced both by the lateral clearance to nearby obstacles and by the social interaction between members of the group. When motion is not constrained (i.e. when obstacles are far and the crowd density is low) a group tends to adopt an abreast formation that facilitates dialog between its members. When facing navigation constraints, to reduce its frontal width, the group compact the formation. And when the lateral space between each member become too thin, i.e. when members are shoulder-to-shoulder, the formation is staggered. The bending of the group is, most of the time, forward (V-like formation) to maintain good communication when a backward bending (inversed-V-like or wedge formation) would be more flexible moving against an opposite flow.
-  
+
 Finally, while groups tend to avoid collisions, with other pedestrians or with obstacles, as a whole they are able to split if needed merging back afterwards.
-  
+
 ## Bibliography ##
 
 - Dawson, Chad. 2002. &ldquo;Formations.&rdquo; Pp. 272-282 in AI Game Programming Wisdom, Steve Rabinedited by. Charles River Media Retrieved (<http://introgamedev.com/resource_aiwisdom.html>).

@@ -1,14 +1,15 @@
 ---
 layout: post
 title: "CASA 2010 report (part 1)"
-permalink: /wordpress-11
+redirect_from:
+ - /wordpress-11
 tags:
  - conference
  - crowd_simulation
  - navigation
 ---
 
-Well It's been a long time since I posted here... I've been pretty busy since the beginning of 2010. Anyway, here's a report of the part of this year CASA I attended to. 
+Well It's been a long time since I posted here... I've been pretty busy since the beginning of 2010. Anyway, here's a report of the part of this year CASA I attended to.
 
 CASA, the yearly conference on Computer Animation and Social Agents, was held in St Malo, France, from 31/05/10 to 03/06/10 (further information [here](http://casa2010.inria.fr)). As its name implies, the conference focuses are:
 - Animation techniques (motion capture, motion control, physics-based animation...),
@@ -17,8 +18,8 @@ CASA, the yearly conference on Computer Animation and Social Agents, was held in
 During the conference, I only attended to Craig W. Reynolds keynote and to the collocated crowd simulation workshop.
 
 ## Craig W. Reynolds Keynote ##
-Craig Reynolds is to autonomous agents navigation what Louis Pasteur is to vaccination, he virtually invented the field. His seminal work of [1987](http://pille.iwr.uni-heidelberg.de/~ckurs/Data/Flocks.pdf) introduced steering behavior, simple rules to models the way autonomous agents navigate in groups. When I worked on the bibliography of my master's thesis, I was amazed to see that almost every paper I read was citing this 1987 paper or its [1999](http://www.cs.uu.nl/docs/vakken/mpp/papers/8.pdf) little brother; Google scholar count [more than 3000 citations](http://scholar.google.fr/scholar?cluster=8844322844823739657&amp;hl=fr&amp;as_sdt=2000")! One other thing that is quite interesting about Reynolds work is its rarity, I personally know only those two articles (and [google scholar](http://scholar.google.fr/scholar?hl=fr&amp;q=CW+Reynolds&amp;btnG=Rechercher&amp;lr=&amp;as_sdt=2000&amp;as_vis=1") tends to agree). Needless to say I was really eager to attend to the legend's talk. 
+Craig Reynolds is to autonomous agents navigation what Louis Pasteur is to vaccination, he virtually invented the field. His seminal work of [1987](http://pille.iwr.uni-heidelberg.de/~ckurs/Data/Flocks.pdf) introduced steering behavior, simple rules to models the way autonomous agents navigate in groups. When I worked on the bibliography of my master's thesis, I was amazed to see that almost every paper I read was citing this 1987 paper or its [1999](http://www.cs.uu.nl/docs/vakken/mpp/papers/8.pdf) little brother; Google scholar count [more than 3000 citations](http://scholar.google.fr/scholar?cluster=8844322844823739657&amp;hl=fr&amp;as_sdt=2000")! One other thing that is quite interesting about Reynolds work is its rarity, I personally know only those two articles (and [google scholar](http://scholar.google.fr/scholar?hl=fr&amp;q=CW+Reynolds&amp;btnG=Rechercher&amp;lr=&amp;as_sdt=2000&amp;as_vis=1") tends to agree). Needless to say I was really eager to attend to the legend's talk.
 
-Well, I was quite disappointed. 
+Well, I was quite disappointed.
 
 The talk he gave was titled "Crowds and emergent teamwork", it presented Reynolds observation on emergent constructions in nature, done mostly by insects (ants, termites, bees...), and his attempts to design autonomous agents able to do the same. The final model gave agents simple rules to add bricks to the construction. The same king of emergent construction was observed. The rest of the keynote was filled by what seems to be the entire flickr account of the host : insects construction (no global plan but a functional emergent structure), human constructions (everything is designed globally)... Some aspects of the keynote were interesting but nothing really new, controversial or brilliant... I do think my expectation were too high though... The crowd simulation workshop report will follow shortly...

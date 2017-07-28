@@ -1,7 +1,8 @@
 ---
 layout: post
 title: First day at SIGGRAPH
-permalink: /wordpress-2
+redirect_from:
+ - /wordpress-2
 img: "/images/posts/2009/acm-crap.jpeg"
 tags:
  - conference

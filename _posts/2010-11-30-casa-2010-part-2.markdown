@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "CASA 2010 report (part 2)"
-permalink: /casa-2010-report-part-2
+redirect_from:
+ - /casa-2010-report-part-2
 tags:
  - conference
  - crowd_simulation

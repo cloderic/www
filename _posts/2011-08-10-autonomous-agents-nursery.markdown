@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Autonomous agents nursery"
-permalink: /autonomous-agents-nursery
+redirect_from:
+ - /autonomous-agents-nursery
 tags:
  - golaem
 ---

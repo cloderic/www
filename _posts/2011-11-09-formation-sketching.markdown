@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Formation Sketching"
-permalink: /formation-sketching
+redirect_from:
+ - /formation-sketching
 img: "/images/posts/2011/sketched-formations.jpg"
 tags:
  - navigation

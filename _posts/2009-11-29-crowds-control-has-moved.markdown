@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Crowds control has moved
-permalink: /wordpress-8
+redirect_from:
+ - /wordpress-8
 tags:
  - site_update
 ---

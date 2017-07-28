@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Changes"
-permalink: /changes
+redirect_from:
+ - /changes
 tags:
  - golaem
  - masa

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: First post - Manifesto
-permalink: /wordpress
+redirect_from:
+  - /wordpress
 tags:
  - site_update
 ---

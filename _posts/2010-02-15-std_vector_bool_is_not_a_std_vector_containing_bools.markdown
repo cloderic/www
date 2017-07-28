@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "std::vector&lt;bool&gt; is NOT a std::vector containing bools"
-permalink: /wordpress-10
+redirect_from:
+ - /wordpress-10
 tags:
  - development
 ---

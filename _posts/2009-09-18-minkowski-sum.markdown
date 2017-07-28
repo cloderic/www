@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Minkowski sum"
-permalink: /wordpress-6
+redirect_from:
+ - /wordpress-6
 tags:
  - geometry
 ---

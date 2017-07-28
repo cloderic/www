@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Aggregate Dynamics for Dense Crowd Simulation"
-permalink: /wordpress-9
+redirect_from:
+ - /wordpress-9
 tags:
  - paper
  - crowd_simulation
@@ -27,6 +28,6 @@ Impressed ? So do I, let's see how it works.  This approach combines microscopic
 
 Both the visual results and the computation times are really interesting ! Two major problems are still not addressed: no collision prediction (two groups heading towards each other won't try to avoid before collision detection) and no way to add social convention to the avoidance behavior (favor one side of collision avoidance, avoid splitting groups...). This method should be great for dense crowds and/or used as a low LOD for navigation behaviors (this will be the topic of the next article !).
 
-##Bibliography## 
+##Bibliography##
  - [_Narain et al. Aggregate Dynamics for Dense Crowd Simulation. SIGGRAPH Asia (2009)_](http://gamma.cs.unc.edu/DenseCrowds/narain-siga09.pdf)
  - _Lin et al. Interactive Modeling, Simulation and Control of Large-Scale Crowds and Traffic. MIG (2009)_

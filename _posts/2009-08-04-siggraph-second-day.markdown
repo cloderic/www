@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "SIGGRAPH: second day"
-permalink: /wordpress-3
+redirect_from:
+ - /wordpress-3
 img: "/images/posts/2009/teapot.jpeg"
 tags:
  - conference
@@ -20,7 +21,7 @@ On the bright side:
      - "Hum, but what Intel's lawyer would say about it."
      - "We don't know but the official statement is that its Intel best interest if you use it."
  - I got two Pixar's renderman teapots !
- 
+
  ![Teapots](/images/posts/2009/teapot.jpeg)
- 
+
  Day two is over.

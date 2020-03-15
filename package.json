@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Clodéric Mars <cloderic.mars@gmail.com>",
   "repository": "github:cloderic/www",
+  "homepage": "https://www.cloderic.com",
+  "license": "(MIT OR CC-BY-4.0)",
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
@@ -27,7 +29,6 @@
   "devDependencies": {
     "prettier": "^1.19.1"
   },
-  "license": "(MIT OR CC-BY-4.0)",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

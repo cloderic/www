@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `cloderic.com`,
     description: `Clodéric Mars home page`,
-    author: `@cloderic`
+    author: `@cloderic`,
+    siteURL: 'https://www.cloderic.com'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

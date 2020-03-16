@@ -2,9 +2,15 @@ import React from 'react';
 import { Global, css } from '@emotion/core';
 import { PRIMARY, DARK } from './colors';
 import { darken } from 'polished';
+import { config } from '@fortawesome/fontawesome-svg-core';
 
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'normalize.css';
 import 'typeface-quicksand';
+
+// Fix the flicking of huge font awesome icons
+// cf. https://medium.com/@fabianterh/fixing-flashing-huge-font-awesome-icons-on-a-gatsby-static-site-787e1cfb3a18
+config.autoAddCss = false;
 
 const Stylesheet = () => (
   <Global

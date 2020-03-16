@@ -3,7 +3,13 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import styled from '@emotion/styled';
 import BackgroundImage from 'gatsby-background-image';
-import { PRIMARY, SECONDARY, WHITE, BOX_SHADOW } from '../theme/colors';
+import {
+  PRIMARY,
+  SECONDARY,
+  WHITE,
+  BOX_SHADOW,
+  TEXT_SHADOW
+} from '../theme/colors';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from '../components/link';
 import {
@@ -63,10 +69,11 @@ const Hero = styled.div`
   }
 
   color: ${WHITE};
+  /*${TEXT_SHADOW};*/
   background-color: ${SECONDARY};
 
   z-index: 10;
-  ${BOX_SHADOW}
+  ${BOX_SHADOW};
 
   .image {
     place-self: stretch stretch;
@@ -76,7 +83,7 @@ const Hero = styled.div`
     grid-row-end: img-bottom;
     z-index: 1;
 
-    ${BOX_SHADOW}
+    ${BOX_SHADOW};
   }
   .title {
     padding: 1rem;
@@ -100,7 +107,9 @@ const Hero = styled.div`
     grid-area: description;
     padding: 0 0.5em;
     margin: 0.5em 0;
+
     border-left: ${WHITE} 2px solid;
+
     @media (min-width: ${S_HERO_MAX_WIDTH}px) {
       border-left-width: 4px;
       padding: 0 1em;

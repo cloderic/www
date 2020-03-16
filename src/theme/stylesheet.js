@@ -27,11 +27,13 @@ const Stylesheet = () => (
       }
       a {
         color: inherit;
-        &:active {
+        &:active,
+        &:focus {
           color: ${PRIMARY};
+          outline: none;
         }
         &:hover {
-          color: ${darken(0.1, PRIMARY)};
+          color: ${darken(0.05, PRIMARY)};
         }
       }
     `}

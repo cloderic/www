@@ -8,5 +8,12 @@ export const BLACK = '#000000';
 
 export const BOX_SHADOW = `
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
-    0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    0 4px 6px -2px rgba(0, 0, 0, 0.1)
+`;
+
+export const TEXT_SHADOW = `
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  svg.svg-inline--fa {
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  }
 `;

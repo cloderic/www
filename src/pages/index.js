@@ -4,6 +4,13 @@ import SEO from '../components/seo';
 import styled from '@emotion/styled';
 import BackgroundImage from 'gatsby-background-image';
 import { PRIMARY, SECONDARY, WHITE, BOX_SHADOW } from '../theme/colors';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from '../components/link';
+import {
+  faTwitter,
+  faLinkedinIn,
+  faGithub
+} from '@fortawesome/free-brands-svg-icons';
 
 export const query = graphql`
   query {
@@ -11,6 +18,15 @@ export const query = graphql`
       childImageSharp {
         fluid(maxWidth: 1500) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        social {
+          github
+          linkedin
+          twitter
         }
       }
     }
@@ -96,47 +112,67 @@ const Hero = styled.div`
       @media (min-width: ${S_HERO_MAX_WIDTH}px) {
         font-size: 1.5rem;
       }
-      line-height: 0.9em;
+      line-height: 1em;
       margin 0;
     }
+
+    p.social {
+      letter-spacing: 0.5em;
+    }
+
     z-index: 2;
   }
 `;
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
-    <Hero>
-      <BackgroundImage
-        className="image"
-        style={{
-          backgroundPosition: 'left center'
-        }}
-        Tag="div"
-        backgroundColor={SECONDARY}
-        fluid={data.face.childImageSharp.fluid}
-      />
-      <div className="title">
-        <h1>
-          Clodéric
-          <br />
-          Mars
-        </h1>
-      </div>
-      <div className="description">
-        <h2>
-          Tech&nbsp;Leader
-          <br />
-          AI&nbsp;Specialist
-          <br />
-          Public&nbsp;Speaker
-          <br />
-          <small>based&nbsp;in&nbsp;Paris</small>
-        </h2>
-        <p>🚧 🚧 🚧</p>
-      </div>
-    </Hero>
-  </Layout>
-);
+const IndexPage = ({ data }) => {
+  const social = data.site.siteMetadata.social;
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Hero>
+        <BackgroundImage
+          className="image"
+          style={{
+            backgroundPosition: 'left center'
+          }}
+          Tag="div"
+          backgroundColor={SECONDARY}
+          fluid={data.face.childImageSharp.fluid}
+        />
+        <div className="title">
+          <h1>
+            Clodéric
+            <br />
+            Mars
+          </h1>
+        </div>
+        <div className="description">
+          <h2>
+            Tech&nbsp;Leader
+            <br />
+            AI&nbsp;Specialist
+            <br />
+            Public&nbsp;Speaker
+            <br />
+            Impromptu&nbsp;Hummer
+            <br />
+            <small>based&nbsp;in&nbsp;Paris</small>
+          </h2>
+          <p className="social">
+            <Link href={`https://twitter.com/${social.twitter}`}>
+              <FontAwesomeIcon size="lg" icon={faTwitter} />
+            </Link>{' '}
+            <Link href={`https://www.linkedin.com/in/${social.linkedin}/`}>
+              <FontAwesomeIcon size="lg" icon={faLinkedinIn} />
+            </Link>{' '}
+            <Link href={`https://github.com/${social.github}`}>
+              <FontAwesomeIcon size="lg" icon={faGithub} />
+            </Link>
+          </p>
+        </div>
+      </Hero>
+    </Layout>
+  );
+};
 
 export default IndexPage;

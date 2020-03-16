@@ -4,7 +4,11 @@ module.exports = {
   siteMetadata: {
     title: `cloderic.com`,
     description: `Clodéric Mars home page`,
-    author: `@cloderic`,
+    social: {
+      twitter: 'cloderic',
+      linkedin: 'cloderic',
+      github: 'cloderic'
+    },
     siteURL: 'https://www.cloderic.com'
   },
   plugins: [

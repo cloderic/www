@@ -1,12 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Global, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { CONTAINER_WIDTH } from '../theme/sizes';
-import { DARK, WHITE } from '../theme/colors';
-
-import 'normalize.css';
-import 'typeface-quicksand';
+import Stylesheet from '../theme/stylesheet';
+import { WHITE } from '../theme/colors';
 
 const Container = styled.div`
   margin: 0 auto;
@@ -23,29 +19,7 @@ const Footer = styled(Container.withComponent('footer'))`
 
 const Layout = ({ children }) => (
   <>
-    <Global
-      styles={css`
-        html {
-          // Border box
-          *,
-          *::before,
-          *::after {
-            box-sizing: border-box;
-          }
-
-          // Base font
-          font-family: quicksand;
-          font-weight: 300;
-          font-size: 14pt;
-        }
-        body {
-          background-color: ${DARK};
-        }
-        a {
-          color: inherit;
-        }
-      `}
-    />
+    <Stylesheet />
     <Main>{children}</Main>
     <Footer>
       © {new Date().getFullYear()}, Built with
@@ -54,9 +28,5 @@ const Layout = ({ children }) => (
     </Footer>
   </>
 );
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
-};
 
 export default Layout;

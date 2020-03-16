@@ -163,9 +163,7 @@ const IndexPage = ({ data }) => {
             <br />
             Public&nbsp;Speaker
             <br />
-            Impromptu&nbsp;Hummer
-            <br />
-            <small>based&nbsp;in&nbsp;Paris</small>
+            <small>humming&nbsp;from&nbsp;Paris</small>
           </h2>
           <p className="social">
             <Link href={`https://twitter.com/${social.twitter}`}>

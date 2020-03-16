@@ -69,7 +69,7 @@ const Hero = styled.div`
   }
 
   color: ${WHITE};
-  /*${TEXT_SHADOW};*/
+  // ${TEXT_SHADOW};
   background-color: ${SECONDARY};
 
   z-index: 10;

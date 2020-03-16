@@ -1,3 +1,5 @@
+const process = require('process');
+
 module.exports = {
   siteMetadata: {
     title: `cloderic.com`,
@@ -6,6 +8,16 @@ module.exports = {
     siteURL: 'https://www.cloderic.com'
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GA_TRACKING_ID,
+        // Anonymize IPs (https://support.google.com/analytics/answer/2763052)
+        anonymize: true,
+        // Respect do not track
+        respectDNT: true
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -43,7 +43,7 @@ const Layout = ({ children }) => (
         Clodéric Mars is the author, are licensed under a{' '}
         <Link href="https://choosealicense.com/licenses/mit/">MIT License</Link>{' '}
         and are available on{' '}
-        <Link href="https://github.com/cloderic/www">Github.</Link>
+        <Link href="https://github.com/cloderic/www">Github</Link>.
       </p>
     </Footer>
   </>

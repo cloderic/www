@@ -1,17 +1,9 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
-import Header from './header';
 import { Global, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { CONTAINER_WIDTH } from '../theme/sizes';
+import { DARK, WHITE } from '../theme/colors';
 
 import 'normalize.css';
 import 'typeface-quicksand';
@@ -19,51 +11,48 @@ import 'typeface-quicksand';
 const Container = styled.div`
   margin: 0 auto;
   max-width: ${CONTAINER_WIDTH}px;
-  padding: 0.5rem 0;
 `;
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+const Main = styled.main``;
 
-  return (
-    <>
-      <Global
-        styles={css`
-          html {
-            // Border box
-            *,
-            *::before,
-            *::after {
-              box-sizing: border-box;
-            }
+const Footer = styled(Container.withComponent('footer'))`
+  color: ${WHITE};
+  padding: 1rem 0;
+`;
 
-            // Base font
-            font-family: quicksand;
-            font-weight: 300;
-            font-size: 14pt;
+const Layout = ({ children }) => (
+  <>
+    <Global
+      styles={css`
+        html {
+          // Border box
+          *,
+          *::before,
+          *::after {
+            box-sizing: border-box;
           }
-        `}
-      />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Container>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </Container>
-    </>
-  );
-};
+
+          // Base font
+          font-family: quicksand;
+          font-weight: 300;
+          font-size: 14pt;
+        }
+        body {
+          background-color: ${DARK};
+        }
+        a {
+          color: inherit;
+        }
+      `}
+    />
+    <Main>{children}</Main>
+    <Footer>
+      © {new Date().getFullYear()}, Built with
+      {` `}
+      <a href="https://www.gatsbyjs.org">Gatsby</a>
+    </Footer>
+  </>
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired

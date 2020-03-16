@@ -17,7 +17,8 @@ const Main = styled.main``;
 
 const Footer = styled(Container.withComponent('footer'))`
   color: ${WHITE};
-  padding: 1rem 0;
+  padding: 1rem 0.25rem;
+  font-size: 0.7em;
 `;
 
 const Layout = ({ children }) => (

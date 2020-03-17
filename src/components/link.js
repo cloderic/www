@@ -6,7 +6,12 @@ const ABSOLUTE_URL = /[a-zA-Z][-+.a-zA-Z]*:.*/;
 
 const Link = ({ href, children, ...otherProps }) =>
   ABSOLUTE_URL.test(href) ? (
-    <OutboundLink target="_blank" {...otherProps} href={href}>
+    <OutboundLink
+      target="_blank"
+      rel="noreferrer noopener"
+      {...otherProps}
+      href={href}
+    >
       {children}
     </OutboundLink>
   ) : (

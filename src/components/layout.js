@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { CONTAINER_WIDTH } from '../theme/sizes';
+import Container from './container';
 import Stylesheet from '../theme/stylesheet';
 import { WHITE } from '../theme/colors';
 import Link from './link';
@@ -10,11 +10,6 @@ import {
   faCreativeCommonsBy,
   faOsi
 } from '@fortawesome/free-brands-svg-icons';
-
-const Container = styled.div`
-  margin: 0 auto;
-  max-width: ${CONTAINER_WIDTH}px;
-`;
 
 const Main = styled.main``;
 

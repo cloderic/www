@@ -41,7 +41,7 @@ export const query = graphql`
 const S_HERO_MAX_WIDTH = 600;
 const M_HERO_MAX_WIDTH = 1000;
 
-const Hero = styled.div`
+const Hero = styled.section`
   display: grid;
   place-items: center center;
 
@@ -67,7 +67,6 @@ const Hero = styled.div`
       'title  .   description';
   }
 
-  color: ${WHITE};
   // ${TEXT_SHADOW};
   background-color: ${SECONDARY};
 

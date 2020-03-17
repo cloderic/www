@@ -1,6 +1,6 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
-import { PRIMARY, BACKGROUND } from './colors';
+import { PRIMARY, BACKGROUND, WHITE } from './colors';
 import { darken } from 'polished';
 import { config } from '@fortawesome/fontawesome-svg-core';
 
@@ -40,6 +40,7 @@ const Stylesheet = () => (
         }
       }
       body {
+        color: ${WHITE};
         background-color: ${BACKGROUND};
       }
       a {

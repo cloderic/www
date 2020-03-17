@@ -164,13 +164,22 @@ const IndexPage = ({ data }) => {
             <small>humming&nbsp;from&nbsp;Paris</small>
           </h2>
           <p className="social">
-            <Link href={`https://twitter.com/${social.twitter}`}>
+            <Link
+              title="Contact me on Twitter"
+              href={`https://twitter.com/${social.twitter}`}
+            >
               <FontAwesomeIcon size="lg" icon={faTwitter} />
             </Link>{' '}
-            <Link href={`https://www.linkedin.com/in/${social.linkedin}/`}>
+            <Link
+              title="Contact me on LinkedIn"
+              href={`https://www.linkedin.com/in/${social.linkedin}/`}
+            >
               <FontAwesomeIcon size="lg" icon={faLinkedinIn} />
             </Link>{' '}
-            <Link href={`https://github.com/${social.github}`}>
+            <Link
+              title="Check my Github page"
+              href={`https://github.com/${social.github}`}
+            >
               <FontAwesomeIcon size="lg" icon={faGithub} />
             </Link>
           </p>

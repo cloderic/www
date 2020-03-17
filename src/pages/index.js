@@ -71,6 +71,7 @@ const Hero = styled.section`
   background-color: ${SECONDARY};
 
   z-index: 10;
+  position: relative;
   ${BOX_SHADOW};
 
   .image {
@@ -79,8 +80,9 @@ const Hero = styled.section`
     grid-column-end: img-right;
     grid-row-start: img-top;
     grid-row-end: img-bottom;
-    z-index: 1;
 
+    position: relative;
+    z-index: 1;
     ${BOX_SHADOW};
   }
   .title {

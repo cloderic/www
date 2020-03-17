@@ -14,16 +14,6 @@ const siteMetadata = {
 module.exports = {
   siteMetadata,
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GA_TRACKING_ID,
-        // Anonymize IPs (https://support.google.com/analytics/answer/2763052)
-        anonymize: true,
-        // Respect do not track
-        respectDNT: true
-      }
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-yaml`,
     `gatsby-transformer-sharp`,
@@ -47,6 +37,16 @@ module.exports = {
         background_color: rgb(parseToRgb(BACKGROUND)),
         display: `minimal-ui`,
         icon: `data/images/mars.png`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GA_TRACKING_ID,
+        // Anonymize IPs (https://support.google.com/analytics/answer/2763052)
+        anonymize: true,
+        // Respect do not track
+        respectDNT: true
       }
     }
   ]

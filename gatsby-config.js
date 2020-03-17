@@ -1,5 +1,6 @@
 const process = require('process');
 const { PRIMARY, BACKGROUND } = require('./src/theme/colors');
+const { rgb, parseToRgb } = require('polished');
 
 const siteMetadata = {
   title: `cloderic.com`,
@@ -42,9 +43,9 @@ module.exports = {
         short_name: siteMetadata.title,
         lang: siteMetadata.lang,
         start_url: `/`,
-        theme_color: PRIMARY,
-        background_color: BACKGROUND,
-        display: `browser`,
+        theme_color: rgb(parseToRgb(PRIMARY)),
+        background_color: rgb(parseToRgb(BACKGROUND)),
+        display: `minimal-ui`,
         icon: `data/images/mars.png`
       }
     }

@@ -1,16 +1,17 @@
 const process = require('process');
+const { PRIMARY, BACKGROUND } = require('./src/theme/colors');
+
+const siteMetadata = {
+  title: `cloderic.com`,
+  description: `Clodéric Mars Portfolio`,
+  author: 'Clodéric Mars',
+  siteUrl: 'https://www.cloderic.com',
+  keywords: ['ai', 'tech', 'public speaking'],
+  lang: 'en'
+};
 
 module.exports = {
-  siteMetadata: {
-    title: `cloderic.com`,
-    description: `Clodéric Mars home page`,
-    social: {
-      twitter: 'cloderic',
-      linkedin: 'cloderic',
-      github: 'cloderic'
-    },
-    siteURL: 'https://www.cloderic.com'
-  },
+  siteMetadata,
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -23,6 +24,9 @@ module.exports = {
       }
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-yaml`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -30,19 +34,18 @@ module.exports = {
         path: `${__dirname}/data`
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: siteMetadata.title,
+        short_name: siteMetadata.title,
+        lang: siteMetadata.lang,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `data/images/gatsby-icon.png` // This path is relative to the root of the site.
+        theme_color: PRIMARY,
+        background_color: BACKGROUND,
+        display: `browser`,
+        icon: `data/images/mars.png`
       }
     }
   ]

@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Meta from '../components/meta';
 import styled from '@emotion/styled';
 import BackgroundImage from 'gatsby-background-image';
 import {
@@ -17,6 +17,7 @@ import {
   faLinkedinIn,
   faGithub
 } from '@fortawesome/free-brands-svg-icons';
+import { graphql } from 'gatsby';
 
 export const query = graphql`
   query {
@@ -27,13 +28,11 @@ export const query = graphql`
         }
       }
     }
-    site {
-      siteMetadata {
-        social {
-          github
-          linkedin
-          twitter
-        }
+    data: dataYaml {
+      social {
+        twitter
+        linkedin
+        github
       }
     }
   }
@@ -134,10 +133,10 @@ const Hero = styled.div`
 `;
 
 const IndexPage = ({ data }) => {
-  const social = data.site.siteMetadata.social;
+  const social = data.data.social;
   return (
     <Layout>
-      <SEO title="Home" />
+      <Meta />
       <Hero>
         <BackgroundImage
           className="image"

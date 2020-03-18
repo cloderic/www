@@ -1,5 +1,5 @@
 const process = require('process');
-const { PRIMARY, BACKGROUND } = require('./src/theme/colors');
+const { PRIMARY, BG_DARK } = require('./src/theme/colors');
 const { rgb, parseToRgb } = require('polished');
 
 const siteMetadata = {
@@ -34,7 +34,7 @@ module.exports = {
         lang: siteMetadata.lang,
         start_url: `/`,
         theme_color: rgb(parseToRgb(PRIMARY)),
-        background_color: rgb(parseToRgb(BACKGROUND)),
+        background_color: rgb(parseToRgb(BG_DARK)),
         display: `minimal-ui`,
         icon: `data/images/mars.png`
       }

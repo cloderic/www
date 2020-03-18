@@ -1,29 +1,93 @@
 import React from 'react';
 import Layout from '../components/layout';
 import Meta from '../components/meta';
-import styled from '@emotion/styled';
-import BackgroundImage from 'gatsby-background-image';
-import {
-  PRIMARY,
-  SECONDARY,
-  WHITE,
-  BOX_SHADOW,
-  TEXT_SHADOW
-} from '../theme/colors';
+import Container from '../components/container';
+import Hero from '../components/hero';
+import Markdown from '../components/markdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from '../components/link';
+import Img from 'gatsby-image';
 import {
   faTwitter,
   faLinkedinIn,
   faGithub
 } from '@fortawesome/free-brands-svg-icons';
 import { graphql } from 'gatsby';
+import {
+  BG_COLOR_1_GRADIENT,
+  BG_COLOR_2_GRADIENT,
+  BOX_SHADOW
+} from '../theme/colors';
+import { CONTAINER_WIDTH } from '../theme/sizes';
+import styled from '@emotion/styled';
+
+const GRID_COLUMNS_COUNT = 5;
+const GRID_SIZE = CONTAINER_WIDTH / GRID_COLUMNS_COUNT;
+const GRID_GAP = 20;
+const S_MAX_WIDTH = 1000;
+
+const Content = styled.div`
+  display: grid;
+  grid-gap: ${GRID_GAP}px;
+  padding: ${GRID_GAP}px 0;
+  grid-template-columns: repeat(${GRID_COLUMNS_COUNT}, 1fr);
+  grid-auto-rows: auto;
+  & > * {
+    position: relative;
+    z-index: 20;
+    ${BOX_SHADOW};
+  }
+  .about {
+    top: -30px;
+    left: 0px;
+
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 1;
+
+    @media (min-width: ${S_MAX_WIDTH}px) {
+      top: -90px;
+      left: 0px;
+
+      grid-column: 3 / span 3;
+      grid-row: 1 / span 2;
+    }
+
+    background: ${BG_COLOR_2_GRADIENT};
+
+    padding: 1rem;
+
+    text-align: justify;
+  }
+  .mars {
+    top: -35px;
+    left: -25%;
+
+    grid-column: 3 / span 2;
+    grid-row: 2 / span 1;
+
+    @media (min-width: ${S_MAX_WIDTH}px) {
+      top: +25px;
+      left: -50px;
+
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 1;
+    }
+    background: ${BG_COLOR_1_GRADIENT};
+  }
+`;
 
 export const query = graphql`
   query {
     face: file(relativePath: { eq: "images/cloderic-stationf.jpeg" }) {
       childImageSharp {
-        fluid(maxWidth: 1500) {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    mars: file(relativePath: { eq: "images/mars.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -35,158 +99,63 @@ export const query = graphql`
         github
       }
     }
-  }
-`;
-
-const S_HERO_MAX_WIDTH = 600;
-const M_HERO_MAX_WIDTH = 1000;
-
-const Hero = styled.section`
-  display: grid;
-  place-items: center center;
-
-  grid-template-columns: [img-left] 1fr 1fr [img-right];
-  grid-template-rows: [img-top] 1fr 1fr [img-bottom];
-  grid-template-areas:
-    '.      .'
-    'title  description';
-
-  @media (min-width: ${S_HERO_MAX_WIDTH}px) {
-    grid-template-columns: [img-left] min-content auto min-content [img-right];
-    grid-template-rows: [img-top] 1fr 1fr [img-bottom];
-    grid-template-areas:
-      '.      .   description'
-      'title  .   description';
-  }
-
-  @media (min-width: ${M_HERO_MAX_WIDTH}px) {
-    grid-template-columns: [img-left] min-content minmax(auto, 750px) [img-right] auto;
-    grid-template-rows: [img-top] 2fr 1fr [img-bottom];
-    grid-template-areas:
-      '.      .   description'
-      'title  .   description';
-  }
-
-  // ${TEXT_SHADOW};
-  background-color: ${SECONDARY};
-
-  z-index: 10;
-  position: relative;
-  ${BOX_SHADOW};
-
-  .image {
-    place-self: stretch stretch;
-    grid-column-start: img-left;
-    grid-column-end: img-right;
-    grid-row-start: img-top;
-    grid-row-end: img-bottom;
-
-    position: relative;
-    z-index: 1;
-    ${BOX_SHADOW};
-  }
-  .title {
-    padding: 1rem;
-    @media (min-width: ${S_HERO_MAX_WIDTH}px) {
-      padding: 2rem;
-    }
-    grid-area: title;
-    text-align: left;
-
-    color: ${PRIMARY};
-    h1 {
-      @media (min-width: ${S_HERO_MAX_WIDTH}px) {
-        font-size: 3.5rem;
+    about: file(relativePath: { eq: "content/home/about.md" }) {
+      fields {
+        content
       }
-      line-height: 0.9em;
-      margin 0;
     }
-    z-index: 2;
-  }
-  .description {
-    grid-area: description;
-    padding: 0 0.5em;
-    margin: 0.5em 0;
-
-    border-left: ${WHITE} 2px solid;
-
-    @media (min-width: ${S_HERO_MAX_WIDTH}px) {
-      border-left-width: 4px;
-      padding: 0 1em;
-      margin-left: 1em;
-    }
-
-    h2 {
-      font-size: 1.1rem;
-      @media (min-width: ${S_HERO_MAX_WIDTH}px) {
-        font-size: 1.5rem;
-      }
-      line-height: 1em;
-      margin 0;
-    }
-
-    p.social {
-      letter-spacing: 0.5em;
-    }
-
-    z-index: 2;
   }
 `;
 
 const IndexPage = ({ data }) => {
   const social = data.data.social;
+  const about = data.about.fields.content;
   return (
     <Layout>
       <Meta />
-      <Hero>
-        <BackgroundImage
-          className="image"
-          style={{
-            backgroundPosition: 'left center'
-          }}
-          Tag="div"
-          backgroundColor={SECONDARY}
-          fluid={data.face.childImageSharp.fluid}
-        />
-        <div className="title">
-          <h1>
-            Clodéric
-            <br />
-            Mars
-          </h1>
-        </div>
-        <div className="description">
-          <h2>
-            Tech&nbsp;Leader
-            <br />
-            AI&nbsp;Specialist
-            <br />
-            Public&nbsp;Speaker
-            <br />
-            <small>humming&nbsp;from&nbsp;Paris</small>
-          </h2>
-          <p className="social">
-            <Link
-              title="Contact me on Twitter"
-              href={`https://twitter.com/${social.twitter}`}
-            >
-              <FontAwesomeIcon size="lg" icon={faTwitter} />
-            </Link>{' '}
-            <Link
-              title="Contact me on LinkedIn"
-              href={`https://www.linkedin.com/in/${social.linkedin}/`}
-            >
-              <FontAwesomeIcon size="lg" icon={faLinkedinIn} />
-            </Link>{' '}
-            <Link
-              title="Check my Github page"
-              href={`https://github.com/${social.github}`}
-            >
-              <FontAwesomeIcon size="lg" icon={faGithub} />
-            </Link>
-          </p>
-        </div>
+      <Hero fluid={data.face.childImageSharp.fluid} title="Clodéric Mars">
+        <h2>
+          Tech&nbsp;Leader
+          <br />
+          AI&nbsp;Specialist
+          <br />
+          Public&nbsp;Speaker
+          <br />
+          <small>humming&nbsp;from&nbsp;Paris</small>
+        </h2>
+        <p className="social">
+          <Link
+            title="Contact me on Twitter"
+            href={`https://twitter.com/${social.twitter}`}
+          >
+            <FontAwesomeIcon size="lg" icon={faTwitter} />
+          </Link>{' '}
+          <Link
+            title="Contact me on LinkedIn"
+            href={`https://www.linkedin.com/in/${social.linkedin}/`}
+          >
+            <FontAwesomeIcon size="lg" icon={faLinkedinIn} />
+          </Link>{' '}
+          <Link
+            title="Check my Github page"
+            href={`https://github.com/${social.github}`}
+          >
+            <FontAwesomeIcon size="lg" icon={faGithub} />
+          </Link>
+        </p>
       </Hero>
+      <section>
+        <Container>
+          <Content>
+            <div className="about">
+              <Markdown content={about} />
+            </div>
+            <div className="mars">
+              <Img fluid={data.mars.childImageSharp.fluid} />
+            </div>
+          </Content>
+        </Container>
+      </section>
     </Layout>
   );
 };

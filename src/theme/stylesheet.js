@@ -1,8 +1,9 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
-import { PRIMARY, BACKGROUND, WHITE } from './colors';
-import { darken } from 'polished';
+import { PRIMARY, BG_DARK_GRADIENT, WHITE } from './colors';
+import { lighten } from 'polished';
 import { config } from '@fortawesome/fontawesome-svg-core';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'normalize.css';
@@ -12,50 +13,74 @@ import 'typeface-quicksand';
 // cf. https://medium.com/@fabianterh/fixing-flashing-huge-font-awesome-icons-on-a-gatsby-static-site-787e1cfb3a18
 config.autoAddCss = false;
 
-const Stylesheet = () => (
-  <Global
-    styles={css`
-      html {
-        // Border box
-        *,
-        *::before,
-        *::after {
-          box-sizing: border-box;
+const Stylesheet = () => {
+  const { pattern } = useStaticQuery(
+    graphql`
+      query {
+        pattern: file(relativePath: { eq: "images/pattern.png" }) {
+          childImageSharp {
+            fixed(width: 500) {
+              src
+            }
+          }
         }
+      }
+    `
+  );
 
-        // Base font
-        font-family: quicksand;
-        font-weight: 300;
-        font-size: 14pt;
+  return (
+    <Global
+      styles={css`
+        html {
+          // Border box
+          *,
+          *::before,
+          *::after {
+            box-sizing: border-box;
+          }
 
-        h1 {
-          font-weight: 400;
+          // Base font
+          font-family: quicksand;
+          font-weight: 300;
+          font-size: 12pt;
+
+          color: ${WHITE};
+
+          h1 {
+            font-weight: 400;
+          }
+          h2,
+          h3,
+          h4,
+          h5,
+          h5 {
+            font-weight: inherit;
+          }
+
+          strong {
+            font-weight: 800;
+          }
         }
-        h2,
-        h3,
-        h4,
-        h5,
-        h5 {
-          font-weight: inherit;
+        body {
+          min-height: 100vh;
+          background: repeat center / 300px
+              url(${pattern.childImageSharp.fixed.src}),
+            ${BG_DARK_GRADIENT};
         }
-      }
-      body {
-        color: ${WHITE};
-        background-color: ${BACKGROUND};
-      }
-      a {
-        color: inherit;
-        &:active,
-        &:focus {
-          color: ${PRIMARY};
-          outline: none;
+        a {
+          color: inherit;
+          &:active,
+          &:focus {
+            color: ${lighten(0.05, PRIMARY)};
+            outline: none;
+          }
+          &:hover {
+            color: ${PRIMARY};
+          }
         }
-        &:hover {
-          color: ${darken(0.05, PRIMARY)};
-        }
-      }
-    `}
-  />
-);
+      `}
+    />
+  );
+};
 
 export default Stylesheet;

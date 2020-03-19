@@ -1,0 +1,14 @@
+podcast:
+  content: |
+    ## Podcast Interview with IFTTD
+
+    Check out this interview for [IFTTD](https://ifttd.io/),
+    in french, broadcasted on the 04/03/2020.
+
+    We discuss about how AI relates to Machine and Deep Learning,
+    about explainabiity and about [craft ai](https://www.craft.ai).
+
+  audio:
+    title: "IFTTD #30 - Ajouter de l'humain dans l'IA avec Clodéric Mars"
+    src: 'https://rss.art19.com/episodes/374ccbfb-5ddb-4410-ad7a-d35ad09973e3.mp3'
+    href: 'https://ifttd.io/30-ajouter-de-lhumain-dans-de-lia-cloderic-mars/'

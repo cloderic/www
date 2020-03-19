@@ -1,7 +1,7 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
 import { PRIMARY, BG_DARK, BG_DARK_GRADIENT, WHITE } from './colors';
-import { lighten } from 'polished';
+import { lighten, transparentize } from 'polished';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { graphql, useStaticQuery } from 'gatsby';
 
@@ -67,8 +67,12 @@ const Stylesheet = () => {
               url(${pattern.childImageSharp.fixed.src}),
             ${BG_DARK_GRADIENT}, ${BG_DARK};
         }
-        a {
+        a,
+        button {
           color: inherit;
+          cursor: pointer;
+          background: none;
+          border: none;
           &:active,
           &:focus {
             color: ${lighten(0.05, PRIMARY)};
@@ -77,6 +81,15 @@ const Stylesheet = () => {
           &:hover {
             color: ${PRIMARY};
           }
+          &:disabled {
+            color: ${transparentize(0.5, WHITE)};
+            &:hover {
+              cursor: not-allowed;
+            }
+          }
+        }
+        hr {
+          border: 0.5px ${WHITE} solid;
         }
       `}
     />

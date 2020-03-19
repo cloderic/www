@@ -7,7 +7,7 @@ import { graphql } from 'gatsby';
 
 export const query = graphql`
   query {
-    content: file(relativePath: { eq: "content/404.md" }) {
+    content: file(relativePath: { eq: "pages/404.md" }) {
       fields {
         content
       }

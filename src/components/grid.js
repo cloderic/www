@@ -30,25 +30,26 @@ export const Tile = styled.div`
 
   padding: 0.5rem;
 
-  top: ${({ small }) => small.top || 0};
-  bottom: ${({ small }) => small.bottom || 0};
-  left: ${({ small }) => small.left || 0};
-  right: ${({ small }) => small.right || 0};
+  top: ${({ small = {} }) => small.top || 0};
+  bottom: ${({ small = {} }) => small.bottom || 0};
+  left: ${({ small = {} }) => small.left || 0};
+  right: ${({ small = {} }) => small.right || 0};
 
-  grid-column: ${({ small }) =>
-    `${small.colStart} / span ${small.colSpan || 1}`};
-  grid-row: ${({ small }) => `${small.rowStart} / span ${small.rowSpan || 1}`};
+  grid-column: ${({ small = {} }) =>
+    `${small.colStart || 1} / span ${small.colSpan || 1}`};
+  grid-row: ${({ small = {} }) =>
+    `${small.rowStart || 1} / span ${small.rowSpan || 1}`};
 
   @media (min-width: ${SMALL_MAX_WIDTH}px) {
-    top: ${({ large }) => large.top || 0};
-    bottom: ${({ large }) => large.bottom || 0};
-    left: ${({ large }) => large.left || 0};
-    right: ${({ large }) => large.right || 0};
+    top: ${({ large = {} }) => large.top || 0};
+    bottom: ${({ large = {} }) => large.bottom || 0};
+    left: ${({ large = {} }) => large.left || 0};
+    right: ${({ large = {} }) => large.right || 0};
 
-    grid-column: ${({ large }) =>
-      `${large.colStart} / span ${large.colSpan || 1}`};
-    grid-row: ${({ large }) =>
-      `${large.rowStart} / span ${large.rowSpan || 1}`};
+    grid-column: ${({ large = {} }) =>
+      `${large.colStart || 1} / span ${large.colSpan || 1}`};
+    grid-row: ${({ large = {} }) =>
+      `${large.rowStart || 1} / span ${large.rowSpan || 1}`};
   }
 `;
 

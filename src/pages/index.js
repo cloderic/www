@@ -14,6 +14,7 @@ import {
   faGithub
 } from '@fortawesome/free-brands-svg-icons';
 import { graphql } from 'gatsby';
+import Player from '../components/player';
 
 export const query = graphql`
   query {
@@ -26,8 +27,8 @@ export const query = graphql`
     }
     mars: file(relativePath: { eq: "images/mars.png" }) {
       childImageSharp {
-        fluid(maxWidth: 400) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 200) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
@@ -38,7 +39,17 @@ export const query = graphql`
         github
       }
     }
-    about: file(relativePath: { eq: "content/home/about.md" }) {
+    home: homeYaml {
+      podcast {
+        content
+        audio {
+          href
+          src
+          title
+        }
+      }
+    }
+    about: file(relativePath: { eq: "pages/home/about.md" }) {
       fields {
         content
       }
@@ -48,6 +59,7 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => {
   const social = data.data.social;
+  const podcast = data.home.podcast;
   const about = data.about.fields.content;
   return (
     <Layout>
@@ -104,14 +116,23 @@ const IndexPage = ({ data }) => {
               text-align: justify;
             `}
           >
+            <div
+              css={css`
+                float: right;
+                shape-outside: circle();
+              `}
+            >
+              <Img fixed={data.mars.childImageSharp.fixed} />
+            </div>
+
             <Markdown content={about} />
           </Tile>
           <Tile
             small={{
-              left: '-25%',
-              right: '-25%',
-              colStart: 3,
-              colSpan: 2,
+              top: '-30px',
+              left: '20px',
+              colStart: 1,
+              colSpan: 4,
               rowStart: 2
             }}
             large={{
@@ -122,8 +143,13 @@ const IndexPage = ({ data }) => {
               colSpan: 2,
               rowStart: 1
             }}
+            css={css`
+              text-align: justify;
+            `}
           >
-            <Img fluid={data.mars.childImageSharp.fluid} />
+            <Markdown content={podcast.content} />
+            <hr />
+            <Player {...podcast.audio} />
           </Tile>
         </Grid>
       </section>

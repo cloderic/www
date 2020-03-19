@@ -27,7 +27,7 @@ export const query = graphql`
     }
     mars: file(relativePath: { eq: "images/mars.png" }) {
       childImageSharp {
-        fixed(width: 200) {
+        fixed(width: 300) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -119,7 +119,12 @@ const IndexPage = ({ data }) => {
             <div
               css={css`
                 float: right;
+                margin-top: calc(-80px - 0.5rem);
+                margin-right: calc(-80px - 0.5rem);
+                margin-left: 0.5rem;
+                margin-bottom: 0.5rem;
                 shape-outside: circle();
+                clip-path: inset(80px 80px 0 0);
               `}
             >
               <Img fixed={data.mars.childImageSharp.fixed} />

@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import { css } from '@emotion/core';
 import Meta from '../components/meta';
-import { Grid, Tile } from '../components/Grid';
+import { Grid, Tile } from '../components/grid';
 import Hero from '../components/hero';
 import Markdown from '../components/markdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

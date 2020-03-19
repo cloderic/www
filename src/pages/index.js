@@ -1,7 +1,8 @@
 import React from 'react';
 import Layout from '../components/layout';
+import { css } from '@emotion/core';
 import Meta from '../components/meta';
-import Container from '../components/container';
+import { Grid, Tile } from '../components/Grid';
 import Hero from '../components/hero';
 import Markdown from '../components/markdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,75 +14,6 @@ import {
   faGithub
 } from '@fortawesome/free-brands-svg-icons';
 import { graphql } from 'gatsby';
-import {
-  BG_COLOR_1_GRADIENT,
-  BG_COLOR_2_GRADIENT,
-  BOX_SHADOW
-} from '../theme/colors';
-import { CONTAINER_WIDTH } from '../theme/sizes';
-import styled from '@emotion/styled';
-
-const GRID_COLUMNS_COUNT = 5;
-const GRID_GAP = 20;
-const S_MAX_WIDTH = 1000;
-
-const Content = styled.div`
-  display: grid;
-  grid-gap: ${GRID_GAP}px;
-  padding: ${GRID_GAP}px 0;
-  grid-template-columns: repeat(${GRID_COLUMNS_COUNT}, 1fr);
-  grid-auto-rows: auto;
-  & > * {
-    position: relative;
-    z-index: 20;
-    ${BOX_SHADOW};
-  }
-  .about {
-    top: -30px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-
-    grid-column: 1 / span 5;
-    grid-row: 1 / span 1;
-
-    @media (min-width: ${S_MAX_WIDTH}px) {
-      top: -90px;
-      bottom: 0px;
-      left: 0px;
-      right: 0px;
-
-      grid-column: 3 / span 3;
-      grid-row: 1 / span 2;
-    }
-
-    background: ${BG_COLOR_2_GRADIENT};
-
-    padding: 1rem;
-
-    text-align: justify;
-  }
-  .mars {
-    top: -35px;
-    bottom: 0px;
-    left: -25%;
-    right: -25%;
-
-    grid-column: 3 / span 2;
-    grid-row: 2 / span 1;
-
-    @media (min-width: ${S_MAX_WIDTH}px) {
-      top: +25px;
-      bottom: 0px;
-      left: -50px;
-      right: -50px;
-
-      grid-column: 1 / span 2;
-      grid-row: 1 / span 1;
-    }
-    background: ${BG_COLOR_1_GRADIENT};
-  }
-`;
 
 export const query = graphql`
   query {
@@ -152,16 +84,48 @@ const IndexPage = ({ data }) => {
         </p>
       </Hero>
       <section>
-        <Container>
-          <Content>
-            <div className="about">
-              <Markdown content={about} />
-            </div>
-            <div className="mars">
-              <Img fluid={data.mars.childImageSharp.fluid} />
-            </div>
-          </Content>
-        </Container>
+        <Grid>
+          <Tile
+            alternate
+            small={{
+              top: '-30px',
+              colStart: 1,
+              colSpan: 5,
+              rowStart: 1
+            }}
+            large={{
+              top: '-90px',
+              colStart: 3,
+              colSpan: 3,
+              rowStart: 1,
+              rowSpan: 2
+            }}
+            css={css`
+              text-align: justify;
+            `}
+          >
+            <Markdown content={about} />
+          </Tile>
+          <Tile
+            small={{
+              left: '-25%',
+              right: '-25%',
+              colStart: 3,
+              colSpan: 2,
+              rowStart: 2
+            }}
+            large={{
+              top: '25px',
+              left: '-50px',
+              right: '-50px',
+              colStart: 1,
+              colSpan: 2,
+              rowStart: 1
+            }}
+          >
+            <Img fluid={data.mars.childImageSharp.fluid} />
+          </Tile>
+        </Grid>
       </section>
     </Layout>
   );

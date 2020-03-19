@@ -1,12 +1,12 @@
 podcast:
   content: |
-    ## Podcast Interview with IFTTD
+    ## Podcast Interview for [IFTTD](https://ifttd.io/)
 
-    Check out this interview for [IFTTD](https://ifttd.io/),
-    in french, broadcasted on the 04/03/2020.
+    _Check out this interview, in french, broadcasted on the 04/03/2020._
 
-    We discuss about how AI relates to Machine and Deep Learning,
-    about explainabiity and about [craft ai](https://www.craft.ai).
+    For ~1h we discuss about AI basics, [craft ai](https://www.craft.ai)
+    and my professional journey. This interview features my greatest hits
+    including _cosmonaut princesses_, _crisps supply chain_ and lots of _stuffs_...
 
   audio:
     title: "IFTTD #30 - Ajouter de l'humain dans l'IA avec Clodéric Mars"

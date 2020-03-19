@@ -1,6 +1,6 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
-import { PRIMARY, BG_DARK_GRADIENT, WHITE } from './colors';
+import { PRIMARY, BG_DARK, BG_DARK_GRADIENT, WHITE } from './colors';
 import { lighten } from 'polished';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -65,7 +65,7 @@ const Stylesheet = () => {
           min-height: 100vh;
           background: repeat center / 300px
               url(${pattern.childImageSharp.fixed.src}),
-            ${BG_DARK_GRADIENT};
+            ${BG_DARK_GRADIENT}, ${BG_DARK};
         }
         a {
           color: inherit;

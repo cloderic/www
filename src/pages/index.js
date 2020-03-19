@@ -22,7 +22,6 @@ import { CONTAINER_WIDTH } from '../theme/sizes';
 import styled from '@emotion/styled';
 
 const GRID_COLUMNS_COUNT = 5;
-const GRID_SIZE = CONTAINER_WIDTH / GRID_COLUMNS_COUNT;
 const GRID_GAP = 20;
 const S_MAX_WIDTH = 1000;
 
@@ -39,14 +38,18 @@ const Content = styled.div`
   }
   .about {
     top: -30px;
+    bottom: 0px;
     left: 0px;
+    right: 0px;
 
     grid-column: 1 / span 5;
     grid-row: 1 / span 1;
 
     @media (min-width: ${S_MAX_WIDTH}px) {
       top: -90px;
+      bottom: 0px;
       left: 0px;
+      right: 0px;
 
       grid-column: 3 / span 3;
       grid-row: 1 / span 2;
@@ -60,14 +63,18 @@ const Content = styled.div`
   }
   .mars {
     top: -35px;
+    bottom: 0px;
     left: -25%;
+    right: -25%;
 
     grid-column: 3 / span 2;
     grid-row: 2 / span 1;
 
     @media (min-width: ${S_MAX_WIDTH}px) {
       top: +25px;
+      bottom: 0px;
       left: -50px;
+      right: -50px;
 
       grid-column: 1 / span 2;
       grid-row: 1 / span 1;

@@ -1,4 +1,4 @@
-const { darken, lighten } = require('polished');
+const { lighten } = require('polished');
 
 const PALETTE = ['#F27830', '#7DB397', '#041A0E', '#88A5BF', '#040F19'];
 

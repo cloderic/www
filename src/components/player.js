@@ -7,6 +7,7 @@ import {
   faUndo,
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import Link from './link';
 
 const PlayerContainer = styled.div`
@@ -39,12 +40,31 @@ const Player = ({ href, src, title }) => {
   const [playing, setPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const play = useCallback(() => audioEl.current.play(), [audioEl]);
-  const pause = useCallback(() => audioEl.current.pause(), [audioEl]);
+  const play = useCallback(() => {
+    audioEl.current.play();
+    trackCustomEvent({
+      category: 'audio',
+      action: 'play',
+      label: title
+    });
+  }, [audioEl, title]);
+  const pause = useCallback(() => {
+    audioEl.current.pause();
+    trackCustomEvent({
+      category: 'audio',
+      action: 'pause',
+      label: title
+    });
+  }, [audioEl, title]);
   const restart = useCallback(() => {
     audioEl.current.currentTime = 0;
     setCurrentTime(0);
-  }, [audioEl, setCurrentTime]);
+    trackCustomEvent({
+      category: 'audio',
+      action: 'restart',
+      label: title
+    });
+  }, [audioEl, setCurrentTime, title]);
 
   useEffect(() => {
     const currentAudioEl = audioEl.current;

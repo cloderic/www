@@ -1,0 +1,37 @@
+---
+title: 'Hierarchical Architecture for Group Navigation Behaviors'
+date: 2011-10-17
+last_update: 2015-06-10
+---
+
+import Pdf from '../../components/players/pdf';
+
+> Initially a
+> ["Groupe navigation state-of-the-art report"](https://github.com/cloderic/Group-navigation-state-of-the-art-report)
+> written and published here while I was working at [Golaem](http://golaem.com),
+> this article was reworked and published as a part of the **Hierarchical
+> Architecture for Group Navigation Behaviors** chapter of
+> [Game AI Pro 2](http://www.gameaipro.com)
+
+The full pdf can be downloaded
+[there](./GameAIPro2_Chapter20_Hierarchical_Architecture_for_Group_Navigation_Behaviors.pdf 'Game AI Pro 2 - Hierarchical Architecture
+for Group Navigation Behaviors').
+
+---
+
+<Pdf
+  title="Game AI Pro 2 - Hierarchical Architecture for Group Navigation Behaviors"
+  src={props.data.pdf.publicURL}
+/>
+
+export const pageQuery = graphql`
+  query {
+    pdf: file(
+      name: {
+        eq: "GameAIPro2_Chapter20_Hierarchical_Architecture_for_Group_Navigation_Behaviors"
+      }
+    ) {
+      publicURL
+    }
+  }
+`;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
-import { PRIMARY, BG_DARK, BG_DARK_GRADIENT, WHITE } from './colors';
+import { PRIMARY, BLACK, BG_DARK, BG_DARK_GRADIENT, WHITE } from './colors';
 import { lighten, transparentize } from 'polished';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -59,6 +59,17 @@ const Stylesheet = () => {
 
           strong {
             font-weight: 800;
+          }
+
+          blockquote {
+            padding-left: 0.5em;
+            font-style: italic;
+            border-left: 0.2em solid ${transparentize(0.5, WHITE)};
+
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
           }
         }
         body {

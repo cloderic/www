@@ -8,7 +8,7 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
-import Link from './link';
+import Link from '../link';
 
 const AudioContainer = styled.div`
   display: flex;

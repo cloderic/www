@@ -125,6 +125,7 @@ const IndexPage = ({ data }) => {
             >
               <Img fixed={data.mars.childImageSharp.fixed} />
             </div>
+            <h2>Hello, there!</h2>
             <MDXRenderer>{about.body}</MDXRenderer>
           </Tile>
           <Tile
@@ -147,6 +148,7 @@ const IndexPage = ({ data }) => {
               text-align: justify;
             `}
           >
+            <h2>Check out this podcast interview about AI</h2>
             <MDXRenderer>{podcast.body}</MDXRenderer>
           </Tile>
         </Grid>

@@ -23,7 +23,15 @@ module.exports = {
       options: {
         defaultLayouts: {
           default: require.resolve('./src/components/defaultPageLayout.js')
-        }
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`]
+            }
+          }
+        ]
       }
     },
     {

@@ -20,7 +20,10 @@ const DefaultPageLayout = ({ children, pageContext }) => {
     <Layout>
       <Meta title={pageContext.frontmatter.title} />
       <SectionContainer>
-        <SectionContainee>{children}</SectionContainee>
+        <SectionContainee>
+          <h1>{pageContext.frontmatter.title}</h1>
+          {children}
+        </SectionContainee>
       </SectionContainer>
     </Layout>
   );

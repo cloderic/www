@@ -59,6 +59,6 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "prettier": "prettier \"**/*.{js,jsx,json,md}\""
+    "prettier": "prettier \"**/*.{js,jsx,json,md,mdx}\""
   }
 }

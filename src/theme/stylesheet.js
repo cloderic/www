@@ -1,6 +1,6 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
-import { PRIMARY, BLACK, BG_DARK, BG_DARK_GRADIENT, WHITE } from './colors';
+import { PRIMARY, BG_DARK, BG_DARK_GRADIENT, WHITE } from './colors';
 import { lighten, transparentize } from 'polished';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { graphql, useStaticQuery } from 'gatsby';

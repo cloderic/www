@@ -1,0 +1,34 @@
+---
+title: 'Minkowski sum'
+date: 2009-09-18
+redirect_from:
+  - /wordpress-6
+  - /minkowski-sum
+archive: true
+---
+
+import Pdf from '../../../components/players/pdf';
+import { graphql } from 'gatsby';
+
+Since the end of my master's internship I hadn't really followed what was going
+on in the academic world about autonomous agent steering. I've done some catchup
+lately ; this post is a preamble to some article report I'm planning to do. Here
+it is, a few slides about the Minkowski sum, a fun geometric function used
+notably in motion planning.
+
+[**View on slideshare**](https://fr.slideshare.net/crowdscontrol/minkowski-sum-on-2d-geometry)
+
+[**Download**](./mikownski-sum-applied-to-2d-geometry)
+
+<Pdf
+  title="The Minkowski Sum (Applied To 2d Geometry)"
+  src={props.data.pdf.publicURL}
+/>
+
+export const pageQuery = graphql`
+  query {
+    pdf: file(name: { eq: "mikownski-sum-applied-to-2d-geometry" }) {
+      publicURL
+    }
+  }
+`;

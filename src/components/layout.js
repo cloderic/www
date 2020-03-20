@@ -5,6 +5,7 @@ import Stylesheet from '../theme/stylesheet';
 import { WHITE } from '../theme/colors';
 import Link from './link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { MDXProvider } from '@mdx-js/react';
 import {
   faCreativeCommons,
   faCreativeCommonsBy,
@@ -23,7 +24,9 @@ const Footer = styled(Container.withComponent('footer'))`
 const Layout = ({ children }) => (
   <>
     <Stylesheet />
-    <Main>{children}</Main>
+    <Main>
+      <MDXProvider components={{ a: Link }}>{children}</MDXProvider>
+    </Main>
     <Footer>
       <p>
         <FontAwesomeIcon icon={faCreativeCommons} />{' '}

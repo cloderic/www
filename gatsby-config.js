@@ -19,10 +19,25 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/components/defaultPageLayout.js')
+        }
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'data',
-        path: `${__dirname}/data`
+        path: `${__dirname}/src/data`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'pages',
+        path: `${__dirname}/src/pages`
       }
     },
     `gatsby-plugin-emotion`,
@@ -36,9 +51,11 @@ module.exports = {
         theme_color: rgb(parseToRgb(PRIMARY)),
         background_color: rgb(parseToRgb(BG_DARK)),
         display: `minimal-ui`,
-        icon: `data/images/mars.png`
+        icon: `src/data/images/mars.png`
       }
     },
+    `gatsby-plugin-sitemap`,
+    'gatsby-plugin-robots-txt',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

@@ -10,7 +10,7 @@ import {
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import Link from './link';
 
-const PlayerContainer = styled.div`
+const AudioContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,7 +35,7 @@ const formatDuration = (seconds) => {
     .join(':');
 };
 
-const Player = ({ href, src, title }) => {
+const Audio = ({ href, src, title }) => {
   const audioEl = useRef(null);
   const [playing, setPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -106,7 +106,7 @@ const Player = ({ href, src, title }) => {
   }, [audioEl]);
 
   return (
-    <PlayerContainer>
+    <AudioContainer>
       <button
         onClick={playing ? pause : play}
         title={playing ? 'Pause' : 'Play'}
@@ -135,8 +135,8 @@ const Player = ({ href, src, title }) => {
           <Link href={href}>there</Link>
         </p>
       </audio>
-    </PlayerContainer>
+    </AudioContainer>
   );
 };
 
-export default Player;
+export default Audio;

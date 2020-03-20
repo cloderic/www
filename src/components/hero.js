@@ -116,11 +116,11 @@ const Hero = ({ fluid, title, children }) => (
     />
     <div className="title">
       <h1>
-        {title.split(' ').map((word) => (
-          <>
+        {title.split(' ').map((word, index) => (
+          <React.Fragment key={index}>
             {word}
             <br />
-          </>
+          </React.Fragment>
         ))}
       </h1>
     </div>

@@ -4,17 +4,16 @@ import { css } from '@emotion/core';
 import Meta from '../components/meta';
 import { Grid, Tile } from '../components/grid';
 import Hero from '../components/hero';
-import Markdown from '../components/markdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from '../components/link';
 import Img from 'gatsby-image';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import {
   faTwitter,
   faLinkedinIn,
   faGithub
 } from '@fortawesome/free-brands-svg-icons';
 import { graphql } from 'gatsby';
-import Player from '../components/player';
 
 export const query = graphql`
   query {
@@ -39,28 +38,25 @@ export const query = graphql`
         github
       }
     }
-    home: homeYaml {
-      podcast {
-        content
-        audio {
-          href
-          src
-          title
+    about: mdx(frontmatter: { title: { eq: "About" } }) {
+      body
+    }
+    podcast: mdx(
+      frontmatter: {
+        title: {
+          eq: "IFTTD #30 - Ajouter de l'humain dans l'IA avec Clodéric Mars"
         }
       }
-    }
-    about: file(relativePath: { eq: "pages/home/about.md" }) {
-      fields {
-        content
-      }
+    ) {
+      body
     }
   }
 `;
 
 const IndexPage = ({ data }) => {
   const social = data.data.social;
-  const podcast = data.home.podcast;
-  const about = data.about.fields.content;
+  const podcast = data.podcast;
+  const about = data.about;
   return (
     <Layout>
       <Meta />
@@ -129,8 +125,7 @@ const IndexPage = ({ data }) => {
             >
               <Img fixed={data.mars.childImageSharp.fixed} />
             </div>
-
-            <Markdown content={about} />
+            <MDXRenderer>{about.body}</MDXRenderer>
           </Tile>
           <Tile
             small={{
@@ -152,9 +147,7 @@ const IndexPage = ({ data }) => {
               text-align: justify;
             `}
           >
-            <Markdown content={podcast.content} />
-            <hr />
-            <Player {...podcast.audio} />
+            <MDXRenderer>{podcast.body}</MDXRenderer>
           </Tile>
         </Grid>
       </section>

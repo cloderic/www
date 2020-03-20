@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Yet another migration"
+img: "/images/posts/2012/octocat.png"
+tags:
+ - site_update
+---
+
+The first post of 2012 (in May... shame on me) is about yet another migration of the site!
+
+As you may know Posterous, that I previously used, was [bought by twitter](http://blog.posterous.com/big-news). It is pretty sure they will close or at least let die their current service. So I moved everything to [GitHub Pages](http://pages.github.com/)! You can browse and even fork this site's [repository](https://github.com/cloderic/cloderic.github.com). The setup was a little longer than expected (basically you have to write html and css on your own), but I'm pretty happy with the result and because its basically a git repository of the site sources I have no fear of losing pages. More important, my inner geek is satisfied!
+
+I'll be back soon (hopefully) with real content !

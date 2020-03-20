@@ -1,0 +1,97 @@
+---
+layout: post
+title: "AI Summit 2013"
+img: "/images/posts/2013/ai-summit.png"
+tags:
+ - conference
+ - ai
+---
+
+This long overdue post is about my takeaway from this year's GDC AI Summit, I tried to organize that in rough categories.
+
+# Spatially located data #
+
+One key part of an AI system is to have meaningful data as input to the decision-making. In most of the games genres, it is very important to have spatially located data and to be able to extract from these meaningful data. 
+
+Several talks focused on this area:
+
+* *"AI Postmortems - Warframe"* by Daniel Brewer (Digital Extremes);
+* *"Spaces in the Sandbox: Tactical Awareness in Open World Games"* by Matthew Jack (Moon collider) and Mika Vehkala (io interactive);
+* *From the Behavior Up: When the AI Is the Design - Third Eye Crime* by Damian Isla and Christian Baekkelund (Moonshot Games).
+
+Basically, we were presented methods to map various kind of data (cover percentage, distance to objective, probability of presence, visibility, …) to spatial location: positions or areas. This information being design to allow complex queries from the decision-making systems such as "give me the most probable place where the thief is that is not so dangerous and where my teammate can still see me". 
+
+Mika Vehkala presented a system based on an area map extracted from the navmeshes, a runtime job abstraction and a set of runtime traversal helpers allowing the creation and composition of queries. With the same goal in mind (but working with positions) Matthew Jack presented a small domain language allowing the creation of these queries. These little "spatial query" scripts are compiled to byte code allowing a safe usage and providing a chance for optimizations. Daniel Brewer explained how he and his team relied on a area map to implement not only NPCs AI but also a game *director* on [warframe](http://en.wikipedia.org/wiki/Warframe). Those talks showcased different usage:
+
+- classical but effective **investigation** using a propagating and cooling-on-sight heat map of the last seen position of the player;
+- **cover point** selection using a distance-to-objective metric to define "good" cover point (between player and objective);
+- **choking point** selection by identifying small iso distance-to-objective zones;
+- **pacing monitoring** by mapping killed enemies, and taking the derivative of it to evaluate how the player is doing (steady pace toward the objective, falling back, ...);
+- **buddy/squad placement** using distance-to-objective (e.g. buddy should be ahead of the player) and distance-to-ideal-path-to-objective (e.g. buddy shouldn't be in front of the player). 
+
+Damian Isla and Christian Baekkelund also presented their new game, Third Eye Crime, whose gameplay design is completely based on the occupancy heat map concept. I'm really looking forward to it.
+
+<object id="embedded" width="640" height="480">
+	<param name="movie" value="http://www.youtube.com/v/wraeNbodjn0?version=3&amp;hl=fr_FR&amp;rel=0"></param>
+	<param name="allowFullScreen" value="true"></param>
+	<param name="allowscriptaccess" value="always"></param>
+	<embed src="http://www.youtube.com/v/wraeNbodjn0?version=3&amp;hl=fr_FR&amp;rel=0" type="application/x-shockwave-flash" width="640" height="480" allowscriptaccess="always" allowfullscreen="true"></embed>
+</object>
+
+Any decision-making system, be it a lua script or a fancy planner, **will** look dumb and any behavior designer will be mostly **helpless** if this kind of spatial queries are not available or not powerful enough. These talks provided very good insights on different approach to implement such system and on what is possible with these. 
+
+# Utility systems #
+
+* *"AI Postmortems - X-Com - Enemy Unknown"* by Alex Cheng (Firaxis);
+* *"Architecture Tricks: Managing Behaviors in Time, Space, and Depth - Infinite axis utility system"* by Dave Mark (Intrinsic Algorithm).
+
+A few days after the summit I was telling everyone that I felt utility systems was one of the major topics. While going though my notes for this post I could only find these 2 talks that were talking explicitly about utility system, but well, this is for me part of my main takeaways.
+
+I've always thought of "utility system" as a fancy word for saying "turning lots of intractable knobs to evaluate possible decisions and take the one with the highest weight". The summit didn't really change my perception. 
+
+Anyhow, I thought Alex Cheng presentation of the AI of X-Com interesting in the sense that, from what I saw, the resulting AI is pretty good and the method to get there are pretty simple: At each turn, NPCs can do one action and one movement, every possible one is weighted from a set of rules that depends on the class of the character and the better one is taken.
+
+Dave Mark presented the system he uses in his consulting work.
+For each possible decision:
+- Define its weight as the product of an infinite number of axises…
+- Ranging from 0 to 1…
+- Mapped from game values (health, ammo, distance to nearest medkit…) using defined bookends and a **response curve** parametrization of one of the predefined function (linear, sigmoid, logit, …).
+
+The underlying idea is that you control the influence of each axis by tweaking the parameters of the curve. Tweaks made easy thanks to … an Excel sheet. The approach propose a unified way to evaluate possible decision thus limiting the complexity of designing a utility-based system. I'm still not completely convinced that the "infinite" number of axises have any interest, the interaction of more than 2 axises can't be visualized and with axises more complex than boolean gates (0 before a threshold, 1 after) it's really difficult to explain, thus control, what is going on. 
+
+Given the number of things that are possible with them and the apparent comfort AI devs have with these, I do think it would be interesting to add some utility flavor to something like BTs, through a particular selector node for example. 
+
+# The next giant leap? #
+
+## From the Behavior Up: When the AI Is the Design - Shigi by Paul Tozour (Intelligence Engine Design Systems) ##
+
+This talk started by the hilarious Shigi video, a parody of Siri showing us Paul Tozour vision of world where AI can help with the design process.
+
+<object id="embedded" width="640" height="360">
+	<param name="movie" value="http://www.youtube.com/v/Jk5DydR-L9M?hl=fr_FR&amp;version=3&amp;rel=0"></param>
+	<param name="allowFullScreen" value="true"></param>
+	<param name="allowscriptaccess" value="always"></param>
+	<embed src="http://www.youtube.com/v/Jk5DydR-L9M?hl=fr_FR&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed>
+</object>
+
+The presentation was really interesting, it focused on how to achieve the long term goal showcased in the video. The idea, *creating a virtual wind tunnel for game design to test the aerodynamic of player experience*.
+
+During the development of [City Conquest](http://www.intelligenceenginestudios.com/cityconquest.htm) the team took baby steps in that direction by implementing Genetically evolved generations of AI players that would test the game over night whenever a change to the rule occurred. The analysis of the taken sequence of actions allowed the team to tweak the balancing of the game.
+
+## Off the Beaten Path: Non-Traditional Uses of AI - [The Restaurant Game](http://web.media.mit.edu/~jorkin/research/) by Jeff Orkin ##
+
+Jeff Orkin started his talk by asserting that, in general, AI is a content problem, the behavior of a NPC is content. For it to be better by an order of magnitude, spending more time on creating the content won't work as **"Human imagination is a limited resource"**. His idea is to base future AI on actual players behavior (an idea a friend of mine explored in his [phd thesis](http://tel.archives-ouvertes.fr/docs/00/66/70/72/PDF/tence-thesis.pdf)), record these and replay fragments of the played patterns when it fits. In short, for him, the future AI engine is a search engine. 
+
+To validate this approach he did an experiment with a simple restaurant game featuring the interaction between a customer and a waitress. He recorded thousands of play sessions, and crowd sourced the annotation of these transcripts (over 450h of work). In the final game, the player is the customer, the system tries to match his action to one of the transcripts and play the reaction of the waitress. With 167 different ways of asking for the bill, variety is no longer an issue and thanks to the manual annotation the waitress' mood can be configured for a different experience each time. 
+
+These two talks were really interesting and shows that their promise is not so crazy, I believe we will get to this kind of AI in the next decade.
+
+# Random notes #
+
+* Luke Dicken was perfect in his famous role "academics are not evil, please love them". His talk on planning was seriously interesting though, I have to take some time to go through his papers.
+* Ben Sunshine-Hill did a nice talk on the interface between navigation an locomotion, it should be shown to anyone puzzled by their navigation engine being not as good on animated characters than on cylinders. I also had a good laugh during his rant on AI devs being proud of unwanted “emergent” behaviors (the infamous “Playmobil, en avant les histoires”-effect). I have an issue though, whenever I meet him I'm starting to hum [this](http://youtu.be/iPUmE-tne5U?t=50s) song, it's a pain.
+* You can find old (and hopefully some of the newer soon) AI summit presentation [here](http://gameai.com/papers.php).
+
+# Conclusion #
+
+All in all a pretty solid conference with a large variety of *depth* level: from a 30 minutes talk on a 25 years old method (half of the seesion "The Next Vector: Improvements in AI Steering Behaviors") to the very interesing and clever Jeff Orkin talk, beginners and veteran are adressed. This come at a price for someone with decent knowledge of the field: feeling uninterested by 1/3 of the sessions. I don't know it there is **A** solution to this problem but I never felt that at the similar Game/AI conference. In any case the remaining is enough for me to go back next year!

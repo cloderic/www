@@ -1,6 +1,6 @@
 ---
-layout: post
 title: 'A sample iOS application using Ogre 3D'
+date: 2013-08-13
 img: '/images/posts/2013/ios-ogre.jpg'
 tags:
   - development
@@ -47,11 +47,10 @@ needed to properly initialize the Ogre renderer.
 
 - (void)applicationDidFinishLaunching:(UIApplication \*)application {
   self.mWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]
-  bounds]];  
-   self.mViewController = [[ViewController alloc] initWithNibName:@"ViewController"
-  bundle:nil];  
-   [self.mViewController startWithWindow:self.mWindow];  
-   [self.mWindow makeKeyAndVisible]; } {% endhighlight %}
+  bounds]]; self.mViewController = [[ViewController alloc]
+  initWithNibName:@"ViewController" bundle:nil]; [self.mViewController
+  startWithWindow:self.mWindow]; [self.mWindow makeKeyAndVisible]; }
+  {% endhighlight %}
 
 The view controller `start` method initializes the `OgreApplication`, the C++
 instance that encapsulate the Ogre context and all the actual _"simulation"_, in
@@ -115,16 +114,18 @@ window.
 {% highlight cpp linenos %} void OgreApplication::start(void* uiWindow, void*
 uiView, void\* uiViewController, unsigned int width, unsigned int height) {
 mRoot = new Ogre::Root("", mResourcesRoot + "ogre.cfg");
-m_StaticPluginLoader.load();  
- Ogre::NameValuePairList params; params["colourDepth"] = "32"; params["contentScalingFactor"]
-= "2.0"; params["FSAA"] = "16"; params["Video Mode"] = Ogre::StringConverter::toString(width) +
-"x" + Ogre::StringConverter::toString(height); params["externalWindowHandle"] = Ogre::StringConverter::toString((unsigned
-long)uiWindow); params["externalViewHandle"] = Ogre::StringConverter::toString((unsigned
-long)uiView); params["externalViewController"] = Ogre::StringConverter::toString((unsigned
-long)uiViewController);  
- // Initialize w/o creating a renderwindow. mRoot->initialise(false, "");  
- // Create the window and attach it to the given UI stuffs. mRenderWindow = mRoot->createRenderWindow("",width,height,true,&params);
-} {% endhighlight %}
+m_StaticPluginLoader.load(); Ogre::NameValuePairList params;
+params["colourDepth"] = "32"; params["contentScalingFactor"] = "2.0";
+params["FSAA"] = "16"; params["Video Mode"] =
+Ogre::StringConverter::toString(width) + "x" +
+Ogre::StringConverter::toString(height); params["externalWindowHandle"] =
+Ogre::StringConverter::toString((unsigned long)uiWindow);
+params["externalViewHandle"] = Ogre::StringConverter::toString((unsigned
+long)uiView); params["externalViewController"] =
+Ogre::StringConverter::toString((unsigned long)uiViewController); // Initialize
+w/o creating a renderwindow. mRoot->initialise(false, ""); // Create the window
+and attach it to the given UI stuffs. mRenderWindow =
+mRoot->createRenderWindow("",width,height,true,&params); } {% endhighlight %}
 
 And voilà, everything works as expected!
 

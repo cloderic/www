@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Blockcode from './blockcode';
 import Container from './container';
 import Stylesheet from '../theme/stylesheet';
 import { WHITE } from '../theme/colors';
@@ -11,6 +12,16 @@ import {
   faCreativeCommonsBy,
   faOsi
 } from '@fortawesome/free-brands-svg-icons';
+
+const mdxComponents = {
+  a: Link,
+  pre: ({ children }) => <>{children}</>,
+  code: ({ children, className = '' }) => (
+    <Blockcode language={className.replace(/language-/, '')}>
+      {children}
+    </Blockcode>
+  )
+};
 
 const Main = styled.main``;
 
@@ -25,7 +36,7 @@ const Layout = ({ children }) => (
   <>
     <Stylesheet />
     <Main>
-      <MDXProvider components={{ a: Link }}>{children}</MDXProvider>
+      <MDXProvider components={mdxComponents}>{children}</MDXProvider>
     </Main>
     <Footer>
       <p>

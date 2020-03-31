@@ -1,10 +1,9 @@
 ---
-title: 'std::vector&lt;bool&gt; is NOT a std::vector containing bools'
+title: std::vector<bool> is NOT a std::vector containing bools
 date: 2009-02-15
 redirect_from:
   - /wordpress-10
-tags:
-  - development
+  - /std_vector_bool_is_not_a_std_vector_containing_bools
 ---
 
 Everything in the title, but let me explain... Lately I've spent a lot of time
@@ -13,7 +12,7 @@ software I'm working on at Golaem. Anyway I came across a strange compiler error
 when trying to deserialize a `std::vector<bool>`. Here's what our serialization
 engine is like:
 
-```
+```cpp
 template<T>
 void read(std::vector<T>& myVector, Bitstream myStream)
 {
@@ -25,10 +24,12 @@ void read(std::vector<T>& myVector, Bitstream myStream)
     read(vector[i],stream);
   }
 }
+
 void read(bool& myBool, Bitstream stream)
 {
   ...
 }
+
 template<T>
 void write(const std::vector<T>& myVector, Bitstream myStream)
 {
@@ -39,6 +40,7 @@ void write(const std::vector<T>& myVector, Bitstream myStream)
     write(vector[i],stream);
   }
 }
+
 void write(const bool& myBool, Bitstream stream)
 {
   ...
@@ -55,15 +57,16 @@ WTF ? This code worked perfectly for doubles, ints and other basic types bools
 should be fine no ? After a quick google and follow links session I stopped on
 the
 [cplusplus.com reference page of the `std::vector`](http://www.cplusplus.com/reference/stl/vector/).
-You should go and read this page completly, yep now ! I give you a few
-seconds... OK you should've finished now, and yeah, you read well,
-`std::vector<bool>` is a template specialization of `std::vector<T>` and it does
-not have the the same properties: `std::vector<bool>::operator[]` doesn't
-returns a reference to a bool but a specially defined type. I love C++ and
-especially the STL... Yes, in most cases it's transparent because this type
-defines a transtyping operator to bool. Yes, it is designed to save space as
-each element of a `std::vector<bool>` takes only 1 bit. But, it is inconsistent
-(`std::deque<bool>` is a `std::deque` of bools), opposed to the basic principles
-of c++ templates, and, apparently not normalized (see
+You should go and read this page completly, yep now! I give you a few seconds...
+
+OK you should've finished now, and yeah, you read well, `std::vector<bool>` is a
+template specialization of `std::vector<T>` and it does not have the the same
+properties: `std::vector<bool>::operator[]` doesn't returns a reference to a
+bool but a specially defined type. I love C++ and especially the STL... Yes, in
+most cases it's transparent because this type defines a transtyping operator to
+bool. Yes, it is designed to save space as each element of a `std::vector<bool>`
+takes only 1 bit. But, it is inconsistent (`std::deque<bool>` is a `std::deque`
+of bools), opposed to the basic principles of c++ templates, and, apparently not
+normalized (see
 [this open letter wrote by Herb Sutter](http://www.gotw.ca/publications/N1211.pdf)
 the day i turned 15). Another good joke from our pals at C++ ISO committee...

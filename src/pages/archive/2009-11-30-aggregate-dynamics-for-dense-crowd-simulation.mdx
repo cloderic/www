@@ -3,11 +3,11 @@ title: 'Aggregate Dynamics for Dense Crowd Simulation'
 date: 2009-11-30
 redirect_from:
   - /wordpress-9
-tags:
-  - paper
-  - crowd_simulation
-  - navigation
+  - /aggregate-dynamics-for-dense-crowd-simulation
+archive: true
 ---
+
+import ReactPlayer from 'react-player';
 
 Ming C.Lin's lab latest work in crowd simulation has been featured in two recent
 publications from MIG
@@ -18,20 +18,12 @@ articles, particularly the latter one, is designed to simulate the navigation
 behaviors of tens of thousand pedestrians at interactive rates. Let's see first
 the eye candy !
 
-<object
-  id="embedded"
-  width="425"
-  height="344"
-  classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
->
-  <param name="allowFullScreen" value="true" />
-  <param name="allowScriptAccess" value="always" />
-  <param
-    name="src"
-    value="http://www.youtube.com/v/pqBSNAOsMDc&amp;rel=0&amp;color1=0xb1b1b1&amp;color2=0xcfcfcf&amp;hl=en_US&amp;feature=player_embedded&amp;fs=1"
-  />
-  <param name="allowfullscreen" value="true" /> <embed src="http://www.youtube.com/v/pqBSNAOsMDc&amp;rel=0&amp;color1=0xb1b1b1&amp;color2=0xcfcfcf&amp;hl=en_US&amp;feature=player_embedded&amp;fs=1" type="application/x-shockwave-flash" width="425" height="344" />
-</object>
+<ReactPlayer
+  url="https://www.youtube.com/watch?v=pqBSNAOsMDc"
+  controls
+  light
+  playing
+/>
 
 Impressed ? So do I, let's see how it works. This approach combines microscopic
 goals with macroscopic flow simulation:
@@ -57,7 +49,7 @@ collision avoidance, avoid splitting groups...). This method should be great for
 dense crowds and/or used as a low LOD for navigation behaviors (this will be the
 topic of the next article !).
 
-##Bibliography##
+## Bibliography
 
 - [_Narain et al. Aggregate Dynamics for Dense Crowd Simulation. SIGGRAPH Asia (2009)_](http://gamma.cs.unc.edu/DenseCrowds/narain-siga09.pdf)
 - _Lin et al. Interactive Modeling, Simulation and Control of Large-Scale Crowds

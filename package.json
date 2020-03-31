@@ -48,6 +48,7 @@
     "react-helmet": "^5.2.1",
     "react-measure": "^2.3.0",
     "react-pdf": "^4.1.0",
+    "react-player": "^1.15.3",
     "typeface-quicksand": "^1.1.4"
   },
   "devDependencies": {

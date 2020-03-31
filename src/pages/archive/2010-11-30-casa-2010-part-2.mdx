@@ -3,11 +3,11 @@ title: 'CASA 2010 report (part 2)'
 date: 2010-11-30
 redirect_from:
   - /casa-2010-report-part-2
-tags:
-  - conference
-  - crowd_simulation
-  - navigation
+  - /casa-2010-part-2
+archive: true
 ---
+
+import ReactPlayer from 'react-player';
 
 I've been pretty lazy on this blog this past months... Anyway here's the end of
 the CASA report.
@@ -64,20 +64,12 @@ rather simple algorithm to compute a collision free velocity. And, yes, its
 quite efficient, and the resulting planning is good (perhaps too good to be
 human-like, though), anyway let's see the result.
 
-<object id="embedded" width="640" height="385">
-  <param
-    name="movie"
-    value="http://www.youtube.com/v/586qhaDwr24?fs=1&amp;hl=fr_FR&amp;hd=1&amp;color1=0x3a3a3a&amp;color2=0x999999"
-  />
-  <param name="allowFullScreen" value="true" />
-  <param name="allowscriptaccess" value="always" />
-  <embed
-    src="http://www.youtube.com/v/586qhaDwr24?fs=1&amp;hl=fr_FR&amp;hd=1&amp;color1=0x3a3a3a&amp;color2=0x999999"
-    type="application/x-shockwave-flash"
-    width="640"
-    height="385"
-  />
-</object>
+<ReactPlayer
+  url="https://www.youtube.com/watch?v=586qhaDwr24"
+  controls
+  light
+  playing
+/>
 
 My major take away on this is the inherent advantage of this kind of vision
 based algorithm: visibility occlusions handling for free (entities hiding each

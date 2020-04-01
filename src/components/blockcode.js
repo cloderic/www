@@ -21,28 +21,32 @@ const LineNo = styled.span`
   opacity: 0.3;
 `;
 
-const Blockcode = ({ children, language }) => (
-  <Highlight
-    {...defaultProps}
-    theme={theme}
-    code={children}
-    language={language}
-  >
-    {({ className, style, tokens, getLineProps, getTokenProps }) => (
-      <Pre className={className} style={style}>
-        <code>
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line, key: i })}>
-              <LineNo>{i + 1}</LineNo>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
-        </code>
-      </Pre>
-    )}
-  </Highlight>
-);
+const Blockcode = ({ children, language }) => {
+  return (
+    <Highlight
+      {...defaultProps}
+      theme={theme}
+      code={React.Children.toArray(children)
+        .join('\n')
+        .trim()}
+      language={language}
+    >
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <Pre className={className} style={style}>
+          <code>
+            {tokens.map((line, i) => (
+              <div key={i} {...getLineProps({ line, key: i })}>
+                <LineNo>{i + 1}</LineNo>
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </code>
+        </Pre>
+      )}
+    </Highlight>
+  );
+};
 
 export default Blockcode;

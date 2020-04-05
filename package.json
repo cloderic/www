@@ -38,6 +38,7 @@
     "intersection-observer": "^0.7.0",
     "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",
+    "lodash.groupby": "^4.6.0",
     "lodash.lowercase": "^4.3.0",
     "lodash.range": "^3.2.0",
     "luxon": "^1.23.0",

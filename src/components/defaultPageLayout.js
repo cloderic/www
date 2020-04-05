@@ -38,7 +38,7 @@ const DefaultPageLayout = ({ children, pageContext }) => {
               <p>
                 <small>
                   Published on{' '}
-                  <time datetime={publicationDate.toISODate()}>
+                  <time dateTime={publicationDate.toISODate()}>
                     {publicationDate.toFormat('yyyy/MM/dd')}
                   </time>
                   .
@@ -52,7 +52,7 @@ const DefaultPageLayout = ({ children, pageContext }) => {
               <p>
                 <small>
                   Last updated on{' '}
-                  <time datetime={updateDate.toISODate()}>
+                  <time dateTime={updateDate.toISODate()}>
                     {updateDate.toFormat('yyyy/MM/dd')}
                   </time>
                   .

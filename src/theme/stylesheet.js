@@ -57,6 +57,19 @@ const Stylesheet = () => {
             font-weight: inherit;
           }
 
+          header {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h5,
+            p {
+              margin 0.1em 0;
+            }
+            margin 2em 0;
+          }
+
           strong {
             font-weight: 800;
           }

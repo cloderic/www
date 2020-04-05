@@ -7,7 +7,15 @@ function createCanonicalUrl(siteUrl, path) {
   return path.endsWith('/') ? `${siteUrl}${path}` : `${siteUrl}${path}/`;
 }
 
-function Meta({ description, lang, keywords = [], title, path = '/' }) {
+function Meta({
+  description,
+  lang,
+  keywords = [],
+  title,
+  path = '/',
+  publicationDate,
+  updateDate
+}) {
   const { site, data } = useStaticQuery(
     graphql`
       query {
@@ -68,6 +76,10 @@ function Meta({ description, lang, keywords = [], title, path = '/' }) {
       <meta name="description" content={pageDescription} />
       <meta name="author" content={siteMetadata.author} />
       <meta name="keywords" content={pageKeywords} />
+      {publicationDate && (
+        <meta name="date" content={publicationDate.toISOString()} />
+      )}
+      {updateDate && <meta name="revised" content={updateDate.toISOString()} />}
       <link rel="canonical" href={pageUrl} />
       {/* Open Graph Metadata https://ogp.me/ */}
       <meta property="og:type" content="article" />

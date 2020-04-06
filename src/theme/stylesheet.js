@@ -56,6 +56,18 @@ const Stylesheet = () => {
           h5 {
             font-weight: inherit;
           }
+          .anchor {
+            fill: ${WHITE};
+            width: 20px;
+            margin-right: 5px;
+            margin-left: -25px;
+            svg {
+              visibility: hidden;
+            }
+            &:hover svg {
+              visibility: visible;
+            }
+          }
 
           header {
             h1,

@@ -1,0 +1,78 @@
+---
+title:
+  'GDC 2014 AI Summit - Environmentally Conscious AI: Improving Spatial Analysis
+  and Reasoning'
+date: 2014-03-17
+---
+
+import Pdf from '../../../components/players/pdf';
+import { graphql } from 'gatsby';
+
+> During [GDC 2014 AI Summit](https://www.gdconf.com/summit/game-ai) in San
+> Francisco, I presented a session with
+> [Ben Sunshine-Hill](https://www.linkedin.com/in/ben-sunshine-hill-6b532517/)
+> from [Havok](https://www.havok.com).
+>
+> I also had the opportunity to participate to the infamous
+> [**Turing Tantrums**](#turing-tantrums-ai-devs-rant) and
+> [**Simplest Tricks**](#the-simplest-trick-in-the-book---simple-formation-assignment)
+> sessions with two short _rants_.
+
+## Environmentally Conscious AI: Improving Spatial Analysis and Reasoning
+
+As game worlds become more complex, game characters need to become more "aware"
+of their surroundings. These days, it is no longer sufficiently believable for
+an agent to merely walk through these environments. Believable movement demands
+so much more. Characters may now need to jump, climb, duck or vault in order to
+navigate through their world. Additionally, simply "being" in a space brings in
+issues with cover selection, visibility, positioning and other forms of spatial
+awareness. In the past, this often meant time-consuming manual markup of levels
+or highly constrained level designs, and it certainly didn't support dynamic
+environments! This session will show two different architectures being
+developed - one by [Havok](https://www.havok.com) and one by
+[MASA](https://masasim.com) - to help automate those spatial issues in a way
+that is independent of level design.
+
+[![GDC 2014 AI Summit - Environmentally Conscious AI: Improving Spatial Analysis
+  and Reasoning](./environmentally-conscious-ai.jpeg)](https://www.gdcvault.com/play/1020571/Environmentally-Conscious-AI-Improving-Spatial)
+
+[**Watch on the GDC Vault**](https://www.gdcvault.com/play/1020571/Environmentally-Conscious-AI-Improving-Spatial) -
+[**View on slideshare**](https://fr.slideshare.net/crowdscontrol/environmentally-conscious-ai-improving-spatial-analysis-and-reaso) -
+[**Download the slides**](./gdcaisummit2014-environmentally-conscious-ai.pdf)
+
+## The simplest trick in the book - Simple formation assignment
+
+> The best slides I ever produced!
+>
+> This very short talk (<5 min) shows a rather simpler method to compute
+> assignments to formation slots for a group navigating agents.
+
+[**View on slideshare**](https://fr.slideshare.net/crowdscontrol/simple-formation-assignment-gdc-14-ai-summit) -
+[**Download the slides**](./gdcaisummit2014-simple-formation-assignment.pdf)
+
+<Pdf
+  title="Simple formation assignment"
+  src={props.data.simplest_trick_pdf.publicURL}
+/>
+
+## Turing Tantrums: AI Devs Rant!
+
+> This was fun, and prepared at the last minute!
+>
+> Mine is at ~30 minutes and is about the curse of parametrization, a long
+> lasting pet peeve of mine: "I can guarantee that you can't explain to me how
+> to set those parameters".
+
+[![GDC 2014 AI Summit - Turing Tantrums: AI Devs Rant!](./turing-tantrums.jpeg)](https://www.gdcvault.com/play/1020577/Turing-Tantrums-AI-Devs-Rant)
+
+[**Watch on the GDC Vault**](https://www.gdcvault.com/play/1020577/Turing-Tantrums-AI-Devs-Rant)
+
+export const pageQuery = graphql`
+  query {
+    simplest_trick_pdf: file(
+      name: { eq: "gdcaisummit2014-simple-formation-assignment" }
+    ) {
+      publicURL
+    }
+  }
+`;

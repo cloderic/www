@@ -3,10 +3,6 @@ import lowerCase from 'lodash.lowercase';
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
-function createCanonicalUrl(siteUrl, path) {
-  return path.endsWith('/') ? `${siteUrl}${path}` : `${siteUrl}${path}/`;
-}
-
 function Meta({
   description,
   lang,
@@ -43,7 +39,9 @@ function Meta({
   const siteMetadata = site.siteMetadata;
   const social = data.social;
 
-  const pageUrl = createCanonicalUrl(siteMetadata.siteUrl, path);
+  const pageUrl = path.endsWith('/')
+    ? `${siteMetadata.siteUrl}${path}`
+    : `${siteMetadata.siteUrl}${path}/`;
   const pageTitle = title
     ? `${title} | ${siteMetadata.title}`
     : siteMetadata.title;
@@ -59,10 +57,7 @@ function Meta({
     .join(',');
   const pageLang = lang || siteMetadata.lang;
   const socialCard = {
-    url: createCanonicalUrl(
-      siteMetadata.siteUrl,
-      social.card.childImageSharp.resize.src
-    ),
+    url: `${siteMetadata.siteUrl}${social.card.childImageSharp.resize.src}`,
     width: social.card.childImageSharp.resize.width,
     height: social.card.childImageSharp.resize.height,
     mimeType: `image/${social.card.extension}`

@@ -37,7 +37,10 @@ const Date = styled.time`
 export const query = graphql`
   query {
     articles: allSitePage(
-      filter: { path: { regex: "/^/articles/.+/" } }
+      filter: {
+        path: { regex: "/^/articles/.+/" }
+        context: { frontmatter: { hidden: { ne: true } } }
+      }
       sort: { fields: context___frontmatter___date, order: DESC }
     ) {
       edges {

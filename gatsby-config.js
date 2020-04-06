@@ -4,7 +4,7 @@ const { rgb, parseToRgb } = require('polished');
 
 const siteMetadata = {
   title: `cloderic.com`,
-  description: `Clodéric Mars Portfolio`,
+  description: `Clodéric Mars - Tech Leader, AI Specialist, Public Speaker, humming from Paris`,
   author: 'Clodéric Mars',
   siteUrl: 'https://www.cloderic.com',
   keywords: ['ai', 'tech', 'public speaking'],

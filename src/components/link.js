@@ -3,7 +3,8 @@ import GatsbyLink from 'gatsby-link';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const ABSOLUTE_URL = /[a-zA-Z][-+.a-zA-Z]*:.*/;
-const INTERNAL_URL = /^#.*/;
+const WITH_EXTENSION_URL = /\.[^.]+$/;
+const SITE_URL = /^\/(?!\/)/;
 
 const Link = ({ href, children, ...otherProps }) =>
   ABSOLUTE_URL.test(href) ? (
@@ -15,13 +16,13 @@ const Link = ({ href, children, ...otherProps }) =>
     >
       {children}
     </OutboundLink>
-  ) : INTERNAL_URL.test(href) ? (
-    <a {...otherProps} href={href}>
-      {children}
-    </a>
-  ) : (
+  ) : SITE_URL.test(href) && !WITH_EXTENSION_URL.test(href) ? (
     <GatsbyLink {...otherProps} to={href}>
       {children}
     </GatsbyLink>
+  ) : (
+    <a {...otherProps} href={href}>
+      {children}
+    </a>
   );
 export default Link;

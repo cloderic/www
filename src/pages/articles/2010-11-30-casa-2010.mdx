@@ -11,7 +11,7 @@ redirect_from:
   - /blog/2010-11-30-casa-2010-part-2
 ---
 
-import ReactPlayer from 'react-player';
+import Video from '../../components/players/video';
 
 CASA, the yearly conference on Computer Animation and Social Agents, was held in
 St Malo, France, from 31/05/10 to 03/06/10 (further information
@@ -107,12 +107,7 @@ rather simple algorithm to compute a collision free velocity. And, yes, its
 quite efficient, and the resulting planning is good (perhaps too good to be
 human-like, though), anyway let's see the result.
 
-<ReactPlayer
-  url="https://www.youtube.com/watch?v=586qhaDwr24"
-  controls
-  light
-  playing
-/>
+<Video src="https://www.youtube.com/watch?v=586qhaDwr24" />
 
 My major take away on this is the inherent advantage of this kind of vision
 based algorithm: visibility occlusions handling for free (entities hiding each

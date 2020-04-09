@@ -41,13 +41,10 @@ export const query = graphql`
     about: mdx(frontmatter: { title: { eq: "About" } }) {
       body
     }
-    podcast: mdx(
-      frontmatter: {
-        title: {
-          eq: "IFTTD #30 - Ajouter de l'humain dans l'IA avec Clodéric Mars"
-        }
-      }
-    ) {
+    podcast: mdx(fileAbsolutePath: { regex: "/2020-03-04/" }) {
+      body
+    }
+    talk: mdx(fileAbsolutePath: { regex: "/2017-03-09/" }) {
       body
     }
   }
@@ -55,8 +52,7 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => {
   const social = data.data.social;
-  const podcast = data.podcast;
-  const about = data.about;
+  const { about, podcast, talk } = data;
   return (
     <Layout>
       <Meta />
@@ -150,6 +146,30 @@ const IndexPage = ({ data }) => {
           >
             <h2>Check out this podcast interview about AI</h2>
             <MDXRenderer>{podcast.body}</MDXRenderer>
+          </Tile>
+          <Tile
+            alternate
+            small={{
+              top: '5px',
+              colStart: 2,
+              colSpan: 5,
+              rowStart: 3
+            }}
+            large={{
+              top: '-50px',
+              left: '-25px',
+              right: '-25px',
+              colStart: 2,
+              colSpan: 4,
+              rowStart: 3,
+              rowSpan: 2
+            }}
+            css={css`
+              text-align: justify;
+            `}
+          >
+            <h2>Let's talk about XAI, with Alfred, Batman's butler</h2>
+            <MDXRenderer>{talk.body}</MDXRenderer>
           </Tile>
         </Grid>
       </section>

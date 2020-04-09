@@ -7,7 +7,7 @@ redirect_from:
   - /blog/2009-11-30-aggregate-dynamics-for-dense-crowd-simulation
 ---
 
-import ReactPlayer from 'react-player';
+import Video from '../../components/players/video';
 
 Ming C.Lin's lab latest work in crowd simulation has been featured in two recent
 publications from MIG
@@ -18,12 +18,7 @@ articles, particularly the latter one, is designed to simulate the navigation
 behaviors of tens of thousand pedestrians at interactive rates. Let's see first
 the eye candy !
 
-<ReactPlayer
-  url="https://www.youtube.com/watch?v=pqBSNAOsMDc"
-  controls
-  light
-  playing
-/>
+<Video src="https://www.youtube.com/watch?v=pqBSNAOsMDc" />
 
 Impressed ? So do I, let's see how it works. This approach combines microscopic
 goals with macroscopic flow simulation:

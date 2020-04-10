@@ -1,59 +1,200 @@
 import React, { useCallback, useState } from 'react';
 import { Document, Page } from 'react-pdf/dist/entry.webpack';
 import range from 'lodash.range';
-import debounce from 'lodash.debounce';
 import styled from '@emotion/styled';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCircleNotch,
+  faStepBackward,
+  faStepForward,
+  faFileDownload,
+  faExternalLinkAlt
+} from '@fortawesome/free-solid-svg-icons';
 import Measure from 'react-measure';
+import Link from '../link';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
+import { BOX_SHADOW, BG_COLOR_2_GRADIENT } from '../../theme/colors';
 
-const PdfContainer = styled.div`
-  .document {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: stretch;
+const DocumentContainer = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: stretch;
+  .containee {
+    width: 100%;
+    max-width: 800px;
+  }
+  .page,
+  .controls {
+    position: relative;
+    z-index: 10;
+    ${BOX_SHADOW};
   }
   .page {
-    margin: 0.5rem;
+    margin: 0.5rem 0;
+  }
+  .controls {
+    background: ${BG_COLOR_2_GRADIENT};
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: ${({ noPagination }) =>
+      noPagination ? 'center' : 'space-between'};;
+    padding: 0 0.5rem;
+
+    .title {
+      flex-grow: 1;
+      text-align: center;
+      max-width: 70%;
+      margin: 1em 0;
+
+      header {
+        font-size: 1.15em;
+        margin 0;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
   }
 `;
 
-const Pdf = ({ src }) => {
-  const [width, setWidth] = useState(undefined);
-  const [numPages, setNumPages] = useState(0);
+const Pdf = ({
+  title,
+  src,
+  href,
+  start = 0,
+  end = -1,
+  noPagination,
+  noControls
+}) => {
+  const [loading, setLoading] = useState(true);
+  const [[currentStart, currentEnd], setRange] = useState([0, 0]);
+  const [current, setCurrent] = useState(undefined);
   const onDocumentLoaded = useCallback(
-    ({ numPages }) => setNumPages(numPages),
-    [setNumPages]
+    ({ numPages }) => {
+      setLoading(false);
+      const currentStart = Math.min(Math.max(0, start), numPages);
+      const currentEnd =
+        end < 0 ? numPages : Math.min(Math.max(currentStart, end), numPages);
+      setRange([currentStart, currentEnd]);
+      setCurrent(currentStart);
+    },
+    [start, end, noPagination, setLoading, setCurrent, setRange]
   );
-  const onResize = useCallback(
-    debounce(
-      (contentRect) => setWidth(Math.min(800, contentRect.bounds.width)),
-      500
-    ),
-    [setWidth]
+  const onPrevious = useCallback(
+    () =>
+      setCurrent((current) => {
+        const newCurrent = Math.max(currentStart, current - 1);
+        trackCustomEvent({
+          category: 'pdf',
+          action: 'previousPage',
+          label: title,
+          value: newCurrent
+        });
+        return newCurrent;
+      }),
+    [setCurrent, currentStart]
   );
+  const onNext = useCallback(
+    () =>
+      setCurrent((current) => {
+        const newCurrent = Math.min(currentEnd - 1, current + 1);
+        trackCustomEvent({
+          category: 'pdf',
+          action: 'nextPage',
+          label: title,
+          value: newCurrent
+        });
+        return newCurrent;
+      }),
+    [setCurrent, currentEnd]
+  );
+
   return (
-    <Measure bounds onResize={onResize}>
-      {({ measureRef }) => (
-        <PdfContainer ref={measureRef}>
-          <Document
-            className="document"
-            file={src}
-            onLoadSuccess={onDocumentLoaded}
-          >
-            {!width
-              ? []
-              : range(numPages).map((i) => (
+    <DocumentContainer noPagination={noPagination}>
+      <Measure bounds>
+        {({ measureRef, contentRect }) => (
+          <div className="containee" ref={measureRef}>
+            <Document
+              className="document"
+              file={src}
+              onLoadSuccess={onDocumentLoaded}
+            >
+              {!noControls && (
+                <div className="controls">
+                  {!noPagination && (
+                    <button
+                      onClick={onPrevious}
+                      title={'Previous page'}
+                      disabled={noPagination || current === currentStart}
+                    >
+                      <FontAwesomeIcon icon={faStepBackward} />
+                    </button>
+                  )}
+                  <div className="title">
+                    <header>{title}</header>
+                    <div>
+                      <small>
+                        <Link href={src}>
+                          <FontAwesomeIcon icon={faFileDownload} /> Download
+                        </Link>{' '}
+                        -{' '}
+                        <Link href={href}>
+                          <FontAwesomeIcon icon={faExternalLinkAlt} /> Open
+                          original
+                        </Link>
+                      </small>
+                    </div>
+                    <div>
+                      {loading ? (
+                        <FontAwesomeIcon icon={faCircleNotch} spin />
+                      ) : !noPagination ? (
+                        <small>
+                          Page {current + 1} / {currentEnd}
+                        </small>
+                      ) : (
+                        <small>
+                          Pages {currentStart + 1} to {currentEnd}
+                        </small>
+                      )}
+                    </div>
+                  </div>
+                  {!noPagination && (
+                    <button
+                      onClick={onNext}
+                      title={'Next page'}
+                      disabled={noPagination || current === currentEnd - 1}
+                    >
+                      <FontAwesomeIcon icon={faStepForward} />
+                    </button>
+                  )}
+                </div>
+              )}
+
+              {!noPagination ? (
+                <Page
+                  className="page"
+                  pageNumber={current + 1}
+                  width={contentRect.bounds.width}
+                />
+              ) : (
+                range(currentStart, currentEnd).map((i) => (
                   <Page
                     className="page"
                     key={i}
                     pageNumber={i + 1}
-                    width={width}
+                    width={contentRect.bounds.width}
                   />
-                ))}
-          </Document>
-        </PdfContainer>
-      )}
-    </Measure>
+                ))
+              )}
+            </Document>
+          </div>
+        )}
+      </Measure>
+    </DocumentContainer>
   );
 };
 

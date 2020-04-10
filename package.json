@@ -37,7 +37,6 @@
     "gatsby-transformer-sharp": "^2.3.13",
     "gatsby-transformer-yaml": "^2.2.27",
     "intersection-observer": "^0.7.0",
-    "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",
     "lodash.groupby": "^4.6.0",
     "lodash.lowercase": "^4.3.0",

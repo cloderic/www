@@ -1,0 +1,51 @@
+---
+title: >-
+  The three stages of Explainable AI: How explainability facilitates real world
+  deployment of AI
+date: 2020-04-10
+---
+
+import Pdf from '../../../components/players/pdf';
+import { graphql } from 'gatsby';
+
+> This work matured throughout 2019 in
+> [various conferences, round tables and workshops](#history), it was formalized
+> early 2020 to be
+> [published in the proceedings of EGC](#paper-published-in-the-proceedings-of-the-humains-et-ia-hia-workshop-of-the-20th-extraction-et-gestion-des-connaissances-egc-conference-in-2020).
+
+🚧🚧🚧
+
+---
+
+## Paper, published in the proceedings of the "Humains et IA (HIA)" workshop of the [20th Extraction et Gestion des Connaissances (EGC) conference in 2020](https://egc2020.sciencesconf.org).
+
+<Pdf
+  title="The three stages of Explainable AI: How explainability facilitates real world
+  deployment of AI"
+  href="https://github.com/craft-ai/sci/tree/master/publications/2020-the-three-stages-of-xai"
+  src={props.data.paper.publicURL}
+/>
+
+export const pageQuery = graphql`
+  query {
+    paper: file(name: { eq: "2020-the-three-stages-of-xai" }) {
+      publicURL
+    }
+  }
+`;
+
+## History
+
+- **2019/03/13** -
+  [Paris Machine Learning Meetup #5, season 6](https://nuit-blanche.blogspot.com/2019/03/ce-soir-paris-machine-learning-5-season.html).
+- **2019/04/18** -
+  [AI Night _explainability_ roundtable](https://www.craft.ai/blog/ai-night-2019-explainable-ai-workshop).
+- **2019/05/24** & **2019/07/18** -
+  [#AIforLeaders workshops at Total](https://sc21.fr/total-retour-sur-la-session-aiforleaders-du-24-mai/).
+- **2019/10/07** -
+  [X-IA #6 _Intelligibilité des modèles_ Meetup](https://ax.polytechnique.org/newsletter/preview/index/id/503/noLayout/1)
+- **2019/10/17** -
+  [Séminaire Aristote, l’IA est-elle explicable ? Un coup d'oeil furtif dans la boite noire des algorithmes de l'IA](https://www.association-aristote.fr/lia-est-elle-explicable/).
+- **2020/01/28** -
+  [Humains et IA (HIA) workshop](http://headwork.gforge.inria.fr/HIA2020/index)
+  of the 20th Extraction et Gestion des Connaissances (EGC) conference.

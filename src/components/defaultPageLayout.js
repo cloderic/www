@@ -16,7 +16,7 @@ const ArticleContainee = styled(Container)`
   padding: 2rem 0.5rem;
 `;
 
-const DefaultPageLayout = ({ children, pageContext }) => {
+const DefaultPageLayout = ({ children, pageContext, location }) => {
   const publicationDate =
     pageContext.frontmatter.date &&
     DateTime.fromISO(pageContext.frontmatter.date);
@@ -28,6 +28,7 @@ const DefaultPageLayout = ({ children, pageContext }) => {
       <Meta
         title={pageContext.frontmatter.title}
         publicationDate={publicationDate && publicationDate.toJSDate()}
+        path={location.pathname}
         updateDate={updateDate && updateDate.toJSDate()}
       />
       <ArticleContainer>

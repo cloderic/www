@@ -32,6 +32,11 @@ const DocumentContainer = styled.article`
   }
   .page {
     margin: 0.5rem 0;
+
+    // Do not attempt to display annotations, it messes up the layout.
+    .annotationLayer {
+      display: none;
+    }
   }
   .controls {
     background: ${BG_COLOR_2_GRADIENT};
@@ -68,7 +73,9 @@ const Pdf = ({
   start = 0,
   end = -1,
   noPagination,
-  noControls
+  noControls,
+  noLinks,
+  noTitle
 }) => {
   const [loading, setLoading] = useState(true);
   const [[currentStart, currentEnd], setRange] = useState([0, 0]);
@@ -82,7 +89,7 @@ const Pdf = ({
       setRange([currentStart, currentEnd]);
       setCurrent(currentStart);
     },
-    [start, end, noPagination, setLoading, setCurrent, setRange]
+    [start, end, setLoading, setCurrent, setRange]
   );
   const onPrevious = useCallback(
     () =>
@@ -96,7 +103,7 @@ const Pdf = ({
         });
         return newCurrent;
       }),
-    [setCurrent, currentStart]
+    [title, setCurrent, currentStart]
   );
   const onNext = useCallback(
     () =>
@@ -110,7 +117,7 @@ const Pdf = ({
         });
         return newCurrent;
       }),
-    [setCurrent, currentEnd]
+    [title, setCurrent, currentEnd]
   );
 
   return (
@@ -135,25 +142,28 @@ const Pdf = ({
                     </button>
                   )}
                   <div className="title">
-                    <header>{title}</header>
-                    <div>
-                      <small>
-                        <Link href={src}>
-                          <FontAwesomeIcon icon={faFileDownload} /> Download
-                        </Link>{' '}
-                        -{' '}
-                        <Link href={href}>
-                          <FontAwesomeIcon icon={faExternalLinkAlt} /> Open
-                          original
-                        </Link>
-                      </small>
-                    </div>
+                    {!noTitle && <header>{title}</header>}
+                    {!noLinks && (
+                      <div>
+                        <small>
+                          <Link href={src}>
+                            <FontAwesomeIcon icon={faFileDownload} /> Download
+                          </Link>{' '}
+                          -{' '}
+                          <Link href={href}>
+                            <FontAwesomeIcon icon={faExternalLinkAlt} /> Open
+                            original
+                          </Link>
+                        </small>
+                      </div>
+                    )}
                     <div>
                       {loading ? (
                         <FontAwesomeIcon icon={faCircleNotch} spin />
                       ) : !noPagination ? (
                         <small>
-                          Page {current + 1} / {currentEnd}
+                          Page {current - currentStart + 1} /{' '}
+                          {currentEnd - currentStart}
                         </small>
                       ) : (
                         <small>

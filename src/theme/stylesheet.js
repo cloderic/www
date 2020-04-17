@@ -89,7 +89,7 @@ const Stylesheet = () => {
           blockquote {
             padding-left: 0.5em;
             font-style: italic;
-            border-left: 0.2em solid ${transparentize(0.5, WHITE)};
+            border-left: 0.2em solid ${transparentize(0.5, PRIMARY)};
 
             margin-block-start: 1em;
             margin-block-end: 1em;

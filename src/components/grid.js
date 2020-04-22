@@ -35,6 +35,15 @@ export const Tile = styled.div`
   left: ${({ small = {} }) => small.left || 0};
   right: ${({ small = {} }) => small.right || 0};
 
+  width: ${({ small = {} }) =>
+    `calc(100% ${small.left ? `- ${small.left}` : ''} ${
+      small.right ? `+ ${small.right}` : ''
+    })`};
+  height: ${({ small = {} }) =>
+    `calc(100% ${small.top ? `- ${small.top}` : ''} ${
+      small.bottom ? `+ ${small.bottom}` : ''
+    })`};
+
   grid-column: ${({ small = {} }) =>
     `${small.colStart || 1} / span ${small.colSpan || 1}`};
   grid-row: ${({ small = {} }) =>
@@ -45,6 +54,15 @@ export const Tile = styled.div`
     bottom: ${({ large = {} }) => large.bottom || 0};
     left: ${({ large = {} }) => large.left || 0};
     right: ${({ large = {} }) => large.right || 0};
+
+    width: ${({ large = {} }) =>
+      `calc(100% ${large.left ? `- ${large.left}` : ''} ${
+        large.right ? `+ ${large.right}` : ''
+      })`};
+    height: ${({ large = {} }) =>
+      `calc(100% ${large.top ? `- ${large.top}` : ''} ${
+        large.bottom ? `+ ${large.bottom}` : ''
+      })`};
 
     grid-column: ${({ large = {} }) =>
       `${large.colStart || 1} / span ${large.colSpan || 1}`};

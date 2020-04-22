@@ -47,6 +47,17 @@ export const query = graphql`
     talk: mdx(fileAbsolutePath: { regex: "/2017-03-09/" }) {
       body
     }
+    threeStages: file(
+      relativePath: {
+        eq: "articles/2020-04-22-the-three-stages-of-explainable-ai/the-three-stages-of-xai.png"
+      }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `;
 
@@ -93,12 +104,14 @@ const IndexPage = ({ data }) => {
             alternate
             small={{
               top: '-30px',
+              bottom: '-30px',
               colStart: 1,
               colSpan: 5,
               rowStart: 1
             }}
             large={{
               top: '-90px',
+              bottom: '-90px',
               colStart: 3,
               colSpan: 3,
               rowStart: 1,
@@ -127,6 +140,7 @@ const IndexPage = ({ data }) => {
           <Tile
             small={{
               top: '-30px',
+              bottom: '-30px',
               left: '20px',
               colStart: 1,
               colSpan: 4,
@@ -134,8 +148,7 @@ const IndexPage = ({ data }) => {
             }}
             large={{
               top: '25px',
-              left: '-50px',
-              right: '-50px',
+              bottom: '25px',
               colStart: 1,
               colSpan: 2,
               rowStart: 1
@@ -152,16 +165,17 @@ const IndexPage = ({ data }) => {
             small={{
               top: '5px',
               colStart: 2,
-              colSpan: 5,
+              colSpan: 4,
               rowStart: 3
             }}
             large={{
-              top: '-50px',
-              left: '-25px',
-              right: '-25px',
-              colStart: 2,
-              colSpan: 4,
-              rowStart: 3,
+              top: '10px',
+              bottom: '10px',
+              left: '-20px',
+              right: '15px',
+              colStart: 1,
+              colSpan: 2,
+              rowStart: 2,
               rowSpan: 2
             }}
             css={css`
@@ -170,6 +184,40 @@ const IndexPage = ({ data }) => {
           >
             <h2>Let's talk about XAI, with Alfred, Batman's butler</h2>
             <MDXRenderer>{talk.body}</MDXRenderer>
+          </Tile>
+          <Tile
+            small={{
+              top: '5px',
+              colStart: 1,
+              colSpan: 5,
+              rowStart: 4
+            }}
+            large={{
+              top: '-50px',
+              bottom: '-50px',
+              // left: '5px',
+              right: '10px',
+              colStart: 3,
+              colSpan: 3,
+              rowStart: 3,
+              rowSpan: 1
+            }}
+          >
+            <h2>The 3 stages of Explainable AI</h2>
+            <Link
+              title="The 3 stages of Explainable AI"
+              href="/articles/2020-04-22-the-three-stages-of-explainable-ai/"
+            >
+              <Img fluid={data.threeStages.childImageSharp.fluid} />
+            </Link>
+            <p>
+              <Link
+                title="The 3 stages of Explainable AI"
+                href="/articles/2020-04-22-the-three-stages-of-explainable-ai/"
+              >
+                Read the article...
+              </Link>
+            </p>
           </Tile>
         </Grid>
       </section>

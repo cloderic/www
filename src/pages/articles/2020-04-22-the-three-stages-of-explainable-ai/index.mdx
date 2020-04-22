@@ -2,8 +2,7 @@
 title: >-
   The three stages of Explainable AI: How explainability facilitates real world
   deployment of AI
-date: 2020-04-10
-hidden: true
+date: 2020-04-22
 ---
 
 import Pdf from '../../../components/players/pdf';
@@ -517,18 +516,23 @@ challenge [identified by Adrian Weller](https://arxiv.org/abs/1708.01870).
 The AI community generally considers that the more explainability you gain, the
 less predictive performance you can achieve, especially in Machine Learning.
 Overcoming this is a primary goal of the XAI field, and in particular it is the
-main goal of the DARPA XAI program. Several opportunities have been identified
-to achieve this objective, the most promising ones being to create hybrid AI
-combining different approaches. One idea is to _push_ high-performance but
-unexplainable algorithms to the edges, around an explainable core. For example
-in cat image recognition, a deep neural networks would identify low level
-details like whiskers and pointy ears, while decision trees or bayesian models
-would associate the presence of both whiskers and pointy ears to a cat in an
-explainable fashion. Another idea is to adapt Machine Learning algorithms to
-work from existing expert-built symbolic representations of physical models to
-leverage existing knowledge, instead of having to relearn and embed it. This
-field is relatively new, and comes as a stark departure from the deep learning
-trend of the past few years.
+main goal of the DARPA XAI program.
+
+Several opportunities have been identified to achieve this objective, the most
+promising ones being to create **hybrid AIs** combining different approaches.
+
+One idea is to _push_ high-performance but unexplainable algorithms to the
+edges, around an explainable core. For example a deep neural networks would
+identify low level details like whiskers and pointy ears, while decision trees
+or bayesian models would associate the presence of both whiskers and pointy ears
+to a cat in an explainable fashion.
+
+Another idea is to adapt Machine Learning algorithms to work from existing
+expert-built symbolic representations of physical models to leverage existing
+knowledge, instead of having to relearn and embed it. This field is relatively
+new, and comes as a stark departure from the deep learning trend of the past few
+years. This is at the heart of
+[IRT SystemX IA2 program](https://www.irt-systemx.fr/systemx-lance-le-programme-de-recherche-intelligence-artificielle-et-ingenierie-augmentee-ia2/).
 
 ## Conclusion
 
@@ -541,14 +545,18 @@ trend of the past few years.
   noControls
 />
 
-In this paper we structured in three stages the impact that explainability can
-have on AI applications deployed in the _"real world"_. Those 3 stages provide a
-simple framework to quickly identify the need for explainability in a AI powered
-project. Stage 1 is about leveraging explainability to improve the adoption and
-performance of AI applications. Stage 2 is about explaining every AI decisions
-to build trust with their users and supervisors. Stage 3 is about enabling the
-interoperability of AI systems with each other and other software, thus
-unlocking new and richer use cases.
+We structured in three stages the impact that explainability has on AIs deployed
+in the _"real world"_. Those 3 stages provide a simple framework to quickly
+identify the need for explainability in a AI powered project.
+
+**Stage 1** is about leveraging explainability to improve the adoption and
+performance of AIs.
+
+**Stage 2** is about explaining every AI decisions to build trust with their
+users and supervisors.
+
+**Stage 3** is about enabling the interoperability of AIs with each other and
+other software, thus unlocking new and richer use cases.
 
 <Pdf
   title="The three stages of Explainable AI - Takeaway"
@@ -569,8 +577,8 @@ enterprise AI because it not only offers stronger guarantees in terms of data
 governance, but also facilitates involvement and support from users and domain
 experts impacted by such AI.
 
-Far from being just a constraint on AI design, explainability helps develop
-better and richer AIs.
+**Far from being just a constraint on AI design, explainability is actually an
+opportunity to develop AIs that actually deliver value to Humans.**
 
 <Pdf
   title="The three stages of Explainable AI - Beyond"

@@ -1,6 +1,7 @@
 import Container from './container';
 import { DateTime } from 'luxon';
 import Layout from './layout';
+import BackHomeLink from './backHomeLink';
 import Meta from './meta';
 import React from 'react';
 import styled from '@emotion/styled';
@@ -58,6 +59,7 @@ const DefaultPageLayout = ({ children, pageContext, location }) => {
       <ArticleContainer>
         <ArticleContainee>
           <header className="articleHeader">
+            <BackHomeLink />
             <h1>{pageContext.frontmatter.title}</h1>
             {publicationDate && (
               <p>
@@ -73,6 +75,7 @@ const DefaultPageLayout = ({ children, pageContext, location }) => {
           </header>
           {children}
           <footer className="articleFooter">
+            <BackHomeLink />
             {updateDate && (
               <p>
                 <small>

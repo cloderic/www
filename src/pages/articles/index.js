@@ -4,6 +4,7 @@ import Layout from '../../components/layout';
 import Meta from '../../components/meta';
 import Link from '../../components/link';
 import Container from '../../components/container';
+import BackHomeLink from '../../components/backHomeLink';
 import { graphql } from 'gatsby';
 import { DateTime } from 'luxon';
 import styled from '@emotion/styled';
@@ -77,6 +78,7 @@ const ArticlesIndexPage = ({ data }) => {
       <Meta title="Articles" />
       <ListContainer>
         <ListContainee>
+          <BackHomeLink />
           <h1>Articles</h1>
           {sortedYears.map((year) => (
             <React.Fragment key={year}>

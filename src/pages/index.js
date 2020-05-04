@@ -69,9 +69,9 @@ const IndexPage = ({ data }) => {
       <Meta />
       <Hero fluid={data.face.childImageSharp.fluid} title="Clodéric Mars">
         <h2>
-          Tech&nbsp;Leader
+          AI&nbsp;Product&nbsp;Engineer
           <br />
-          AI&nbsp;Specialist
+          Tech&nbsp;Leader
           <br />
           Public&nbsp;Speaker
           <br />

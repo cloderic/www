@@ -39,6 +39,10 @@ const FooterContainer = styled(Container.withComponent('footer'))`
   .license {
     font-size: 0.7em;
   }
+
+  @media print {
+    display: none;
+  }
 `;
 
 const Footer = () => (

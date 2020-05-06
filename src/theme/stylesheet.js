@@ -43,11 +43,18 @@ const Stylesheet = () => {
           font-family: quicksand;
           font-weight: 300;
           font-size: 12pt;
+          @media print {
+            font-size: 9pt;
+          }
 
           color: ${WHITE};
 
           h1 {
             font-weight: 400;
+            @media print {
+              font-weight: 500;
+            }
+            page-break-after: "";
           }
           h2,
           h3,
@@ -55,6 +62,10 @@ const Stylesheet = () => {
           h5,
           h5 {
             font-weight: inherit;
+            @media print {
+              font-weight: 400;
+            }
+            page-break-after: "";
           }
           .anchor {
             fill: ${WHITE};

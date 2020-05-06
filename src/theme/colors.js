@@ -21,7 +21,10 @@ const BG_COLOR_2_GRADIENT = createBgGradient(BG_COLOR_2);
 
 const BOX_SHADOW = `
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
-    0 4px 6px -2px rgba(0, 0, 0, 0.1)
+    0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  @media print {
+    box-shadow: none;
+  }
 `;
 
 const TEXT_SHADOW = `

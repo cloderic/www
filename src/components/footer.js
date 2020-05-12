@@ -55,6 +55,9 @@ const Footer = () => (
         <li>
           <Link href="/articles">Articles</Link>
         </li>
+        <li>
+          <Link href="/content/resume.en">Resume</Link>
+        </li>
       </ul>
     </nav>
     <p className="license">

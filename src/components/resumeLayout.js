@@ -7,11 +7,16 @@ import {
   PRIMARY,
   BG_COLOR_1,
   BG_COLOR_1_GRADIENT,
+  BG_COLOR_2,
+  BG_COLOR_2_GRADIENT,
   BLACK,
   WHITE,
   BOX_SHADOW
 } from '../theme/colors';
 import { graphql, useStaticQuery } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 
 const ResumePage = styled.article`
   position: relative;
@@ -26,20 +31,36 @@ const ResumePage = styled.article`
     fill: ${BLACK};
   }
 
-  header > .description {
-    font-size: 1.1em;
+  header {
+    h1 {
+      color: ${PRIMARY};
+    }
+    .description {
+      font-size: 1.1em;
+    }
   }
 
-  & > address {
-    position: absolute;
+  .aside {
+    float: right;
+
     top: 0;
     right: 0;
 
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .aside > div {
     background: ${BG_COLOR_1_GRADIENT};
     color: ${WHITE};
     @media print {
       background: ${BG_COLOR_1};
       -webkit-print-color-adjust: exact !important;
+    }
+    &:nth-child(even) {
+      background: ${BG_COLOR_2_GRADIENT};
+      @media print {
+        background: ${BG_COLOR_2};
+      }
     }
 
     ${BOX_SHADOW};
@@ -49,22 +70,28 @@ const ResumePage = styled.article`
     font-style: normal;
     font-size: 0.9em;
 
-    display: flex;
-    flex-direction: column;
+    h2 {
+      text-align: center;
+      border: none;
+      margin-block-start: 0.5em;
+      margin-block-end: 0.5em;
+    }
 
-    .item {
-      display: inline-flex;
-      align-items: center;
+    dl {
+      margin-block-start: 0.5em;
+      margin-block-end: 0.5em;
 
-      margin: 0.3em;
+      display: grid;
+      grid-template-columns: 3ch auto;
+      row-gap: 0.5em;
+      place-items: center stretch;
 
       dt {
-        flex: 0 0;
-        width: 3ch;
+        grid-column: 1 / span 1;
         text-align: center;
       }
       dd {
-        flex: 1 0;
+        grid-column: 2 / span 1;
         text-align: right;
       }
     }
@@ -82,84 +109,163 @@ const ResumePage = styled.article`
   }
 `;
 
-const ResumeLayout = ({ children }) => {
-  const result = useStaticQuery(
+const Aside = [
+  {
+    title: 'Contact',
+    items: [
+      {
+        hidden: ({ email }) => email == null,
+        label: () => (
+          <span role="img" aria-label="Email">
+            ✉️
+          </span>
+        ),
+        value: ({ email }) => <Link href={`mailto:${email}`}>{email}</Link>
+      },
+      {
+        hidden: ({ phone }) => phone == null,
+        label: () => (
+          <span role="img" aria-label="Phone">
+            📱
+          </span>
+        ),
+        value: ({ phone }) => <span>{phone}</span>
+      },
+      {
+        hidden: ({ address }) => address == null,
+        label: () => (
+          <span role="img" aria-label="Address">
+            🏡
+          </span>
+        ),
+        value: ({ address }) => (
+          <span
+            dangerouslySetInnerHTML={{
+              __html: address.split('\n').join('<br/>')
+            }}
+          />
+        )
+      }
+    ]
+  },
+  {
+    title: 'Interesting links',
+    items: [
+      {
+        label: () => (
+          <FontAwesomeIcon icon={faNewspaper} aria-label="LinkedIn" />
+        ),
+        value: ({ siteUrl }) => <Link href={siteUrl}>{siteUrl}</Link>
+      },
+      {
+        label: () => (
+          <FontAwesomeIcon icon={faLinkedinIn} aria-label="LinkedIn" />
+        ),
+        value: ({ linkedin }) => (
+          <Link
+            title="My LinkedIn profile"
+            href={`https://www.linkedin.com/in/${linkedin}`}
+          >
+            https://www.linkedin.com/in/{linkedin}
+          </Link>
+        )
+      },
+      {
+        label: () => <FontAwesomeIcon icon={faGithub} aria-label="Github" />,
+        value: ({ github }) => (
+          <Link title="My Github profile" href={`https://github.com/${github}`}>
+            https://github.com/{github}
+          </Link>
+        )
+      }
+    ]
+  },
+  {
+    title: 'Language Skills',
+    items: [
+      {
+        label: () => (
+          <span role="img" aria-label="French">
+            🇫🇷
+          </span>
+        ),
+        value: () => <>Native</>
+      },
+      {
+        label: () => (
+          <span role="img" aria-label="English">
+            🇬🇧
+          </span>
+        ),
+        value: () => (
+          <>
+            Proficient
+            <br />
+            <small>
+              <em>Intl working environment xp</em>
+            </small>
+          </>
+        )
+      }
+    ]
+  }
+];
+
+const ResumeLayout = ({ children, pageContext }) => {
+  const { header } = pageContext.frontmatter;
+  const { site, data } = useStaticQuery(
     graphql`
       query {
+        site {
+          siteMetadata {
+            author
+            siteUrl
+          }
+        }
         data: dataYaml {
           contact {
             address
             email
             phone
           }
+          social {
+            linkedin
+            github
+          }
         }
       }
     `
   );
-  console.log('result', result);
-  const data = result.data;
+  const asideProps = {
+    ...data.contact,
+    ...data.social,
+    siteUrl: site.siteMetadata.siteUrl
+  };
   return (
     <Layout>
       <Container>
         <ResumePage>
+          <div className="aside">
+            {Aside.map(({ title, items }, index) => (
+              <div key={index}>
+                <h2>{title}</h2>
+                <dl>
+                  {items.map(({ hidden, label, value }) =>
+                    hidden && hidden(asideProps) ? null : (
+                      <React.Fragment key={index}>
+                        <dt>{label(asideProps)}</dt>
+                        <dd>{value(asideProps)}</dd>
+                      </React.Fragment>
+                    )
+                  )}
+                </dl>
+              </div>
+            ))}
+          </div>
           <header>
-            <h1>Clodéric Mars</h1>
-            <p className="description">
-              AI Product Engineer / Tech Leader / Public Speaker
-            </p>
+            <h1>{site.siteMetadata.author}</h1>
+            <p className="description">{header}</p>
           </header>
-          <address>
-            {data.contact.email && (
-              <div className="item">
-                <dt>
-                  <span role="img" aria-label="email">
-                    ✉️
-                  </span>
-                </dt>
-                <dd>
-                  <Link href={`mailto:${data.contact.email}`}>
-                    {data.contact.email}
-                  </Link>
-                </dd>
-              </div>
-            )}
-            <div className="item">
-              <dt>
-                <span role="img" aria-label="portfolio">
-                  📚
-                </span>
-              </dt>
-              <dd>
-                <Link href="https://www.cloderic.com">
-                  https://www.cloderic.com
-                </Link>
-              </dd>
-            </div>
-            {data.contact.phone && (
-              <div className="item">
-                <dt>
-                  <span role="img" aria-label="telephone">
-                    📱
-                  </span>
-                </dt>
-                <dd>{data.contact.phone}</dd>
-              </div>
-            )}
-            {data.contact.address && (
-              <div className="item">
-                <dt>
-                  <span role="img" aria-label="address">
-                    🏡
-                  </span>
-                </dt>
-                <dd
-                  dangerouslySetInnerHTML={{
-                    __html: data.contact.address.split('\n').join('<br/>')
-                  }}
-                ></dd>
-              </div>
-            )}
-          </address>
           <div>{children}</div>
         </ResumePage>
       </Container>

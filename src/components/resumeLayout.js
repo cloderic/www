@@ -114,7 +114,7 @@ const Aside = [
     title: 'Contact',
     items: [
       {
-        hidden: ({ email }) => email == null,
+        hidden: ({ email }) => !email,
         label: () => (
           <span role="img" aria-label="Email">
             ✉️
@@ -123,7 +123,7 @@ const Aside = [
         value: ({ email }) => <Link href={`mailto:${email}`}>{email}</Link>
       },
       {
-        hidden: ({ phone }) => phone == null,
+        hidden: ({ phone }) => !phone,
         label: () => (
           <span role="img" aria-label="Phone">
             📱
@@ -132,7 +132,7 @@ const Aside = [
         value: ({ phone }) => <span>{phone}</span>
       },
       {
-        hidden: ({ address }) => address == null,
+        hidden: ({ address }) => !address,
         label: () => (
           <span role="img" aria-label="Address">
             🏡

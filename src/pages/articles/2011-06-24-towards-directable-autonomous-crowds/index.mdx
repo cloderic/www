@@ -1,0 +1,33 @@
+---
+title: 'Paris Game/AI Conference 2011 - Towards Directable Autonomous Crowds'
+date: 2011-06-24
+last_update: 2020-05-15
+---
+
+import Pdf from '../../../components/players/pdf';
+import { graphql } from 'gatsby';
+
+> During
+> [Paris Game/AI Conference 2011](http://golaem.com/content/events/golaem-present-paris-gameai-conference-2011)
+> I was very fortunate to give my first ever talk at an international
+> conference, in english!
+>
+> I presented the initial verion of Golaem's crowd simulation software for the
+> animation and vfx industries. The talk focused on my work on the navigation
+> engine and how it allows for arists to direct the movement of the crowds as
+> they would extras.
+>
+> Unfortunately, the videos have been lost, but you can still get an idea.
+
+<Pdf
+  title="Towards Directable Autonomous Crowds"
+  src={props.data.pdf.publicURL}
+/>
+
+export const pageQuery = graphql`
+  query {
+    pdf: file(name: { eq: "2011-06-24-towards-directable-autonomous-crowds" }) {
+      publicURL
+    }
+  }
+`;

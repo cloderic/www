@@ -148,12 +148,17 @@ const Pdf = ({
                         <small>
                           <Link href={src}>
                             <FontAwesomeIcon icon={faFileDownload} /> Download
-                          </Link>{' '}
-                          -{' '}
-                          <Link href={href}>
-                            <FontAwesomeIcon icon={faExternalLinkAlt} /> Open
-                            original
                           </Link>
+                          {href ? (
+                            <>
+                              {' '}
+                              -{' '}
+                              <Link href={href}>
+                                <FontAwesomeIcon icon={faExternalLinkAlt} />{' '}
+                                Open original
+                              </Link>
+                            </>
+                          ) : null}
                         </small>
                       </div>
                     )}

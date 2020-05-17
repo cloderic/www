@@ -6,6 +6,7 @@ last_update: 2020-05-15
 
 import Pdf from '../../../components/players/pdf';
 import { graphql } from 'gatsby';
+import Video from '../../../components/players/video';
 
 > During
 > [Paris Game/AI Conference 2011](http://golaem.com/content/events/golaem-present-paris-gameai-conference-2011)
@@ -16,17 +17,24 @@ import { graphql } from 'gatsby';
 > animation and vfx industries. The talk focused on my work on the navigation
 > engine and how it allows for arists to direct the movement of the crowds as
 > they would extras.
->
-> Unfortunately, the videos have been lost, but you can still get an idea.
+
+### pdf version, no videos
 
 <Pdf
   title="Towards Directable Autonomous Crowds"
   src={props.data.pdf.publicURL}
 />
 
+### Video version
+
+<Video src="https://www.youtube.com/watch?v=23YrW8Rf-2M" />
+
 export const pageQuery = graphql`
   query {
-    pdf: file(name: { eq: "2011-06-24-towards-directable-autonomous-crowds" }) {
+    pdf: file(
+      name: { eq: "2011-06-24-towards-directable-autonomous-crowds" }
+      extension: { eq: "pdf" }
+    ) {
       publicURL
     }
   }

@@ -15,7 +15,11 @@ import {
 } from '../theme/colors';
 import { graphql, useStaticQuery } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import {
+  faLinkedinIn,
+  faGithub,
+  faResearchgate
+} from '@fortawesome/free-brands-svg-icons';
 import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 
 const ResumePage = styled.article`
@@ -177,6 +181,19 @@ const Aside = [
             https://github.com/{github}
           </Link>
         )
+      },
+      {
+        label: () => (
+          <FontAwesomeIcon icon={faResearchgate} aria-label="Research Gate" />
+        ),
+        value: ({ researchgate }) => (
+          <Link
+            title="My Research Gate profile"
+            href={`https://www.researchgate.net/profile/{researchgate}`}
+          >
+            https://www.researchgate.net/profile/{researchgate}
+          </Link>
+        )
       }
     ]
   },
@@ -231,6 +248,7 @@ const ResumeLayout = ({ children, pageContext }) => {
           social {
             linkedin
             github
+            researchgate
           }
         }
       }

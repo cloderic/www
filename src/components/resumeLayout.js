@@ -189,7 +189,7 @@ const Aside = [
         value: ({ researchgate }) => (
           <Link
             title="My Research Gate profile"
-            href={`https://www.researchgate.net/profile/{researchgate}`}
+            href={`https://www.researchgate.net/profile/${researchgate}`}
           >
             https://www.researchgate.net/profile/{researchgate}
           </Link>

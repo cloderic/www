@@ -9,6 +9,7 @@ function Meta({
   keywords = [],
   title,
   path = '/',
+  canonicalUrl,
   publicationDate,
   updateDate
 }) {
@@ -75,7 +76,7 @@ function Meta({
         <meta name="date" content={publicationDate.toISOString()} />
       )}
       {updateDate && <meta name="revised" content={updateDate.toISOString()} />}
-      <link rel="canonical" href={pageUrl} />
+      <link rel="canonical" href={canonicalUrl || pageUrl} />
       {/* Open Graph Metadata https://ogp.me/ */}
       <meta property="og:type" content="article" />
       <meta property="og:title" content={pageTitle} />

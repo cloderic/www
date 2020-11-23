@@ -49,6 +49,9 @@ export const query = graphql`
     talk: mdx(fileAbsolutePath: { regex: "/2017-03-09/" }) {
       body
     }
+    bias101: mdx(fileAbsolutePath: { regex: "/2020-11-06/" }) {
+      body
+    }
     threeStages: file(
       relativePath: {
         eq: "articles/2020-04-22-the-three-stages-of-explainable-ai/the-three-stages-of-xai.png"
@@ -65,7 +68,7 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => {
   const social = data.data.social;
-  const { about, podcast, talk } = data;
+  const { about, podcast, talk, bias101 } = data;
   return (
     <Layout>
       <Meta />
@@ -178,9 +181,8 @@ const IndexPage = ({ data }) => {
             }}
             large={{
               top: '10px',
-              bottom: '10px',
-              left: '-20px',
-              right: '15px',
+              left: '10px',
+              right: '10px',
               colStart: 1,
               colSpan: 2,
               rowStart: 2,
@@ -190,8 +192,10 @@ const IndexPage = ({ data }) => {
               text-align: justify;
             `}
           >
-            <h2>Let's talk about XAI, with Alfred, Batman's butler</h2>
-            <MDXRenderer>{talk.body}</MDXRenderer>
+            <h2>
+              AI & Biases 101 @ <a href="https://thegoodai.co">The Good AI</a>
+            </h2>
+            <MDXRenderer>{bias101.body}</MDXRenderer>
           </Tile>
           <Tile
             small={{
@@ -226,6 +230,29 @@ const IndexPage = ({ data }) => {
                 Read the article...
               </Link>
             </p>
+          </Tile>
+          <Tile
+            small={{
+              colStart: 1,
+              colSpan: 5,
+              rowStart: 5
+            }}
+            large={{
+              top: '10px',
+              bottom: '10px',
+              left: '-20px',
+              right: '15px',
+              colStart: 2,
+              colSpan: 4,
+              rowStart: 4,
+              rowSpan: 1
+            }}
+            css={css`
+              text-align: justify;
+            `}
+          >
+            <h2>Let's talk about XAI, with Alfred, Batman's butler</h2>
+            <MDXRenderer>{talk.body}</MDXRenderer>
           </Tile>
         </Grid>
       </section>

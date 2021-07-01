@@ -80,7 +80,7 @@ const IndexPage = ({ data }) => {
           <br />
           Public&nbsp;Speaker
           <br />
-          <small>humming&nbsp;from&nbsp;Paris</small>
+          <small>humming&nbsp;from&nbsp;Montréal</small>
         </h2>
         <p className="social">
           <Link

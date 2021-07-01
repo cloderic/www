@@ -11,8 +11,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import {
   faTwitter,
   faLinkedinIn,
-  faGithub,
-  faResearchgate
+  faGithub
 } from '@fortawesome/free-brands-svg-icons';
 import { graphql } from 'gatsby';
 
@@ -37,7 +36,6 @@ export const query = graphql`
         twitter
         linkedin
         github
-        researchgate
       }
     }
     about: mdx(frontmatter: { title: { eq: "About" } }) {
@@ -100,12 +98,6 @@ const IndexPage = ({ data }) => {
             href={`https://github.com/${social.github}`}
           >
             <FontAwesomeIcon size="lg" icon={faGithub} />
-          </Link>{' '}
-          <Link
-            title="Check my Research Gate profile"
-            href={`https://www.researchgate.net/profile/${social.researchgate}`}
-          >
-            <FontAwesomeIcon size="lg" icon={faResearchgate} />
           </Link>
         </p>
       </Hero>

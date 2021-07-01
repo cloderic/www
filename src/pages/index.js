@@ -46,7 +46,7 @@ export const query = graphql`
     podcast: mdx(fileAbsolutePath: { regex: "/2020-03-04/" }) {
       body
     }
-    talk: mdx(fileAbsolutePath: { regex: "/2017-03-09/" }) {
+    talk: mdx(fileAbsolutePath: { regex: "/2021-05-04/" }) {
       body
     }
     bias101: mdx(fileAbsolutePath: { regex: "/2020-11-06/" }) {
@@ -251,7 +251,10 @@ const IndexPage = ({ data }) => {
               text-align: justify;
             `}
           >
-            <h2>Let's talk about XAI, with Alfred, Batman's butler</h2>
+            <h2>
+              When AI meets Simulation @{' '}
+              <a href="https://www.hub-franceia.fr">Hub France IA</a>
+            </h2>
             <MDXRenderer>{talk.body}</MDXRenderer>
           </Tile>
         </Grid>

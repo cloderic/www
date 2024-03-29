@@ -1,3 +1,3 @@
 # https://www.cloderic.com
 
-![Gatsby Publish](https://github.com/cloderic/www/workflows/Gatsby%20Publish/badge.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/040d38d4-905c-477f-b3bf-f86485ce441d/deploy-status)](https://app.netlify.com/sites/cloderic/deploys)

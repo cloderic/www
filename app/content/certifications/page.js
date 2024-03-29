@@ -1,0 +1,36 @@
+import { H1 } from '../../../components/base';
+import Link from '../../../components/link';
+import listContent from '../utils/listContent';
+import sortBy from 'lodash.sortby';
+import { DateTime } from 'luxon';
+
+export const metadata = {
+  title: 'MOOCS & Certifications'
+};
+
+export default async function Page() {
+  const content = (await listContent({ parseFrontmatter: true }))
+    .filter(
+      ({ date, hidden, type }) =>
+        date != null && !hidden && type == 'certification'
+    )
+    .map(({ date, ...otherProperties }) => ({
+      date: DateTime.fromJSDate(date, { zone: 'UTC' }),
+      ...otherProperties
+    }));
+  const sortedContent = sortBy(content, 'date').reverse();
+  return (
+    <>
+      <H1 noanchor>MOOCS & Certifications</H1>
+      <ul>
+        {sortedContent.map(({ slug, title, date }, index) => (
+          <li key={index}>
+            <Link href={`/content/${slug}`}>
+              {title} / {date.toFormat('yyyy/MM/dd')}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}

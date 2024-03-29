@@ -1,0 +1,174 @@
+---
+title: 'A sample iOS application using Ogre 3D'
+date: 2013-08-13
+last_update: 2013-08-26
+redirect_from:
+  - /blog/2013-08-13-a-sample-ios-application-using-ogre-3d
+---
+
+![iOS Ogre](/content/2013-08-13-a-sample-ios-application-using-ogre-3d/ios-ogre.jpg)
+
+I'm currently working on an iOS demo of [MASA LIFE](http://www.masalife.net),
+the AI middleware I'm developping; in fact I'm porting the demo we did for this
+year's GDC to iOS. It is called _PaperArena_, and it is a small capture the flag
+tank game showcasing the kind of AI you can develop with LIFE. This demo was
+originally developped for Windows using [Ogre 3D](http://www.ogre3d.org/).
+
+![Paperarena](/content/2013-08-13-a-sample-ios-application-using-ogre-3d/paperarena.png)
+
+Long story short, while porting LIFE runtime and the core of the PaperArena code
+to iOS was quite easy and straightforward, I ran into some problem trying to
+make Ogre use a `UIView` that I gave him.
+
+No documentation is available but I found two interesting forum threads,
+[here](http://www.ogre3d.org/forums/viewtopic.php?f=2&t=71508&hilit=externalviewhandle&sid=0c0d92ddd87f3f25af2ad8181a530e4f)
+and
+[there](http://www.ogre3d.org/forums/viewtopic.php?f=21&t=71904&hilit=externalviewhandle&sid=b148dd48905674e5895284aa903a0c1b).
+While providing good base information, none gave a final solution.
+
+After a few hours of work I finally got something running and decided to share
+it, expecting it might help others and hoping to get some feedback, being
+neither an Ogre3D nor an iOS expert.
+
+The full repository can be browsed, pulled and forked on
+[github](https://github.com/cloderic/ios-ogre).
+
+![The sample](/content/2013-08-13-a-sample-ios-application-using-ogre-3d/ios-ogre.jpg)
+
+## Interesting stuffs
+
+### The Objective-C side
+
+The _app delegate_ handles the lifetime of the application, it creates the
+window, the view controller (from an interface builder file) and start the
+_"simulation"_. The windows is passed to the view controller because it is
+needed to properly initialize the Ogre renderer.
+
+```objectivec
+- (void)applicationDidFinishLaunching:(UIApplication \*)application {
+  self.mWindow = [
+    [UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]
+  ];
+  self.mViewController = [
+    [ViewController alloc] initWithNibName:@"ViewController" bundle:nil
+  ];
+  [self.mViewController startWithWindow:self.mWindow];
+  [self.mWindow makeKeyAndVisible];
+}
+```
+
+The view controller `start` method initializes the `OgreApplication`, the C++
+instance that encapsulate the Ogre context and all the actual _"simulation"_, in
+this case.
+
+```objectivec
+- (void)startWithWindow:(UIWindow\*) window {
+  unsigned int width = self.view.frame.size.width;
+  unsigned int height = self.view.frame.size.height;
+
+  mOgreView = [[OgreView alloc] initWithFrame:CGRectMake(0,0,width,height)];
+
+  [self.view addSubview:mOgreView];
+
+  mApplication.start(window, mOgreView, self, width, height);
+
+  // Linking the ogre view to the render window
+  mOgreView.mRenderWindow = mApplication.mRenderWindow;
+
+  // Ogre has created an EAGL2ViewController for the provided mOgreView
+  // and assigned it as the root view controller of the window
+  //
+  // Let's first retrieve it
+  UIViewController* ogreViewController = window.rootViewController;
+
+  // I want to be the actual root view controller
+  window.rootViewController = self;
+
+  // But i want to add a child link with the ogre one
+  [self addChildViewController:ogreViewController];
+
+  // add the ogre view as a sub view
+  [self.view addSubview:mOgreView];
+  [self.view sendSubviewToBack:mOgreView];
+}
+```
+
+On line 5, a sub-view is created, that is the one actually used by Ogre. I would
+have preferred to be able to directly create such view in the interface builder
+and even get rid of the parent view but it Ogre creates its own view controller
+for it (which I failed to replace) and I wanted to keep my own.
+
+This view uses the custom class `OgreView`
+([.h](https://github.com/cloderic/ios-ogre/blob/ff401891fcdc4e4ffd7e071cddce71d35fd9e067/OgreView.h),
+[.mm](https://github.com/cloderic/ios-ogre/blob/ff401891fcdc4e4ffd7e071cddce71d35fd9e067/OgreView.mm))
+that "mimicks" what Ogre is expected as a view, ie. the not exported `EAGL2View`
+([.h](https://bitbucket.org/sinbad/ogre/src/baa48feb22e9f35088b521d336678847a9a71504/RenderSystems/GLES2/include/EAGL/OgreEAGL2View.h?at=v1-8),
+[.mm](https://bitbucket.org/sinbad/ogre/src/baa48feb22e9f35088b521d336678847a9a71504/RenderSystems/GLES2/src/EAGL/OgreEAGL2View.mm?at=v1-8)).
+
+On line 18, Ogre's created view controller is retrieved, `self` then takes back
+its place as `window`'s root view controller and a parenting link is created
+between the two view controllers (should help propagating OS events).
+
+Finally, the Ogre view is attached to the main view and sent to the back for
+other sub-views to be visible.
+
+### The C++ side
+
+On the C++ side, the given pointers are provided when creating Ogre's render
+window.
+
+```cpp
+void OgreApplication::start(
+    void* uiWindow,
+    void* uiView,
+    void* uiViewController,
+    unsigned int width,
+    unsigned int height) {
+  mRoot = new Ogre::Root("", mResourcesRoot + "ogre.cfg");
+  m_StaticPluginLoader.load();
+  Ogre::NameValuePairList params;
+  params["colourDepth"] = "32";
+  params["contentScalingFactor"] = "2.0";
+  params["FSAA"] = "16";
+  params["Video Mode"] =
+    Ogre::StringConverter::toString(width) +
+    "x" +
+    Ogre::StringConverter::toString(height);
+  params["externalWindowHandle"] =
+    Ogre::StringConverter::toString((unsigned long)uiWindow);
+  params["externalViewHandle"] =
+    Ogre::StringConverter::toString((unsigned long)uiView);
+  params["externalViewController"] =
+    Ogre::StringConverter::toString((unsigned long)uiViewController);
+  // Initialize w/o creating a renderwindow.
+  mRoot->initialise(false, "");
+  // Create the window and attach it to the given UI stuffs.
+  mRenderWindow = mRoot->createRenderWindow("",width,height,true,&params);
+}
+```
+
+And voilà, everything works as expected!
+
+On top of that, this sample application uses `CoreMotion` for
+accelerometer/gyroscope control of the camera as well as touch gestures
+recognizers and more. Once again it's available on
+[github](https://github.com/cloderic/ios-ogre).
+
+I'm sure I've done some bad stuff and that there is a much simpler way of doing
+all that. Experts of iOS, experts of Ogre, please let me know, I'll update the
+application accordingly!
+
+If you are going to GDC Europe next week (19/08/13 and 20/08/13), drop by and
+say hi (booth #170 on the GDC expor floor). If all goes well for me, you should
+be able to play PaperArena on an iPad!
+
+## Update - 2013/08/26
+
+I've updated both the code on github and the post. I was previously setting
+`params["externalViewController"]` instead of
+`params["externalViewControllerHandle"]` which is the actual good name for the
+parameters. That was in fact the reason why this piece of code was working.
+
+Furthermore I have discovered that the system doesn't handle well screen
+orientation when starting in non portrait mode (e.g. when you set the valid
+orientations from the settings of the app). This needs further investigation.

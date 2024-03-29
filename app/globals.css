@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[url:theme("backgroundImage.body-pattern"),theme("backgroundImage.gradient-to-br")];
+  @apply bg-[length:300px,100%];
+  @apply bg-[position:center,left_top];
+  @apply bg-repeat;
+  @apply from-pink;
+  @apply to-slate-300;
+}
+
+.hljs {
+  background: initial;
+  color: initial;
+}

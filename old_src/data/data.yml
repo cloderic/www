@@ -1,0 +1,9 @@
+social:
+  card: './images/mars.png'
+  twitter: 'cloderic'
+  linkedin: 'cloderic'
+  github: 'cloderic'
+contact:
+  email: cloderic@hey.com
+  phone: ''
+  address: ''

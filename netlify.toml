@@ -1,0 +1,7 @@
+[build]
+command = "npm run build"
+publish = ".next"
+
+[build.environment]
+# set TERM variable for terminal output
+TERM = "xterm"

@@ -8,7 +8,7 @@ async function listContent({ parseFrontmatter = false } = {}) {
   const { compileMDX } = await import('next-mdx-remote/rsc');
 
   return await Promise.all(
-    (await glob('**/*.mdx')).map(async (filePath) => {
+    (await glob('app/content/*.mdx')).map(async (filePath) => {
       const slug = path.basename(filePath, '.mdx');
       if (parseFrontmatter) {
         const source = await fs.promises.readFile(filePath, {

@@ -7,6 +7,9 @@ async function loadMatchingContent({ params }) {
   const matchingContent = (await listContent()).find(
     ({ slug }) => slug === params.slug
   );
+  if (!matchingContent) {
+    return { content: null, frontmatter: { title: `"${slug}" not found` } };
+  }
   return await loadContent(matchingContent.path);
 }
 

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'highlight.js/styles/default.css';
 
 @tailwind base;
 @tailwind components;
@@ -12,10 +13,6 @@ body {
   @apply from-pink;
   @apply to-slate-300;
 }
-
-{{/* Import and customize styles for hljs syntax higlighting */}}
-
-@import 'highlight.js/styles/default.css';
 
 .hljs {
   background: initial;

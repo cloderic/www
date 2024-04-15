@@ -1,5 +1,6 @@
 import './globals.css';
 import Link from '../components/link';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata = {
   title: {
@@ -51,6 +52,9 @@ export default function RootLayout({ children }) {
           </p>
         </footer>
       </body>
+      {process.env.GA_ID != null ? (
+        <GoogleAnalytics gaId={process.env.GA_ID} />
+      ) : null}
     </html>
   );
 }

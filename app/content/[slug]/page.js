@@ -14,12 +14,12 @@ async function loadMatchingContent({ params }) {
   return await loadContent(matchingContent.path);
 }
 
-// export async function generateMetadata({ params }) {
-//   const { frontmatter } = await loadMatchingContent({ params });
-//   return {
-//     title: frontmatter.title
-//   };
-// }
+export async function generateMetadata({ params }) {
+  const { frontmatter } = await loadMatchingContent({ params });
+  return {
+    title: frontmatter.title
+  };
+}
 
 export default async function Page({ params }) {
   const { content, frontmatter } = await loadMatchingContent({ params });

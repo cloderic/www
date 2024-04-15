@@ -4,16 +4,16 @@ import loadContent from '../utils/loadContent';
 import listContent from '../utils/listContent';
 
 async function loadMatchingContent({ params }) {
+  const matchingContent = (await listContent({ parseFrontmatter: true })).find(
+    ({ slug }) => slug === params.slug
+  );
+  if (!matchingContent) {
+    return { content: null, frontmatter: { title: `"${slug}" not found` } };
+  }
   return {
     content: null,
     frontmatter: { title: `"${params.slug}" ahahahahaa` }
   };
-  // const matchingContent = (await listContent()).find(
-  //   ({ slug }) => slug === params.slug
-  // );
-  // if (!matchingContent) {
-  //   return { content: null, frontmatter: { title: `"${slug}" not found` } };
-  // }
   //return await loadContent(matchingContent.path);
 }
 
@@ -62,6 +62,6 @@ export default async function Page({ params }) {
   );
 }
 
-export async function generateStaticParams() {
-  return (await listContent()).map(({ slug }) => slug);
-}
+// export async function generateStaticParams() {
+//   return (await listContent()).map(({ slug }) => slug);
+// }

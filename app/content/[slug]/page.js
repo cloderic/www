@@ -5,7 +5,7 @@ import listContent from '../utils/listContent';
 import { notFound } from 'next/navigation';
 
 async function loadMatchingContent({ params }) {
-  const matchingContent = (await listContent({ parseFrontmatter: true })).find(
+  const matchingContent = (await listContent()).find(
     ({ slug }) => slug === params.slug
   );
   if (!matchingContent) {

@@ -19,7 +19,7 @@ export default function Title({
   return (
     <Tag
       {...otherProps}
-      className={clsx(className, 'group relative mt-2')}
+      className={clsx(className, 'group relative mt-2 font-title')}
       id={anchor}
     >
       {anchor != null ? (
@@ -32,5 +32,45 @@ export default function Title({
       ) : null}
       {children}
     </Tag>
+  );
+}
+
+export function H1({ className, ...otherProps }) {
+  return (
+    <Title
+      tag="h1"
+      className={clsx(className, 'text-4xl font-extralight text-blue')}
+      {...otherProps}
+    />
+  );
+}
+
+export function H2({ className, ...otherProps }) {
+  return (
+    <Title
+      tag="h2"
+      className={clsx(className, 'text-3xl font-extralight text-blue')}
+      {...otherProps}
+    />
+  );
+}
+
+export function H3({ className, ...otherProps }) {
+  return (
+    <Title
+      tag="h3"
+      className={clsx(className, 'text-lg text-blue')}
+      {...otherProps}
+    />
+  );
+}
+
+export function H4({ className, ...otherProps }) {
+  return (
+    <Title
+      tag="h4"
+      className={clsx(className, 'text-lg italic text-blue')}
+      {...otherProps}
+    />
   );
 }

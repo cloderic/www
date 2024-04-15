@@ -1,6 +1,9 @@
 # Dependency directories
 /node_modules
 
+# environment
+/.env
+
 # output
 /.next
 

@@ -3,6 +3,7 @@ import { DateTime } from 'luxon';
 import loadContent from '../utils/loadContent';
 import listContent from '../utils/listContent';
 import { notFound } from 'next/navigation';
+import HomeLink from '../../../components/homeLink';
 
 async function loadMatchingContent({ params }) {
   const matchingContent = (await listContent()).find(
@@ -30,29 +31,32 @@ export default async function Page({ params }) {
     DateTime.fromJSDate(frontmatter.last_update, { zone: 'UTC' });
   return (
     <>
-      <H1 noanchor>{frontmatter.title}</H1>
-      {frontmatter.date && (
-        <small>
-          Published on{' '}
-          <time dateTime={publicationDate.toISODate()}>
-            {publicationDate.toFormat('yyyy/MM/dd')}
-          </time>
-          .
-        </small>
-      )}
-      {content}
-      <footer>
-        {updateDate && (
-          <p>
-            <small>
-              Last updated on{' '}
-              <time dateTime={updateDate.toISODate()}>
-                {updateDate.toFormat('yyyy/MM/dd')}
-              </time>
-              .
-            </small>
+      <header className="mb-4">
+        <H1 noanchor>{frontmatter.title}</H1>
+        {frontmatter.date && (
+          <p className="text-xs">
+            Published on{' '}
+            <time dateTime={publicationDate.toISODate()}>
+              {publicationDate.toFormat('yyyy/MM/dd')}
+            </time>
+            .
           </p>
         )}
+      </header>
+      {content}
+      <footer className="mt-4">
+        {updateDate && (
+          <p className="text-xs">
+            Last updated on{' '}
+            <time dateTime={updateDate.toISODate()}>
+              {updateDate.toFormat('yyyy/MM/dd')}
+            </time>
+            .
+          </p>
+        )}
+        <div className="text-center">
+          <HomeLink />
+        </div>
       </footer>
     </>
   );

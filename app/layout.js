@@ -1,6 +1,6 @@
-import 'highlight.js/styles/default.css';
 import './globals.css';
 import Link from '../components/link';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata = {
   title: {
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="bg-white/30 mx-auto my-0 px-16 py-8 w-fit min-h-screen drop-shadow-2xl backdrop-blur-sm">
+        <div className="bg-white/30 mx-auto my-0 px-2 py-4 md:px-8 md:py-8 w-fit min-h-screen drop-shadow-2xl backdrop-blur-sm">
           <div className="max-w-prose">{children}</div>
         </div>
         <footer className="mt-6 mb-2 text-center text-xs text-slate-500">
@@ -52,6 +52,9 @@ export default function RootLayout({ children }) {
           </p>
         </footer>
       </body>
+      {process.env.GA_ID != null ? (
+        <GoogleAnalytics gaId={process.env.GA_ID} />
+      ) : null}
     </html>
   );
 }

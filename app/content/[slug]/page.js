@@ -10,12 +10,12 @@ async function loadDatedContent({ params }) {
   return await loadContent(matchingContent.path);
 }
 
-export async function generateMetadata({ params }) {
-  const { frontmatter } = await loadDatedContent({ params });
-  return {
-    title: frontmatter.title
-  };
-}
+// export async function generateMetadata({ params }) {
+//   const { frontmatter } = await loadDatedContent({ params });
+//   return {
+//     title: frontmatter.title
+//   };
+// }
 
 export default async function Page({ params }) {
   const { content, frontmatter } = await loadDatedContent({ params });
@@ -36,7 +36,7 @@ export default async function Page({ params }) {
           .
         </small>
       )}
-      {content}
+      {/* {content} */}
       <footer>
         {updateDate && (
           <p>

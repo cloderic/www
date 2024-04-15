@@ -1,6 +1,12 @@
 import './globals.css';
 import Link from '../components/link';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Urbanist } from 'next/font/google';
+
+const urbanist = Urbanist({
+  subsets: ['latin'],
+  variable: '--font-urbanist'
+});
 
 export const metadata = {
   title: {
@@ -15,7 +21,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={urbanist.variable}>
       <body>
         <div className="bg-white/30 mx-auto my-0 px-2 py-4 md:px-8 md:py-8 w-fit min-h-screen drop-shadow-2xl backdrop-blur-sm">
           <div className="max-w-prose">{children}</div>

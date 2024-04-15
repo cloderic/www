@@ -31,6 +31,7 @@
     "react-children-utilities": "^2.10.0",
     "react-dom": "^18.2.0",
     "react-player": "^2.15.1",
+    "react-tweet": "^3.2.1",
     "rehype-highlight": "^7.0.0"
   },
   "devDependencies": {

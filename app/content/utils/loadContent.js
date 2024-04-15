@@ -1,5 +1,6 @@
 import { compileMDX } from 'next-mdx-remote/rsc';
 import rehypeHighlight from 'rehype-highlight';
+import { Tweet } from 'react-tweet';
 
 import { promises as fs } from 'fs';
 import path from 'path';
@@ -37,7 +38,8 @@ const components = {
   code: Code,
   Video: Video,
   Pdf: Pdf,
-  Audio: Audio
+  Audio: Audio,
+  Tweet: Tweet
 };
 
 export default async function loadContent(sourceFile) {

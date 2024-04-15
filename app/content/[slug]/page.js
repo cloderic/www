@@ -8,11 +8,16 @@ async function loadMatchingContent({ params }) {
     ({ slug }) => slug === params.slug
   );
   if (!matchingContent) {
-    return { content: null, frontmatter: { title: `"${slug}" not found` } };
+    return {
+      content: null,
+      frontmatter: { title: `"${params.slug}" not found` }
+    };
   }
   return {
     content: null,
-    frontmatter: { title: `"${params.slug}" ahahahahaa` }
+    frontmatter: {
+      title: `"${matchingContent.slug}" found at "${matchingContent.path}"`
+    }
   };
   //return await loadContent(matchingContent.path);
 }

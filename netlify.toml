@@ -1,0 +1,11 @@
+[build]
+command = "npm run build"
+publish = ".next"
+
+[build.environment]
+# set TERM variable for terminal output
+TERM = "xterm"
+
+# Include all the content files (.mdx in apps so that they can be loaded to render)
+[functions]
+included_files = ["app/**"]

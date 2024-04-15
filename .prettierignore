@@ -1,4 +1,4 @@
-.cache
+.next
 node_modules
 package-lock.json
-public
+*.toml

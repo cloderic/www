@@ -6,8 +6,8 @@ export const metadata = {
 };
 
 export default async function Bio({}) {
-  const bioEnMdx = await loadContent('app/content/bio.en.mdx');
-  const bioFrMdx = await loadContent('app/content/bio.fr.mdx');
+  const bioEnMdx = await loadContent('app/content/bio-en.mdx');
+  const bioFrMdx = await loadContent('app/content/bio-fr.mdx');
   return (
     <>
       <H1>Biography 🇬🇧</H1>

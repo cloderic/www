@@ -20,6 +20,12 @@ export default async function Home() {
       <H2>Content</H2>
       <ul>
         <li>
+          <Link href="/resume/en">Resume 🇬🇧</Link>
+        </li>
+        <li>
+          <Link href="/resume/fr">CV 🇫🇷</Link>
+        </li>
+        <li>
           <Link href="/bio">Bio</Link>
         </li>
         <li>

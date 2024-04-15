@@ -10,7 +10,8 @@ async function loadMatchingContent({ params }) {
   if (!matchingContent) {
     return { content: null, frontmatter: { title: `"${slug}" not found` } };
   }
-  return await loadContent(matchingContent.path);
+  return { content: null, frontmatter: { title: `"${slug}" ahahahahaa` } };
+  //return await loadContent(matchingContent.path);
 }
 
 // export async function generateMetadata({ params }) {

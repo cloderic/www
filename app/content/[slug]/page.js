@@ -5,13 +5,19 @@ import listContent from '../utils/listContent';
 import { notFound } from 'next/navigation';
 
 async function loadMatchingContent({ params }) {
-  const matchingContent = (await listContent()).find(
-    ({ slug }) => slug === params.slug
-  );
-  if (!matchingContent) {
-    notFound();
-  }
-  return await loadContent(matchingContent.path);
+  const matchingContent = await listContent();
+  return {
+    frontmatter: {
+      title: matchingContent.map(({ slug }) => slug).join(', ')
+    }
+  };
+  // const matchingContent = (await listContent()).find(
+  //   ({ slug }) => slug === params.slug
+  // );
+  // if (!matchingContent) {
+  //   notFound();
+  // }
+  // return await loadContent(matchingContent.path);
 }
 
 // export async function generateMetadata({ params }) {

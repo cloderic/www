@@ -14,7 +14,10 @@ export default async function Home() {
           height={150}
           alt="Picture of the mars"
         />
-        <H1 noanchor>Welcome to my home page!</H1>
+        <div>
+          <H1 noanchor>Clodéric Mars</H1>
+          <p>AI Product Engineer / Tech Leader / Public Speaker</p>
+        </div>
       </div>
       {welcomeMdx.content}
       <H2>Content</H2>

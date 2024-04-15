@@ -1,5 +1,6 @@
 import loadContent from '../content/utils/loadContent';
 import { H1 } from '../../components/base';
+import HomeLink from '../../components/homeLink';
 
 export const metadata = {
   title: 'Biography'
@@ -14,6 +15,9 @@ export default async function Bio({}) {
       {bioEnMdx.content}
       <H1>Biographie 🇫🇷</H1>
       {bioFrMdx.content}
+      <footer className="mt-4 text-center">
+        <HomeLink />
+      </footer>
     </>
   );
 }

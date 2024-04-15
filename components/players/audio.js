@@ -78,7 +78,7 @@ export default function Audio({ href, src, title }) {
   }, [audioEl]);
 
   return (
-    <div className="flex justify-between items-center py-2 px-6 rounded-full bg-slate-900 text-pink">
+    <div className="flex justify-between items-center py-2 px-6 rounded-full bg-blue text-pink">
       <button
         onClick={playing ? pause : play}
         title={playing ? 'Pause' : 'Play'}

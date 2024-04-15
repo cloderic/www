@@ -1,5 +1,6 @@
 import { H1 } from '../../../components/base';
 import Link from '../../../components/link';
+import HomeLink from '../../../components/homeLink';
 import listContent from '../utils/listContent';
 import sortBy from 'lodash.sortby';
 import { DateTime } from 'luxon';
@@ -31,6 +32,9 @@ export default async function Page() {
           </li>
         ))}
       </ul>
+      <footer className="mt-4 text-center">
+        <HomeLink />
+      </footer>
     </>
   );
 }

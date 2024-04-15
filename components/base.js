@@ -1,46 +1,6 @@
 import clsx from 'clsx';
 
-import Title from './title';
-
-export function H1({ className, ...otherProps }) {
-  return (
-    <Title
-      tag="h1"
-      className={clsx(className, 'text-3xl font-bold text-blue')}
-      {...otherProps}
-    />
-  );
-}
-
-export function H2({ className, ...otherProps }) {
-  return (
-    <Title
-      tag="h2"
-      className={clsx(className, 'text-xl font-bold text-blue')}
-      {...otherProps}
-    />
-  );
-}
-
-export function H3({ className, ...otherProps }) {
-  return (
-    <Title
-      tag="h3"
-      className={clsx(className, 'text-lg font-bold text-blue')}
-      {...otherProps}
-    />
-  );
-}
-
-export function H4({ className, ...otherProps }) {
-  return (
-    <Title
-      tag="h4"
-      className={clsx(className, 'text-lg italic text-blue')}
-      {...otherProps}
-    />
-  );
-}
+export { H1, H2, H3, H4 } from './title';
 
 export function Blockquote({ children, className, ...otherProps }) {
   return (

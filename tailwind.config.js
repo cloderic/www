@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: [
@@ -22,6 +23,9 @@ module.exports = {
         light: '#C7B3F2',
         lighter: '#D3C4F2'
       }
+    },
+    fontFamily: {
+      title: ['Urbanist', 'system-ui']
     },
     extend: {
       backgroundImage: {

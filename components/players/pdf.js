@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import Link from 'next/link';
+import Link from '../link';
 import {
   ArrowDownTrayIcon,
   ArrowTopRightOnSquareIcon
@@ -27,7 +27,7 @@ export default function Pdf({
       .map((optionKey) => `${optionKey}=${pdfOptions[optionKey]}`)
       .join('&');
   return (
-    <div className="flex flex-col bg-zinc-800 p-2">
+    <div className="flex flex-col bg-slate-800 p-2">
       <iframe
         className={clsx(className, 'w-full')}
         src={fullSrc}
@@ -35,12 +35,12 @@ export default function Pdf({
       />
       <div className="flex gap-4 justify-end text-white text-sm">
         {!disableDownload ? (
-          <Link href={src}>
+          <Link href={src} className="text-white">
             <ArrowDownTrayIcon className="inline w-3 h-3" /> Download
           </Link>
         ) : null}
         {href != null ? (
-          <Link href={href}>
+          <Link href={href} className="text-white">
             <ArrowTopRightOnSquareIcon className="inline w-3 h-3" /> Open
             original
           </Link>

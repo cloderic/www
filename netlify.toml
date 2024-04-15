@@ -6,6 +6,6 @@ publish = ".next"
 # set TERM variable for terminal output
 TERM = "xterm"
 
-# Include all files in all functions
+# Include all the content files (.mdx in apps so that they can be loaded to render)
 [functions]
 included_files = ["app/**"]

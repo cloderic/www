@@ -23,15 +23,14 @@ async function loadMatchingContent({ params }) {
 
 export default async function Page({ params }) {
   const { content, frontmatter } = await loadMatchingContent({ params });
-  // const publicationDate =
-  //   frontmatter.date && DateTime.fromJSDate(frontmatter.date, { zone: 'UTC' });
-  // const updateDate =
-  //   frontmatter.last_update &&
-  //   DateTime.fromJSDate(frontmatter.last_update, { zone: 'UTC' });
+  const publicationDate =
+    frontmatter.date && DateTime.fromJSDate(frontmatter.date, { zone: 'UTC' });
+  const updateDate =
+    frontmatter.last_update &&
+    DateTime.fromJSDate(frontmatter.last_update, { zone: 'UTC' });
   return (
     <>
       <H1 noanchor>{frontmatter.title}</H1>
-      {/*
       {frontmatter.date && (
         <small>
           Published on{' '}
@@ -54,7 +53,7 @@ export default async function Page({ params }) {
             </small>
           </p>
         )}
-      </footer> */}
+      </footer>
     </>
   );
 }

@@ -25,7 +25,7 @@ module.exports = {
       }
     },
     fontFamily: {
-      title: ['Urbanist', 'system-ui']
+      title: ['var(--font-urbanist)', 'system-ui']
     },
     extend: {
       backgroundImage: {

@@ -2,24 +2,16 @@ import { H1 } from '../../../components/base';
 import { DateTime } from 'luxon';
 import loadContent from '../utils/loadContent';
 import listContent from '../utils/listContent';
+import { notFound } from 'next/navigation';
 
 async function loadMatchingContent({ params }) {
   const matchingContent = (await listContent({ parseFrontmatter: true })).find(
     ({ slug }) => slug === params.slug
   );
   if (!matchingContent) {
-    return {
-      content: null,
-      frontmatter: { title: `"${params.slug}" not found` }
-    };
+    notFound();
   }
-  return {
-    content: null,
-    frontmatter: {
-      title: `"${matchingContent.slug}" found at "${matchingContent.path}"`
-    }
-  };
-  //return await loadContent(matchingContent.path);
+  return await loadContent(matchingContent.path);
 }
 
 // export async function generateMetadata({ params }) {

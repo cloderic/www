@@ -2,6 +2,7 @@ import { loadMatchingContent } from './page';
 import truncate from 'lodash.truncate';
 import { createImageResponse } from '../../ogThumbnail';
 import { promises as fs } from 'fs';
+import getBaseUrl from '../../getBaseUrl';
 
 // Image metadata
 export { size, contentType } from '../../ogThumbnail';
@@ -11,9 +12,10 @@ export const alt = 'Thumbnail picture for a content page on cloderic.com';
 export default async function Image({ params }) {
   const { frontmatter } = await loadMatchingContent({ params });
 
-  let coverImg = null;
   if (frontmatter.cover) {
-    coverImg = await fs.readFile('public' + frontmatter.cover);
+    const coverImgRes = await fetch(getBaseUrl() + frontmatter.cover);
+    const coverImgBuf = await coverImgRes.arrayBuffer();
+
     return createImageResponse(
       <div
         style={{
@@ -24,7 +26,7 @@ export default async function Image({ params }) {
           gap: '10px'
         }}
       >
-        <img src={coverImg.buffer} height={400} />
+        <img src={coverImgBuf} height={400} />
         <div
           style={{
             fontSize: 30,

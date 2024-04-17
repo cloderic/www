@@ -77,5 +77,6 @@ export default async function Page({ params }) {
 }
 
 export async function generateStaticParams() {
-  return (await listContent()).map(({ slug }) => slug);
+  const contentList = await listContent();
+  return contentList.map(({ slug }) => slug);
 }

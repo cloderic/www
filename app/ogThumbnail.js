@@ -21,24 +21,23 @@ export async function createImageResponse(children) {
           height: '100%',
           width: '100%',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           backgroundImage: `linear-gradient(to bottom right, ${twConfig.theme.colors.pink.DEFAULT}, ${twConfig.theme.colors.slate['300']})`,
           fontFamily: 'ui-sans-serif, system-ui',
-          fontSize: 32,
           fontWeight: 300
         }}
       >
         <div
           style={{
-            left: 42,
-            top: 42,
+            left: 20,
+            top: 20,
             position: 'absolute',
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
-            gap: '10px'
+            gap: '10px',
+            fontSize: 32
           }}
         >
           <img src={marsImg.buffer} width={50} height={50} />

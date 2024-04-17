@@ -7,8 +7,10 @@ import sortBy from 'lodash.sortby';
 
 export default async function Home() {
   const welcomeMdx = await loadContent('app/content/welcome.mdx');
-  const highlights = (await listContent({ parseFrontmatter: true })).filter(
-    ({ highlight }) => highlight
+  const highlights = (
+    await listContent({ parseFrontmatter: true })
+  ).filter(({ categories = [] }) =>
+    categories.find((category) => category == 'highlights')
   );
   const sortedHighlights = sortBy(highlights, 'date').reverse();
 

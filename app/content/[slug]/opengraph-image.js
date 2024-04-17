@@ -1,28 +1,33 @@
-import { generateOgThumbnail } from '../../opengraph-image';
 import { loadMatchingContent } from './page';
 import truncate from 'lodash.truncate';
+import { createImageResponse } from '../../ogThumbnail';
 
 // Image metadata
-export const alt = 'cloderic.com - content thumbnail';
-export const size = {
-  width: 1200,
-  height: 600
-};
-
-export const contentType = 'image/png';
+export { size, contentType } from '../../ogThumbnail';
+export const alt = 'Thumbnail picture for a content page on cloderic.com';
 
 // Image generation
 export default async function Image({ params }) {
-  const { frontmatter } = await loadMatchingContent({ params });
-  return generateOgThumbnail(
+  let title;
+  try {
+    const { frontmatter } = await loadMatchingContent({ params });
+    title = truncate(frontmatter.title, { length: 45, separator: /[,:.] +/ });
+  } catch (error) {
+    console.error(
+      'Unexpected error while rendering the open graph image',
+      error
+    );
+    title = str(error);
+  }
+
+  return createImageResponse(
     <div
       style={{
         fontSize: 55,
         textAlign: 'center'
       }}
     >
-      {truncate(frontmatter.title, { length: 45, separator: /[,:.] +/ })}
-    </div>,
-    size
+      {title}
+    </div>
   );
 }

@@ -11,7 +11,7 @@ export const size = {
 export const contentType = 'image/png';
 
 export async function createImageResponse(children) {
-  const marsImg = await fs.readFile('public/mars.png');
+  const marsImg = await fs.readFile('app/icon.png');
 
   return new ImageResponse(
     (

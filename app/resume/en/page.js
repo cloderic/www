@@ -2,7 +2,10 @@ import loadContent from '../../content/utils/loadContent';
 import { H1 } from '../../../components/base';
 
 export const metadata = {
-  title: 'Resume'
+  title: 'Resume',
+  alternates: {
+    canonical: '/resume/en'
+  }
 };
 
 export default async function ResumeEn({}) {

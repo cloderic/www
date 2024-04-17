@@ -5,7 +5,10 @@ import listContent from '../utils/listContent';
 import sortBy from 'lodash.sortby';
 
 export const metadata = {
-  title: 'MOOCS & Certifications'
+  title: 'MOOCS & Certifications',
+  alternates: {
+    canonical: '/content/certifications'
+  }
 };
 
 export default async function Page() {

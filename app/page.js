@@ -7,8 +7,10 @@ import sortBy from 'lodash.sortby';
 
 export default async function Home() {
   const welcomeMdx = await loadContent('app/content/welcome.mdx');
-  const highlights = (await listContent({ parseFrontmatter: true })).filter(
-    ({ highlight }) => highlight
+  const highlights = (
+    await listContent({ parseFrontmatter: true })
+  ).filter(({ categories = [] }) =>
+    categories.find((category) => category == 'highlights')
   );
   const sortedHighlights = sortBy(highlights, 'date').reverse();
 
@@ -18,7 +20,10 @@ export default async function Home() {
         <Image src="/mars.png" width={150} height={150} alt="Picture of Mars" />
         <div>
           <H1 noanchor>Clodéric Mars</H1>
-          <p>AI Product Engineer / Tech Leader / Public Speaker</p>
+          <p className="font-title">
+            AI Product Engineer / Tech Leader / Public Speaker
+          </p>
+          <p className="text-5xl">🧑‍🦱🤝🤖</p>
         </div>
       </div>
       {welcomeMdx.content}

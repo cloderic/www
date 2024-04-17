@@ -3,6 +3,7 @@ import loadContent from '../utils/loadContent';
 import listContent from '../utils/listContent';
 import { notFound } from 'next/navigation';
 import HomeLink from '../../../components/homeLink';
+import Image from 'next/image';
 
 export async function loadMatchingContent({ params }) {
   const matchingContent = (await listContent()).find(
@@ -21,6 +22,9 @@ export async function generateMetadata({ params }) {
     openGraph: {
       type: 'article',
       publishedTime: frontmatter.date.toISO()
+    },
+    alternates: {
+      canonical: frontmatter.canonicalUrl || `/content/${params.slug}`
     }
   };
 }
@@ -31,6 +35,16 @@ export default async function Page({ params }) {
   const updateDate = frontmatter.last_update;
   return (
     <>
+      {frontmatter.cover ? (
+        <div className="relative aspect-video -mt-4 -mx-4 md:-mt-8 md:-mx-8">
+          <Image
+            fill={true}
+            src={frontmatter.cover}
+            className="object-cover"
+            alt={`cover for "${frontmatter.title}"`}
+          />
+        </div>
+      ) : null}
       <header className="mb-4">
         <H1 noanchor>{frontmatter.title}</H1>
         {frontmatter.date && (
@@ -63,5 +77,6 @@ export default async function Page({ params }) {
 }
 
 export async function generateStaticParams() {
-  return (await listContent()).map(({ slug }) => slug);
+  const contentList = await listContent();
+  return contentList.map(({ slug }) => slug);
 }

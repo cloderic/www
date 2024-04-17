@@ -7,7 +7,7 @@ import twConfig from '../tailwind.config';
 export const alt = 'cloderic.com - homepage';
 export const size = {
   width: 1200,
-  height: 600
+  height: 630
 };
 
 export const contentType = 'image/png';

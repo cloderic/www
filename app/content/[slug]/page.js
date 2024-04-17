@@ -17,7 +17,11 @@ export async function loadMatchingContent({ params }) {
 export async function generateMetadata({ params }) {
   const { frontmatter } = await loadMatchingContent({ params });
   return {
-    title: frontmatter.title
+    title: frontmatter.title,
+    openGraph: {
+      type: 'article',
+      publishedTime: frontmatter.date.toISO()
+    }
   };
 }
 

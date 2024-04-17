@@ -3,28 +3,19 @@ import listContent from './content/utils/listContent';
 import { H1, H2 } from '../components/base';
 import Link from '../components/link';
 import Image from 'next/image';
-import { DateTime } from 'luxon';
 import sortBy from 'lodash.sortby';
 
 export default async function Home() {
   const welcomeMdx = await loadContent('app/content/welcome.mdx');
-  const highlights = (await listContent({ parseFrontmatter: true }))
-    .filter(({ highlight }) => highlight)
-    .map(({ date, ...otherProperties }) => ({
-      date: DateTime.fromJSDate(date, { zone: 'UTC' }),
-      ...otherProperties
-    }));
+  const highlights = (await listContent({ parseFrontmatter: true })).filter(
+    ({ highlight }) => highlight
+  );
   const sortedHighlights = sortBy(highlights, 'date').reverse();
 
   return (
     <>
       <div className="flex items-center gap-8">
-        <Image
-          src="/mars.png"
-          width={150}
-          height={150}
-          alt="Picture of the mars"
-        />
+        <Image src="/mars.png" width={150} height={150} alt="Picture of Mars" />
         <div>
           <H1 noanchor>Clodéric Mars</H1>
           <p>AI Product Engineer / Tech Leader / Public Speaker</p>

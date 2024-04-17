@@ -1,5 +1,6 @@
 import './globals.css';
 import Link from '../components/link';
+import getBaseUrl from './getBaseUrl';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Urbanist } from 'next/font/google';
 
@@ -9,11 +10,12 @@ const urbanist = Urbanist({
 });
 
 export const metadata = {
+  metadataBase: getBaseUrl(),
   title: {
     template: '%s | cloderic.com',
     default: 'cloderic.com' // a default is required when creating a template
   },
-  description: `Clodéric Mars - AI Product Engineer, Tech Leader, Public Speaker, humming from Paris`,
+  description: `Clodéric Mars - AI Product Engineer, Tech Leader, Public Speaker, humming from Montréal`,
   authors: [{ name: 'Clodéric Mars' }],
   siteUrl: 'https://www.cloderic.com',
   keywords: ['ai', 'tech', 'public speaking']

@@ -1,11 +1,10 @@
 import { H1 } from '../../../components/base';
-import { DateTime } from 'luxon';
 import loadContent from '../utils/loadContent';
 import listContent from '../utils/listContent';
 import { notFound } from 'next/navigation';
 import HomeLink from '../../../components/homeLink';
 
-async function loadMatchingContent({ params }) {
+export async function loadMatchingContent({ params }) {
   const matchingContent = (await listContent()).find(
     ({ slug }) => slug === params.slug
   );
@@ -24,11 +23,8 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const { content, frontmatter } = await loadMatchingContent({ params });
-  const publicationDate =
-    frontmatter.date && DateTime.fromJSDate(frontmatter.date, { zone: 'UTC' });
-  const updateDate =
-    frontmatter.last_update &&
-    DateTime.fromJSDate(frontmatter.last_update, { zone: 'UTC' });
+  const publicationDate = frontmatter.date;
+  const updateDate = frontmatter.last_update;
   return (
     <>
       <header className="mb-4">

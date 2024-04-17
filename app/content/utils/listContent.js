@@ -4,6 +4,8 @@ const { glob } = require('glob');
 const fs = require('fs');
 const path = require('path');
 
+const processFronmatter = require('./processFrontmatter');
+
 async function listContent({ parseFrontmatter = false } = {}) {
   const { compileMDX } = await import('next-mdx-remote/rsc');
 
@@ -22,7 +24,9 @@ async function listContent({ parseFrontmatter = false } = {}) {
           }
         });
 
-        return { ...frontmatter, slug, path: filePath };
+        const processedFronmatter = processFronmatter(frontmatter);
+
+        return { ...processedFronmatter, slug, path: filePath };
       }
       return { slug, path: filePath };
     })

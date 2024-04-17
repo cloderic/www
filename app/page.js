@@ -18,7 +18,10 @@ export default async function Home() {
         <Image src="/mars.png" width={150} height={150} alt="Picture of Mars" />
         <div>
           <H1 noanchor>Clodéric Mars</H1>
-          <p>AI Product Engineer / Tech Leader / Public Speaker</p>
+          <p className="font-title">
+            AI Product Engineer / Tech Leader / Public Speaker
+          </p>
+          <p className="text-5xl">🧑‍🦱🤝🤖</p>
         </div>
       </div>
       {welcomeMdx.content}

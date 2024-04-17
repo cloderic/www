@@ -4,7 +4,10 @@ import listContent from './utils/listContent';
 import sortBy from 'lodash.sortby';
 
 export const metadata = {
-  title: 'Content Archive'
+  title: 'Content Archive',
+  alternates: {
+    canonical: '/content'
+  }
 };
 
 export default async function Page() {

@@ -13,12 +13,23 @@ export const metadata = {
   metadataBase: getBaseUrl(),
   title: {
     template: '%s | cloderic.com',
-    default: 'cloderic.com' // a default is required when creating a template
+    default: 'cloderic.com | Clodéric Mars page' // a default is required when creating a template
   },
-  description: `Clodéric Mars - AI Product Engineer, Tech Leader, Public Speaker, humming from Montréal`,
+  description: `Clodéric Mars is an AI Product Engineer and Tech Leader with a strong focus on collaborative AI systems that work alongside humans`,
   authors: [{ name: 'Clodéric Mars' }],
   siteUrl: 'https://www.cloderic.com',
-  keywords: ['ai', 'tech', 'public speaking']
+  keywords: ['ai', 'tech', 'public speaking', 'human-ai collaboration'],
+  twitter: {
+    site: '@cloderic',
+    creator: '@cloderic'
+  },
+  alternates: {
+    canonical: '/'
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
 };
 
 export default function RootLayout({ children }) {

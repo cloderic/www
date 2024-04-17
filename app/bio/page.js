@@ -3,7 +3,10 @@ import { H1 } from '../../components/base';
 import HomeLink from '../../components/homeLink';
 
 export const metadata = {
-  title: 'Biography'
+  title: 'Biography',
+  alternates: {
+    canonical: '/bio'
+  }
 };
 
 export default async function Bio({}) {

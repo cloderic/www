@@ -21,6 +21,9 @@ export async function generateMetadata({ params }) {
     openGraph: {
       type: 'article',
       publishedTime: frontmatter.date.toISO()
+    },
+    alternates: {
+      canonical: frontmatter.canonicalUrl || `/content/${params.slug}`
     }
   };
 }

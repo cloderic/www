@@ -3,17 +3,13 @@ import listContent from './content/utils/listContent';
 import { H1, H2 } from '../components/base';
 import Link from '../components/link';
 import Image from 'next/image';
-import { DateTime } from 'luxon';
 import sortBy from 'lodash.sortby';
 
 export default async function Home() {
   const welcomeMdx = await loadContent('app/content/welcome.mdx');
-  const highlights = (await listContent({ parseFrontmatter: true }))
-    .filter(({ highlight }) => highlight)
-    .map(({ date, ...otherProperties }) => ({
-      date: DateTime.fromJSDate(date, { zone: 'UTC' }),
-      ...otherProperties
-    }));
+  const highlights = (await listContent({ parseFrontmatter: true })).filter(
+    ({ highlight }) => highlight
+  );
   const sortedHighlights = sortBy(highlights, 'date').reverse();
 
   return (

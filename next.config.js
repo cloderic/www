@@ -28,6 +28,12 @@ module.exports = {
         destination: '/content/:slug',
         permanent: true
       },
+      // Default resume is english
+      {
+        source: '/resume',
+        destination: '/resume/en',
+        permanent: true
+      },
       ...contentRedirections
     ];
   }

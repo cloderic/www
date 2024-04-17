@@ -1,19 +1,5 @@
 import listContent from './content/utils/listContent';
-
-function getBaseUrl() {
-  if (process.env.URL != null) {
-    // `URL` is set by netlify to the main address of the site
-    // It can also be set locally in the `.env`
-    return process.env.URL;
-  }
-
-  if (process.env.NODE_ENV == 'development') {
-    // We assume the site is ran using `next dev`
-    return `http://localhost:${process.env.PORT}`;
-  }
-
-  return 'http://example.com';
-}
+import getBaseUrl from './getBaseUrl';
 
 export default async function sitemap() {
   const baseUrl = getBaseUrl();

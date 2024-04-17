@@ -15,12 +15,7 @@ export default async function Home() {
   return (
     <>
       <div className="flex items-center gap-8">
-        <Image
-          src="/mars.png"
-          width={150}
-          height={150}
-          alt="Picture of the mars"
-        />
+        <Image src="/mars.png" width={150} height={150} alt="Picture of Mars" />
         <div>
           <H1 noanchor>Clodéric Mars</H1>
           <p>AI Product Engineer / Tech Leader / Public Speaker</p>

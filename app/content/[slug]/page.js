@@ -4,7 +4,7 @@ import listContent from '../utils/listContent';
 import { notFound } from 'next/navigation';
 import HomeLink from '../../../components/homeLink';
 
-async function loadMatchingContent({ params }) {
+export async function loadMatchingContent({ params }) {
   const matchingContent = (await listContent()).find(
     ({ slug }) => slug === params.slug
   );

@@ -1,9 +1,9 @@
-import { generateOgThumbnail, size } from '../../opengraph-image';
 import { loadMatchingContent } from './page';
 import truncate from 'lodash.truncate';
+import { createImageResponse } from '../../ogThumbnail';
 
 // Image metadata
-export { size, contentType } from '../../opengraph-image';
+export { size, contentType } from '../../ogThumbnail';
 export const alt = 'Thumbnail picture for a content page on cloderic.com';
 
 // Image generation
@@ -20,15 +20,14 @@ export default async function Image({ params }) {
     title = str(error);
   }
 
-  return generateOgThumbnail(
+  return createImageResponse(
     <div
       style={{
         fontSize: 55,
         textAlign: 'center'
       }}
     >
-      {truncate(title, { length: 45, separator: /[,:.] +/ })}
-    </div>,
-    size
+      {title}
+    </div>
   );
 }

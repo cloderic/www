@@ -15,12 +15,16 @@ export const metadata = {
 export default async function Bio({}) {
   const bioEnMdx = await loadContent('app/content/bio-en.mdx');
   const bioFrMdx = await loadContent('app/content/bio-fr.mdx');
-  const talks = (
-    await listContent({ parseFrontmatter: true })
-  ).filter(({ categories = [] }) =>
+  const content = sortBy(
+    await listContent({ parseFrontmatter: true }),
+    'date'
+  ).reverse();
+  const talks = content.filter(({ categories = [] }) =>
     categories.find((category) => category == 'talk')
   );
-  const sortedTalks = sortBy(talks, 'date').reverse();
+  const publications = content.filter(({ categories = [] }) =>
+    categories.find((category) => category == 'publication')
+  );
 
   return (
     <>
@@ -30,10 +34,19 @@ export default async function Bio({}) {
       {bioFrMdx.content}
       <H1>Talks</H1>
       <ContentList
-        items={sortedTalks}
+        items={talks}
         renderDate={({ date }) => date.toFormat('yyyy/MM/dd')}
         renderTitle={({ short_title, title }) => short_title || title}
         renderSubtitle={({ venue }) => `@ ${venue}`}
+      />
+      <H1>Peer-reviewed publications</H1>
+      <ContentList
+        items={publications}
+        renderDate={({ date, venue }) =>
+          `${date.toFormat('yyyy/MM')} - ${venue}`
+        }
+        renderTitle={({ short_title, title }) => short_title || title}
+        renderSubtitle={({ authors = [] }) => authors.join(', ')}
       />
       <footer className="mt-4 text-center">
         <HomeLink />

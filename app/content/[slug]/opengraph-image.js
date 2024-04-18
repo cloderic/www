@@ -1,7 +1,6 @@
 import { loadMatchingContent } from './page';
 import truncate from 'lodash.truncate';
 import { createImageResponse } from '../../ogThumbnail';
-import { promises as fs } from 'fs';
 import getBaseUrl from '../../getBaseUrl';
 
 // Image metadata

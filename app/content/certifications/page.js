@@ -12,9 +12,10 @@ export const metadata = {
 };
 
 export default async function Page() {
-  const content = (await listContent({ parseFrontmatter: true })).filter(
-    ({ date, hidden, type }) =>
-      date != null && !hidden && type == 'certification'
+  const content = (
+    await listContent({ parseFrontmatter: true })
+  ).filter(({ categories = [] }) =>
+    categories.find((c) => c === 'certification')
   );
   const sortedContent = sortBy(content, 'date').reverse();
   return (

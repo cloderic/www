@@ -2,6 +2,7 @@ import loadContent from './content/utils/loadContent';
 import listContent from './content/utils/listContent';
 import { H1, H2 } from '../components/base';
 import Link from '../components/link';
+import ContentList from '../components/contentList';
 import Image from 'next/image';
 import sortBy from 'lodash.sortby';
 
@@ -28,17 +29,12 @@ export default async function Home() {
       </div>
       {welcomeMdx.content}
       <H2>Highlights</H2>
-      <ul>
-        {sortedHighlights.map(({ slug, title, date }, index) => (
-          <li key={index}>
-            <time dateTime={date.toISODate()}>
-              {date.toFormat('yyyy/MM/dd')}
-            </time>
-            {' - '}
-            <Link href={`/content/${slug}`}>{title}</Link>
-          </li>
-        ))}
-      </ul>
+      <ContentList
+        items={sortedHighlights}
+        renderDate={({ date }) => date.toFormat('yyyy/MM/dd')}
+        renderTitle={({ title }) => title}
+        renderSubtitle={({}) => null}
+      />
       <H2>All Content</H2>
       <ul>
         <li>

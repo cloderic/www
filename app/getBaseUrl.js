@@ -1,9 +1,4 @@
 export default function getBaseUrl() {
-  if (process.env.DEPLOY_PRIME_URL != null) {
-    // `DEPLOY_PRIME_URL` is set by netlify to represent the primary URL for an individual deploy,
-    return new URL(process.env.DEPLOY_PRIME_URL);
-  }
-
   if (process.env.URL != null) {
     // `URL` is set by netlify to the main address of the site
     // It can also be set locally in the `.env`

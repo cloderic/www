@@ -5,6 +5,10 @@ import Link from '../components/link';
 import ContentList from '../components/contentList';
 import Image from 'next/image';
 import sortBy from 'lodash.sortby';
+import Twitter from '../components/logos/twitter';
+import LinkedIn from '../components/logos/linkedIn';
+import SoundCloud from '../components/logos/soundCloud';
+import GoogleScholar from '../components/logos/googleScholar';
 
 export default async function Home() {
   const welcomeMdx = await loadContent('app/content/welcome.mdx');
@@ -25,6 +29,32 @@ export default async function Home() {
             AI Product Engineer / Tech Leader / Public Speaker
           </p>
           <p className="text-5xl">🧑‍🦱🤝🤖</p>
+          <p className="text-blue flex gap-2">
+            <Link
+              href="https://twitter.com/cloderic"
+              title="Clodéric on Twitter"
+            >
+              <Twitter className="h-6 w-6" />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/cloderic"
+              title="Clodéric on LinkedIn"
+            >
+              <LinkedIn className="h-6 w-6" />
+            </Link>
+            <Link
+              href="https://scholar.google.com/citations?user=fvCC1rwAAAAJ"
+              title="Clodéric on Google Scholar"
+            >
+              <GoogleScholar className="h-6 w-6" />
+            </Link>
+            <Link
+              href="https://soundcloud.com/cloderic"
+              title="Clodéric on SoundCloud"
+            >
+              <SoundCloud className="h-6 w-6" />
+            </Link>
+          </p>
         </div>
       </div>
       {welcomeMdx.content}

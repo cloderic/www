@@ -1,9 +1,5 @@
 import clsx from 'clsx';
-import Link from '../link';
-import {
-  ArrowDownTrayIcon,
-  ArrowTopRightOnSquareIcon
-} from '@heroicons/react/24/solid';
+import MediaPlayer from './mediaPlayer';
 
 export default function Pdf({
   className,
@@ -11,7 +7,8 @@ export default function Pdf({
   src,
   page,
   href,
-  disableDownload
+  disableDownload,
+  ...otherProps
 }) {
   const pdfOptions = {
     toolbar: '0',
@@ -27,25 +24,17 @@ export default function Pdf({
       .map((optionKey) => `${optionKey}=${pdfOptions[optionKey]}`)
       .join('&');
   return (
-    <div className="flex flex-col bg-slate-800 p-2">
+    <MediaPlayer
+      originalLabel="Open original"
+      originalHref={href}
+      downloadHref={disableDownload ? null : src}
+      {...otherProps}
+    >
       <iframe
         className={clsx(className, 'w-full')}
         src={fullSrc}
         title={title}
       />
-      <div className="flex gap-4 justify-end text-white text-sm">
-        {!disableDownload ? (
-          <Link href={src} className="text-white">
-            <ArrowDownTrayIcon className="inline w-3 h-3" /> Download
-          </Link>
-        ) : null}
-        {href != null ? (
-          <Link href={href} className="text-white">
-            <ArrowTopRightOnSquareIcon className="inline w-3 h-3" /> Open
-            original
-          </Link>
-        ) : null}
-      </div>
-    </div>
+    </MediaPlayer>
   );
 }

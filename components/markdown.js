@@ -13,9 +13,10 @@ export {
 } from './base';
 export { default as a } from './link';
 import Image from 'next/image';
-export { default as Video } from './players/video';
 export { default as Pdf } from './players/pdf';
 export { default as Audio } from './players/audio';
+export { default as SoundCloud } from './players/soundcloud';
+export { default as YouTube } from './players/youtube';
 export { Tweet } from 'react-tweet';
 
 export function img(props) {

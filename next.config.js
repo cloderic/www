@@ -2,6 +2,16 @@ const listContent = require('./app/content/utils/listContent');
 
 module.exports = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'http.cat',
+        port: '',
+        pathname: '/*'
+      }
+    ]
+  },
   async redirects() {
     const contentRedirections = (await listContent({ parseFrontmatter: true }))
       .filter(

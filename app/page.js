@@ -25,11 +25,8 @@ export default async function Home() {
         <Image src="/mars.png" width={150} height={150} alt="Picture of Mars" />
         <div>
           <H1 noanchor>Clodéric Mars</H1>
-          <p className="font-title">
-            AI Product Engineer / Tech Leader / Public Speaker
-          </p>
-          <p className="text-5xl">🧑‍🦱🤝🤖</p>
-          <p className="text-blue flex gap-2">
+          <p className="text-5xl my-2">🧑‍🦱🤝🤖</p>
+          <p className="text-blue flex gap-2 my-2">
             <Link
               href="https://twitter.com/cloderic"
               title="Clodéric on Twitter"
@@ -78,6 +75,9 @@ export default async function Home() {
         </li>
         <li>
           <Link href="/content/certifications">Certifications</Link>
+        </li>
+        <li>
+          <Link href="/music">🎸 Music</Link>
         </li>
         <li>
           <Link href="/content">Archive</Link>

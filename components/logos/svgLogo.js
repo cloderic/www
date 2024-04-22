@@ -4,7 +4,7 @@ export default function SvgLogo({ label, viewBox, d, ...otherProps }) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox={viewBox}
       fill="currentColor"
-      ariaLabel={label}
+      aria-label={label}
       role="img"
       {...otherProps}
     >

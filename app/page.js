@@ -77,6 +77,9 @@ export default async function Home() {
           <Link href="/content/certifications">Certifications</Link>
         </li>
         <li>
+          <Link href="/music">🎸 Music</Link>
+        </li>
+        <li>
           <Link href="/content">Archive</Link>
         </li>
       </ul>

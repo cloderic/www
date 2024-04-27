@@ -1,4 +1,4 @@
-import { H1 } from '../../components/base';
+import { H1 } from '../../components/title';
 import Link from '../../components/link';
 import HomeLink from '../../components/homeLink';
 import listContent from '../content/utils/listContent';

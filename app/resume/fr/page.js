@@ -1,5 +1,5 @@
 import loadContent from '../../content/utils/loadContent';
-import { H1 } from '../../../components/base';
+import { H1 } from '../../../components/title';
 
 export const metadata = {
   title: 'CV',

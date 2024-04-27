@@ -19,7 +19,12 @@ export default async function ContentList({
           >
             {renderDate(item)}
           </time>
-          <Link href={`/content/${item.slug}`}>{renderTitle(item)}</Link>
+          <Link
+            href={`/content/${item.slug}`}
+            className="text-blue hover:underline"
+          >
+            {renderTitle(item)}
+          </Link>
           <span className="text-sm">{renderSubtitle(item)}</span>
         </li>
       ))}

@@ -1,9 +1,10 @@
-import { H1 } from '../../../components/base';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+
+import { H1 } from '../../../components/title';
 import loadContent from '../utils/loadContent';
 import listContent from '../utils/listContent';
-import { notFound } from 'next/navigation';
 import HomeLink from '../../../components/homeLink';
-import Image from 'next/image';
 
 export async function loadMatchingContent({ params }) {
   const matchingContent = (await listContent()).find(

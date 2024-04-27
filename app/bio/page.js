@@ -1,6 +1,6 @@
 import loadContent from '../content/utils/loadContent';
 import listContent from '../content/utils/listContent';
-import { H1 } from '../../components/base';
+import { H1 } from '../../components/title';
 import HomeLink from '../../components/homeLink';
 import sortBy from 'lodash.sortby';
 import ContentList from '../../components/contentList';

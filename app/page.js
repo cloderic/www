@@ -1,6 +1,6 @@
 import loadContent from './content/utils/loadContent';
 import listContent from './content/utils/listContent';
-import { H1, H2 } from '../components/base';
+import { H1, H2 } from '../components/title';
 import Link from '../components/link';
 import ContentList from '../components/contentList';
 import Image from 'next/image';

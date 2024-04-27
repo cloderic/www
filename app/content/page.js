@@ -1,5 +1,4 @@
-import { H1 } from '../../components/base';
-import Link from '../../components/link';
+import { H1 } from '../../components/title';
 import listContent from './utils/listContent';
 import sortBy from 'lodash.sortby';
 import ContentList from '../../components/contentList';

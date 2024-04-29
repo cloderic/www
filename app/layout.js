@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={urbanist.variable}>
       <body>
         <div className="bg-white/30 mx-auto my-0 px-2 py-4 md:px-8 md:py-8 w-fit min-h-screen drop-shadow-2xl backdrop-blur-sm">
-          <div className="max-w-prose">{children}</div>
+          {children}
         </div>
         <footer className="mt-6 mb-2 text-center text-xs text-slate-500">
           <p>

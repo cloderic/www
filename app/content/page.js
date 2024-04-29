@@ -16,7 +16,7 @@ export default async function Page() {
   );
   const sortedContent = sortBy(content, 'date').reverse();
   return (
-    <>
+    <div className="max-w-prose">
       <H1 noanchor>Archive</H1>
       <ContentList
         items={sortedContent}
@@ -24,6 +24,6 @@ export default async function Page() {
         renderTitle={({ title }) => title}
         renderSubtitle={({}) => null}
       />
-    </>
+    </div>
   );
 }

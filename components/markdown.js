@@ -1,15 +1,16 @@
 import clsx from 'clsx';
 import Image from 'next/image';
+import { MDXRemote } from 'next-mdx-remote/rsc';
 
-export { default as a } from './link';
+import Link from './link';
 import Title from './title';
-export { default as Pdf } from './players/pdf';
-export { default as Audio } from './players/audio';
-export { default as SoundCloud } from './players/soundCloud';
-export { default as YouTube } from './players/youtube';
-export { Tweet } from 'react-tweet';
+import Pdf from './players/pdf';
+import Audio from './players/audio';
+import SoundCloud from './players/soundCloud';
+import YouTube from './players/youtube';
+import { Tweet } from 'react-tweet';
 
-export function img(props) {
+function img(props) {
   return (
     <span className="block relative aspect-video">
       <Image {...props} fill={true} className="object-contain not-prose" />
@@ -17,27 +18,27 @@ export function img(props) {
   );
 }
 
-export function h1(props) {
+function h1(props) {
   return <Title as="h1" {...props} />;
 }
 
-export function h2(props) {
+function h2(props) {
   return <Title as="h2" {...props} />;
 }
 
-export function h3(props) {
+function h3(props) {
   return <Title as="h3" {...props} />;
 }
 
-export function h4(props) {
+function h4(props) {
   return <Title as="h4" {...props} />;
 }
 
-export function h5(props) {
+function h5(props) {
   return <Title as="h5" {...props} />;
 }
 
-export function wrapper({ className, children, components, ...otherProps }) {
+function wrapper({ className, children, components, ...otherProps }) {
   return (
     <article
       {...otherProps}
@@ -52,5 +53,31 @@ export function wrapper({ className, children, components, ...otherProps }) {
     >
       {children}
     </article>
+  );
+}
+
+const baseComponents = {
+  a: Link,
+  img,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  Pdf,
+  Audio,
+  SoundCloud,
+  YouTube,
+  Tweet
+};
+
+export const components = {
+  wrapper,
+  ...baseComponents
+};
+
+export function Mdx({ children, className, ...otherProps }) {
+  return (
+    <MDXRemote source={children} components={baseComponents} {...otherProps} />
   );
 }

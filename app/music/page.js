@@ -17,7 +17,7 @@ export default async function Music() {
   ).filter(({ categories = [] }) => categories.find((c) => c === 'music'));
   const sortedContent = sortBy(content, 'date').reverse();
   return (
-    <>
+    <div className="max-w-prose">
       <H1 noanchor>🎸 Music</H1>
       <ul>
         {sortedContent.map(({ slug, title, date }, index) => (
@@ -31,6 +31,6 @@ export default async function Music() {
       <footer className="mt-4 text-center">
         <HomeLink />
       </footer>
-    </>
+    </div>
   );
 }

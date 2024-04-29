@@ -35,7 +35,7 @@ export default async function Page({ params }) {
   const publicationDate = frontmatter.date;
   const updateDate = frontmatter.last_update;
   return (
-    <>
+    <div className="max-w-prose">
       {frontmatter.cover ? (
         <div className="relative aspect-video -mt-4 -mx-4 md:-mt-8 md:-mx-8">
           <Image
@@ -73,7 +73,7 @@ export default async function Page({ params }) {
           <HomeLink />
         </div>
       </footer>
-    </>
+    </div>
   );
 }
 

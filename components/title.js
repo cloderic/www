@@ -19,7 +19,7 @@ export default function Title({
   return (
     <Tag
       {...otherProps}
-      className={clsx(className, 'group relative mt-2')}
+      className={clsx(className, 'group relative mt-2 mb-1')}
       id={anchor}
     >
       {anchor != null ? (
@@ -32,6 +32,15 @@ export default function Title({
       ) : null}
       {children}
     </Tag>
+  );
+}
+
+export function Subtitle({ className, top = false, ...otherProps }) {
+  return (
+    <span
+      className={clsx(className, 'block', top ? 'mt-2 -mb-2' : 'mb-1 -mt-1')}
+      {...otherProps}
+    />
   );
 }
 

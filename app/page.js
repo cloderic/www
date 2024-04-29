@@ -20,7 +20,7 @@ export default async function Home() {
   const sortedHighlights = sortBy(highlights, 'date').reverse();
 
   return (
-    <>
+    <div className="max-w-prose">
       <div className="flex items-center gap-8">
         <Image src="/mars.png" width={150} height={150} alt="Picture of Mars" />
         <div>
@@ -83,6 +83,6 @@ export default async function Home() {
           <Link href="/content">Archive</Link>
         </li>
       </ul>
-    </>
+    </div>
   );
 }

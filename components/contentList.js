@@ -4,10 +4,11 @@ export default async function ContentList({
   items,
   renderTitle,
   renderSubtitle,
-  renderDate
+  renderDate,
+  ...otherProps
 }) {
   return (
-    <ul className="">
+    <ul {...otherProps}>
       {items.map((item, index) => (
         <li
           key={index}

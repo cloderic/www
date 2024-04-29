@@ -27,7 +27,7 @@ export default async function Bio({}) {
   );
 
   return (
-    <>
+    <div className="max-w-prose">
       <H1>Biography 🇬🇧</H1>
       {bioEnMdx.content}
       <H1>Biographie 🇫🇷</H1>
@@ -51,6 +51,6 @@ export default async function Bio({}) {
       <footer className="mt-4 text-center">
         <HomeLink />
       </footer>
-    </>
+    </div>
   );
 }

@@ -11,31 +11,31 @@ export default async function sitemap() {
       priority: 1
     },
     {
-      url: `${baseUrl}/bio`,
+      url: new URL(`/bio`, baseUrl),
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1
     },
     {
-      url: `${baseUrl}/content`,
+      url: new URL(`/content`, baseUrl),
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1
     },
     {
-      url: `${baseUrl}/certifications`,
+      url: new URL(`/certifications`, baseUrl),
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1
     },
     {
-      url: `${baseUrl}/resume/en`,
+      url: new URL(`/resume/en`, baseUrl),
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1
     },
     {
-      url: `${baseUrl}/resume/fr`,
+      url: new URL(`/resume/fr`, baseUrl),
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1
@@ -43,7 +43,7 @@ export default async function sitemap() {
   ];
   const contentPages = (await listContent({ parseFrontmatter: true })).map(
     ({ slug, last_update, date }) => ({
-      url: `${baseUrl}/content/${slug}`,
+      url: new URL(`/content/${slug}`, baseUrl),
       lastModified: last_update
         ? last_update.toJSDate()
         : date

@@ -151,7 +151,7 @@ export default async function ResumeEn({}) {
       </LeftCol>
       <RightCol>
         <section className="break-inside-avoid">
-          <ItemTitle from="2021-02" location="Montréal, France">
+          <ItemTitle from="2021-02" location="Montréal, Canada">
             VP of Engineering - [**AI Redefined**](https://www.ai-r.com)
           </ItemTitle>
           <ItemDescription>

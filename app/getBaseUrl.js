@@ -7,8 +7,8 @@ export default function getBaseUrl() {
 
   if (process.env.NODE_ENV == 'development') {
     // We assume the site is ran using `next dev`
-    return new URL(`http://localhost:${process.env.PORT}`);
+    return new URL(`http://localhost:${process.env.PORT}/`);
   }
 
-  return new URL('http://example.com');
+  return new URL('http://example.com/');
 }

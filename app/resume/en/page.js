@@ -166,7 +166,7 @@ export default async function ResumeEn({}) {
           <ItemTitle from="2020-05" to="2021-01" location="Paris, France">
             Freelance AI engineer
           </ItemTitle>
-          <ItemTitle from="2020-05" to="2021-01" as="h4">
+          <ItemTitle from="2020-08" to="2021-01" as="h4">
             AI Product Engineer - **AI Redefined**
           </ItemTitle>
           <ItemDescription>
@@ -175,7 +175,7 @@ export default async function ResumeEn({}) {
           - Open source product release coordination
           `}
           </ItemDescription>
-          <ItemTitle from="2020-05" to="2021-01" as="h4">
+          <ItemTitle from="2020-05" to="2020-06" as="h4">
             Volunteering Data Scientist - [**APHP**](https://www.aphp.fr)
           </ItemTitle>
           <ItemDescription>

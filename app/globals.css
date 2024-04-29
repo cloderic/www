@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@media print {
+  html {
+    font-size: 11px;
+  }
+}
+
+
 body {
   @apply bg-[url:theme("backgroundImage.body-pattern"),theme("backgroundImage.gradient-to-br")];
   @apply bg-[length:300px,100%];
@@ -11,6 +18,12 @@ body {
   @apply bg-repeat;
   @apply from-pink;
   @apply to-slate-300;
+}
+
+@media print {
+  body {
+    @apply bg-none;
+  }
 }
 
 .hljs {

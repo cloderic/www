@@ -1,28 +1,83 @@
-export {
-  H1 as h1,
-  H2 as h2,
-  H3 as h3,
-  H4 as h4,
-  P as p,
-  Em as em,
-  Blockquote as blockquote,
-  Pre as pre,
-  Code as code,
-  Ul as ul,
-  Ol as ol
-} from './base';
-export { default as a } from './link';
+import clsx from 'clsx';
 import Image from 'next/image';
-export { default as Pdf } from './players/pdf';
-export { default as Audio } from './players/audio';
-export { default as SoundCloud } from './players/soundCloud';
-export { default as YouTube } from './players/youtube';
-export { Tweet } from 'react-tweet';
+import { MDXRemote } from 'next-mdx-remote/rsc';
 
-export function img(props) {
+import Link from './link';
+import Title from './title';
+import Pdf from './players/pdf';
+import Audio from './players/audio';
+import SoundCloud from './players/soundCloud';
+import YouTube from './players/youtube';
+import { Tweet } from 'react-tweet';
+
+function img(props) {
   return (
     <span className="block relative aspect-video">
-      <Image {...props} fill={true} className="object-contain" />
+      <Image {...props} fill={true} className="object-contain not-prose" />
     </span>
+  );
+}
+
+function h1(props) {
+  return <Title as="h1" {...props} />;
+}
+
+function h2(props) {
+  return <Title as="h2" {...props} />;
+}
+
+function h3(props) {
+  return <Title as="h3" {...props} />;
+}
+
+function h4(props) {
+  return <Title as="h4" {...props} />;
+}
+
+function h5(props) {
+  return <Title as="h5" {...props} />;
+}
+
+function wrapper({ className, children, components, ...otherProps }) {
+  return (
+    <article
+      {...otherProps}
+      className={clsx(
+        className,
+        'prose',
+        'prose-a:no-underline hover:prose-a:underline',
+        'prose-headings:font-title prose-headings:font-light',
+        'prose-h1:font-extralight prose-h1:text-4xl',
+        'prose-h2:font-extralight prose-h2:text-3xl'
+      )}
+    >
+      {children}
+    </article>
+  );
+}
+
+const baseComponents = {
+  a: Link,
+  img,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  Pdf,
+  Audio,
+  SoundCloud,
+  YouTube,
+  Tweet
+};
+
+export const components = {
+  wrapper,
+  ...baseComponents
+};
+
+export function Mdx({ children, className, ...otherProps }) {
+  return (
+    <MDXRemote source={children} components={baseComponents} {...otherProps} />
   );
 }

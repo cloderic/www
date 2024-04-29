@@ -4,14 +4,15 @@ export default async function ContentList({
   items,
   renderTitle,
   renderSubtitle,
-  renderDate
+  renderDate,
+  ...otherProps
 }) {
   return (
-    <ul className="">
+    <ul {...otherProps}>
       {items.map((item, index) => (
         <li
           key={index}
-          className="border-l-4 border-blue pl-2 my-4 flex flex-col"
+          className="border-l-4 border-blue pl-2 my-4 flex flex-col break-inside-avoid"
         >
           <time
             className="text-blue-light text-xs"
@@ -19,7 +20,12 @@ export default async function ContentList({
           >
             {renderDate(item)}
           </time>
-          <Link href={`/content/${item.slug}`}>{renderTitle(item)}</Link>
+          <Link
+            href={`/content/${item.slug}`}
+            className="text-blue hover:underline"
+          >
+            {renderTitle(item)}
+          </Link>
           <span className="text-sm">{renderSubtitle(item)}</span>
         </li>
       ))}

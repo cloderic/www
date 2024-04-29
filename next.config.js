@@ -44,6 +44,12 @@ module.exports = {
         destination: '/resume/en',
         permanent: true
       },
+      // Removing the certifications page
+      {
+        source: '/content/certifications',
+        destination: '/resume/en#education',
+        permanent: true
+      },
       ...contentRedirections
     ];
   }

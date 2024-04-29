@@ -19,7 +19,7 @@ export default function Title({
   return (
     <Tag
       {...otherProps}
-      className={clsx(className, 'group relative mt-2 font-title')}
+      className={clsx(className, 'group relative mt-2 mb-1')}
       id={anchor}
     >
       {anchor != null ? (
@@ -35,11 +35,23 @@ export default function Title({
   );
 }
 
+export function Subtitle({ className, top = false, ...otherProps }) {
+  return (
+    <span
+      className={clsx(className, 'block', top ? 'mt-2 -mb-2' : 'mb-1 -mt-1')}
+      {...otherProps}
+    />
+  );
+}
+
 export function H1({ className, ...otherProps }) {
   return (
     <Title
-      tag="h1"
-      className={clsx(className, 'text-4xl font-extralight text-blue')}
+      as="h1"
+      className={clsx(
+        className,
+        'text-4xl font-extralight text-blue font-title'
+      )}
       {...otherProps}
     />
   );
@@ -48,8 +60,11 @@ export function H1({ className, ...otherProps }) {
 export function H2({ className, ...otherProps }) {
   return (
     <Title
-      tag="h2"
-      className={clsx(className, 'text-3xl font-extralight text-blue')}
+      as="h2"
+      className={clsx(
+        className,
+        'text-3xl font-extralight text-blue font-title'
+      )}
       {...otherProps}
     />
   );
@@ -59,17 +74,7 @@ export function H3({ className, ...otherProps }) {
   return (
     <Title
       tag="h3"
-      className={clsx(className, 'text-lg text-blue')}
-      {...otherProps}
-    />
-  );
-}
-
-export function H4({ className, ...otherProps }) {
-  return (
-    <Title
-      tag="h4"
-      className={clsx(className, 'text-lg italic text-blue')}
+      className={clsx(className, 'text-lg text-blue font-title')}
       {...otherProps}
     />
   );

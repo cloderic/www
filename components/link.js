@@ -1,40 +1,35 @@
-import clsx from 'clsx';
-
 import NextLink from 'next/link';
-
-const ABSOLUTE_URL = /[a-zA-Z][-+.a-zA-Z]*:.*/;
+import getBaseUrl from '../app/getBaseUrl';
+import { useMemo } from 'react';
 
 export default function Link({
   children,
-  className,
   href,
   title,
+  noprinturl,
   ...otherProps
 }) {
-  if (ABSOLUTE_URL.test(href)) {
-    return (
-      <NextLink
-        href={href}
-        className={clsx(className, 'text-blue hover:underline')}
-        target="_blank"
-        rel="noreferrer noopener"
-        title={title}
-        aria-label={title}
-        {...otherProps}
-      >
-        {children}
-      </NextLink>
-    );
-  }
+  const [hrefUrl, hrefExternal] = useMemo(() => {
+    if (URL.canParse(href)) {
+      return [new URL(href), true];
+    }
+    return [new URL(href, getBaseUrl()), false];
+  }, [href]);
   return (
     <NextLink
       href={href}
-      className={clsx(className, 'text-blue hover:underline')}
+      target={hrefExternal ? '_blank' : '_self'}
+      rel={hrefExternal ? 'noreferrer noopener' : ''}
       title={title}
       aria-label={title}
       {...otherProps}
     >
       {children}
+      {!noprinturl ? (
+        <span className="hidden print:inline">{` (${hrefUrl.host}${
+          hrefUrl.pathname == '/' ? '' : hrefUrl.pathname
+        }${hrefUrl.search})`}</span>
+      ) : null}
     </NextLink>
   );
 }

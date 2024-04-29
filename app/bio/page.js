@@ -1,6 +1,6 @@
 import loadContent from '../content/utils/loadContent';
 import listContent from '../content/utils/listContent';
-import { H1 } from '../../components/base';
+import { H1 } from '../../components/title';
 import HomeLink from '../../components/homeLink';
 import sortBy from 'lodash.sortby';
 import ContentList from '../../components/contentList';
@@ -27,7 +27,7 @@ export default async function Bio({}) {
   );
 
   return (
-    <>
+    <div className="max-w-prose">
       <H1>Biography 🇬🇧</H1>
       {bioEnMdx.content}
       <H1>Biographie 🇫🇷</H1>
@@ -51,6 +51,6 @@ export default async function Bio({}) {
       <footer className="mt-4 text-center">
         <HomeLink />
       </footer>
-    </>
+    </div>
   );
 }

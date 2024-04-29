@@ -1,6 +1,6 @@
 import loadContent from './content/utils/loadContent';
 import listContent from './content/utils/listContent';
-import { H1, H2 } from '../components/base';
+import { H1, H2 } from '../components/title';
 import Link from '../components/link';
 import ContentList from '../components/contentList';
 import Image from 'next/image';
@@ -20,7 +20,7 @@ export default async function Home() {
   const sortedHighlights = sortBy(highlights, 'date').reverse();
 
   return (
-    <>
+    <div className="max-w-prose">
       <div className="flex items-center gap-8">
         <Image src="/mars.png" width={150} height={150} alt="Picture of Mars" />
         <div>
@@ -74,15 +74,12 @@ export default async function Home() {
           <Link href="/bio">Bio</Link>
         </li>
         <li>
-          <Link href="/content/certifications">Certifications</Link>
-        </li>
-        <li>
           <Link href="/music">🎸 Music</Link>
         </li>
         <li>
           <Link href="/content">Archive</Link>
         </li>
       </ul>
-    </>
+    </div>
   );
 }

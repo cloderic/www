@@ -1,9 +1,10 @@
-import { H1 } from '../../../components/base';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+
+import { H1 } from '../../../components/title';
 import loadContent from '../utils/loadContent';
 import listContent from '../utils/listContent';
-import { notFound } from 'next/navigation';
 import HomeLink from '../../../components/homeLink';
-import Image from 'next/image';
 
 export async function loadMatchingContent({ params }) {
   const matchingContent = (await listContent()).find(
@@ -34,7 +35,7 @@ export default async function Page({ params }) {
   const publicationDate = frontmatter.date;
   const updateDate = frontmatter.last_update;
   return (
-    <>
+    <div className="max-w-prose">
       {frontmatter.cover ? (
         <div className="relative aspect-video -mt-4 -mx-4 md:-mt-8 md:-mx-8">
           <Image
@@ -72,7 +73,7 @@ export default async function Page({ params }) {
           <HomeLink />
         </div>
       </footer>
-    </>
+    </div>
   );
 }
 

@@ -4,7 +4,7 @@ import rehypeHighlight from 'rehype-highlight';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-import * as MdComponents from '../../../components/markdown';
+import { components } from '../../../components/markdown';
 import processFronmatter from './processFrontmatter';
 
 export default async function loadContent(sourceFile) {
@@ -14,7 +14,7 @@ export default async function loadContent(sourceFile) {
   });
   const compiledMdx = await compileMDX({
     source,
-    components: MdComponents,
+    components,
     options: {
       parseFrontmatter: true,
       mdxOptions: {

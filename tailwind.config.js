@@ -1,5 +1,4 @@
 const colors = require('tailwindcss/colors');
-const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: [
@@ -12,6 +11,7 @@ module.exports = {
       black: colors.black,
       white: colors.white,
       slate: colors.slate,
+      gray: colors.gray,
       blue: {
         dark: '#010332',
         DEFAULT: '#020873',
@@ -30,8 +30,19 @@ module.exports = {
     extend: {
       backgroundImage: {
         'body-pattern': "url('/body-pattern.png')"
-      }
+      },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            '--tw-prose-headings': theme('colors.blue.DEFAULT'),
+            '--tw-prose-links': theme('colors.blue.DEFAULT'),
+            '--tw-prose-bullets': theme('colors.blue.DEFAULT'),
+            '--tw-prose-quote-borders': theme('colors.pink.DEFAULT'),
+            '--tw-prose-pre-bg': theme('colors.pink.light')
+          }
+        }
+      })
     }
   },
-  plugins: []
+  plugins: [require('@tailwindcss/typography')]
 };

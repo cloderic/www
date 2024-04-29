@@ -1,5 +1,4 @@
-import { H1 } from '../../components/base';
-import Link from '../../components/link';
+import { H1 } from '../../components/title';
 import listContent from './utils/listContent';
 import sortBy from 'lodash.sortby';
 import ContentList from '../../components/contentList';
@@ -17,7 +16,7 @@ export default async function Page() {
   );
   const sortedContent = sortBy(content, 'date').reverse();
   return (
-    <>
+    <div className="max-w-prose">
       <H1 noanchor>Archive</H1>
       <ContentList
         items={sortedContent}
@@ -25,6 +24,6 @@ export default async function Page() {
         renderTitle={({ title }) => title}
         renderSubtitle={({}) => null}
       />
-    </>
+    </div>
   );
 }

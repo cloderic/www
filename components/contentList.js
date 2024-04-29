@@ -12,7 +12,7 @@ export default async function ContentList({
       {items.map((item, index) => (
         <li
           key={index}
-          className="border-l-4 border-blue pl-2 my-4 flex flex-col"
+          className="border-l-4 border-blue pl-2 my-4 flex flex-col break-inside-avoid"
         >
           <time
             className="text-blue-light text-xs"

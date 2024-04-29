@@ -74,9 +74,6 @@ export default async function Home() {
           <Link href="/bio">Bio</Link>
         </li>
         <li>
-          <Link href="/content/certifications">Certifications</Link>
-        </li>
-        <li>
           <Link href="/music">🎸 Music</Link>
         </li>
         <li>

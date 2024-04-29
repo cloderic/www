@@ -16,12 +16,14 @@ export default function Link({ children, href, title, ...otherProps }) {
         {...otherProps}
       >
         {children}
+        <span className="hidden print:inline">{` (${href})`}</span>
       </NextLink>
     );
   }
   return (
     <NextLink href={href} title={title} aria-label={title} {...otherProps}>
       {children}
+      <span className="hidden print:inline">{` (https://cloderic.com${href})`}</span>
     </NextLink>
   );
 }

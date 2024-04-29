@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 import listContent from '../../content/utils/listContent';
 import Title, { Subtitle } from '../../../components/title';
+import Link from '../../../components/link';
 import { Mdx } from '../../../components/markdown';
 import ContentList from '../../../components/contentList';
 const { DateTime } = require('luxon');
@@ -48,9 +49,10 @@ export function LeftCol({ className, ...otherProps }) {
   return (
     <div
       className={clsx(
-        'prose',
+        'prose print:prose-sm',
         'prose-a:no-underline hover:prose-a:underline',
         'prose-headings:font-title prose-headings:font-light *:prose-headings:m-0',
+        'prose-li:mt-0 prose-li:mb-1',
         'prose-h1:font-extralight prose-h1:text-4xl',
         'prose-h2:font-extralight prose-h2:text-3xl',
         className
@@ -65,10 +67,11 @@ export function RightCol({ className, ...otherProps }) {
     <div
       className={clsx(
         'lg:col-span-2',
-        'prose',
+        'prose print:prose-sm',
         'prose-p:text-justify',
         'prose-a:no-underline hover:prose-a:underline',
         'prose-headings:font-title prose-headings:font-light *:prose-headings:m-0',
+        'prose-li:mt-0 prose-li:mb-1',
         'prose-h1:font-extralight prose-h1:text-4xl',
         'prose-h2:font-extralight prose-h2:text-3xl',
         className
@@ -100,38 +103,31 @@ export default async function ResumeEn({}) {
         <Title as="h1" className="text-5xl text-blue font-title font-light">
           Clodéric Mars
         </Title>
-        <Subtitle className="text-2xl font-title uppercase">
-          AI Product Engineer <br />
-          Tech Leader <br />
-          Public Speaker
+        <Subtitle className="text-xl font-title">
+          AI Product Engineer & Tech Leader specialized in turning research
+          prototypes in enterprise products
         </Subtitle>
       </LeftCol>
       <RightCol>
-        <ItemDescription className="prose-p:my-2">
+        <ItemDescription className="">
           {`
-          Creative, enthusiastic and thoughtful software engineer & tech leader!
+          **Creative, enthusiastic and thoughtful software engineer & tech leader!**
 
           Since 2006, I'm building AIs with one overarching goal:
           fostering **collaboration between Humans and AIs**.
 
           To bridge the gap between research and productization, I've developed a wide range of
           skills: AI and ML algorithms, applied data science, distributed cloud
-          architecture, API design, product management, workshop facilitation,
-          project leadership.
+          architecture, API design, product & tech roadmap management, workshop facilitation,
+          customer & partners relationships.
 
           Over the years my role has evolved from individual
-          contributor to team leader and to managing several teams internally and in
-          coordination with external stakeholders, customers, partners and
-          subcontractors. As CTO of craft ai and VP Engineering of AI Redefined, I
+          contributor, to team leader, to managing several teams internally and in
+          coordination with external stakeholders. As CTO of craft ai and VP Engineering of AI Redefined, I
           recruited and led teams of 15+ AI researchers, software engineers and
           data scientists in challenging deep tech startup environments.
 
-          Presenting projects, running workshops, evangelizing prospects, giving
-          technical or inspirational talks, I've accumulated a wealth of
-          experience in public speaking. I've had the opportunity to present at
-          several conferences in both French and English, as well as numerous
-          meetups and seminars. I've also organized and moderated conferences and
-          round tables.
+          I have experience working in multi-cultural and international environments with full proficiency in both French, my native language, and English.
           `}
         </ItemDescription>
       </RightCol>
@@ -140,7 +136,7 @@ export default async function ResumeEn({}) {
       </LeftCol>
       <RightCol>
         <ItemTitle from="2021-02" location="Montréal, France">
-          VP of Engineering @ [AI Redefined](https://www.ai-r.com)
+          VP of Engineering - [**AI Redefined**](https://www.ai-r.com)
         </ItemTitle>
         <ItemDescription>
           {`
@@ -151,82 +147,76 @@ export default async function ResumeEn({}) {
           - Coordination and contributions on multiple research collaborations including with University of Alberta (Edmonton, Canada), MILA (Montréal, Canada) and IRT SystemX (Paris Saclay, France)
          `}
         </ItemDescription>
-        <ItemTitle from="2015-03" to="2020-04" location="Paris, France">
-          Co-founder & CTO @ [craft ai](https://www.craft.ai/)
+        <ItemTitle from="2020-05" to="2021-01" location="Paris, France">
+          Freelance AI engineer
+        </ItemTitle>
+        <ItemTitle from="2020-05" to="2021-01" as="h4">
+          AI Product Engineer - [**AI Redefined**](https://www.ai-r.com)
         </ItemTitle>
         <ItemDescription>
-          Building upon some prototypes we built at MASA Group, we raised a 2 M€
-          seed round and created craft ai, an Enterprise AI API to build self
-          learning AIs able to collaborate with Humans. After 5 years we had
-          raised a total of 9 M€ and reached a growth stage, **powering a dozen
-          AIs** for our entreprise customers such as Total, EDF and Dassault
-          Aviation. As CTO, I was particularly **in charge of the product & tech
-          activities**, recruiting and leading a team of ~15 Machine Learning
-          researchers, software engineers and data scientists while staying
-          hands-on in R&D, biz dev and evangelism. I also participated in every
-          aspects of the company inception and development: fund raising,
-          business model, positioning, business plan...
+          {`
+          - Technical presales
+          - Open source product release coordination
+          `}
+        </ItemDescription>
+        <ItemTitle from="2020-05" to="2021-01" as="h4">
+          Volunteering Data Scientist - [**APHP**](https://www.aphp.fr)
+        </ItemTitle>
+        <ItemDescription>
+          Data extraction and preparation for epidemiological studies of the
+          first COVID-19 patients in Paris hospitals: Python, PostgreSQL, Apache
+          Spark, data science
+        </ItemDescription>
+        <ItemTitle from="2015-03" to="2020-04" location="Paris, France">
+          Co-founder & CTO - [**craft ai**](https://www.craft.ai/)
+        </ItemTitle>
+        <ItemDescription>
+          {`
+          - Development of the company from 7 to >20 employees, participation in fundraising for a total of ~9M€, deployment of ~10 AI projects within large companies including EDF (Paris, France), Total (Paris, France) and Dassault Aviation (Paris, France).
+          - Leading product development, R&D and Customer Success teams.
+          - Hands-on development of an explainable AI SaaS specialized in time series: Rust, Javascript, Python, Kafka, Redis, Kubernetes, Docker, machine learning, data science.
+          `}
         </ItemDescription>
         <ItemTitle from="2012-01" to="2015-02" location="Paris, France">
-          Lead Software Engineer & Product Manager @ [MASA
-          Group](https://masasim.com/)
+          Lead Software Engineer & Product Manager - [**MASA
+          Group**](https://masasim.com/)
         </ItemTitle>
         <ItemDescription>
-          I was recruited to lead a product development team at MASA Group, a
-          leading AI company, founded by AI researchers in 1996. I managed a
-          team of ~5 developers distributed between Paris and Munich and later
-          also took the Product Management role after ~2 years. We developed
-          from scratch an AI middleware enabling non experts to create and
-          control AIs in simulations and video games. I participated in the
-          business development and global strategy for this product in
-          collaboration with the company C-Level and coordinated the effort with
-          the sales and other R&D teams.
+          {`
+          - Leading a product development team (~5 software engineers) based in Paris and Munich.
+          - Managing an AI product, a middleware enabling non-specialists to create and control AIs for simulations and video games: Technical pre-sales, participation to business development, speaker at several international conferences (e.g. GDC), coordination with the research team.
+          - Development of the behavior tree and spatial reasoning engine: C++, Computational Geometry, Game AI, Unity, Ogre3d, VBS2/3
+          `}
         </ItemDescription>
-        <ItemTitle from="2009-03" to="2011-12" location="Rennes, France">
-          R&D Software Engineer @ [Golaem](http://golaem.com/)
+        <ItemTitle from="2010-01" to="2011-12" location="Rennes, France">
+          R&D Software Engineer - [**Golaem**](http://golaem.com/)
         </ItemTitle>
         <ItemDescription>
-          I came back to the lab where I interned during my master's at
-          [INRIA](https://www.inria.fr/) to join the initial R&D team of Golaem,
-          the _spin off_ they co-founded. I took part in the **industrialization
-          of the initial crowd simulation academic prototype** where I was in
-          charge of the navigation (path finding & steering) module. While we
-          built this rock solid foundations we prototyped its usage in various
-          industries, I had the opportunity to coordinate an integration project
-          with Dassault Systèmes and also work on a train passenger simulation
-          project with SNCF. This core technology was used to build Golaem's
-          main product, the leading crowd simulation tool for the film industry
-          being used for special effects in live action and animation.
+          {`
+          - Development of navigation engine for virtual crowds: C++, Computational Geometry, Game AI.
+          - Management of a collaborative R&D project with Dassault Systèmes (Paris, France), Archividéo (Rennes, France) and CNRS (Paris, France), for the "real-time" population of a 3d virtual city.
+          `}
+        </ItemDescription>
+        <ItemTitle from="2010-01" to="2011-12" location="Rennes, France">
+          R&D Software Engineer - [**INRIA**](https://www.inria.fr)
+        </ItemTitle>
+        <ItemDescription>
+          {`
+          - Development of a 3d simulation engine and industrialization of a navigation engine for virtual crowds: C++, Qt, Ogre3d, Computational Geometry, Game AI.
+          `}
         </ItemDescription>
         <ItemTitle from="2006-07" to="2009-02" location="Rennes, France">
-          Software Engineer @ [Open](https://www.open.global/fr)
-        </ItemTitle>
-        <ItemTitle
-          from="2006-07"
-          to="2008-09"
-          location="Rennes, France"
-          as="h4"
-        >
-          Java/JEE architect
+          Software Engineer - [**Teamlog** (acquired by
+          Open)](https://www.open.global/fr)
         </ItemTitle>
         <ItemDescription>
-          I joined a small project team that developed the first user generated
-          content feature for pagesjaunes.fr. I worked on the first version of
-          the backend and was in charge of the collaboration with eXo Platform
-          who provided the moderation backoffice.
-        </ItemDescription>
-        <ItemTitle from="2006-07" to="2008-07" as="h4">
-          GIS/3D authoring toolchain developer
-        </ItemTitle>
-        <ItemDescription>
-          I was hired by Teamlog (now part of Open) to be an initial member of a
-          team that grew from 4 to ~20, we developed an authoring toolchain to
-          create virtual cities from GIS data and geolocalized photos as a part
-          of a larger project orchestrated by Orange Labs. Our toolchain was
-          used to build virtual versions of Paris and Barcelona.
+          {`
+          - Development of a tool chain to create virtual cities for Orange: C++, Qt, Open Scene Graph, PostGIS, Geographic Information Systems, Computational Geometry.
+          - Development of a user contribution system for PagesJaunes.fr: Java/J2E.
+          `}
         </ItemDescription>
         <ItemTitle from="2006-02" to="2006-09" location="Rennes, France">
-          AI Research Intern @ [INRIA](https://www.inria.fr)
+          AI Research Intern - [**INRIA**](https://www.inria.fr)
         </ItemTitle>
         <ItemDescription>
           I was a member of the [Bunraku
@@ -272,19 +262,13 @@ export default async function ResumeEn({}) {
         />
       </RightCol>
       <LeftCol>
-        <Title as="h2">Talks</Title>
-      </LeftCol>
-      <RightCol>
-        <ContentList
-          items={talks}
-          className="not-prose"
-          renderDate={({ date }) => date.toFormat('yyyy/MM/dd')}
-          renderTitle={({ short_title, title }) => short_title || title}
-          renderSubtitle={({ venue }) => `@ ${venue}`}
-        />
-      </RightCol>
-      <LeftCol>
         <Title as="h2">Peer-reviewed publications</Title>
+        <p className="text-sm">
+          Full list at{' '}
+          <Link href="https://scholar.google.com/citations?user=fvCC1rwAAAAJ">
+            https://scholar.google.com/citations?user=fvCC1rwAAAAJ
+          </Link>
+        </p>
       </LeftCol>
       <RightCol>
         <ContentList
@@ -295,6 +279,18 @@ export default async function ResumeEn({}) {
           }
           renderTitle={({ short_title, title }) => short_title || title}
           renderSubtitle={({ authors = [] }) => authors.join(', ')}
+        />
+      </RightCol>
+      <LeftCol>
+        <Title as="h2">Talks</Title>
+      </LeftCol>
+      <RightCol>
+        <ContentList
+          items={talks}
+          className="not-prose"
+          renderDate={({ date }) => date.toFormat('yyyy/MM/dd')}
+          renderTitle={({ short_title, title }) => short_title || title}
+          renderSubtitle={({ venue }) => `@ ${venue}`}
         />
       </RightCol>
     </div>

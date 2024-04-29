@@ -159,8 +159,8 @@ export default async function ResumeEn({}) {
           - Coordination of product & technological strategy, research and external collaboration efforts in line with corporate strategy and business development.
           - Recruiting and leading the research & engineering team from 5 to 16 engineers & researchers.
           - Key contribution to product and sales strategy, as well as operations: defining offers, managing the product roadmap, participating in business development, setuping technological & research partnerships.
-          - Hands-on research and development of a multi-agent, human-in-the-loop reinforcement learning orchestration platform and several projects implementing it: Python, Go, Javascript, Kubernetes, Reinforcement Learning, Machine Learning, Data Science.
-          - Coordination and contributions on multiple collaborations including with [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [NAV CANADA](https://www.navcanada.ca/), [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/) and [IRT SystemX](https://www.irt-systemx.fr/)
+          - Hands-on research and development of [Cogment](https://cogment.ai/) a multi-agent, human-in-the-loop reinforcement learning orchestration platform and several projects implementing it: Python, Go, Javascript, Kubernetes, Reinforcement Learning, Machine Learning, Data Science.
+          - Coordination and contributions on multiple collaborations including with [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [NAV CANADA](https://www.navcanada.ca/), [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/) and [IRT SystemX](https://www.irt-systemx.fr/).
          `}
           </ItemDescription>
           <ItemTitle from="2020-05" to="2021-01" location="Paris, France">
@@ -170,10 +170,8 @@ export default async function ResumeEn({}) {
             AI Product Engineer - **AI Redefined**
           </ItemTitle>
           <ItemDescription>
-            {`
-          - Technical presales
-          - Open source product release coordination
-          `}
+            Contribution & coordination of the open source release of Cogment
+            v1.
           </ItemDescription>
           <ItemTitle from="2020-05" to="2020-06" as="h4">
             Volunteering Data Scientist - [**APHP**](https://www.aphp.fr)
@@ -181,7 +179,7 @@ export default async function ResumeEn({}) {
           <ItemDescription>
             Data extraction and preparation for epidemiological studies of the
             first COVID-19 patients in Paris hospitals: Python, PostgreSQL,
-            Apache Spark, data science
+            Apache Spark, data science.
           </ItemDescription>
         </section>
         <section className="break-inside-avoid">
@@ -205,7 +203,7 @@ export default async function ResumeEn({}) {
             {`
           - Leading a product development team (~5 software engineers) based in Paris and Munich.
           - Managing an AI product, a middleware enabling non-specialists to create and control AIs for simulations and video games: Technical pre-sales, participation to business development, speaker at several international conferences (e.g. GDC), coordination with the research team.
-          - Development of the behavior tree and spatial reasoning engine: C++, Computational Geometry, Game AI, Unity, Ogre3d, VBS2/3
+          - Development of the behavior tree and spatial reasoning engine: C++, Computational Geometry, Game AI, Unity, Ogre3d, VBS2/3.
           `}
           </ItemDescription>
         </section>
@@ -247,11 +245,10 @@ export default async function ResumeEn({}) {
             AI Research Intern - [**INRIA**](https://www.inria.fr)
           </ItemTitle>
           <ItemDescription>
-            I was a member of the [Bunraku
-            project-team](https://www.irisa.fr/bunraku/), advised by Fabrice
-            Lamarche. I worked in the field of crowd simulation on environment
-            representation using semantic & topologic abstraction of navigation
-            graphs.
+            Member of the [Bunraku project-team](https://www.irisa.fr/bunraku/),
+            advised by Fabrice Lamarche. Environment representation formalism
+            for crowd simulation using semantic & topologic abstraction of
+            navigation graphs.
           </ItemDescription>
         </section>
       </RightCol>

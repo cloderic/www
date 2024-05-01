@@ -102,7 +102,11 @@ export default async function ResumeEn({}) {
       )}
     >
       <LeftCol className="not-prose">
-        <Title as="h1" className="text-5xl text-blue font-title font-light">
+        <Title
+          as="h1"
+          className="text-5xl text-blue font-title font-light"
+          noanchor
+        >
           Clodéric Mars
         </Title>
         <Subtitle className="text-xl font-title">

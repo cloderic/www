@@ -36,8 +36,8 @@ export default async function Bio({}) {
       <ContentList
         items={talks}
         renderDate={({ date }) => date.toFormat('yyyy/MM/dd')}
-        renderTitle={({ short_title, title }) => short_title || title}
-        renderSubtitle={({ venue }) => `@ ${venue}`}
+        renderTitle={({ title }) => title}
+        renderSubtitle={({ venue }) => venue}
       />
       <H1>Peer-reviewed publications</H1>
       <ContentList
@@ -45,7 +45,7 @@ export default async function Bio({}) {
         renderDate={({ date, venue }) =>
           `${date.toFormat('yyyy/MM')} - ${venue}`
         }
-        renderTitle={({ short_title, title }) => short_title || title}
+        renderTitle={({ title }) => title}
         renderSubtitle={({ authors = [] }) => authors.join(', ')}
       />
       <footer className="mt-4 text-center">

@@ -23,6 +23,8 @@
     "clsx": "^2.1.0",
     "glob": "^10.3.12",
     "highlight.js": "^11.9.0",
+    "lodash.difference": "^4.5.0",
+    "lodash.groupby": "^4.6.0",
     "lodash.sortby": "^4.7.0",
     "lodash.truncate": "^4.4.2",
     "luxon": "^3.4.4",

@@ -7,7 +7,8 @@ import Link from '../../../components/link';
 import PrintButton from '../../../components/printButton';
 import { Mdx } from '../../../components/markdown';
 import ContentList from '../../../components/contentList';
-const { DateTime } = require('luxon');
+import { DateTime } from 'luxon';
+import difference from 'lodash.difference';
 
 export const metadata = {
   title: 'Resume',
@@ -78,17 +79,19 @@ export default async function ResumeEn({}) {
     await listContent({ parseFrontmatter: true }),
     'date'
   ).reverse();
-  const publications = contentItems.filter(
-    ({ categories = [] }) =>
-      categories.find((category) => category == 'publication') &&
-      categories.find((category) => category == 'resume')
+  const resumeContentItems = contentItems.filter(({ categories = [] }) =>
+    categories.find((category) => category == 'resume')
   );
-  const talks = contentItems.filter(
-    ({ categories = [] }) =>
-      categories.find((category) => category == 'talk') &&
-      !categories.find((category) => category == 'publication') &&
-      categories.find((category) => category == 'resume')
+  const publications = resumeContentItems.filter(({ categories = [] }) =>
+    categories.find((category) => category == 'publication')
   );
+  const talks = difference(
+    resumeContentItems.filter(({ categories = [] }) =>
+      categories.find((category) => category == 'talk')
+    ),
+    publications
+  );
+  const otherPublications = difference(resumeContentItems, publications, talks);
   const moocs = contentItems.filter(({ categories = [] }) =>
     categories.find((category) => category == 'mooc')
   );
@@ -282,9 +285,9 @@ export default async function ResumeEn({}) {
           items={moocs}
           className="not-prose"
           renderDate={({ date }) => `${date.toFormat('yyyy/MM')}`}
-          renderTitle={({ title, short_title, organization }) => (
+          renderTitle={({ title, organization }) => (
             <>
-              <strong>{organization}</strong> - {short_title || title}
+              <strong>{organization}</strong> - {title}
             </>
           )}
           renderSubtitle={({ topics = [] }) => topics.join(', ')}
@@ -306,7 +309,7 @@ export default async function ResumeEn({}) {
           renderDate={({ date, venue }) =>
             `${date.toFormat('yyyy/MM')} - ${venue}`
           }
-          renderTitle={({ short_title, title }) => short_title || title}
+          renderTitle={({ title }) => title}
           renderSubtitle={({ authors = [] }) => authors.join(', ')}
         />
       </RightCol>
@@ -318,7 +321,19 @@ export default async function ResumeEn({}) {
           items={talks}
           className="not-prose"
           renderDate={({ date }) => date.toFormat('yyyy/MM/dd')}
-          renderTitle={({ short_title, title }) => short_title || title}
+          renderTitle={({ title }) => title}
+          renderSubtitle={({ venue }) => venue}
+        />
+      </RightCol>
+      <LeftCol>
+        <Title as="h2">Other publications</Title>
+      </LeftCol>
+      <RightCol>
+        <ContentList
+          items={otherPublications}
+          className="not-prose"
+          renderDate={({ date }) => date.toFormat('yyyy/MM')}
+          renderTitle={({ title }) => title}
           renderSubtitle={({ venue }) => venue}
         />
       </RightCol>

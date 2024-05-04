@@ -9,6 +9,7 @@ import banner from './two-clouds-away.jpeg';
 
 export const metadata = {
   title: 'Music',
+  description: 'Music recordings archive',
   alternates: {
     canonical: '/content/music'
   }

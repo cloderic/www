@@ -5,6 +5,7 @@ import { H1 } from '../../../components/title';
 import loadContent from '../utils/loadContent';
 import listContent from '../utils/listContent';
 import HomeLink from '../../../components/homeLink';
+import { metadata } from '../../music/page';
 
 export async function loadMatchingContent({ params }) {
   const matchingContent = (await listContent()).find(
@@ -18,7 +19,7 @@ export async function loadMatchingContent({ params }) {
 
 export async function generateMetadata({ params }) {
   const { frontmatter } = await loadMatchingContent({ params });
-  return {
+  const metadata = {
     title: frontmatter.title,
     openGraph: {
       type: 'article',
@@ -28,6 +29,12 @@ export async function generateMetadata({ params }) {
       canonical: frontmatter.canonicalUrl || `/content/${params.slug}`
     }
   };
+
+  if (frontmatter.description) {
+    metadata.description = frontmatter.description;
+  }
+
+  return metadata;
 }
 
 export default async function Page({ params }) {

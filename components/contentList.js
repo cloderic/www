@@ -29,6 +29,7 @@ export default async function ContentList({
   renderTitle = defaultRenderTitle,
   renderSubtitle = defaultRenderSubtitle,
   renderDate = defaultRenderDate,
+  noprinturl,
   ...otherProps
 }) {
   return (
@@ -47,6 +48,7 @@ export default async function ContentList({
           <Link
             href={`/content/${item.slug}`}
             className="text-blue hover:underline"
+            noprinturl={noprinturl}
           >
             {renderTitle(item)}
           </Link>

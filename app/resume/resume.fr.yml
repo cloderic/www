@@ -1,0 +1,141 @@
+page_title: CV
+title: Clodéric Mars
+subtitle: >
+  Ingénieur produit IA et tech leader, transformant des prototypes de recherche
+  en produits pour entreprise depuis 2006
+intro: |
+  **Ingénieur logiciel créatif, enthousiaste et réfléchi, et tech leader**.
+
+  Depuis 2006, je construis des IA avec un objectif primordial : favoriser la **collaboration entre Humains et IAs**.
+
+  Pour combler le fossé entre la recherche et la production, j'ai développé un large éventail de compétences : Algorithmes d'IA et
+  de ML, science des données appliquée, architecture cloud distribuée, conception d'API, gestion de roadmap produit et technologiques,
+  facilitation d'ateliers, relations avec les clients et les partenaires.
+
+  Au fil des ans, mon rôle a évolué, passant de contributeur individuel à manager, puis à la gestion de plusieurs équipes en
+  interne et en coordination avec des externes. En tant que CTO de craft ai et VP Engineering de AI Redefined, j'ai
+  j'ai recruté et dirigé des équipes de plus de 15 chercheurs et ingénieurs en intelligence artificielle, dans des environnements
+  stimulants de startup deep tech.
+
+  J'ai l'habitude de travailler dans des environnements multiculturels et internationaux.
+  Je maîtrise parfaitement le français, ma langue maternelle, et l'anglais.
+
+experiences:
+  title: Expériences
+  items:
+    - from: 2021-02
+      location: Montréal, Canada
+      title: >
+        VP of Engineering - [**AI Redefined**](https://www.ai-r.com)
+      description: |
+        - Coordination de la stratégie produit et technologique, de la recherche et des efforts de collaboration externe conformément à la stratégie de l'entreprise et au développement commercial.
+        - Recrutement et direction l'équipe de recherche et d'ingénierie de 5 à 16 ingénieurs et chercheurs.
+        - Contributions clés à la stratégie produit et commerciale, ainsi qu'aux opérations : définition des offres, gestion de la feuille de route du produit, participation au développement commercial, mise en place de partenariats technologiques et de recherche.
+        - Recherche et développement de [Cogment] (https://cogment.ai/), une plateforme d'orchestration de l'apprentissage par renforcement multi-agents et avec humains dans la boucle, et plusieurs projets l'implémentant : Python, Go, Javascript, Kubernetes, apprentissage par renforcement, apprentissage artificiel, science des données.
+        - Coordination et contributions à de multiples collaborations, notamment avec [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [NAV CANADA](https://www.navcanada.ca/), [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/) et [IRT SystemX](https://www.irt-systemx.fr/).
+    - from: 2020-05
+      to: 2021-01
+      location: Paris, France
+      title: Ingénieur IA Freelance
+      items:
+        - from: 2020-08
+          to: 2021-01
+          title: >
+            Ingénieur produits IA - **AI Redefined**
+          description: |
+            Contribution et coordination de la version initiale de Cogment open source.
+        - from: 2020-05
+          to: 2020-06
+          title: >
+            Scientifique des données bénévole - [**APHP**](https://www.aphp.fr)
+          description: |
+            Extraction et préparation des données pour les études épidémiologiques des
+            premiers patients COVID-19 dans les hôpitaux parisiens : Python, PostgreSQL,
+            Apache Spark, science des données.
+    - from: 2015-03
+      to: 2020-04
+      location: Paris, France
+      title: >
+        Co-fondateur & CTO - [**craft ai**](https://www.craft.ai/)
+      description: |
+        - Développement de la société de 7 à 20+ employés, participation à des levées de fonds pour un total de ~9M€, déploiement de ~10 projets d'IA au sein de grandes entreprises dont [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr) et [Dassault Aviation](https://www.dassault-aviation.com).
+        - Direction des équipes de développement de produits, de R&D et de Customer Success.
+        - Développement d'un SaaS d'IA explicable spécialisé dans les séries temporelles : Rust, Javascript, Python, Kafka, Redis, Kubernetes, Docker, apprentissage artificiel, science des données.
+    - from: 2012-01
+      to: 2015-02
+      location: Paris, France
+      title: >
+        Ingénieur Logiciel Lead & Product Manager - [**MASA
+        Group**](https://masasim.com/)
+      description: |
+        - Direction d'une équipe de développement produits (~5 ingénieurs logiciels) basée à Paris et à Munich.
+        - Gestion d'un produit d'IA, un middleware permettant à des non-spécialistes de créer et de contrôler des IAs pour des simulations et des jeux vidéo : Avant-vente technique, participation au développement commercial, intervention dans plusieurs conférences internationales (e.g. GDC), coordination avec l'équipe de recherche.
+        - Développement d'un moteur d'IA (behavior tree & raisonnement spatial) : C++, géométrie algorithmique, Game AI, Unity, Ogre3d, VBS2/3.
+    - from: 2010-01
+      to: 2011-12
+      location: Rennes, France
+      title: >
+        Ingénieur logiciel R&D - [**Golaem**](http://golaem.com/)
+      description: |
+        - Développement d'un moteur de navigation pour les foules virtuelles : C++, géométrie algorithmique, Game AI.
+        - Gestion d'un projet de R&D en collaboration avec [Dassault Systèmes](https://www.3ds.com) et [CNRS](https://www.cnrs.fr), pour la population "en temps réel" d'une ville virtuelle en 3D.
+    - from: 2009-02
+      to: 2009-12
+      location: Rennes, France
+      title: >
+        Ingénieur logiciel R&D - [**INRIA**](https://www.inria.fr)
+      description: |
+        Développement d'un moteur de simulation 3D et industrialisation d'un moteur de navigation pour les foules virtuelles : C++, Qt, Ogre3d, géométrie algorithmique, Game AI.
+    - from: 2006-07
+      to: 2009-02
+      location: Rennes, France
+      title: >
+        Ingénieur logiciel - [**Teamlog** (acquis par
+        Open)](https://www.open.global)
+      description: |
+        - Développement d'une chaîne d'outils pour la création de villes virtuelles pour [Orange](https://www.orange.fr) : C++, Qt, Open Scene Graph, PostGIS, systèmes d'information géographique (SIG), géométrie algorithmique.
+        - Développement d'un système de contribution des utilisateurs pour [PagesJaunes.fr](https://www.pagesjaunes.fr) : Java/J2E.
+    - from: 2006-02
+      to: 2006-09
+      location: Rennes, France
+      title: >
+        Chercheur en IA stagiaire - [**INRIA**](https://www.inria.fr)
+      description: |
+        Membre de l'équipe du projet Bunraku (https://www.irisa.fr/bunraku),
+        encadré par Fabrice Lamarche. Formalisme de représentation de l'environnement
+        pour la simulation de foule utilisant l'abstraction sémantique et topologique des
+        graphes de navigation.
+education:
+  title: Education
+  items:
+    - from: 2001-09
+      to: 2006-06
+      location: Rennes, France
+      title: >
+        **Diplôme d'ingénieur (MEng) en Informatique** - [_INSA de
+        Rennes_](https://www.insa-rennes.fr)
+      description: |
+        2 ans de cours généraux de sciences et d'ingénierie suivis de 3 ans de spécialisation en informatique.
+    - from: 2005-09
+      to: 2006-06
+      location: Rennes, France
+      title: >
+        **Master 2 Recherche (MSc) en Intelligence Artificielle** - [_Université
+        de Rennes 1_](https://www.univ-rennes.fr)
+      description: >
+        Programme d'études d'un an orienté vers le monde de la recherche axé sur
+        l'intelligence artificielle, y compris l'apprentissage automatique et le
+        raisonnement symbolique. l'intelligence artificielle, y compris
+        l'apprentissage automatique et le raisonnement symbolique. Collaboration
+        avec [INRIA](https://www.inria.fr).
+  moocs:
+    title: MOOCS
+peer_review_publications:
+  title: Publications évaluées par des pairs
+  subtitle: >
+    Liste complète sur [Google
+    Scholar](https://scholar.google.com/citations?user=fvCC1rwAAAAJ)
+talks:
+  title: Conférences
+other_publications:
+  title: Autres Publications

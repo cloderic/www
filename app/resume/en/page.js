@@ -68,7 +68,7 @@ export function LeftCol({ className, ...otherProps }) {
 export function RightCol({ className, ...otherProps }) {
   return (
     <LeftCol
-      className={clsx('lg:col-span-2', 'prose-p:text-justify', className)}
+      className={clsx('prose-p:text-justify', className)}
       {...otherProps}
     />
   );
@@ -98,13 +98,13 @@ export default async function ResumeEn({}) {
   return (
     <div
       className={clsx(
-        'grid grid-cols-1 lg:grid-cols-[repeat(3,_32ch)] gap-4 print:grid-cols-1 print:max-w-[18cm]'
+        'grid max-w-screen-lg grid-cols-1 lg:grid-cols-[25ch_auto] print:max-w-[18cm] print:grid-cols-[4cm_auto] gap-4'
       )}
     >
       <LeftCol className="not-prose">
         <Title
           as="h1"
-          className="text-5xl text-blue font-title font-light"
+          className="text-6xl text-blue font-title font-light"
           noanchor
         >
           Clodéric Mars
@@ -252,7 +252,7 @@ export default async function ResumeEn({}) {
             AI Research Intern - [**INRIA**](https://www.inria.fr)
           </ItemTitle>
           <ItemDescription>
-            Member of the [Bunraku project-team](https://www.irisa.fr/bunraku/),
+            Member of the [Bunraku project-team](https://www.irisa.fr/bunraku),
             advised by Fabrice Lamarche. Environment representation formalism
             for crowd simulation using semantic & topologic abstraction of
             navigation graphs.
@@ -295,6 +295,7 @@ export default async function ResumeEn({}) {
             </>
           )}
           renderSubtitle={({ topics = [] }) => topics.join(', ')}
+          noprinturl
         />
       </RightCol>
       <LeftCol>
@@ -315,6 +316,7 @@ export default async function ResumeEn({}) {
           }
           renderTitle={({ title }) => title}
           renderSubtitle={({ authors = [] }) => authors.join(', ')}
+          noprinturl
         />
       </RightCol>
       <LeftCol>
@@ -327,6 +329,7 @@ export default async function ResumeEn({}) {
           renderDate={({ date }) => date.toFormat('yyyy/MM/dd')}
           renderTitle={({ title }) => title}
           renderSubtitle={({ venue }) => venue}
+          noprinturl
         />
       </RightCol>
       <LeftCol>
@@ -339,6 +342,7 @@ export default async function ResumeEn({}) {
           renderDate={({ date }) => date.toFormat('yyyy/MM')}
           renderTitle={({ title }) => title}
           renderSubtitle={({ venue }) => venue}
+          noprinturl
         />
       </RightCol>
     </div>

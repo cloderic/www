@@ -1,10 +1,41 @@
-import clsx from 'clsx';
 import { DateTime } from 'luxon';
+import { parse } from 'yaml';
+import { promises as fs } from 'fs';
+import clsx from 'clsx';
+import difference from 'lodash.difference';
+import sortBy from 'lodash.sortby';
 
-import Title, { Subtitle } from '../../components/title';
-import PrintButton from '../../components/printButton';
-import { Mdx } from '../../components/markdown';
-import ContentList from '../../components/contentList';
+import { Mdx } from '../../../components/markdown';
+import ContentList from '../../../components/contentList';
+import listContent from '../../content/utils/listContent';
+import PrintButton from '../../../components/printButton';
+import Title, { Subtitle } from '../../../components/title';
+
+export async function loadResume({ params }) {
+  const resumeFile = await fs.readFile(
+    `app/resume/resume.${params.slug}.yml`,
+    'utf8'
+  );
+  return parse(resumeFile);
+}
+
+export async function generateMetadata({ params }) {
+  const resume = await loadResume({ params });
+  return {
+    title: resume.page_title,
+    alternates: {
+      canonical: `/resume/${params.slug}`,
+      languages: {
+        'en-US': '/resume/en',
+        'fr-FR': '/resume/fr'
+      }
+    }
+  };
+}
+
+export async function generateStaticParams() {
+  return ['fr', 'en'];
+}
 
 function ItemTitle({ children, as = 'h3', from, to = null, location = null }) {
   const fromDate = DateTime.fromISO(from);
@@ -57,13 +88,28 @@ function RightCol({ className, ...otherProps }) {
   );
 }
 
-export default async function Resume({
-  resume,
-  publications,
-  talks,
-  otherPublications,
-  moocs
-}) {
+export default async function Resume({ params }) {
+  const resume = await loadResume({ params });
+  const contentItems = sortBy(
+    await listContent({ parseFrontmatter: true }),
+    'date'
+  ).reverse();
+  const resumeContentItems = contentItems.filter(({ categories = [] }) =>
+    categories.find((category) => category == 'resume')
+  );
+  const publications = resumeContentItems.filter(({ categories = [] }) =>
+    categories.find((category) => category == 'publication')
+  );
+  const talks = difference(
+    resumeContentItems.filter(({ categories = [] }) =>
+      categories.find((category) => category == 'talk')
+    ),
+    publications
+  );
+  const otherPublications = difference(resumeContentItems, publications, talks);
+  const moocs = contentItems.filter(({ categories = [] }) =>
+    categories.find((category) => category == 'mooc')
+  );
   return (
     <div
       className={clsx(

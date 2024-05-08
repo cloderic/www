@@ -62,22 +62,46 @@ export default async function Home() {
         renderTitle={({ title }) => title}
         renderSubtitle={({}) => null}
       />
-      <H2>All Content</H2>
-      <ul>
+      <ul className="flex mt-8 justify-between">
         <li>
-          <Link href="/resume/en">Resume 🇬🇧</Link>
+          <Link
+            href="/resume/en"
+            className="text-blue text-lg hover:underline py-2 px-4 bg-pink rounded-full"
+          >
+            Resume
+          </Link>
         </li>
         <li>
-          <Link href="/resume/fr">CV 🇫🇷</Link>
+          <Link
+            href="/resume/fr"
+            className="text-blue text-lg hover:underline py-2 px-4 bg-pink rounded-full"
+          >
+            CV
+          </Link>
         </li>
         <li>
-          <Link href="/bio">Bio</Link>
+          <Link
+            href="/bio"
+            className="text-blue text-lg hover:underline py-2 px-4 bg-pink rounded-full"
+          >
+            Bio
+          </Link>
         </li>
         <li>
-          <Link href="/music">🎸 Music</Link>
+          <Link
+            href="/music"
+            className="text-blue text-lg hover:underline py-2 px-4 bg-pink rounded-full"
+          >
+            Music
+          </Link>
         </li>
         <li>
-          <Link href="/content">Archive</Link>
+          <Link
+            href="/content"
+            className="text-blue text-lg hover:underline py-2 px-4 bg-pink rounded-full"
+          >
+            Archive
+          </Link>
         </li>
       </ul>
     </div>

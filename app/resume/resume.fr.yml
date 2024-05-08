@@ -4,21 +4,11 @@ subtitle: >
   Ingénieur produit IA et tech leader, transformant des prototypes de recherche
   en produits pour entreprise depuis 2006
 intro: |
-  **Ingénieur logiciel créatif, enthousiaste et réfléchi, et tech leader**.
+  Depuis 2006, je suis profondément engagé vers un objectif primodial : favoriser la **collaboration entre Humains et IAs**. Au cours de ma carrière, j'ai contribué à de multiples projets où l'IA augmente l'expertise humaine. Ces projets incluent l'amélioration de la production cinématographique avec des personnages pilotés par IA, l'optimisation des infrastructures de transport grâce à la simulation et à l'analyse de données, le développement de simulations d'entrainements efficaces et réalistes, et l'amélioration de l'efficacité des opérations des infrastructures énergétiques.
 
-  Depuis 2006, je construis des IA avec un objectif primordial : favoriser la **collaboration entre Humains et IAs**.
+  J'excelle à **combler le fossé entre la recherche de pointe et les applications B2B**. Mon leadership s'étend au recrutement et à la direction d'équipes d'ingénieurs et de chercheurs dans des environnements de startups deep tech. Je conçois des feuilles de route stratégiques pour les produits et dirige des programmes de R&D collaboratifs, tout en restant toujours impliqué de manière pratique dans l'architecture et le développement.
 
-  Pour combler le fossé entre la recherche et la production, j'ai développé un large éventail de compétences : Algorithmes d'IA et
-  de ML, science des données appliquée, architecture cloud distribuée, conception d'API, gestion de roadmap produit et technologiques,
-  facilitation d'ateliers, relations avec les clients et les partenaires.
-
-  Au fil des ans, mon rôle a évolué, passant de contributeur individuel à manager, puis à la gestion de plusieurs équipes en
-  interne et en coordination avec des externes. En tant que CTO de craft ai et VP Engineering de AI Redefined, j'ai
-  j'ai recruté et dirigé des équipes de plus de 15 chercheurs et ingénieurs en intelligence artificielle, dans des environnements
-  stimulants de startup deep tech.
-
-  J'ai l'habitude de travailler dans des environnements multiculturels et internationaux.
-  Je maîtrise parfaitement le français, ma langue maternelle, et l'anglais.
+  **Ingénieur logiciel généraliste**, mes compétences incluent la conception de systèmes "human-in-the-loop", l'IA appliquée, l'architecture cloud distribuée, et le développement full-stack. Je suis également un communiquant efficace, maîtrisant le français et l'anglais, capable d'exprimer des idées complexes de manière claire et convaincante.
 
 experiences:
   title: Expériences
@@ -83,7 +73,7 @@ experiences:
       to: 2009-12
       location: Rennes, France
       title: >
-        Ingénieur logiciel R&D - [**INRIA**](https://www.inria.fr)
+        Ingénieur logiciel R&D - [**Inria**](https://www.inria.fr)
       description: |
         Développement d'un moteur de simulation 3D et industrialisation d'un moteur de navigation pour les foules virtuelles : C++, Qt, Ogre3d, géométrie algorithmique, Game AI.
     - from: 2006-07
@@ -99,7 +89,7 @@ experiences:
       to: 2006-09
       location: Rennes, France
       title: >
-        Chercheur en IA stagiaire - [**INRIA**](https://www.inria.fr)
+        Chercheur en IA stagiaire - [**Inria**](https://www.inria.fr)
       description: |
         Membre de l'équipe du projet Bunraku (https://www.irisa.fr/bunraku),
         encadré par Fabrice Lamarche. Formalisme de représentation de l'environnement
@@ -127,7 +117,7 @@ education:
         l'intelligence artificielle, y compris l'apprentissage automatique et le
         raisonnement symbolique. l'intelligence artificielle, y compris
         l'apprentissage automatique et le raisonnement symbolique. Collaboration
-        avec [INRIA](https://www.inria.fr).
+        avec [Inria](https://www.inria.fr).
   moocs:
     title: MOOCS
 peer_review_publications:

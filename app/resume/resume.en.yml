@@ -4,24 +4,12 @@ subtitle: >
   AI Product Engineer & Tech Leader, turning research prototypes into enterprise
   products since 2006
 intro: |
-  **Creative, enthusiastic and thoughtful software engineer & tech leader!**
+  Since 2006, I have been deeply committed to a singular goal: **fostering the collaboration between humans and AIs**. Throughout my career, I have significantly contributed to various projects where AI augments human expertise. These projects include enhancing movie production with AI-driven characters, optimizing transportation infrastructure through simulation & data analysis, developing effective & realistic training simulations, and improving the efficiency of energy infrastructure operations.
 
-  Since 2006, I'm building AIs with one overarching goal: fostering
-  **collaboration between Humans and AIs**.
+  I excel at **bridging the gap between cutting-edge research and B2B applications**. My leadership spans recruiting and guiding teams of engineers and researchers within high-pressure, deep tech startup environments. I design strategic product roadmaps and spearhead collaborative R&D programs, always ensuring I remain hands-on with technical architecture and coding.
 
-  To bridge the gap between research and productization, I've developed a wide
-  range of skills: AI and ML algorithms, applied data science, distributed cloud
-  architecture, API design, product & tech roadmap management, workshop
-  facilitation, customer & partners relationships.
+  A **generalist software engineer**, my competencies include human-in-the-loop systems design, applied AI, distributed cloud architecture, and full-stack development. I am also an effective communicator, proficient in both French and English, capable of articulating complex ideas clearly and persuasively.
 
-  Over the years my role has evolved from individual contributor, to team
-  leader, to managing several teams internally and in coordination with external
-  stakeholders. As CTO of craft ai and VP Engineering of AI Redefined, I
-  recruited and led teams of 15+ AI researchers, software engineers and data
-  scientists in challenging deep tech startup environments.
-
-  I have experience working in multi-cultural and international environments
-  with full proficiency in both French, my native language, and English.
 experiences:
   title: Experiences
   items:
@@ -85,7 +73,7 @@ experiences:
       to: 2009-12
       location: Rennes, France
       title: >
-        R&D Software Engineer - [**INRIA**](https://www.inria.fr)
+        R&D Software Engineer - [**Inria**](https://www.inria.fr)
       description: |
         Development of a 3d simulation engine and industrialization of a navigation engine for virtual crowds: C++, Qt, Ogre3d, Computational Geometry, Game AI.
     - from: 2006-07
@@ -101,7 +89,7 @@ experiences:
       to: 2006-09
       location: Rennes, France
       title: >
-        AI Research Intern - [**INRIA**](https://www.inria.fr)
+        AI Research Intern - [**Inria**](https://www.inria.fr)
       description: |
         Member of the [Bunraku project-team](https://www.irisa.fr/bunraku),
         advised by Fabrice Lamarche. Environment representation formalism
@@ -128,7 +116,7 @@ education:
       description: >
         Academia-oriented 1 year curriculum with a focus on Artificial
         Intelligence, including machine learning and symbolic reasoning, in
-        collaboration with [INRIA](https://www.inria.fr).
+        collaboration with [Inria](https://www.inria.fr).
   moocs:
     title: MOOCS
 peer_review_publications:

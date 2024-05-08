@@ -2,27 +2,32 @@ import Link from './link';
 
 const defaultRenderDate = ({ date }) => date.toFormat('yyyy/MM/dd');
 const defaultRenderTitle = ({ title, venue, organization }) => (
-  <>
+  <h3>
     {title}
     {venue != null || organization != null ? (
       <span className="italic"> - {venue || organization}</span>
     ) : null}
-  </>
+  </h3>
 );
 
 const CATEGORY_PICTOS = {
   publication: '🖊️',
+  other_publications: '🖊️',
   talk: '🎙️',
   music: '🎸',
   mooc: '📚'
 };
 
-const defaultRenderSubtitle = ({ categories = [] }) =>
-  categories.map((category) =>
-    Object.hasOwn(CATEGORY_PICTOS, category) ? (
-      <span className="me-2">{CATEGORY_PICTOS[category]}</span>
-    ) : null
-  );
+const defaultRenderSubtitle = ({ categories = [], description = '' }) => (
+  <>
+    {categories.map((category) =>
+      Object.hasOwn(CATEGORY_PICTOS, category) ? (
+        <span className="me-2">{CATEGORY_PICTOS[category]}</span>
+      ) : null
+    )}
+    {description}
+  </>
+);
 
 export default async function ContentList({
   items,

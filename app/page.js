@@ -56,12 +56,7 @@ export default async function Home() {
       </div>
       {welcomeMdx.content}
       <H2>Highlights</H2>
-      <ContentList
-        items={sortedHighlights}
-        renderDate={({ date }) => date.toFormat('yyyy/MM/dd')}
-        renderTitle={({ title }) => title}
-        renderSubtitle={({}) => null}
-      />
+      <ContentList items={sortedHighlights} />
       <ul className="flex mt-8 justify-between">
         <li>
           <Link

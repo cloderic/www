@@ -8,6 +8,6 @@ export default function robots() {
       userAgent: '*',
       allow: '/'
     },
-    sitemap: `${baseUrl}/sitemap.xml`
+    sitemap: `${baseUrl}sitemap.xml`
   };
 }

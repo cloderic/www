@@ -21,14 +21,11 @@ export default async function Music() {
   ).filter(({ categories = [] }) => categories.find((c) => c === 'music'));
   return (
     <div className="max-w-prose">
-      <div className="relative aspect-video -mt-4 -mx-4 md:-mt-8 md:-mx-8">
+      <div className="-mt-4 -mx-4 md:-mt-8 md:-mx-8">
         <Image
-          fill={true}
           src={banner}
-          className="object-cover"
-          alt={
-            "Two Clouds Away (Clodéric's band at University) playing live on stage"
-          }
+          className="object-cover aspect-video"
+          alt="Two Clouds Away (Clodéric's band at University) playing live on stage"
         />
       </div>
       <H1 noanchor>Music</H1>

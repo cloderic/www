@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import { H1 } from '../../components/title';
 import { Mdx } from '../../components/markdown';
 import HomeLink from '../../components/homeLink';
+import HeroImage from '../../components/heroImage';
 import ContentList from '../../components/contentList';
 import listContent from '../content/utils/listContent';
 
@@ -21,16 +21,10 @@ export default async function Music() {
   ).filter(({ categories = [] }) => categories.find((c) => c === 'music'));
   return (
     <div className="max-w-prose">
-      <div className="relative aspect-video -mt-4 -mx-4 md:-mt-8 md:-mx-8">
-        <Image
-          fill={true}
-          src={banner}
-          className="object-cover"
-          alt={
-            "Two Clouds Away (Clodéric's band at University) playing live on stage"
-          }
-        />
-      </div>
+      <HeroImage
+        src={banner}
+        alt="Two Clouds Away (Clodéric's band at University) playing live on stage"
+      />
       <H1 noanchor>Music</H1>
       <Mdx>
         I've been _on and off_ playing music since, well, forever. This page is

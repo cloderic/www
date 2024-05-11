@@ -50,7 +50,15 @@ module.exports = {
         destination: '/resume/en#education',
         permanent: true
       },
-      ...contentRedirections
+      ...contentRedirections,
+      // 404 caught by the google search console,
+      {
+        source:
+          '/f0ad71a94a5d8babd8aaf747699e2804/GameAIPro2_Chapter20_Hierarchical_Architecture_for_Group_Navigation_Behaviors.pdf',
+        destination:
+          '/content/2015-06-10-hierarchical-architecture-for-group-navigation-behaviors/GameAIPro2_Chapter20_Hierarchical_Architecture_for_Group_Navigation_Behaviors.pdf',
+        permanent: true
+      }
     ];
   }
 };

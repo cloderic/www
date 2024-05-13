@@ -15,7 +15,7 @@ export const metadata = {
     template: '%s | cloderic.com',
     default: 'cloderic.com | Professional AI builder, amateur musician' // a default is required when creating a template
   },
-  description: `Clodéric Mars is an AI Product Engineer and Tech Leader with a strong focus on collaborative AI systems that work alongside humans, outside of work is also playing music`,
+  description: `Clodéric Mars is an AI Product Engineer and Tech Leader with a strong focus on building AIs that work alongside humans, outside of work he's also playing music`,
   authors: [{ name: 'Clodéric Mars' }],
   siteUrl: 'https://www.cloderic.com',
   keywords: ['ai', 'tech', 'public speaking', 'human-ai collaboration'],

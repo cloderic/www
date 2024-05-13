@@ -11,7 +11,7 @@ export const metadata = {
   title: 'Music',
   description: 'Music recordings archive',
   alternates: {
-    canonical: '/content/music'
+    canonical: '/music'
   }
 };
 

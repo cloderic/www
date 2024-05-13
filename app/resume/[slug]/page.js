@@ -10,6 +10,7 @@ import ContentList from '../../../components/contentList';
 import listContent from '../../content/utils/listContent';
 import PrintButton from '../../../components/printButton';
 import Title, { Subtitle } from '../../../components/title';
+import { Fragment } from 'react';
 
 export async function loadResume({ params }) {
   const resumeFile = await fs.readFile(
@@ -150,20 +151,22 @@ export default async function Resume({ params }) {
       </LeftCol>
       <RightCol>
         {resume.experiences.items.map(
-          ({ from, to, location, title, description, items = [] }) => (
-            <section className="break-inside-avoid">
+          ({ from, to, location, title, description, items = [] }, index) => (
+            <section className="break-inside-avoid" key={index}>
               <ItemTitle from={from} to={to} location={location}>
                 {title}
               </ItemTitle>
               <ItemDescription>{description}</ItemDescription>
-              {items.map(({ from, to, location, title, description }) => (
-                <>
-                  <ItemTitle from={from} to={to} location={location} as="h4">
-                    {title}
-                  </ItemTitle>
-                  <ItemDescription>{description}</ItemDescription>
-                </>
-              ))}
+              {items.map(
+                ({ from, to, location, title, description }, index) => (
+                  <Fragment key={index}>
+                    <ItemTitle from={from} to={to} location={location} as="h4">
+                      {title}
+                    </ItemTitle>
+                    <ItemDescription>{description}</ItemDescription>
+                  </Fragment>
+                )
+              )}
             </section>
           )
         )}
@@ -173,20 +176,22 @@ export default async function Resume({ params }) {
       </LeftCol>
       <RightCol>
         {resume.education.items.map(
-          ({ from, to, location, title, description, items = [] }) => (
-            <section className="break-inside-avoid">
+          ({ from, to, location, title, description, items = [] }, index) => (
+            <section className="break-inside-avoid" key={index}>
               <ItemTitle from={from} to={to} location={location}>
                 {title}
               </ItemTitle>
               <ItemDescription>{description}</ItemDescription>
-              {items.map(({ from, to, location, title, description }) => (
-                <>
-                  <ItemTitle from={from} to={to} location={location} as="h4">
-                    {title}
-                  </ItemTitle>
-                  <ItemDescription>{description}</ItemDescription>
-                </>
-              ))}
+              {items.map(
+                ({ from, to, location, title, description }, index) => (
+                  <Fragment key={index}>
+                    <ItemTitle from={from} to={to} location={location} as="h4">
+                      {title}
+                    </ItemTitle>
+                    <ItemDescription>{description}</ItemDescription>
+                  </Fragment>
+                )
+              )}
             </section>
           )
         )}

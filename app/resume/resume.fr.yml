@@ -21,27 +21,15 @@ experiences:
         - Coordination de la stratégie produit et technologique, de la recherche et des efforts de collaboration externe conformément à la stratégie de l'entreprise et au développement commercial.
         - Recrutement et direction l'équipe de recherche et d'ingénierie de 5 à 16 ingénieurs et chercheurs.
         - Contributions clés à la stratégie produit et commerciale, ainsi qu'aux opérations : définition des offres, gestion de la feuille de route du produit, participation au développement commercial, mise en place de partenariats technologiques et de recherche.
-        - Recherche et développement de [Cogment] (https://cogment.ai/), une plateforme d'orchestration de l'apprentissage par renforcement multi-agents et avec humains dans la boucle, et plusieurs projets l'implémentant : Python, Go, Javascript, Kubernetes, apprentissage par renforcement, apprentissage artificiel, science des données.
+        - Recherche et développement de [Cogment](https://cogment.ai/), une plateforme d'orchestration de l'apprentissage par renforcement multi-agents et avec humains dans la boucle, et plusieurs projets l'implémentant : Python, Go, Javascript, Kubernetes, apprentissage par renforcement, apprentissage artificiel, science des données.
         - Coordination et contributions à de multiples collaborations, notamment avec [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [NAV CANADA](https://www.navcanada.ca/), [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/) et [IRT SystemX](https://www.irt-systemx.fr/).
-    - from: 2020-05
+    - from: 2020-08
       to: 2021-01
       location: Paris, France
-      title: Ingénieur IA Freelance
-      items:
-        - from: 2020-08
-          to: 2021-01
-          title: >
-            Ingénieur produits IA - **AI Redefined**
-          description: |
-            Contribution et coordination de la version initiale de Cogment open source.
-        - from: 2020-05
-          to: 2020-06
-          title: >
-            Scientifique des données bénévole - [**APHP**](https://www.aphp.fr)
-          description: |
-            Extraction et préparation des données pour les études épidémiologiques des
-            premiers patients COVID-19 dans les hôpitaux parisiens : Python, PostgreSQL,
-            Apache Spark, science des données.
+      title: >
+        Ingénieur IA Freelance - **AI Redefined**
+      description: |
+        Contribution et coordination de la version initiale de Cogment open source.
     - from: 2015-03
       to: 2020-04
       location: Paris, France
@@ -95,6 +83,37 @@ experiences:
         encadré par Fabrice Lamarche. Formalisme de représentation de l'environnement
         pour la simulation de foule utilisant l'abstraction sémantique et topologique des
         graphes de navigation.
+  more:
+    title: Autres activités
+    items:
+      - from: 2020-07
+        to: 2020-12
+        title: >
+          Contributeur - **The Good AI**
+        description: |
+          The Good AI était une plateforme et un média collaboratif focalisé sur les applications responsables de l'IA.
+          J'ai contribué du contenu écrit pour le site.
+      - from: 2020-05
+        to: 2020-06
+        location: Paris, France
+        title: >
+          Scientifique des données (bénévole) - [**APHP**](https://www.aphp.fr)
+        description: |
+          Extraction et préparation de données pour les études épidémiologiques des
+          premiers patients COVID-19 dans les hôpitaux parisiens : Python, PostgreSQL,
+          Apache Spark, science des données.
+      - from: 2015-01
+        to: 2016-07
+        location: Vienne, Autriche
+        title: >
+          Président de session - **nucl.ai**
+        description: |
+          nucl.ai était une conférence industrielle d'IA annuelle, pendant 2 ans j'ai été président de session:
+          sélection & affinement du contenu, relation avec les intervenants et présentateur. En 2016, j'étais en
+          charge de la session "Cognition, Bots & Understanding" (cognition, bots & compréhension - avec,
+          entre autres, des intervenants de Snips, Recast.AI & IBM Watson); en 2015, de la session "Agent Behaviors"
+          (comportements d'agents - avec, entre autres, des intervenants de Square Enix, Creative Assembly & Bohemia
+          Interactive Simulations).
 education:
   title: Education
   items:

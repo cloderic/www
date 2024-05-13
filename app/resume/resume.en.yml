@@ -13,7 +13,7 @@ intro: |
 experiences:
   title: Experiences
   items:
-    - from: 2021-02
+    - from: 2020-08
       location: Montréal, Canada
       title: >
         VP of Engineering - [**AI Redefined**](https://www.ai-r.com)
@@ -23,25 +23,13 @@ experiences:
         - Key contribution to product and sales strategy, as well as operations: defining offers, managing the product roadmap, participating in business development, setuping technological & research partnerships.
         - Hands-on research and development of [Cogment](https://cogment.ai/) a multi-agent, human-in-the-loop reinforcement learning orchestration platform and several projects implementing it: Python, Go, Javascript, Kubernetes, Reinforcement Learning, Machine Learning, Data Science.
         - Coordination and contributions on multiple collaborations including with [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [NAV CANADA](https://www.navcanada.ca/), [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/) and [IRT SystemX](https://www.irt-systemx.fr/).
-    - from: 2020-05
+    - from: 2020-08
       to: 2021-01
       location: Paris, France
-      title: Freelance AI engineer
-      items:
-        - from: 2020-08
-          to: 2021-01
-          title: >
-            AI Product Engineer - **AI Redefined**
-          description: |
-            Contribution & coordination of the open source release of Cogment v1.
-        - from: 2020-05
-          to: 2020-06
-          title: >
-            Volunteering Data Scientist - [**APHP**](https://www.aphp.fr)
-          description: |
-            Data extraction and preparation for epidemiological studies of the
-            first COVID-19 patients in Paris hospitals: Python, PostgreSQL,
-            Apache Spark, data science.
+      title: >
+        Freelance AI engineer - **AI Redefined**
+      description: |
+        Contribution & coordination of the open source release of Cogment v1.
     - from: 2015-03
       to: 2020-04
       location: Paris, France
@@ -95,6 +83,36 @@ experiences:
         advised by Fabrice Lamarche. Environment representation formalism
         for crowd simulation using semantic & topologic abstraction of
         navigation graphs.
+  more:
+    title: Additional activities
+    items:
+      - from: 2020-07
+        to: 2020-12
+        title: >
+          Contributor - **The Good AI**
+        description: |
+          The Good AI was a plateform and a collaborative media focused on responsible application for AI.
+          I contributed written content for the website.
+      - from: 2020-05
+        to: 2020-06
+        location: Paris, France
+        title: >
+          Data Scientist (volunteer) - [**APHP**](https://www.aphp.fr)
+        description: |
+          Data extraction and preparation for epidemiological studies of the
+          first COVID-19 patients in Paris hospitals: Python, PostgreSQL,
+          Apache Spark, data science.
+      - from: 2015-01
+        to: 2016-07
+        location: Vienna, Austria
+        title: >
+          Track chair - **nucl.ai**
+        description: |
+          nucl.ai was a yearly AI developper conference, for 2 years I was track chair: content selection
+          & refinement, speakers management and presenter. In 2016, I was in charge of the "Cognition,
+          Bots & Understanding" track (cognition, bots & compréhension - with speakers from Snips, Recast.AI,
+          IBM Watson and others); in 2015, de "Agent Behaviors" track (with speakers from Square Enix,
+          Creative Assembly, Bohemia Interactive Simulations and others).
 education:
   title: Education
   items:

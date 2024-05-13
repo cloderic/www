@@ -86,6 +86,13 @@ experiences:
   more:
     title: Autres activités
     items:
+      - from: 2020-07
+        to: 2020-12
+        title: >
+          Contributeur - **The Good AI**
+        description: |
+          The Good AI était une plateforme et un média collaboratif focalisé sur les applications responsables de l'IA.
+          J'ai contribué du contenu écrit pour le site.
       - from: 2020-05
         to: 2020-06
         location: Paris, France
@@ -95,13 +102,6 @@ experiences:
           Extraction et préparation de données pour les études épidémiologiques des
           premiers patients COVID-19 dans les hôpitaux parisiens : Python, PostgreSQL,
           Apache Spark, science des données.
-      - from: 2020-07
-        to: 2020-12
-        title: >
-          Contributeur - **The Good AI**
-        description: |
-          The Good AI était une plateforme et un média collaboratif focalisé sur les applications responsables de l'IA.
-          J'ai contribué du contenu écrit pour le site.
       - from: 2015-01
         to: 2016-07
         location: Vienne, Autriche

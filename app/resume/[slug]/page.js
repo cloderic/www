@@ -170,6 +170,27 @@ export default async function Resume({ params }) {
             </section>
           )
         )}
+        <Title as="h3">{resume.experiences.more.title}</Title>
+        {resume.experiences.more.items.map(
+          ({ from, to, location, title, description, items = [] }, index) => (
+            <section className="break-inside-avoid" key={index}>
+              <ItemTitle as="h4" from={from} to={to} location={location}>
+                {title}
+              </ItemTitle>
+              <ItemDescription>{description}</ItemDescription>
+              {items.map(
+                ({ from, to, location, title, description }, index) => (
+                  <Fragment key={index}>
+                    <ItemTitle from={from} to={to} location={location} as="h4">
+                      {title}
+                    </ItemTitle>
+                    <ItemDescription>{description}</ItemDescription>
+                  </Fragment>
+                )
+              )}
+            </section>
+          )
+        )}
       </RightCol>
       <LeftCol>
         <Title as="h2">{resume.education.title}</Title>

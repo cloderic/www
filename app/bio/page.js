@@ -1,6 +1,6 @@
 import loadContent from '../content/utils/loadContent';
 import listContent from '../content/utils/listContent';
-import { H1 } from '../../components/title';
+import { H1, H2 } from '../../components/title';
 import HomeLink from '../../components/homeLink';
 import sortBy from 'lodash.sortby';
 import ContentList from '../../components/contentList';
@@ -28,18 +28,19 @@ export default async function Bio({}) {
 
   return (
     <div className="max-w-prose">
-      <H1>Biography 🇬🇧</H1>
+      <H1>Biography</H1>
+      <H2 className="italic">English blurb 🇬🇧</H2>
       {bioEnMdx.content}
-      <H1>Biographie 🇫🇷</H1>
+      <H2 className="italic">French blurb 🇫🇷</H2>
       {bioFrMdx.content}
-      <H1>Talks</H1>
+      <H2>Talks</H2>
       <ContentList
         items={talks}
         renderDate={({ date }) => date.toFormat('yyyy/MM/dd')}
         renderTitle={({ title }) => title}
         renderSubtitle={({ venue }) => venue}
       />
-      <H1>Peer-reviewed publications</H1>
+      <H2>Peer-reviewed publications</H2>
       <ContentList
         items={publications}
         renderDate={({ date, venue }) =>

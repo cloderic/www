@@ -1,0 +1,120 @@
+---
+title: BT 101 – Behavior Trees grammar basics
+venue: craft ai's blog
+date: 2015-06-24
+cover: /content/2015-06-24-bt-101/bt-101-cover.png
+categories:
+  - resume
+  - other_publications
+---
+
+> This article was originally published on the original [craft ai](https://www.craft.ai) website, it was deleted a while ago and can only be accessed through the [internet archive](https://web.archive.org/web/20150703080948/http://www.craft.ai/blog/bt-101-behavior-trees-grammar-basics/).
+>
+> Here is a more accessible version, unfortunately, I couldn't retrieve all the original illustrations.
+
+Behavior Trees (BT) are a formalism used to describe tasks and their switching in a modular fashion. They were first introduced in the game industry around 2004/2005, most notably for [Halo 2](https://www.gamedeveloper.com/programming/gdc-2005-proceeding-handling-complexity-in-the-i-halo-2-i-ai) by Damian Isla and [Façade](https://web.archive.org/web/20150520061903/http://aigamedev.com/open/review/facade-ai/) by Andrew Stern and Michael Mateas; both building upon prior works in the field of robotics and intelligent virtual agents. The main motivations were to create a language that would be:
+
+- easy to represent and understand graphically;
+- efficient to execute;
+- while managing the inherent complexity of directable autonomous characters.
+
+They are now used frequently to implement Non Playable Characters (NPC) Artificial Intelligence (AI) in all kind of games and simulations and have evolved quite a bit since. craft ai is part of this evolution, using BTs as a component of its intelligent automation engine. We want to apply the nice properties of BTs to a wide range of fields such as the connected devices, robots, personal assistants, and generally all apps requiring contextual and personalized decision-making.
+
+This post is the first of a series that will focus on studying BTs, as used, for example, inside craft ai… For now our goal is to introduce the basics of BTs: what their basic building blocks are, what their main properties are. Without further ado, let’s dive in!
+
+## Structure
+
+Let’s start by taking a look at the general structure of a BT. Like everyone – yes even you – have guessed, they’re trees, more precisely directed rooted trees, one root, directed edges, no cycles. Most of the time BTs are represented from the root, from top to bottom. As the order of a node’s children has a meaning, they are usually horizontally aligned with the leftmost being considered the first child and the rightmost – you got it – the last one.
+
+States
+Each leaf node of the tree represents an atomic task that can be executed directly. Nodes that have children represent tasks composed of their children.
+
+During the execution each node can be in one of several states:
+
+- **Not executed**, if the node wasn’t executed previously;
+- **Running**, when the node was started but is not yet finished;
+- **Success**, when the node finished in success;
+- **Failure**, when the node finished in failure.
+
+![The 4 different states of BT nodes: not executed, running, failure, success](/content/2015-06-24-bt-101/bt-node-states.jpg)
+
+_Success_ and _failure_ represent functional states, the latter does not necessarily mean an error occured. Let’s say we have a node representing the retrieval of _HBO’s Game Of Thrones_ episode without any gruesome death; it will probably find none which can be a case for a _failure_, but it is not an error.
+
+A node can be _running_ for a finite amount of time and end up either _failing_ or _succeeding_. A node can also represent an instantaneous task, which will never be in the _running_ state, it _succeeds_ or _fails_ instantaneously. On the other end of the spectrum, a node can just as well represent an infinite task that will never reach success or failure.
+
+## Traversal
+
+The execution of a BT is based on discrete _updates_, each performing a **single depth-first traversal** of the tree recursively from the root. Each node computes its state during traversal, and if it has children it defines how they are to be traversed. Most of the time children are traversed from left to right until a child reaches a given state.
+
+In most implementations, among them craft ai’s, nodes belong to a few different generic types that form the basic grammar of BTs. A node’s type defines how its children are traversed and how its state is computed. With only a few different types the expressive power is already large while the traversal is kept understandable. In the following section we’ll explore the main elements of this grammar.
+
+## Base Grammar
+
+### Sequence
+
+_I wasn't able to retrieve this illustration of a behavior tree sequence node._
+
+The sequence node executes its children sequentially – yes, it’s mindblowing – until all _succeed_. The traversal starts from the first child and proceeds to the following one until a child becomes _running_ or ends in _failure_. In the first case, reaching a _running_ child, the traversal is stopped in the _running_ state and will resume during the following traversal. In the second case, reaching a _failed_ child, the traversal ends and the sequence _fails_.
+When the last child _succeeds_, the sequence ends in _success_. In practice the sequence behaves like a lazily evaluated boolean _and_.
+
+_I wasn't able to retrieve this illustration of a behavior tree sequence traversal steps._
+
+The figure illustrates two consecutive traversals of a sequence. **Traversal 1** goes as follows:
+
+1. the traversal of the sequence starts, as it was previously not _running_, its first child is evaluated;
+2. the first child ends in success right away, the traversal continues to the second one;
+3. the second child ends its first traversal in the _running_ state, which means the task it represents has not finished, as a result the sequence is stopped and the sequence node is in the _running_ state.
+
+The following traversal, **Traversal 2** unfolds like this:
+
+1. the traversal of the sequence starts, as it was previously _running_ it begins by the second child which ends up in _success_;
+2. the traversal proceeds to the third child which _fails_ right away;
+3. as one of its children failed, the sequence ends up _failing_.
+
+If the third child had _succeeded_, the sequence would have succeeded too.
+
+### Selector
+
+_I wasn't able to retrieve this illustration of a behavior tree selector node._
+
+The selector will “try” to execute its children in their order until one _succeeds_. If the sequence node is the _and_, the selector node is the _or_. While a sequence continues unless one child fails, the selector continues unless one child succeeds, in which case the selector ends in success. A selector will fail if all its children have failed.
+
+_I wasn't able to retrieve this illustration of a behavior tree selector traversal steps._
+
+The figure illustrates two consecutive selector traversals. **Traversal 1** unfolds as follows:
+
+1. the traversal of the selector starts, as it was previously not _running_, its first child is evaluated;
+2. the first child ends in failure right away, the traversal continues to the second one;
+3. the second child ends its first traversal in the _running_ state, the selector is interrupted in the _running_ state.
+
+The following traversal, **Traversal 2** unfolds like this:
+
+1. the traversal of the selector starts, as it was previously _running_ it begins by the second child which ends up in failure;
+2. the traversal proceeds to the third child which happens to _succeed_ right away;
+3. as one of its children succeeded, the selector ends up _succeeding_.
+
+Contrary to the sequence, the selector is often found with a range of slightly different variations. The basic version described above orders its children **statically** from left to right, but it is possible to make this ordering **dynamic**, based on utility functions for example. Once each child is assigned a utility, the selector can either use these to order the children as above, or use a probability pick: the higher utility the most likely a child is to be picked.
+
+Another important extension is the concept of **active selector**. In the version we explained, if the selector is already _running_, the traversal starts with the previously _running_ child. In an active selector, the traversal always starts from scratch with the first child. In our example, if the root had been an active selector the second traversal would have started with a new traversal of the first child instead of the second one. If the first child had not failed, the ongoing execution of the second child would have been **interrupted**. This is a very important extension as it allows Behavior Tree to be truly reactive to context changes.
+
+### Condition
+
+_I wasn't able to retrieve this illustration of a behavior tree condition node._
+
+The condition node allows to use simple predicates in the tree. If the predicate is true the node _succeeds_, otherwise it _fails_. This node is very important in various BT patterns, for example as the first child in a sequence it will act as a precondition.
+
+In craft ai’s BT implementation, the condition node can also take a single child that will be executed only if the predicate is true, in which case the condition node takes the state of its child. This proves to be a nice shortcut to execute a node while a condition is met.
+
+### Action
+
+_I wasn't able to retrieve this illustration of a behavior tree action node._
+
+The action node is the last of the **big four**. Its role is to interface with other systems triggering movements, sounds, sensor information retrievals, database updates, ... Action nodes manage the execution of actions, which are, basically, callbacks to the targeted system.
+
+When the action node becomes _running_, it schedules the asynchronous execution of its action. The node stays in the _running_ state until the action finishes, at which point it _succeeds_ or _fails_ according to the result of the action. If during a tree traversal the action node is not traversed, for example when an active selector is used, the execution of the action is cancelled, thus allowing the graceful handling of interruptions.
+
+### Other nodes
+
+These four nodes are the core of the BT grammar. But given the four node states and the recursive traversal algorithm, it is pretty simple to imagine a range of additional nodes. Some of them are fairly common such as the parallel node that will traverse all its children in a single step, thus allowing more than one of its children to be running at the same time. Some other nodes are very specific; craft ai, for example, provides helper nodes to manipulate the knowledge and messaging subsystems.
+
+In future posts we will delve deeper into BTs, first to give you an overview of their successful use mainly in the game industry, and also to get a firmer grasp on their benefits over other methods such as [Business Process Model and Notation (BPMN)](https://en.wikipedia.org/wiki/Business_Process_Model_and_Notation) or plain code.

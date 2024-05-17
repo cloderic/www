@@ -2,15 +2,15 @@
 title: BT 101 – Behavior Trees grammar basics
 venue: craft ai's blog
 date: 2015-06-24
-cover: /content/2015-06-24-bt-101/bt-101-cover.png
+cover: /content/2015-06-24-behavior-trees-101/behavior-trees-101-cover.jpg
 categories:
   - resume
   - other_publications
 ---
 
-> This article was originally published on the original [craft ai](https://www.craft.ai) website, it was deleted a while ago and can only be accessed through the [internet archive](https://web.archive.org/web/20150703080948/http://www.craft.ai/blog/bt-101-behavior-trees-grammar-basics/).
+> This article was originally published on the original [craft ai](https://www.craft.ai) website, it was deleted a while ago and can only be accessed through the [internet archive](https://web.archive.org/web/20181121124618/http://www.craft.ai/blog/bt-101-behavior-trees-grammar-basics/).
 >
-> Here is a more accessible version, unfortunately, I couldn't retrieve all the original illustrations.
+> Here is a more accessible version.
 
 Behavior Trees (BT) are a formalism used to describe tasks and their switching in a modular fashion. They were first introduced in the game industry around 2004/2005, most notably for [Halo 2](https://www.gamedeveloper.com/programming/gdc-2005-proceeding-handling-complexity-in-the-i-halo-2-i-ai) by Damian Isla and [Façade](https://web.archive.org/web/20150520061903/http://aigamedev.com/open/review/facade-ai/) by Andrew Stern and Michael Mateas; both building upon prior works in the field of robotics and intelligent virtual agents. The main motivations were to create a language that would be:
 
@@ -36,7 +36,7 @@ During the execution each node can be in one of several states:
 - **Success**, when the node finished in success;
 - **Failure**, when the node finished in failure.
 
-![The 4 different states of BT nodes: not executed, running, failure, success](/content/2015-06-24-bt-101/bt-node-states.jpg)
+![The 4 different states of BT nodes: not executed, running, failure, success](/content/2015-06-24-behavior-trees-101/behavior-trees-states.jpg)
 
 _Success_ and _failure_ represent functional states, the latter does not necessarily mean an error occured. Let’s say we have a node representing the retrieval of _HBO’s Game Of Thrones_ episode without any gruesome death; it will probably find none which can be a case for a _failure_, but it is not an error.
 
@@ -52,12 +52,12 @@ In most implementations, among them craft ai’s, nodes belong to a few differen
 
 ### Sequence
 
-_I wasn't able to retrieve this illustration of a behavior tree sequence node._
+![A Behavior Tree Sequence Node](/content/2015-06-24-behavior-trees-101/behavior-trees-sequence-node.jpg)
 
 The sequence node executes its children sequentially – yes, it’s mindblowing – until all _succeed_. The traversal starts from the first child and proceeds to the following one until a child becomes _running_ or ends in _failure_. In the first case, reaching a _running_ child, the traversal is stopped in the _running_ state and will resume during the following traversal. In the second case, reaching a _failed_ child, the traversal ends and the sequence _fails_.
 When the last child _succeeds_, the sequence ends in _success_. In practice the sequence behaves like a lazily evaluated boolean _and_.
 
-_I wasn't able to retrieve this illustration of a behavior tree sequence traversal steps._
+![A Behavior Tree Sequence Node Traversal Steps](/content/2015-06-24-behavior-trees-101/behavior-trees-sequence-traversal-steps.jpg)
 
 The figure illustrates two consecutive traversals of a sequence. **Traversal 1** goes as follows:
 
@@ -75,11 +75,11 @@ If the third child had _succeeded_, the sequence would have succeeded too.
 
 ### Selector
 
-_I wasn't able to retrieve this illustration of a behavior tree selector node._
+![A Behavior Tree Selector Node](/content/2015-06-24-behavior-trees-101/behavior-trees-selector-node.jpg)
 
 The selector will “try” to execute its children in their order until one _succeeds_. If the sequence node is the _and_, the selector node is the _or_. While a sequence continues unless one child fails, the selector continues unless one child succeeds, in which case the selector ends in success. A selector will fail if all its children have failed.
 
-_I wasn't able to retrieve this illustration of a behavior tree selector traversal steps._
+![A Behavior Tree Selector Node Traversal Steps](/content/2015-06-24-behavior-trees-101/behavior-trees-selector-traversal-steps.jpg)
 
 The figure illustrates two consecutive selector traversals. **Traversal 1** unfolds as follows:
 
@@ -99,7 +99,7 @@ Another important extension is the concept of **active selector**. In the versio
 
 ### Condition
 
-_I wasn't able to retrieve this illustration of a behavior tree condition node._
+![A Behavior Tree Condition Node](/content/2015-06-24-behavior-trees-101/behavior-trees-condition-node.jpg)
 
 The condition node allows to use simple predicates in the tree. If the predicate is true the node _succeeds_, otherwise it _fails_. This node is very important in various BT patterns, for example as the first child in a sequence it will act as a precondition.
 
@@ -107,7 +107,7 @@ In craft ai’s BT implementation, the condition node can also take a single chi
 
 ### Action
 
-_I wasn't able to retrieve this illustration of a behavior tree action node._
+![A Behavior Tree Action Node](/content/2015-06-24-behavior-trees-101/behavior-trees-action-node.jpg)
 
 The action node is the last of the **big four**. Its role is to interface with other systems triggering movements, sounds, sensor information retrievals, database updates, ... Action nodes manage the execution of actions, which are, basically, callbacks to the targeted system.
 

@@ -33,6 +33,7 @@
     "react": "^18.2.0",
     "react-children-utilities": "^2.10.0",
     "react-dom": "^18.2.0",
+    "react-h5-audio-player": "^3.9.1",
     "react-tweet": "^3.2.1",
     "rehype-highlight": "^7.0.0",
     "sharp": "^0.33.3",

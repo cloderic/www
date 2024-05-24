@@ -5,18 +5,30 @@ import {
   ArrowTopRightOnSquareIcon
 } from '@heroicons/react/24/solid';
 
-export function OriginalLink({ href, label = 'Open original', ...otherProps }) {
+export function OriginalLink({
+  href,
+  label = 'Open original',
+  hideLabel = false,
+  ...otherProps
+}) {
   return (
-    <Link href={href} {...otherProps}>
-      <ArrowTopRightOnSquareIcon className="inline w-3 h-3" /> {label}
+    <Link href={href} {...otherProps} title={label}>
+      <ArrowTopRightOnSquareIcon className="inline w-3 h-3" />
+      {hideLabel ? null : <span> {label}</span>}
     </Link>
   );
 }
 
-export function DownloadLink({ href, label = 'Download', ...otherProps }) {
+export function DownloadLink({
+  href,
+  label = 'Download',
+  hideLabel = false,
+  ...otherProps
+}) {
   return (
-    <Link href={href} {...otherProps}>
-      <ArrowDownTrayIcon className="inline w-3 h-3" /> {label}
+    <Link href={href} {...otherProps} title={label}>
+      <ArrowDownTrayIcon className="inline w-3 h-3" />
+      {hideLabel ? null : <span> {label}</span>}
     </Link>
   );
 }

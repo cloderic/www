@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
     title: frontmatter.title,
     openGraph: {
       type: 'article',
-      publishedTime: frontmatter.date.toISO()
+      publishedTime: frontmatter.date ? frontmatter.date.toISO() : new Date()
     },
     alternates: {
       canonical: frontmatter.canonicalUrl || `/content/${params.slug}`

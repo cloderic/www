@@ -36,9 +36,9 @@ export function DownloadLink({
 export default function MediaPlayer({
   children,
   originalLabel = undefined,
-  originalHref = undefined,
+  href = undefined,
   downloadLabel = undefined,
-  downloadHref = undefined,
+  src = undefined,
   className,
   ...otherProps
 }) {
@@ -49,16 +49,16 @@ export default function MediaPlayer({
     >
       {children}
       <div className="flex gap-4 justify-end text-white text-sm">
-        {downloadHref != null ? (
+        {src != null ? (
           <DownloadLink
-            href={downloadHref}
+            href={src}
             label={downloadLabel}
             className="text-white"
           />
         ) : null}
-        {originalHref != null ? (
+        {href != null ? (
           <OriginalLink
-            href={originalHref}
+            href={href}
             label={originalLabel}
             className="text-white"
           />

@@ -1,6 +1,6 @@
 'use client';
 
-import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
+import AudioPlayer from 'react-h5-audio-player';
 import clsx from 'clsx';
 import Link from '../link';
 import {
@@ -9,54 +9,118 @@ import {
   ArrowTopRightOnSquareIcon
 } from '@heroicons/react/24/solid';
 import './audio.css';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
+import { sendGAEvent } from '@next/third-parties/google';
+import debounce from 'lodash.debounce';
 
-export default function Audio({ tracks }) {
-  const [playing, setPlaying] = useState(false);
-  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+function TrackListItem({
+  artist,
+  title,
+  src,
+  href,
+  learnMoreHref,
+  index,
+  onSelectTrack,
+  current,
+  playing
+}) {
   return (
-    <div className="bg-slate-800 text-white flex flex-col">
+    <li key={index} className="m-2 flex gap-2 items-center justify-start">
+      {current ? (
+        <div
+          className={clsx(
+            'inline align-text-bottom w-5 h-5 text-pink ',
+            playing && 'animate-pulse'
+          )}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+          >
+            <circle cx="12" cy="12" r="11" />
+          </svg>
+        </div>
+      ) : (
+        <button onClick={onSelectTrack}>
+          <PlayIcon className="inline align-text-bottom w-5 h-5 hover:text-pink" />
+        </button>
+      )}
+      {learnMoreHref != null ? (
+        <Link
+          href={learnMoreHref}
+          title="Learn more about the track"
+          className="line-clamp-1 hover:underline"
+        >
+          {artist ? `${artist} - ` : null}
+          {title}
+        </Link>
+      ) : (
+        <div className="line-clamp-1">
+          {artist ? `${artist} - ` : null}
+          {title}
+        </div>
+      )}
+      <div className="flex-grow" />
+      <Link
+        href={src}
+        title="Download track"
+        className="hover:text-pink hover:underline"
+      >
+        <ArrowDownTrayIcon className="w-4 h-4" />
+      </Link>
+
+      {href != null ? (
+        <Link
+          href={href}
+          title="Open original"
+          className="hover:text-pink hover:underline"
+        >
+          <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+        </Link>
+      ) : null}
+    </li>
+  );
+}
+
+export default function Audio({ tracks, className, ...otherProps }) {
+  const [playing, setPlaying] = useState(false);
+  const handlePlay = useCallback(() => setPlaying(true), [setPlaying]);
+  const handlePause = useCallback(() => setPlaying(false), [setPlaying]);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+  const handlePrevious = useCallback(
+    () => setCurrentTrackIndex((index) => Math.max(index - 1, 0)),
+    [setCurrentTrackIndex]
+  );
+  const handleNext = useCallback(
+    () =>
+      setCurrentTrackIndex((index) => Math.min(index + 1, tracks.length - 1)),
+    [setCurrentTrackIndex, tracks]
+  );
+  const handlePlaying = useCallback(
+    debounce(() => {
+      sendGAEvent({
+        event: 'playing_track',
+        title: tracks[currentTrackIndex].title,
+        artist: tracks[currentTrackIndex].artist
+      });
+    }, 500),
+    [currentTrackIndex, tracks]
+  );
+  return (
+    <div
+      className={clsx(className, 'bg-slate-800 text-slate-300 flex flex-col')}
+      {...otherProps}
+    >
       <ol className="not-prose">
-        {tracks.map(({ title, src, href }, index) => (
-          <li key={index} className="m-2 flex gap-2 items-center justify-start">
-            {index === currentTrackIndex ? (
-              <PlayIcon
-                className={clsx(
-                  'inline align-text-bottom w-5 h-5 text-pink',
-                  playing && 'animate-pulse'
-                )}
-              />
-            ) : (
-              <div className="w-5" />
-            )}
-            <button
-              className={clsx(
-                'line-clamp-1',
-                index !== currentTrackIndex && 'hover:underline'
-              )}
-              disabled={index === currentTrackIndex}
-              onClick={() => setCurrentTrackIndex(index)}
-            >
-              {title}
-            </button>
-            <div className="flex-grow" />
-            <Link
-              href={src}
-              title="Download track"
-              className="hover:text-pink hover:underline"
-            >
-              <ArrowDownTrayIcon className="w-4 h-4" />
-            </Link>
-            {href != null ? (
-              <Link
-                href={href}
-                title="Open original"
-                className="hover:text-pink hover:underline"
-              >
-                <ArrowTopRightOnSquareIcon className="w-4 h-4" />
-              </Link>
-            ) : null}
-          </li>
+        {tracks.map((track, index) => (
+          <TrackListItem
+            key={index}
+            current={index === currentTrackIndex}
+            playing={index === currentTrackIndex && playing}
+            {...track}
+            onSelectTrack={() => setCurrentTrackIndex(index)}
+          />
         ))}
       </ol>
       <AudioPlayer
@@ -64,21 +128,12 @@ export default function Audio({ tracks }) {
         showJumpControls={false}
         showSkipControls={tracks.length > 1}
         customAdditionalControls={[]}
-        onPlay={() => setPlaying(true)}
-        onPause={() => setPlaying(false)}
-        onClickPrevious={() =>
-          setCurrentTrackIndex((index) => Math.max(index - 1, 0))
-        }
-        onClickNext={() =>
-          setCurrentTrackIndex((index) =>
-            Math.min(index + 1, tracks.length - 1)
-          )
-        }
-        onEnded={() =>
-          setCurrentTrackIndex((index) =>
-            Math.min(index + 1, tracks.length - 1)
-          )
-        }
+        onPlay={handlePlay}
+        onPause={handlePause}
+        onClickPrevious={handlePrevious}
+        onClickNext={handleNext}
+        onEnded={handleNext}
+        onPlaying={handlePlaying}
       />
     </div>
   );

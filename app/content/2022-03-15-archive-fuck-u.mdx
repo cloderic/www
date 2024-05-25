@@ -5,9 +5,19 @@ date: 2022-03-15
 categories:
   - music
 cover: /content/2022-03-15-archive-fuck-u/archive-fuck-u-cover.jpeg
+audioTracks:
+  - title: Fuck U (Archive Cover)
+    artist: Clodéric Mars
+    src: /content/2022-03-15-archive-fuck-u/archive-fuck-u.mp3
+    href: https://soundcloud.com/cloderic/fuck-u
+    soundCloudTrackId: 1241064967
 ---
 
-<SoundCloud trackId="1241064967" originalHref="https://soundcloud.com/cloderic/fuck-u" downloadHref="/content/2022-03-15-archive-fuck-u/archive-fuck-u.mp3"/>
+<SoundCloud
+  trackId={frontmatter.audioTracks[0].soundCloudTrackId}
+  href={frontmatter.audioTracks[0].href}
+  src={frontmatter.audioTracks[0].src}
+/>
 
 This is a Cover of "Fuck U" by ["Archive"](https://en.wikipedia.org/wiki/Archive_(band)) released on their 2004 album ["Noise"](https://en.wikipedia.org/wiki/Noise_(Archive_album)).
 

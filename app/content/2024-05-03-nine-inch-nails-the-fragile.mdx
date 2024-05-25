@@ -6,9 +6,19 @@ categories:
   - music
   - highlights
 cover: /content/2024-05-03-nine-inch-nails-the-fragile/nine-inch-nails-the-fragile-cover.jpeg
+audioTracks:
+  - title: The Fragile (Nine Inch Nails Cover)
+    artist: Clodéric Mars
+    src: /content/2024-05-03-nine-inch-nails-the-fragile/nine-inch-nails-the-fragile.m4a
+    href: https://soundcloud.com/cloderic/the-fragile
+    soundCloudTrackId: 1813987137
 ---
 
-<SoundCloud trackId="1813987137" originalHref="https://soundcloud.com/cloderic/the-fragile" downloadHref="/content/2024-05-03-nine-inch-nails-the-fragile/nine-inch-nails-the-fragile.m4a"/>
+<SoundCloud
+  trackId={frontmatter.audioTracks[0].soundCloudTrackId}
+  href={frontmatter.audioTracks[0].href}
+  src={frontmatter.audioTracks[0].src}
+/>
 
 This is a Cover of "The Fragile" by ["Nine Inch Nails"](https://en.wikipedia.org/wiki/Nine_Inch_Nails) released on their 1999 album ["The Fragile"](https://en.wikipedia.org/wiki/The_Fragile).
 

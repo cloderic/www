@@ -2,12 +2,7 @@ import { useMemo } from 'react';
 import twConfig from '../../tailwind.config';
 import MediaPlayer from './mediaPlayer';
 
-export default function SoundCloud({
-  trackId,
-  originalHref,
-  downloadHref,
-  ...otherProps
-}) {
+export default function SoundCloud({ trackId, href, src, ...otherProps }) {
   const url = useMemo(() => {
     const url = new URL('https://w.soundcloud.com/player/');
     url.searchParams.append(
@@ -27,8 +22,8 @@ export default function SoundCloud({
   return (
     <MediaPlayer
       originalLabel="Open in SoundCloud"
-      originalHref={originalHref}
-      downloadHref={downloadHref}
+      href={href}
+      src={src}
       {...otherProps}
     >
       <iframe

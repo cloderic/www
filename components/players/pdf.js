@@ -26,8 +26,8 @@ export default function Pdf({
   return (
     <MediaPlayer
       originalLabel="Open original"
-      originalHref={href}
-      downloadHref={disableDownload ? null : src}
+      href={href}
+      src={disableDownload ? null : src}
       {...otherProps}
     >
       <iframe

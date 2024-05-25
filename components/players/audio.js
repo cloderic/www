@@ -19,13 +19,12 @@ function TrackListItem({
   src,
   href,
   learnMoreHref,
-  index,
   onSelectTrack,
   current,
   playing
 }) {
   return (
-    <li key={index} className="m-2 flex gap-2 items-center justify-start">
+    <li className="m-2 flex gap-2 items-center justify-start">
       {current ? (
         <div
           className={clsx(

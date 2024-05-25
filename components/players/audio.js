@@ -1,116 +1,139 @@
 'use client';
 
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import AudioPlayer from 'react-h5-audio-player';
+import clsx from 'clsx';
+import Link from '../link';
 import {
   PlayIcon,
-  PauseIcon,
-  ArrowUturnLeftIcon,
+  ArrowDownTrayIcon,
   ArrowTopRightOnSquareIcon
 } from '@heroicons/react/24/solid';
-import Link from '../link';
+import './audio.css';
+import { useCallback, useState } from 'react';
+import { sendGAEvent } from '@next/third-parties/google';
+import debounce from 'lodash.debounce';
 
-const formatDuration = (seconds) => {
-  let rest = seconds;
-  const hours = Math.floor(rest / 3600);
-  rest -= hours * 3600;
-  const minutes = Math.floor(rest / 60);
-  rest -= minutes * 60;
-  const roundSeconds = Math.ceil(rest);
-  return [hours, minutes, roundSeconds]
-    .map((n) => `${n}`.padStart(2, '0'))
-    .join(':');
-};
-
-export default function Audio({ href, src, title }) {
-  const audioEl = useRef(null);
-  const [playing, setPlaying] = useState(false);
-  const [duration, setDuration] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
-  const play = useCallback(() => {
-    audioEl.current.play();
-  }, [audioEl, title]);
-  const pause = useCallback(() => {
-    audioEl.current.pause();
-  }, [audioEl, title]);
-  const restart = useCallback(() => {
-    audioEl.current.currentTime = 0;
-    setCurrentTime(0);
-  }, [audioEl, setCurrentTime, title]);
-
-  useEffect(() => {
-    const currentAudioEl = audioEl.current;
-    let timeTracker = null;
-    const stopTrackingCurrentTime = () => {
-      if (timeTracker) {
-        clearInterval(timeTracker);
-        timeTracker = null;
-      }
-    };
-    const startTrackingCurrentTime = () => {
-      stopTrackingCurrentTime();
-      timeTracker = setInterval(
-        () => setCurrentTime(currentAudioEl.currentTime),
-        1000
-      );
-    };
-    setDuration(currentAudioEl.duration);
-    const onLoadedMetata = () => setDuration(currentAudioEl.duration);
-    currentAudioEl.addEventListener('loadedmetadata', onLoadedMetata);
-
-    const onPlay = () => {
-      startTrackingCurrentTime();
-      setPlaying(true);
-    };
-    currentAudioEl.addEventListener('play', onPlay);
-
-    const onPause = () => {
-      stopTrackingCurrentTime();
-      setPlaying(false);
-    };
-    currentAudioEl.addEventListener('pause', onPause);
-
-    return () => {
-      stopTrackingCurrentTime();
-      currentAudioEl.removeEventListener('loadedmetadata', onLoadedMetata);
-      currentAudioEl.removeEventListener('play', onPlay);
-      currentAudioEl.removeEventListener('pause', onPause);
-    };
-  }, [audioEl]);
-
+function TrackListItem({
+  artist,
+  title,
+  src,
+  href,
+  learnMoreHref,
+  onSelectTrack,
+  current,
+  playing
+}) {
   return (
-    <div className="flex justify-between items-center py-2 px-6 rounded-full bg-blue text-pink">
-      <button
-        onClick={playing ? pause : play}
-        title={playing ? 'Pause' : 'Play'}
+    <li className="m-2 flex gap-2 items-center justify-start">
+      {current ? (
+        <div
+          className={clsx(
+            'inline align-text-bottom w-5 h-5 text-pink ',
+            playing && 'animate-pulse'
+          )}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+          >
+            <circle cx="12" cy="12" r="11" />
+          </svg>
+        </div>
+      ) : (
+        <button onClick={onSelectTrack}>
+          <PlayIcon className="inline align-text-bottom w-5 h-5 hover:text-pink" />
+        </button>
+      )}
+      {learnMoreHref != null ? (
+        <Link
+          href={learnMoreHref}
+          title="Learn more about the track"
+          className="line-clamp-1 hover:underline"
+        >
+          {artist ? `${artist} - ` : null}
+          {title}
+        </Link>
+      ) : (
+        <div className="line-clamp-1">
+          {artist ? `${artist} - ` : null}
+          {title}
+        </div>
+      )}
+      <div className="flex-grow" />
+      <Link
+        href={src}
+        title="Download track"
+        className="hover:text-pink hover:underline"
       >
-        {playing ? (
-          <PauseIcon className="w-8 h-8" />
-        ) : (
-          <PlayIcon className="w-8 h-8" />
-        )}
-      </button>
-      <span className="duration">
-        {formatDuration(currentTime)}&nbsp;/&nbsp;{formatDuration(duration)}
-      </span>
-      <button
-        onClick={restart}
-        disabled={currentTime === 0}
-        title={'Restart from beginning'}
-      >
-        <ArrowUturnLeftIcon className="w-8 h-8" />
-      </button>
-      <Link href={href} title={`Open original source for '${title}'...`}>
-        <ArrowTopRightOnSquareIcon className="w-8 h-8 text-pink" />
+        <ArrowDownTrayIcon className="w-4 h-4" />
       </Link>
-      <audio ref={audioEl} src={src} crossOrigin>
-        <p>
-          Your browser does not support the <code>audio</code> element.
-        </p>
-        <p>
-          Check out the original source for '{title}'{' '}
-          <Link href={href}>there</Link>
-        </p>
-      </audio>
+
+      {href != null ? (
+        <Link
+          href={href}
+          title="Open original"
+          className="hover:text-pink hover:underline"
+        >
+          <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+        </Link>
+      ) : null}
+    </li>
+  );
+}
+
+export default function Audio({ tracks, className, ...otherProps }) {
+  const [playing, setPlaying] = useState(false);
+  const handlePlay = useCallback(() => setPlaying(true), [setPlaying]);
+  const handlePause = useCallback(() => setPlaying(false), [setPlaying]);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+  const handlePrevious = useCallback(
+    () => setCurrentTrackIndex((index) => Math.max(index - 1, 0)),
+    [setCurrentTrackIndex]
+  );
+  const handleNext = useCallback(
+    () =>
+      setCurrentTrackIndex((index) => Math.min(index + 1, tracks.length - 1)),
+    [setCurrentTrackIndex, tracks]
+  );
+  const handlePlaying = useCallback(
+    debounce(() => {
+      sendGAEvent({
+        event: 'playing_track',
+        title: tracks[currentTrackIndex].title,
+        artist: tracks[currentTrackIndex].artist
+      });
+    }, 500),
+    [currentTrackIndex, tracks]
+  );
+  return (
+    <div
+      className={clsx(className, 'bg-slate-800 text-slate-300 flex flex-col')}
+      {...otherProps}
+    >
+      <ol className="not-prose">
+        {tracks.map((track, index) => (
+          <TrackListItem
+            key={index}
+            current={index === currentTrackIndex}
+            playing={index === currentTrackIndex && playing}
+            {...track}
+            onSelectTrack={() => setCurrentTrackIndex(index)}
+          />
+        ))}
+      </ol>
+      <AudioPlayer
+        src={tracks[currentTrackIndex].src}
+        showJumpControls={false}
+        showSkipControls={tracks.length > 1}
+        customAdditionalControls={[]}
+        onPlay={handlePlay}
+        onPause={handlePause}
+        onClickPrevious={handlePrevious}
+        onClickNext={handleNext}
+        onEnded={handleNext}
+        onPlaying={handlePlaying}
+      />
     </div>
   );
 }

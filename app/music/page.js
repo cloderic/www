@@ -2,7 +2,7 @@ import { H1 } from '../../components/title';
 import { Mdx } from '../../components/markdown';
 import HomeLink from '../../components/homeLink';
 import HeroImage from '../../components/heroImage';
-import ContentList from '../../components/contentList';
+import Audio from '../../components/players/audio';
 import listContent from '../content/utils/listContent';
 
 import banner from './two-clouds-away.jpeg';
@@ -16,9 +16,15 @@ export const metadata = {
 };
 
 export default async function Music() {
-  const musicContent = (
-    await listContent({ parseFrontmatter: true })
-  ).filter(({ categories = [] }) => categories.find((c) => c === 'music'));
+  const tracks = (await listContent({ parseFrontmatter: true }))
+    .filter(({ categories = [] }) => categories.find((c) => c === 'music'))
+    .map(({ slug, audioTracks }) =>
+      audioTracks.map((track) => ({
+        ...track,
+        learnMoreHref: `/content/${slug}`
+      }))
+    )
+    .flat();
   return (
     <div className="max-w-prose">
       <HeroImage
@@ -30,12 +36,7 @@ export default async function Music() {
         I've been _on and off_ playing music since, well, forever. This page is
         my public archive of the tunes I've recorded...
       </Mdx>
-      <ContentList
-        items={musicContent}
-        renderDate={({ date }) => date.toFormat('yyyy')}
-        renderTitle={({ title }) => title}
-        renderSubtitle={() => <span className="italic">Solo</span>}
-      />
+      <Audio tracks={tracks} className="mt-4" />
       <footer className="mt-4 text-center">
         <HomeLink />
       </footer>

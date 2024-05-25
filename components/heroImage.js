@@ -21,7 +21,7 @@ export default function HeroImage({
           'object-cover',
           height == null && 'aspect-video'
         )}
-        width={width == null && !fill ? 750 : null}
+        width={width == null && !fill ? 750 : width}
         height={height}
         fill={fill}
         {...otherProps}

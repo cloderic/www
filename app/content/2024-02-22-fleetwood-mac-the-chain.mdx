@@ -5,9 +5,19 @@ date: 2024-02-22
 categories:
   - music
 cover: /content/2024-02-22-fleetwood-mac-the-chain/fleetwood-mac-the-chain-cover.jpeg
+audioTracks:
+  - title: The Chain (Fleetwood Mac Cover)
+    artist: Clodéric Mars
+    src: /content/2024-02-22-fleetwood-mac-the-chain/fleetwood-mac-the-chain.m4a
+    href: https://soundcloud.com/cloderic/the-chain
+    soundCloudTrackId: 1737657084
 ---
 
-<SoundCloud trackId="1737657084" originalHref="https://soundcloud.com/cloderic/the-chain" downloadHref="/content/2024-02-22-fleetwood-mac-the-chain/fleetwood-mac-the-chain.m4a"/>
+<SoundCloud
+  trackId={frontmatter.audioTracks[0].soundCloudTrackId}
+  href={frontmatter.audioTracks[0].href}
+  src={frontmatter.audioTracks[0].src}
+/>
 
 This is a Cover of ["The Chain"](https://en.wikipedia.org/wiki/The_Chain) by ["Fleetwood Mac"](https://en.wikipedia.org/wiki/Fleetwood_Mac) released on their 1977 album ["Rumours"](https://en.wikipedia.org/wiki/Rumours_(album)).
 

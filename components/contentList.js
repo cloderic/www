@@ -20,9 +20,11 @@ const CATEGORY_PICTOS = {
 
 const defaultRenderSubtitle = ({ categories = [], description = '' }) => (
   <>
-    {categories.map((category) =>
+    {categories.map((category, index) =>
       Object.hasOwn(CATEGORY_PICTOS, category) ? (
-        <span className="me-2">{CATEGORY_PICTOS[category]}</span>
+        <span key={index} className="me-2">
+          {CATEGORY_PICTOS[category]}
+        </span>
       ) : null
     )}
     {description}

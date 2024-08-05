@@ -43,7 +43,10 @@ function ItemTitle({ children, as = 'h3', from, to = null, location = null }) {
   const toDate = to != null ? DateTime.fromISO(to) : null;
   return (
     <>
-      <Subtitle className="text-blue-light text-xs" top>
+      <Title as={as}>
+        <Mdx>{children}</Mdx>
+      </Title>
+      <Subtitle className="text-blue-light text-xs">
         {toDate
           ? `from ${fromDate.toFormat('yyyy/MM')} to ${toDate.toFormat(
               'yyyy/MM'
@@ -51,9 +54,6 @@ function ItemTitle({ children, as = 'h3', from, to = null, location = null }) {
           : `since ${fromDate.toFormat('yyyy/MM')}`}
         {location ? ` - ${location}` : null}
       </Subtitle>
-      <Title as={as}>
-        <Mdx>{children}</Mdx>
-      </Title>
     </>
   );
 }

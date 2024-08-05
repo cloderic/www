@@ -4,41 +4,41 @@ subtitle: >
   AI Product Engineer & Tech Leader, turning research prototypes into enterprise
   products since 2006
 intro: |
-  Since 2006, I have been deeply committed to a singular goal: **fostering the collaboration between humans and AIs**. Throughout my career, I have significantly contributed to various projects where AI augments human expertise. These projects include enhancing movie production with AI-driven characters, optimizing transportation infrastructure through simulation & data analysis, developing effective & realistic training simulations, and improving the efficiency of energy infrastructure operations.
+  Since 2006, I have specialized in **fostering human-AI collaboration**. My projects have enabled artists to direct autonomous characters in movies, helped engineers optimize transportation infrastructure, provided trainees with personalized training simulations, and assisted operators in improving energy infrastructure.
 
-  I excel at **bridging the gap between cutting-edge research and B2B applications**. My leadership spans recruiting and guiding teams of engineers and researchers within high-pressure, deep tech startup environments. I design strategic product roadmaps and spearhead collaborative R&D programs, always ensuring I remain hands-on with technical architecture and coding.
+  I excel at **bridging cutting-edge research and B2B applications**. My leadership includes recruiting and guiding teams in high-pressure, deep tech environments. I design and lead strategic product and R&D roadmaps, while remaining hands-on with technical architecture and coding.
 
-  A **generalist software engineer**, my competencies include human-in-the-loop systems design, applied AI, distributed cloud architecture, and full-stack development. I am also an effective communicator, proficient in both French and English, capable of articulating complex ideas clearly and persuasively.
+  As a **generalist software engineer**, my skills include human-in-the-loop systems design, applied AI, distributed cloud architecture, and full-stack development. I communicate effectively in both French and English, articulating complex ideas clearly and persuasively.
 
 experiences:
   title: Experiences
   items:
-    - from: 2020-08
+    - from: 2021-02
       location: Montréal, Canada
       title: >
         VP of Engineering - [**AI Redefined**](https://www.ai-r.com)
       description: |
-        - Coordination of product & technological strategy, research and external collaboration efforts in line with corporate strategy and business development.
-        - Recruiting and leading the research & engineering team from 5 to 16 engineers & researchers.
-        - Key contribution to product and sales strategy, as well as operations: defining offers, managing the product roadmap, participating in business development, setuping technological & research partnerships.
-        - Hands-on research and development of [Cogment](https://cogment.ai/) a multi-agent, human-in-the-loop reinforcement learning orchestration platform and several projects implementing it: Python, Go, Javascript, Kubernetes, Reinforcement Learning, Machine Learning, Data Science.
-        - Coordination and contributions on multiple collaborations including with [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [NAV CANADA](https://www.navcanada.ca/), [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/) and [IRT SystemX](https://www.irt-systemx.fr/).
+        - Directed tech and research strategy, leading to 3 commercial products generating $1M-$1.5M ARR and publishing over 3 peer-reviewed papers annually.
+        - Grew and led a research & engineering team from 5 to 16 members.
+        - Coordinated collaborations with [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [NAV CANADA](https://www.navcanada.ca/), [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), and [IRT SystemX](https://www.irt-systemx.fr/).
+        - Conducted R&D for [Cogment](https://cogment.ai/), a multi-agent, human-in-the-loop reinforcement learning platform, and various projects using Python, Go, Javascript, Kubernetes, Reinforcement Learning, Machine Learning, and Data Science.
     - from: 2020-08
       to: 2021-01
       location: Paris, France
       title: >
         Freelance AI engineer - **AI Redefined**
       description: |
-        Contribution & coordination of the open source release of Cogment v1.
+        Coordinated and contributed to the open source release of Cogment v1, building upon 3 years of prototoyping & R&D.
     - from: 2015-03
       to: 2020-04
       location: Paris, France
       title: >
         Co-founder & CTO - [**craft ai**](https://www.craft.ai/)
       description: |
-        - Development of the company from 7 to 20+ employees, participation in fundraising for a total of ~9M€, deployment of ~10 AI projects within large companies including [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr) and [Dassault Aviation](https://www.dassault-aviation.com).
-        - Leading product development, R&D and Customer Success teams.
-        - Hands-on development of an explainable AI SaaS specialized in time series: Rust, Javascript, Python, Kafka, Redis, Kubernetes, Docker, machine learning, data science.
+        - Cofounded and expanded the company from 7 to 20+ employees, raising ~9M€ in funding.
+        - Led the product, technology, and research strategy and roadmap.
+        - Developed an explainable AI SaaS for time series analysis using Rust, Javascript, Python, Kafka, Redis, Kubernetes, Docker, Machine Learning, and Data Science.
+        - Deployed the product in ~10 AI projects for major clients like [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr), and [Dassault Aviation](https://www.dassault-aviation.com).
     - from: 2012-01
       to: 2015-02
       location: Paris, France
@@ -46,24 +46,25 @@ experiences:
         Lead Software Engineer & Product Manager - [**MASA
         Group**](https://masasim.com/)
       description: |
-        - Leading a product development team (~5 software engineers) based in Paris and Munich.
-        - Managing an AI product, a middleware enabling non-specialists to create and control AIs for simulations and video games: Technical pre-sales, participation to business development, speaker at several international conferences (e.g. GDC), coordination with the research team.
-        - Development of the behavior tree and spatial reasoning engine: C++, Computational Geometry, Game AI, Unity, Ogre3d, VBS2/3.
+        - Led a team of ~5 software engineers across Paris and Munich.
+        - Managed an AI product for non-specialists to create and control AIs in simulations and video games, handling technical pre-sales, business development, and presenting at international conferences (e.g., GDC).
+        - Developed a behavior tree and spatial reasoning engine using C++, Computational Geometry, Game AI, Unity, Ogre3d, VBS2/3.
     - from: 2010-01
       to: 2011-12
       location: Rennes, France
       title: >
         R&D Software Engineer - [**Golaem**](http://golaem.com/)
       description: |
-        - Development of navigation engine for virtual crowds: C++, Computational Geometry, Game AI.
-        - Management of a collaborative R&D project with [Dassault Systèmes](https://www.3ds.com) and [CNRS](https://www.cnrs.fr), for the "real-time" population of a 3d virtual city.
+        - Developed a navigation engine for virtual crowds using C++, Computational Geometry, and Game AI.
+        - Managed a collaborative R&D project with [Dassault Systèmes](https://www.3ds.com) and [CNRS](https://www.cnrs.fr) for the real-time population of a 3D virtual city.
     - from: 2009-02
       to: 2009-12
       location: Rennes, France
       title: >
         R&D Software Engineer - [**Inria**](https://www.inria.fr)
       description: |
-        Development of a 3d simulation engine and industrialization of a navigation engine for virtual crowds: C++, Qt, Ogre3d, Computational Geometry, Game AI.
+        - Member of the [Bunraku project-team](https://www.irisa.fr/bunraku),
+        - Developed a 3d simulation engine and industrialized a navigation engine for virtual crowds uisng C++, Qt, Ogre3d, Computational Geometry, Game AI.
     - from: 2006-07
       to: 2009-02
       location: Rennes, France
@@ -71,18 +72,8 @@ experiences:
         Software Engineer - [**Teamlog** (acquired by
               Open)](https://www.open.global)
       description: |
-        - Development of a tool chain to create virtual cities for [Orange](https://www.orange.fr): C++, Qt, Open Scene Graph, PostGIS, Geographic Information Systems, Computational Geometry.
-        - Development of a user contribution system for [PagesJaunes.fr](https://www.pagesjaunes.fr): Java/J2E.
-    - from: 2006-02
-      to: 2006-09
-      location: Rennes, France
-      title: >
-        AI Research Intern - [**Inria**](https://www.inria.fr)
-      description: |
-        Member of the [Bunraku project-team](https://www.irisa.fr/bunraku),
-        advised by Fabrice Lamarche. Environment representation formalism
-        for crowd simulation using semantic & topologic abstraction of
-        navigation graphs.
+        - Developed a toolchain to create virtual cities for [Orange](https://www.orange.fr) using C++, Qt, Open Scene Graph, PostGIS, Geographic Information Systems, Computational Geometry.
+        - Developed a user contribution system for [PagesJaunes.fr](https://www.pagesjaunes.fr) using Java/J2E.
   more:
     title: Additional activities
     items:
@@ -100,7 +91,7 @@ experiences:
           Data Scientist (volunteer) - [**APHP**](https://www.aphp.fr)
         description: |
           Data extraction and preparation for epidemiological studies of the
-          first COVID-19 patients in Paris hospitals: Python, PostgreSQL,
+          first COVID-19 patients in Paris hospitals using Python, PostgreSQL,
           Apache Spark, data science.
       - from: 2015-01
         to: 2016-07
@@ -108,11 +99,7 @@ experiences:
         title: >
           Track chair - **nucl.ai**
         description: |
-          nucl.ai was a yearly AI developper conference, for 2 years I was track chair: content selection
-          & refinement, speakers management and presenter. In 2016, I was in charge of the "Cognition,
-          Bots & Understanding" track (cognition, bots & compréhension - with speakers from Snips, Recast.AI,
-          IBM Watson and others); in 2015, de "Agent Behaviors" track (with speakers from Square Enix,
-          Creative Assembly, Bohemia Interactive Simulations and others).
+          nucl.ai was a yearly AI developer conference where I served as track chair for two years. My responsibilities included content selection and refinement, speaker management, and presenting. In 2015, I chaired the “Agent Behaviors” track with speakers from Square Enix, Creative Assembly, Bohemia Interactive Simulations, and others. In 2016, I led the “Cognition, Bots & Understanding” track featuring speakers from Snips, Recast.AI, IBM Watson, and more.
 education:
   title: Education
   items:
@@ -122,19 +109,18 @@ education:
       title: >
         **MEng (Diplôme d'ingénieur) in Computer Science** - [_INSA de
         Rennes_](https://www.insa-rennes.fr)
-      description: >
-        2 years of general scientific and engineering courses followed by 3
-              years of computer science specialization.
+      description: |
+        - Completed a 5-year engineering program, including 2 years of general scientific and engineering courses followed by 3 years specializing in computer science.
     - from: 2005-09
       to: 2006-06
       location: Rennes, France
       title: >
         **MSc in Artificial Intelligence** - [_Université de Rennes
         1_](https://www.univ-rennes.fr)
-      description: >
-        Academia-oriented 1 year curriculum with a focus on Artificial
-        Intelligence, including machine learning and symbolic reasoning, in
-        collaboration with [Inria](https://www.inria.fr).
+      description: |
+        - Completed an academic curriculum focused on Artificial Intelligence, including machine learning and symbolic reasoning.
+        - Interned at [Inria](https://www.inria.fr) with the [Bunraku project-team](https://www.irisa.fr/bunraku), advised by Fabrice Lamarche.
+        - Developed a semantic and topologic navigation graph formalism for crowd simulation.
   moocs:
     title: MOOCS
 peer_review_publications:

@@ -92,6 +92,11 @@ module.exports = {
         destination:
           '/content/2014-03-17-gdcaisummit2014-environmentally-conscious-ai/gdcaisummit2014-simple-formation-assignment.pdf',
         permanent: true
+      },
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true
       }
     ];
   }

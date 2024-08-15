@@ -38,7 +38,7 @@ experiences:
         - Amorcage et développement l'entreprise, passant de 7 à 20+ employés, levant environ 9M€ de financement.
         - Direction de la stratégie et la feuille de route produit, technologique et de recherche.
         - Développement d'une solution SaaS d'IA explicable pour l'analyse de séries temporelles utilisant Rust, Javascript, Python, Kafka, Redis, Kubernetes, Docker, apprentissage artificiel et science des données.
-        - Déployé le produit dans environ 10 projets d'IA pour des clients majeurs tels que [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr) et [Dassault Aviation](https://www.dassault-aviation.com).
+        - Déploiement du produit dans ~10 projets d'IA pour des clients majeurs tels que [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr) et [Dassault Aviation](https://www.dassault-aviation.com).
     - from: 2012-01
       to: 2015-02
       location: Paris, France
@@ -64,7 +64,8 @@ experiences:
       title: >
         Ingénieur logiciel R&D - [**Inria**](https://www.inria.fr)
       description: |
-        Développement d'un moteur de simulation 3D et industrialisation d'un moteur de navigation pour les foules virtuelles utilisant C++, Qt, Ogre3d, géométrie algorithmique, Game AI.
+        - Membre de l'équipe-project [Bunraku](https://www.irisa.fr/bunraku),
+        - Développement d'un moteur de simulation 3D et industrialisation d'un moteur de navigation pour les foules virtuelles utilisant C++, Qt, Ogre3d, géométrie algorithmique, Game AI.
     - from: 2006-07
       to: 2009-02
       location: Rennes, France
@@ -119,7 +120,7 @@ education:
         de Rennes 1_](https://www.univ-rennes.fr)
       description: |
         - Cursus académique axé sur l'intelligence artificielle, comprenant l'apprentissage artificiel et le raisonnement symbolique.
-        - Stage chez [Inria](https://www.inria.fr) au sein de l'équipe projet [Bunraku](https://www.irisa.fr/bunraku), sous la direction de Fabrice Lamarche.
+        - Travaux de recherche effectués au sein d'[Inria](https://www.inria.fr) dans l'équipe projet [Bunraku](https://www.irisa.fr/bunraku), sous la direction de Fabrice Lamarche.
         - Développement d'un formalisme de graphe de navigation sémantique et topologique pour la simulation de foules.
   moocs:
     title: MOOCS

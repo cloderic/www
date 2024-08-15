@@ -12,20 +12,20 @@ import PrintButton from '../../../components/printButton';
 import Title, { Subtitle } from '../../../components/title';
 import { Fragment } from 'react';
 
-export async function loadResume({ params }) {
+export async function loadResume(locale) {
   const resumeFile = await fs.readFile(
-    `app/resume/resume.${params.slug}.yml`,
+    `app/resume/resume.${locale}.yml`,
     'utf8'
   );
   return parse(resumeFile);
 }
 
-export async function generateMetadata({ params }) {
-  const resume = await loadResume({ params });
+export async function generateMetadata({ params: { locale } }) {
+  const resume = await loadResume(locale);
   return {
     title: resume.page_title,
     alternates: {
-      canonical: `/resume/${params.slug}`,
+      canonical: `/resume/${locale}`,
       languages: {
         'en-US': '/resume/en',
         'fr-FR': '/resume/fr'
@@ -89,8 +89,8 @@ function RightCol({ className, ...otherProps }) {
   );
 }
 
-export default async function Resume({ params }) {
-  const resume = await loadResume({ params });
+export default async function Resume({ params: { locale } }) {
+  const resume = await loadResume(locale);
   const contentItems = sortBy(
     await listContent({ parseFrontmatter: true }),
     'date'

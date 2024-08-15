@@ -1,0 +1,5 @@
+{
+  "actions.print": "Print or save to pdf...",
+  "item.date.fromTo": "from {fromDate} to {toDate}",
+  "item.date.since": "since {fromDate}"
+}

@@ -1,0 +1,5 @@
+{
+  "actions.print": "Imprimer ou enregistrer en pdf...",
+  "item.date.fromTo": "entre {fromDate} et {toDate}",
+  "item.date.since": "depuis {fromDate}"
+}

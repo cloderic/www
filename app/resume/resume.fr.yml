@@ -53,8 +53,8 @@ experiences:
       to: 2011-12
       location: Rennes, France
       title: >
-        Ingénieur logiciel R&D - [**Golaem (acquis par
-        Autodesk)**](http://golaem.com/)
+        Ingénieur logiciel R&D - [**Golaem** (acquis par
+        Autodesk)](http://golaem.com/)
       description: |
         - Développement d'un moteur de navigation pour les foules virtuelles utilisant C++, géométrie algorithmique, Game AI.
         - Gestion d'un projet de R&D en collaboration avec [Dassault Systèmes](https://www.3ds.com) et [CNRS](https://www.cnrs.fr), pour la population "en temps réel" d'une ville virtuelle en 3D.
@@ -101,7 +101,7 @@ experiences:
         description: |
           nucl.ai était une conférence annuelle pour les développeurs en IA où j'ai été président de session pendant deux ans. Mes responsabilités comprenaient la sélection et l'affinement du contenu, la gestion des intervenants et les présentations. En 2015, j'ai présidé la session "Agent Behaviors" avec des intervenants de Square Enix, Creative Assembly, Bohemia Interactive Simulations et d'autres. En 2016, j'ai dirigé la session "Cognition, Bots & Understanding" avec des intervenants de Snips, Recast.AI, IBM Watson et d'autres.
 education:
-  title: Education
+  title: Éducation
   items:
     - from: 2001-09
       to: 2006-06

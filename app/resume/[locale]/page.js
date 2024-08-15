@@ -10,22 +10,24 @@ import ContentList from '../../../components/contentList';
 import listContent from '../../content/utils/listContent';
 import PrintButton from '../../../components/printButton';
 import Title, { Subtitle } from '../../../components/title';
+import getIntl from '../../../i18n/i18n';
+import { defineMessages } from '@formatjs/intl';
 import { Fragment } from 'react';
 
-export async function loadResume({ params }) {
+export async function loadResume(locale) {
   const resumeFile = await fs.readFile(
-    `app/resume/resume.${params.slug}.yml`,
+    `app/resume/resume.${locale}.yml`,
     'utf8'
   );
   return parse(resumeFile);
 }
 
-export async function generateMetadata({ params }) {
-  const resume = await loadResume({ params });
+export async function generateMetadata({ params: { locale } }) {
+  const resume = await loadResume(locale);
   return {
     title: resume.page_title,
     alternates: {
-      canonical: `/resume/${params.slug}`,
+      canonical: `/resume/${locale}`,
       languages: {
         'en-US': '/resume/en',
         'fr-FR': '/resume/fr'
@@ -38,9 +40,26 @@ export async function generateStaticParams() {
   return ['fr', 'en'];
 }
 
-function ItemTitle({ children, as = 'h3', from, to = null, location = null }) {
+function ItemTitle({
+  children,
+  as = 'h3',
+  from,
+  to = null,
+  location = null,
+  intl
+}) {
   const fromDate = DateTime.fromISO(from);
   const toDate = to != null ? DateTime.fromISO(to) : null;
+  const messages = defineMessages({
+    fromTo: {
+      id: 'item.date.fromTo',
+      defaultMessage: 'from {fromDate} to {toDate}'
+    },
+    since: {
+      id: 'item.date.since',
+      defaultMessage: 'since {fromDate}'
+    }
+  });
   return (
     <>
       <Title as={as}>
@@ -48,11 +67,13 @@ function ItemTitle({ children, as = 'h3', from, to = null, location = null }) {
       </Title>
       <Subtitle className="text-blue-light text-xs">
         {toDate
-          ? `from ${fromDate.toFormat('yyyy/MM')} to ${toDate.toFormat(
-              'yyyy/MM'
-            )}`
-          : `since ${fromDate.toFormat('yyyy/MM')}`}
-        {location ? ` - ${location}` : null}
+          ? intl.formatMessage(messages.fromTo, {
+              fromDate: fromDate.toFormat('yyyy/MM'),
+              toDate: toDate.toFormat('yyyy/MM')
+            })
+          : intl.formatMessage(messages.since, {
+              fromDate: fromDate.toFormat('yyyy/MM')
+            })}
       </Subtitle>
     </>
   );
@@ -89,8 +110,10 @@ function RightCol({ className, ...otherProps }) {
   );
 }
 
-export default async function Resume({ params }) {
-  const resume = await loadResume({ params });
+export default async function Resume({ params: { locale } }) {
+  const intl = await getIntl(locale);
+
+  const resume = await loadResume(locale);
   const contentItems = sortBy(
     await listContent({ parseFrontmatter: true }),
     'date'
@@ -141,7 +164,7 @@ export default async function Resume({ params }) {
             <Mdx>{process.env.CONTACT_ADDRESS || 'Montréal, QC\n\nCanada'}</Mdx>
           </div>
         </address>
-        <PrintButton />
+        <PrintButton intl={intl} />
       </LeftCol>
       <RightCol>
         <ItemDescription className="">{resume.intro}</ItemDescription>
@@ -153,14 +176,20 @@ export default async function Resume({ params }) {
         {resume.experiences.items.map(
           ({ from, to, location, title, description, items = [] }, index) => (
             <section className="break-inside-avoid" key={index}>
-              <ItemTitle from={from} to={to} location={location}>
+              <ItemTitle from={from} to={to} location={location} intl={intl}>
                 {title}
               </ItemTitle>
               <ItemDescription>{description}</ItemDescription>
               {items.map(
                 ({ from, to, location, title, description }, index) => (
                   <Fragment key={index}>
-                    <ItemTitle from={from} to={to} location={location} as="h4">
+                    <ItemTitle
+                      from={from}
+                      to={to}
+                      location={location}
+                      as="h4"
+                      intl={intl}
+                    >
                       {title}
                     </ItemTitle>
                     <ItemDescription>{description}</ItemDescription>
@@ -174,14 +203,26 @@ export default async function Resume({ params }) {
         {resume.experiences.more.items.map(
           ({ from, to, location, title, description, items = [] }, index) => (
             <section className="break-inside-avoid" key={index}>
-              <ItemTitle as="h4" from={from} to={to} location={location}>
+              <ItemTitle
+                as="h4"
+                from={from}
+                to={to}
+                location={location}
+                intl={intl}
+              >
                 {title}
               </ItemTitle>
               <ItemDescription>{description}</ItemDescription>
               {items.map(
                 ({ from, to, location, title, description }, index) => (
                   <Fragment key={index}>
-                    <ItemTitle from={from} to={to} location={location} as="h4">
+                    <ItemTitle
+                      from={from}
+                      to={to}
+                      location={location}
+                      as="h4"
+                      intl={intl}
+                    >
                       {title}
                     </ItemTitle>
                     <ItemDescription>{description}</ItemDescription>
@@ -199,14 +240,20 @@ export default async function Resume({ params }) {
         {resume.education.items.map(
           ({ from, to, location, title, description, items = [] }, index) => (
             <section className="break-inside-avoid" key={index}>
-              <ItemTitle from={from} to={to} location={location}>
+              <ItemTitle from={from} to={to} location={location} intl={intl}>
                 {title}
               </ItemTitle>
               <ItemDescription>{description}</ItemDescription>
               {items.map(
                 ({ from, to, location, title, description }, index) => (
                   <Fragment key={index}>
-                    <ItemTitle from={from} to={to} location={location} as="h4">
+                    <ItemTitle
+                      from={from}
+                      to={to}
+                      location={location}
+                      as="h4"
+                      intl={intl}
+                    >
                       {title}
                     </ItemTitle>
                     <ItemDescription>{description}</ItemDescription>

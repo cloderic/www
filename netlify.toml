@@ -8,4 +8,4 @@ TERM = "xterm"
 
 # Include all the content files (.mdx in apps so that they can be loaded to render)
 [functions]
-included_files = ["app/**", "tailwind.config"]
+included_files = ["app/**", "tailwind.config", "i18n/**"]

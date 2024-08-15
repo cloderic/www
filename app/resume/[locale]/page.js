@@ -74,6 +74,7 @@ function ItemTitle({
           : intl.formatMessage(messages.since, {
               fromDate: fromDate.toFormat('yyyy/MM')
             })}
+        {location ? ` - ${location}` : null}
       </Subtitle>
     </>
   );

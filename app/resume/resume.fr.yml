@@ -84,16 +84,14 @@ experiences:
         title: >
           Contributeur - **The Good AI**
         description: |
-          The Good AI était une plateforme et un média collaboratif focalisé sur les applications responsables de l'IA.
-          J'ai contribué du contenu écrit pour le site.
+          - Contribution de contenu écrit autour de l'IA responsable.
       - from: 2020-05
         to: 2020-06
         location: Paris, France
         title: >
           Scientifique des données (bénévole) - [**APHP**](https://www.aphp.fr)
         description: |
-          Extraction et préparation de données pour les études épidémiologiques des
-          premiers patients COVID-19 dans les hôpitaux parisiens : Python, PostgreSQL,
+          - Support d'études épidémiologiques des premiers patients COVID-19 par l'extraction et la préparation de données : Python, PostgreSQL,
           Apache Spark, science des données.
       - from: 2015-01
         to: 2016-07
@@ -101,7 +99,7 @@ experiences:
         title: >
           Président de session - **nucl.ai**
         description: |
-          nucl.ai était une conférence annuelle pour les développeurs en IA où j'ai été président de session pendant deux ans. Mes responsabilités comprenaient la sélection et l'affinement du contenu, la gestion des intervenants et les présentations. En 2015, j'ai présidé la session "Agent Behaviors" avec des intervenants de Square Enix, Creative Assembly, Bohemia Interactive Simulations et d'autres. En 2016, j'ai dirigé la session "Cognition, Bots & Understanding" avec des intervenants de Snips, Recast.AI, IBM Watson et d'autres.
+          - Sélection de contenu, gestion des intervenants et présentation pour une conférence annuelle pour les développeurs en IA.
 education:
   title: Éducation
   items:

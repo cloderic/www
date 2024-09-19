@@ -29,7 +29,7 @@ experiences:
       title: >
         Freelance AI engineer - **AI Redefined**
       description: |
-        Coordinated and contributed to the open source release of Cogment v1, building upon 3 years of prototoyping & R&D.
+        - Coordinated and contributed to the open source release of Cogment v1, building upon 3 years of prototoyping & R&D.
     - from: 2015-03
       to: 2020-04
       location: Paris, France
@@ -66,7 +66,7 @@ experiences:
         R&D Software Engineer - [**Inria**](https://www.inria.fr)
       description: |
         - Member of the [Bunraku project-team](https://www.irisa.fr/bunraku),
-        - Developed a 3d simulation engine and industrialized a navigation engine for virtual crowds uisng C++, Qt, Ogre3d, Computational Geometry, Game AI.
+        - Industrialized pedestrian animation & navigation research prototypes uisng C++, Qt, Ogre3d, Computational Geometry, Game AI.
     - from: 2006-07
       to: 2009-02
       location: Rennes, France
@@ -84,24 +84,21 @@ experiences:
         title: >
           Contributor - **The Good AI**
         description: |
-          The Good AI was a plateform and a collaborative media focused on responsible application for AI.
-          I contributed written content for the website.
+          - Contributed written content about responsible AI.
       - from: 2020-05
         to: 2020-06
         location: Paris, France
         title: >
           Data Scientist (volunteer) - [**APHP**](https://www.aphp.fr)
         description: |
-          Data extraction and preparation for epidemiological studies of the
-          first COVID-19 patients in Paris hospitals using Python, PostgreSQL,
-          Apache Spark, data science.
+          - Supported early COVID-19 epidemiological studies by extracting & preparing data using Python, PostgreSQL, Apache Spark, data science.
       - from: 2015-01
         to: 2016-07
         location: Vienna, Austria
         title: >
           Track chair - **nucl.ai**
         description: |
-          nucl.ai was a yearly AI developer conference where I served as track chair for two years. My responsibilities included content selection and refinement, speaker management, and presenting. In 2015, I chaired the “Agent Behaviors” track with speakers from Square Enix, Creative Assembly, Bohemia Interactive Simulations, and others. In 2016, I led the “Cognition, Bots & Understanding” track featuring speakers from Snips, Recast.AI, IBM Watson, and more.
+          - Curated content, managed speakers and presented tracks at a yearly AI developer conference.
 education:
   title: Education
   items:

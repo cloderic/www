@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { defineMessage } from '@formatjs/intl';
 
 import { Mdx } from '../../../components/markdown';
 import ContentList from '../../../components/contentList';
@@ -84,6 +85,11 @@ function RightCol({ className, ...otherProps }) {
 export default async function Resume({ params: { locale } }) {
   const intl = await getIntl(locale);
 
+  const saveAtsResumeMessage = defineMessage({
+    id: 'actions.saveAtsResume',
+    defaultMessage: 'Save ATS friendly version...'
+  });
+
   const resume = await loadResume(locale);
 
   return (
@@ -122,7 +128,7 @@ export default async function Resume({ params: { locale } }) {
             href={`/resume/${locale}/docx`}
             className="bg-pink text-blue py-2 px-4 rounded-full text-sm print:hidden"
           >
-            Save ATS friendly version...
+            {intl.formatMessage(saveAtsResumeMessage)}
           </Link>
         </div>
       </LeftCol>

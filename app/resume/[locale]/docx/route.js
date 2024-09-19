@@ -405,7 +405,7 @@ export async function GET(request, { params: { locale } }) {
             ])
             .flat(),
           ...createHeading1(resume.other_publications.title),
-          ...resume.peer_review_publications.items
+          ...resume.other_publications.items
             .map(({ date, venue, title }) => [
               new Paragraph({
                 children: [

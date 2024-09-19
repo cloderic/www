@@ -1,5 +1,6 @@
 {
   "actions.print": "Imprimer ou enregistrer en pdf...",
+  "actions.saveAtsResume": "Enregistrer une version pour ATS...",
   "item.date.fromTo": "entre {fromDate} et {toDate}",
   "item.date.since": "depuis {fromDate}"
 }

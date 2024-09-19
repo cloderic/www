@@ -1,26 +1,14 @@
-import { DateTime } from 'luxon';
-import { parse } from 'yaml';
-import { promises as fs } from 'fs';
 import clsx from 'clsx';
-import difference from 'lodash.difference';
-import sortBy from 'lodash.sortby';
 
 import { Mdx } from '../../../components/markdown';
 import ContentList from '../../../components/contentList';
-import listContent from '../../content/utils/listContent';
 import PrintButton from '../../../components/printButton';
 import Title, { Subtitle } from '../../../components/title';
 import getIntl from '../../../i18n/i18n';
-import { defineMessages } from '@formatjs/intl';
+import formatDateRange from '../../../components/helpers/formatDateRange';
 import { Fragment } from 'react';
-
-export async function loadResume(locale) {
-  const resumeFile = await fs.readFile(
-    `app/resume/resume.${locale}.yml`,
-    'utf8'
-  );
-  return parse(resumeFile);
-}
+import loadResume from '../loadResume';
+import Link from '../../../components/link';
 
 export async function generateMetadata({ params: { locale } }) {
   const resume = await loadResume(locale);
@@ -48,32 +36,14 @@ function ItemTitle({
   location = null,
   intl
 }) {
-  const fromDate = DateTime.fromISO(from);
-  const toDate = to != null ? DateTime.fromISO(to) : null;
-  const messages = defineMessages({
-    fromTo: {
-      id: 'item.date.fromTo',
-      defaultMessage: 'from {fromDate} to {toDate}'
-    },
-    since: {
-      id: 'item.date.since',
-      defaultMessage: 'since {fromDate}'
-    }
-  });
+  const dateRange = formatDateRange({ from, to, intl });
   return (
     <>
       <Title as={as}>
         <Mdx>{children}</Mdx>
       </Title>
       <Subtitle className="text-blue-light text-xs">
-        {toDate
-          ? intl.formatMessage(messages.fromTo, {
-              fromDate: fromDate.toFormat('yyyy/MM'),
-              toDate: toDate.toFormat('yyyy/MM')
-            })
-          : intl.formatMessage(messages.since, {
-              fromDate: fromDate.toFormat('yyyy/MM')
-            })}
+        {dateRange}
         {location ? ` - ${location}` : null}
       </Subtitle>
     </>
@@ -115,26 +85,7 @@ export default async function Resume({ params: { locale } }) {
   const intl = await getIntl(locale);
 
   const resume = await loadResume(locale);
-  const contentItems = sortBy(
-    await listContent({ parseFrontmatter: true }),
-    'date'
-  ).reverse();
-  const resumeContentItems = contentItems.filter(({ categories = [] }) =>
-    categories.find((category) => category == 'resume')
-  );
-  const publications = resumeContentItems.filter(({ categories = [] }) =>
-    categories.find((category) => category == 'publication')
-  );
-  const talks = difference(
-    resumeContentItems.filter(({ categories = [] }) =>
-      categories.find((category) => category == 'talk')
-    ),
-    publications
-  );
-  const otherPublications = difference(resumeContentItems, publications, talks);
-  const moocs = contentItems.filter(({ categories = [] }) =>
-    categories.find((category) => category == 'mooc')
-  );
+
   return (
     <div
       className={clsx(
@@ -147,25 +98,33 @@ export default async function Resume({ params: { locale } }) {
           className="text-6xl text-blue font-title font-light"
           noanchor
         >
-          {resume.title}
+          {resume.name}
         </Title>
-        <Subtitle className="text-xl font-title">{resume.subtitle}</Subtitle>
+        <Subtitle className="text-xl font-title">{resume.job_title}</Subtitle>
         <address className="text-sm flex flex-col gap-2 my-4">
-          {process.env.CONTACT_MAIL ? (
+          {resume.contact.mail ? (
             <div>
-              <Mdx>{process.env.CONTACT_MAIL}</Mdx>
+              <Mdx>{resume.contact.mail}</Mdx>
             </div>
           ) : null}
-          {process.env.CONTACT_PHONE ? (
+          {resume.contact.phone ? (
             <div>
-              <Mdx>{process.env.CONTACT_PHONE}</Mdx>
+              <Mdx>{resume.contact.phone}</Mdx>
             </div>
           ) : null}
           <div>
-            <Mdx>{process.env.CONTACT_ADDRESS || 'Montréal, QC\n\nCanada'}</Mdx>
+            <Mdx>{resume.contact.address}</Mdx>
           </div>
         </address>
         <PrintButton intl={intl} />
+        <div className="mt-2">
+          <Link
+            href={`/resume/${locale}/docx`}
+            className="bg-pink text-blue py-2 px-4 rounded-full text-sm print:hidden"
+          >
+            Save ATS friendly version...
+          </Link>
+        </div>
       </LeftCol>
       <RightCol>
         <ItemDescription className="">{resume.intro}</ItemDescription>
@@ -266,7 +225,7 @@ export default async function Resume({ params: { locale } }) {
         )}
         <Title as="h3">{resume.education.moocs.title}</Title>
         <ContentList
-          items={moocs}
+          items={resume.education.moocs.items}
           className="not-prose"
           renderDate={({ date }) => `${date.toFormat('yyyy/MM')}`}
           renderTitle={({ title, organization }) => (
@@ -286,7 +245,7 @@ export default async function Resume({ params: { locale } }) {
       </LeftCol>
       <RightCol>
         <ContentList
-          items={publications}
+          items={resume.peer_review_publications.items}
           className="not-prose"
           renderDate={({ date, venue }) =>
             `${date.toFormat('yyyy/MM')} - ${venue}`
@@ -301,7 +260,7 @@ export default async function Resume({ params: { locale } }) {
       </LeftCol>
       <RightCol>
         <ContentList
-          items={talks}
+          items={resume.talks.items}
           className="not-prose"
           renderDate={({ date }) => date.toFormat('yyyy/MM/dd')}
           renderTitle={({ title }) => title}
@@ -314,7 +273,7 @@ export default async function Resume({ params: { locale } }) {
       </LeftCol>
       <RightCol>
         <ContentList
-          items={otherPublications}
+          items={resume.other_publications.items}
           className="not-prose"
           renderDate={({ date }) => date.toFormat('yyyy/MM')}
           renderTitle={({ title }) => title}

@@ -23,6 +23,7 @@
     "@tailwindcss/typography": "^0.5.0",
     "@types/mdx": "^2.0.12",
     "clsx": "^2.1.0",
+    "docx": "^8.5.0",
     "glob": "^10.3.12",
     "highlight.js": "^11.9.0",
     "lodash.debounce": "^4.0.8",
@@ -39,7 +40,9 @@
     "react-h5-audio-player": "^3.9.1",
     "react-tweet": "^3.2.1",
     "rehype-highlight": "^7.0.0",
+    "remark-parse": "^11.0.0",
     "sharp": "^0.33.3",
+    "unified": "^11.0.5",
     "yaml": "^2.4.2"
   },
   "devDependencies": {

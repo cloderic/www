@@ -12,7 +12,8 @@ key_skills:
   - Gestion de programme
   - Avant-vente & gestion de projets B2B
   - Transfert technologique
-  - Architecture cloud distribué
+  - Systèmes distribués
+  - Infrastructure cloud
   - Développement full-stack
   - Communication écrite et orale
   - Français (natif)
@@ -37,6 +38,8 @@ experiences:
         - Python
         - Go
         - Kubernetes
+        - AWS
+        - Azure
     - from: 2020-08
       to: 2021-01
       location: Paris, France
@@ -62,6 +65,8 @@ experiences:
         - Javascript
         - Kubernetes
         - Kafka
+        - AWS
+        - Azure
     - from: 2012-01
       to: 2015-02
       location: Paris, France

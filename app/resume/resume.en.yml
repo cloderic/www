@@ -12,7 +12,8 @@ key_skills:
   - Program Management
   - B2B presales & project management
   - Technology transfer
-  - Distributed cloud architecture
+  - Distributed systems
+  - Cloud infrastructure
   - Full-stack development
   - Written and oral communication
   - French (native)
@@ -37,6 +38,8 @@ experiences:
         - Python
         - Go
         - Kubernetes
+        - AWS
+        - Azure
     - from: 2020-08
       to: 2021-01
       location: Paris, France
@@ -62,6 +65,8 @@ experiences:
         - Javascript
         - Kubernetes
         - Kafka
+        - AWS
+        - Azure
     - from: 2012-01
       to: 2015-02
       location: Paris, France

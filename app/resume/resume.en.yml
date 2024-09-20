@@ -6,10 +6,17 @@ contact:
   linkedIn: https://www.linkedin.com/in/cloderic
 intro: |
   I am tech leader specialized in **fostering human-AI collaboration**. My projects have enabled artists to direct autonomous characters in movies, helped engineers optimize transportation infrastructure, provided trainees with personalized training simulations, and assisted operators in improving energy infrastructure.
-
-  I excel at **bridging cutting-edge research and B2B applications**. I design and lead strategic roadmaps, operationalized them by recruiting and orchestrate teams of highly skilled engineers and researchers, while remaining hands-on with technical architecture and coding.
-
-  As a **generalist software engineer**, my skills include human-in-the-loop systems design, applied AI, distributed cloud architecture, and full-stack development. I communicate effectively in both French and English.
+key_skills:
+  - Applied Artificial Intelligence
+  - Technical Leadership
+  - Program Management
+  - B2B presales & project management
+  - Technology transfer
+  - Distributed cloud architecture
+  - Full-stack development
+  - Written and oral communication
+  - French (native)
+  - English (full professional proficiency)
 
 experiences:
   title: Experiences
@@ -23,9 +30,6 @@ experiences:
         - Grew and led the research & engineering team from 5 to 16 members.
         - Coordinated collaborations with industry, including with [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/) and [NAV CANADA](https://www.navcanada.ca/); and academia, including with the [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), and [IRT SystemX](https://www.irt-systemx.fr/).
       skills:
-        - Technical Leadership
-        - Program Management
-        - B2B Presales
         - Reinforcement Learning
         - Deep Learning
         - Generative AI
@@ -50,9 +54,6 @@ experiences:
         - Defined and operated the product, technology, and research strategy for an explainable AI SaaS for time series forecasting generating ~1M€ ARR.
         - Deployed the product in ~10 AI projects for major clients like [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr), and [Dassault Aviation](https://www.dassault-aviation.com).
       skills:
-        - Technical Leadership
-        - Program Management
-        - B2B Presales
         - Explainable AI
         - Machine Learning
         - Data Science
@@ -71,8 +72,6 @@ experiences:
         - Led a team of ~5 software engineers across Paris and Munich developing a behavior tree and spatial reasoning engine.
         - Managed an AI product enabling instructional & game designers to build AI agents in simulations and video games, leading to key IP at the origin of **craft ai**.
       skills:
-        - Technical Leadership
-        - Project Management
         - Game AI
         - Computational Geometry
         - Simulation
@@ -88,7 +87,6 @@ experiences:
         - Developed a navigation engine for virtual crowds from research prototypes developed at Inria.
         - Managed a collaborative R&D project with [Dassault Systèmes](https://www.3ds.com) and [CNRS](https://www.cnrs.fr) for the real-time population of a 3D virtual city.
       skills:
-        - Project Management
         - Game AI
         - Computational Geometry
         - Simulation

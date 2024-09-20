@@ -186,6 +186,10 @@ export async function GET(request, { params: { locale } }) {
     skills: {
       id: 'item.skills',
       defaultMessage: 'Skills: '
+    },
+    keySkills: {
+      id: 'item.keySkills',
+      defaultMessage: 'Key skills: '
     }
   });
 
@@ -322,7 +326,22 @@ export async function GET(request, { params: { locale } }) {
               })
             ]
           }),
-          ...createDocxFromMarkdown(resume.intro)
+          ...createDocxFromMarkdown(resume.intro),
+          ...(resume.key_skills.length > 0
+            ? [
+                new Paragraph({
+                  children: [
+                    new TextRun({
+                      text: intl.formatMessage(messages.keySkills),
+                      bold: true
+                    }),
+                    new TextRun({
+                      text: `${resume.key_skills.join(', ')}.`
+                    })
+                  ]
+                })
+              ]
+            : [])
         ]
       },
       {

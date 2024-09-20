@@ -8,5 +8,6 @@
   "contact.website": "Site web : ",
   "item.date.fromTo": "entre {fromDate} et {toDate}",
   "item.date.since": "depuis {fromDate}",
-  "item.skills": "Compétences : "
+  "item.skills": "Compétences : ",
+  "item.keySkills": "Compétences principales : "
 }

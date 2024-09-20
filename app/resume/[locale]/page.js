@@ -93,6 +93,10 @@ export default async function Resume({ params: { locale } }) {
     skills: {
       id: 'item.skills',
       defaultMessage: 'Skills: '
+    },
+    keySkills: {
+      id: 'item.keySkills',
+      defaultMessage: 'Key skills: '
     }
   });
 
@@ -140,6 +144,14 @@ export default async function Resume({ params: { locale } }) {
       </LeftCol>
       <RightCol>
         <ItemDescription className="">{resume.intro}</ItemDescription>
+        {resume.key_skills.length > 0 ? (
+          <p className="border-l-4 border-blue pl-2 py-1 my-0">
+            <span className="font-semibold">
+              {intl.formatMessage(messages.keySkills)}
+            </span>
+            {resume.key_skills.join(', ')}.
+          </p>
+        ) : null}
       </RightCol>
       <LeftCol>
         <Title as="h2">{resume.experiences.title}</Title>

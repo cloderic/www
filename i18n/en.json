@@ -8,5 +8,6 @@
   "contact.website": "Website: ",
   "item.date.fromTo": "from {fromDate} to {toDate}",
   "item.date.since": "since {fromDate}",
-  "item.skills": "Skills: "
+  "item.skills": "Skills: ",
+  "item.keySkills": "Key skills: "
 }

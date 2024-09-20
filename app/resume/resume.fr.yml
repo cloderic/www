@@ -6,10 +6,17 @@ contact:
   linkedIn: https://www.linkedin.com/in/cloderic
 intro: |
   Je suis un tech leader spécialisé dans la **collaboration entre humains et IAs**. Mes projets ont permis à des artistes de diriger des personnages autonomes dans des films, ont aidé des ingénieurs à optimiser les infrastructures de transport, ont fourni des simulations de formation personnalisées aux étudiants et ont assisté des opérateurs dans l'optimisation des infrastructures énergétiques.
-
-  J’excelle à **combler le fossé entre la recherche de pointe et les applications B2B**. Je conçois et dirige des feuilles de route stratégiques, je les mets en œuvre en recrutant et en orchestrant des équipes d'ingénieurs et de chercheurs hautement qualifiés, tout en restant impliqué dans l’architecture technique et le développement.
-
-  En tant qu' **ingénieur logiciel généraliste**, mes compétences incluent la conception de systèmes "human-in-the-loop", l’IA appliquée, les architectures cloud distribuée et le développement full-stack. Je communique efficacement en français et en anglais.
+key_skills:
+  - Intelligence artificielle appliquée
+  - Leadership technique
+  - Gestion de programme
+  - Avant-vente & gestion de projets B2B
+  - Transfert technologique
+  - Architecture cloud distribué
+  - Développement full-stack
+  - Communication écrite et orale
+  - Français (natif)
+  - Anglais (maîtrise professionnelle complète)
 
 experiences:
   title: Expériences
@@ -21,11 +28,8 @@ experiences:
       description: |
         - Direction de la stratégie technologique et de recherche, de [Cogment](https://cogment.ai/), une plateforme d'apprentissage par renforcement multi-agents avec humain dans la boucle, aboutissant à 3 produits commerciaux générant entre ~$1,5M d'ARR et à la publication de plus de 3 articles évalués par les pairs chaque année.
         - Recrutement et direction d'une équipe de recherche et d'ingénierie, passant de 5 à 16 membres.
-        - Coordination de collaborations industrielles, nottament avec [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [NAV CANADA](https://www.navcanada.ca/); et académiques, avec nottament l'[Université d'Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), et l'[IRT SystemX](https://www.irt-systemx.fr/).
+        - Coordination de collaborations industrielles, notamment avec [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [NAV CANADA](https://www.navcanada.ca/); et académiques, avec notamment l'[Université d'Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), et l'[IRT SystemX](https://www.irt-systemx.fr/).
       skills:
-        - Leadership Technique
-        - Gestion de programme
-        - Avant-vente B2B
         - Apprentissage par renforcement
         - Deep Learning
         - IA Générative
@@ -39,20 +43,17 @@ experiences:
       title: >
         Ingénieur IA Freelance - **AI Redefined**
       description: |
-        _Début de poste à AI Redefined comme freelance avant de démménager au Canada_
+        _Début de poste à AI Redefined comme freelance avant de déménager au Canada_
     - from: 2015-03
       to: 2020-04
       location: Paris, France
       title: >
         Co-fondateur & CTO - [**craft ai**](https://www.craft.ai/)
       description: |
-        - Amorcage et développement l'entreprise, passant de 7 à 20+ employés, levant ~9M€ de financement.
-        - Définition et mise en oeuvre de la stratégie produit, technologique et de recherche pour solution SaaS d'IA explicable pour la prédiction de séries temporelles générant ~1M€ d'ARR.
+        - Amorçage et développement l'entreprise, passant de 7 à 20+ employés, levant ~9M€ de financement.
+        - Définition et mise en œuvre de la stratégie produit, technologique et de recherche pour solution SaaS d'IA explicable pour la prédiction de séries temporelles générant ~1M€ d'ARR.
         - Déploiement du produit dans ~10 projets d'IA pour des clients majeurs tels que [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr) et [Dassault Aviation](https://www.dassault-aviation.com).
       skills:
-        - Leadership Technique
-        - Gestion de programme
-        - Avant-vente B2B
         - IA explicable
         - Machine Learning
         - Science des données
@@ -71,8 +72,6 @@ experiences:
         - Direction d'une équipe d’environ 5 ingénieurs logiciels à Paris et Munich travaillant sur un moteur de Behavior Tree et de raisonnement spatial.
         - Gestion d'un produit permettant à des concepteurs pédagogique et de jeux de créer et de contrôler des agents IA dans des simulations et des jeux vidéo, aboutissant à une propriété intellectuelle clé à l’origine de **craft ai**.
       skills:
-        - Leadership Technique
-        - Gestion de projet
         - Game AI
         - Géométrie algorithmique
         - Simulation
@@ -88,7 +87,6 @@ experiences:
         - Développement d'un moteur de navigation pour les foules virtuelles à partir de prototypes de recherche développés à Inria.
         - Gestion d'un projet de R&D en collaboration avec [Dassault Systèmes](https://www.3ds.com) et [CNRS](https://www.cnrs.fr), pour la population "en temps réel" d'une ville virtuelle en 3D.
       skills:
-        - Gestion de projet
         - Game AI
         - Géométrie algorithmique
         - Simulation

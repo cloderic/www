@@ -1,6 +1,12 @@
 {
   "actions.print": "Imprimer ou enregistrer en pdf...",
-  "actions.saveAtsResume": "Enregistrer une version pour ATS...",
+  "actions.saveAtsResume": "Enregistrer pour ATS...",
+  "contact.address": "Adresse : ",
+  "contact.email": "Courriel : ",
+  "contact.linkedin": "LinkedIn : ",
+  "contact.phone": "Téléphone : ",
+  "contact.website": "Site web : ",
   "item.date.fromTo": "entre {fromDate} et {toDate}",
-  "item.date.since": "depuis {fromDate}"
+  "item.date.since": "depuis {fromDate}",
+  "item.skills": "Compétences : "
 }

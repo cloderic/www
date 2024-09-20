@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { defineMessage } from '@formatjs/intl';
+import { defineMessages } from '@formatjs/intl';
 
 import { Mdx } from '../../../components/markdown';
 import ContentList from '../../../components/contentList';
@@ -85,9 +85,15 @@ function RightCol({ className, ...otherProps }) {
 export default async function Resume({ params: { locale } }) {
   const intl = await getIntl(locale);
 
-  const saveAtsResumeMessage = defineMessage({
-    id: 'actions.saveAtsResume',
-    defaultMessage: 'Save ATS friendly version...'
+  const messages = defineMessages({
+    saveAtsResume: {
+      id: 'actions.saveAtsResume',
+      defaultMessage: 'Save ATS friendly version...'
+    },
+    skills: {
+      id: 'item.skills',
+      defaultMessage: 'Skills: '
+    }
   });
 
   const resume = await loadResume(locale);
@@ -128,7 +134,7 @@ export default async function Resume({ params: { locale } }) {
             href={`/resume/${locale}/docx`}
             className="bg-pink text-blue py-2 px-4 rounded-full text-sm print:hidden"
           >
-            {intl.formatMessage(saveAtsResumeMessage)}
+            {intl.formatMessage(messages.saveAtsResume)}
           </Link>
         </div>
       </LeftCol>
@@ -140,34 +146,26 @@ export default async function Resume({ params: { locale } }) {
       </LeftCol>
       <RightCol>
         {resume.experiences.items.map(
-          ({ from, to, location, title, description, items = [] }, index) => (
+          ({ from, to, location, title, description, skills = [] }, index) => (
             <section className="break-inside-avoid" key={index}>
               <ItemTitle from={from} to={to} location={location} intl={intl}>
                 {title}
               </ItemTitle>
               <ItemDescription>{description}</ItemDescription>
-              {items.map(
-                ({ from, to, location, title, description }, index) => (
-                  <Fragment key={index}>
-                    <ItemTitle
-                      from={from}
-                      to={to}
-                      location={location}
-                      as="h4"
-                      intl={intl}
-                    >
-                      {title}
-                    </ItemTitle>
-                    <ItemDescription>{description}</ItemDescription>
-                  </Fragment>
-                )
-              )}
+              {skills.length > 0 ? (
+                <p className="text-sm border-l-4 border-blue pl-2 py-1 my-0">
+                  <span className="font-semibold">
+                    {intl.formatMessage(messages.skills)}
+                  </span>
+                  {skills.join(', ')}.
+                </p>
+              ) : null}
             </section>
           )
         )}
         <Title as="h3">{resume.experiences.more.title}</Title>
         {resume.experiences.more.items.map(
-          ({ from, to, location, title, description, items = [] }, index) => (
+          ({ from, to, location, title, description, skills = [] }, index) => (
             <section className="break-inside-avoid" key={index}>
               <ItemTitle
                 as="h4"
@@ -179,22 +177,14 @@ export default async function Resume({ params: { locale } }) {
                 {title}
               </ItemTitle>
               <ItemDescription>{description}</ItemDescription>
-              {items.map(
-                ({ from, to, location, title, description }, index) => (
-                  <Fragment key={index}>
-                    <ItemTitle
-                      from={from}
-                      to={to}
-                      location={location}
-                      as="h4"
-                      intl={intl}
-                    >
-                      {title}
-                    </ItemTitle>
-                    <ItemDescription>{description}</ItemDescription>
-                  </Fragment>
-                )
-              )}
+              {skills.length > 0 ? (
+                <p className="text-sm border-l-4 border-blue pl-2 py-1 my-0">
+                  <span className="font-semibold">
+                    {intl.formatMessage(messages.skills)}
+                  </span>
+                  {skills.join(', ')}.
+                </p>
+              ) : null}
             </section>
           )
         )}

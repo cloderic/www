@@ -5,11 +5,11 @@ contact:
   address: Montréal, Canada
   linkedIn: https://www.linkedin.com/in/cloderic
 intro: |
-  Since 2006, I have specialized in **fostering human-AI collaboration**. My projects have enabled artists to direct autonomous characters in movies, helped engineers optimize transportation infrastructure, provided trainees with personalized training simulations, and assisted operators in improving energy infrastructure.
+  I am tech leader specialized in **fostering human-AI collaboration**. My projects have enabled artists to direct autonomous characters in movies, helped engineers optimize transportation infrastructure, provided trainees with personalized training simulations, and assisted operators in improving energy infrastructure.
 
-  I excel at **bridging cutting-edge research and B2B applications**. My leadership includes recruiting and guiding teams in high-pressure, deep tech environments. I design and lead strategic product and R&D roadmaps, while remaining hands-on with technical architecture and coding.
+  I excel at **bridging cutting-edge research and B2B applications**. I design and lead strategic roadmaps, operationalized them by recruiting and orchestrate teams of highly skilled engineers and researchers, while remaining hands-on with technical architecture and coding.
 
-  As a **generalist software engineer**, my skills include human-in-the-loop systems design, applied AI, distributed cloud architecture, and full-stack development. I communicate effectively in both French and English, articulating complex ideas clearly and persuasively.
+  As a **generalist software engineer**, my skills include human-in-the-loop systems design, applied AI, distributed cloud architecture, and full-stack development. I communicate effectively in both French and English.
 
 experiences:
   title: Experiences
@@ -19,17 +19,27 @@ experiences:
       title: >
         VP of Engineering - [**AI Redefined**](https://www.ai-r.com)
       description: |
-        - Directed tech and research strategy, leading to 3 commercial products generating $1M-$1.5M ARR and publishing over 3 peer-reviewed papers annually.
-        - Grew and led a research & engineering team from 5 to 16 members.
-        - Coordinated collaborations with [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [NAV CANADA](https://www.navcanada.ca/), [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), and [IRT SystemX](https://www.irt-systemx.fr/).
-        - Conducted R&D for [Cogment](https://cogment.ai/), a multi-agent, human-in-the-loop reinforcement learning platform, and various projects using Python, Go, Javascript, Kubernetes, Reinforcement Learning, Machine Learning, and Data Science.
+        - Directed tech and research strategy for [Cogment](https://cogment.ai/), a multi-agent, human-in-the-loop reinforcement learning platform, leading to 3 commercial products generating ~$1.5M ARR and publishing over 3 peer-reviewed papers annually.
+        - Grew and led the research & engineering team from 5 to 16 members.
+        - Coordinated collaborations with industry, including with [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/) and [NAV CANADA](https://www.navcanada.ca/); and academia, including with the [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), and [IRT SystemX](https://www.irt-systemx.fr/).
+      skills:
+        - Technical Leadership
+        - Program Management
+        - B2B Presales
+        - Reinforcement Learning
+        - Deep Learning
+        - Generative AI
+        - Simulation
+        - Python
+        - Go
+        - Kubernetes
     - from: 2020-08
       to: 2021-01
       location: Paris, France
       title: >
         Freelance AI engineer - **AI Redefined**
       description: |
-        - Coordinated and contributed to the open source release of Cogment v1, building upon 3 years of prototoyping & R&D.
+        _Starting position at AI Redefined as a freelancer before moving to Canada._
     - from: 2015-03
       to: 2020-04
       location: Paris, France
@@ -37,9 +47,20 @@ experiences:
         Co-founder & CTO - [**craft ai**](https://www.craft.ai/)
       description: |
         - Cofounded and expanded the company from 7 to 20+ employees, raising ~9M€ in funding.
-        - Led the product, technology, and research strategy and roadmap.
-        - Developed an explainable AI SaaS for time series analysis using Rust, Javascript, Python, Kafka, Redis, Kubernetes, Docker, Machine Learning, and Data Science.
+        - Defined and operated the product, technology, and research strategy for an explainable AI SaaS for time series forecasting generating ~1M€ ARR.
         - Deployed the product in ~10 AI projects for major clients like [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr), and [Dassault Aviation](https://www.dassault-aviation.com).
+      skills:
+        - Technical Leadership
+        - Program Management
+        - B2B Presales
+        - Explainable AI
+        - Machine Learning
+        - Data Science
+        - Python
+        - Rust
+        - Javascript
+        - Kubernetes
+        - Kafka
     - from: 2012-01
       to: 2015-02
       location: Paris, France
@@ -47,9 +68,16 @@ experiences:
         Lead Software Engineer & Product Manager - [**MASA
         Group**](https://masasim.com/)
       description: |
-        - Led a team of ~5 software engineers across Paris and Munich.
-        - Managed an AI product for non-specialists to create and control AIs in simulations and video games, handling technical pre-sales, business development, and presenting at international conferences (e.g., GDC).
-        - Developed a behavior tree and spatial reasoning engine using C++, Computational Geometry, Game AI, Unity, Ogre3d, VBS2/3.
+        - Led a team of ~5 software engineers across Paris and Munich developing a behavior tree and spatial reasoning engine.
+        - Managed an AI product enabling instructional & game designers to build AI agents in simulations and video games, leading to key IP at the origin of **craft ai**.
+      skills:
+        - Technical Leadership
+        - Project Management
+        - Game AI
+        - Computational Geometry
+        - Simulation
+        - Qt
+        - C++
     - from: 2010-01
       to: 2011-12
       location: Rennes, France
@@ -57,16 +85,22 @@ experiences:
         R&D Software Engineer - [**Golaem** (acquired by
         Autodesk)](http://golaem.com/)
       description: |
-        - Developed a navigation engine for virtual crowds using C++, Computational Geometry, and Game AI.
+        - Developed a navigation engine for virtual crowds from research prototypes developed at Inria.
         - Managed a collaborative R&D project with [Dassault Systèmes](https://www.3ds.com) and [CNRS](https://www.cnrs.fr) for the real-time population of a 3D virtual city.
+      skills:
+        - Project Management
+        - Game AI
+        - Computational Geometry
+        - Simulation
+        - Qt
+        - C++
     - from: 2009-02
       to: 2009-12
       location: Rennes, France
       title: >
         R&D Software Engineer - [**Inria**](https://www.inria.fr)
       description: |
-        - Member of the [Bunraku project-team](https://www.irisa.fr/bunraku),
-        - Industrialized pedestrian animation & navigation research prototypes uisng C++, Qt, Ogre3d, Computational Geometry, Game AI.
+        _Starting position at Golaem as a member of the [Bunraku](https://www.irisa.fr/bunraku) team._
     - from: 2006-07
       to: 2009-02
       location: Rennes, France
@@ -74,8 +108,15 @@ experiences:
         Software Engineer - [**Teamlog** (acquired by
               Open)](https://www.open.global)
       description: |
-        - Developed a toolchain to create virtual cities for [Orange](https://www.orange.fr) using C++, Qt, Open Scene Graph, PostGIS, Geographic Information Systems, Computational Geometry.
-        - Developed a user contribution system for [PagesJaunes.fr](https://www.pagesjaunes.fr) using Java/J2E.
+        - Developed a toolchain to create virtual cities for [Orange](https://www.orange.fr).
+        - Developed a user contribution system for [PagesJaunes.fr](https://www.pagesjaunes.fr).
+      skills:
+        - Geographic Information Systems (GIS)
+        - Computational Geometry
+        - Simulation
+        - Qt
+        - C++
+        - Java
   more:
     title: Additional activities
     items:
@@ -91,7 +132,11 @@ experiences:
         title: >
           Data Scientist (volunteer) - [**APHP**](https://www.aphp.fr)
         description: |
-          - Supported early COVID-19 epidemiological studies by extracting & preparing data using Python, PostgreSQL, Apache Spark, data science.
+          - Supported early COVID-19 epidemiological studies by extracting & preparing data.
+        skills:
+          - Data Science
+          - Python
+          - Apache Spark
       - from: 2015-01
         to: 2016-07
         location: Vienna, Austria
@@ -109,7 +154,7 @@ education:
         **MEng (Diplôme d'ingénieur) in Computer Science** - [_INSA de
         Rennes_](https://www.insa-rennes.fr)
       description: |
-        - Completed a 5-year engineering program, including 2 years of general scientific and engineering courses followed by 3 years specializing in computer science.
+        Engineering program, with a specialization in computer science.
     - from: 2005-09
       to: 2006-06
       location: Rennes, France
@@ -117,9 +162,8 @@ education:
         **MSc in Artificial Intelligence** - [_Université de Rennes
         1_](https://www.univ-rennes.fr)
       description: |
-        - Completed an academic curriculum focused on Artificial Intelligence, including machine learning and symbolic reasoning.
-        - Conducted research work at [Inria](https://www.inria.fr) within the [Bunraku project-team](https://www.irisa.fr/bunraku), advised by Fabrice Lamarche.
-        - Developed a semantic and topologic navigation graph formalism for crowd simulation.
+        Academic curriculum focused on Artificial Intelligence, including machine learning and symbolic reasoning. Member
+        of [Inria](https://www.inria.fr)'s [Bunraku](https://www.irisa.fr/bunraku) team, advised by Fabrice Lamarche.
   moocs:
     title: MOOCS
 peer_review_publications:

@@ -3,7 +3,6 @@ import {
   Paragraph,
   TextRun,
   HeadingLevel,
-  AlignmentType,
   TabStopType,
   TabStopPosition,
   Packer,
@@ -13,6 +12,7 @@ import {
 import remarkParse from 'remark-parse';
 import { unified } from 'unified';
 import slugify from '@sindresorhus/slugify';
+import { defineMessages } from '@formatjs/intl';
 
 import formatDateRange from '../../../../components/helpers/formatDateRange';
 import getIntl from '../../../../i18n/i18n';
@@ -152,6 +152,7 @@ function createItemTitle(title, from, to, location, intl) {
           heading: HeadingLevel.HEADING_3
         }
       ],
+      keepNext: true,
       children
     })
   ];
@@ -160,6 +161,33 @@ function createItemTitle(title, from, to, location, intl) {
 export async function GET(request, { params: { locale } }) {
   const intl = await getIntl(locale);
   const resume = await loadResume(locale);
+
+  const messages = defineMessages({
+    phone: {
+      id: 'contact.phone',
+      defaultMessage: 'Phone: '
+    },
+    email: {
+      id: 'contact.email',
+      defaultMessage: 'Email: '
+    },
+    address: {
+      id: 'contact.address',
+      defaultMessage: 'Address: '
+    },
+    website: {
+      id: 'contact.website',
+      defaultMessage: 'Website: '
+    },
+    linkedin: {
+      id: 'contact.linkedin',
+      defaultMessage: 'LinkedIn: '
+    },
+    skills: {
+      id: 'item.skills',
+      defaultMessage: 'Skills: '
+    }
+  });
 
   const document = new Document({
     creator: resume.name,
@@ -239,28 +267,35 @@ export async function GET(request, { params: { locale } }) {
           new Paragraph({
             style: 'contact',
             children: [
+              ...(resume.contact.phone != null
+                ? [
+                    new TextRun({
+                      text: `${intl.formatMessage(messages.phone)}\t`
+                    }),
+                    new TextRun({
+                      text: resume.contact.phone
+                    })
+                  ]
+                : []),
+              ...(resume.contact.email != null
+                ? [
+                    new TextRun({
+                      text: `${intl.formatMessage(messages.email)}\t`
+                    }),
+                    new TextRun({
+                      text: resume.contact.mail
+                    })
+                  ]
+                : []),
               new TextRun({
-                text: 'Phone: \t'
-              }),
-              new TextRun({
-                text: resume.contact.phone
-              }),
-              new TextRun({
-                text: 'Email: \t',
-                break: 1
-              }),
-              new TextRun({
-                text: resume.contact.mail
-              }),
-              new TextRun({
-                text: 'Address: \t',
+                text: `${intl.formatMessage(messages.address)}\t`,
                 break: 1
               }),
               new TextRun({
                 text: resume.contact.address
               }),
               new TextRun({
-                text: 'Website: \t',
+                text: `${intl.formatMessage(messages.website)}\t`,
                 break: 1
               }),
               new ExternalHyperlink({
@@ -273,7 +308,7 @@ export async function GET(request, { params: { locale } }) {
                 link: getBaseUrl().toString()
               }),
               new TextRun({
-                text: 'LinkedIn: \t',
+                text: `${intl.formatMessage(messages.linkedin)}\t`,
                 break: 1
               }),
               new ExternalHyperlink({
@@ -295,16 +330,46 @@ export async function GET(request, { params: { locale } }) {
         children: [
           ...createHeading1(resume.experiences.title),
           ...resume.experiences.items
-            .map(({ from, to, location, title, description }) => [
+            .map(({ from, to, location, title, description, skills = [] }) => [
               ...createItemTitle(title, from, to, location, intl),
-              ...createDocxFromMarkdown(description)
+              ...createDocxFromMarkdown(description),
+              ...(skills.length > 0
+                ? [
+                    new Paragraph({
+                      children: [
+                        new TextRun({
+                          text: intl.formatMessage(messages.skills),
+                          bold: true
+                        }),
+                        new TextRun({
+                          text: `${skills.join(', ')}.`
+                        })
+                      ]
+                    })
+                  ]
+                : [])
             ])
             .flat(),
           ...createHeading2(resume.experiences.more.title),
           ...resume.experiences.more.items
-            .map(({ from, to, location, title, description }) => [
+            .map(({ from, to, location, title, description, skills = [] }) => [
               ...createItemTitle(title, from, to, location, intl),
-              ...createDocxFromMarkdown(description)
+              ...createDocxFromMarkdown(description),
+              ...(skills.length > 0
+                ? [
+                    new Paragraph({
+                      children: [
+                        new TextRun({
+                          text: intl.formatMessage(messages.skills),
+                          bold: true
+                        }),
+                        new TextRun({
+                          text: `${skills.join(', ')}.`
+                        })
+                      ]
+                    })
+                  ]
+                : [])
             ])
             .flat()
         ]

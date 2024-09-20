@@ -5,11 +5,11 @@ contact:
   address: Montréal, Canada
   linkedIn: https://www.linkedin.com/in/cloderic
 intro: |
-  Depuis 2006, je me suis spécialisé dans la **collaboration entre humains et IA**. Mes projets ont permis à des artistes de diriger des personnages autonomes dans des films, ont aidé des ingénieurs à optimiser les infrastructures de transport, ont fourni des simulations de formation personnalisées aux étudiants et ont assisté des opérateurs dans l'optimisation des infrastructures énergétiques.
+  Je suis un tech leader spécialisé dans la **collaboration entre humains et IAs**. Mes projets ont permis à des artistes de diriger des personnages autonomes dans des films, ont aidé des ingénieurs à optimiser les infrastructures de transport, ont fourni des simulations de formation personnalisées aux étudiants et ont assisté des opérateurs dans l'optimisation des infrastructures énergétiques.
 
-  J’excelle à **combler le fossé entre la recherche de pointe et les applications B2B**. Mon leadership s'étend au recrutement et la direction d’équipes dans des environnements de haute technologie sous pression. Je conçois et dirige des feuilles de route stratégiques pour les produits et la R&D, tout en restant impliqué dans l’architecture technique et le développement.
+  J’excelle à **combler le fossé entre la recherche de pointe et les applications B2B**. Je conçois et dirige des feuilles de route stratégiques, je les mets en œuvre en recrutant et en orchestrant des équipes d'ingénieurs et de chercheurs hautement qualifiés, tout en restant impliqué dans l’architecture technique et le développement.
 
-  En tant qu' **ingénieur logiciel généraliste**, mes compétences incluent la conception de systèmes "human-in-the-loop", l’IA appliquée, l’architecture cloud distribuée et le développement full-stack. Je communique efficacement en français et en anglais, articulant des idées complexes de manière claire et convaincante.
+  En tant qu' **ingénieur logiciel généraliste**, mes compétences incluent la conception de systèmes "human-in-the-loop", l’IA appliquée, les architectures cloud distribuée et le développement full-stack. Je communique efficacement en français et en anglais.
 
 experiences:
   title: Expériences
@@ -19,27 +19,48 @@ experiences:
       title: >
         VP of Engineering - [**AI Redefined**](https://www.ai-r.com)
       description: |
-        - Direction de la stratégie technologique et de recherche, aboutissant à 3 produits commerciaux générant entre 1M$ et 1,5M$ d'ARR et à la publication de plus de 3 articles évalués par les pairs chaque année.
+        - Direction de la stratégie technologique et de recherche, de [Cogment](https://cogment.ai/), une plateforme d'apprentissage par renforcement multi-agents avec humain dans la boucle, aboutissant à 3 produits commerciaux générant entre ~$1,5M d'ARR et à la publication de plus de 3 articles évalués par les pairs chaque année.
         - Recrutement et direction d'une équipe de recherche et d'ingénierie, passant de 5 à 16 membres.
-        - Coordination des collaborations avec [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [NAV CANADA](https://www.navcanada.ca/), [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), et [IRT SystemX](https://www.irt-systemx.fr/).
-        - Recherche et développement de [Cogment](https://cogment.ai/), une plateforme d'apprentissage par renforcement multi-agents avec humain dans la boucle, et divers projets utilisant Python, Go, Javascript, Kubernetes, apprentissage par renforcement, apprentissage artificiel, et science des données.
+        - Coordination de collaborations industrielles, nottament avec [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [NAV CANADA](https://www.navcanada.ca/); et académiques, avec nottament l'[Université d'Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), et l'[IRT SystemX](https://www.irt-systemx.fr/).
+      skills:
+        - Leadership Technique
+        - Gestion de programme
+        - Avant-vente B2B
+        - Apprentissage par renforcement
+        - Deep Learning
+        - IA Générative
+        - Simulation
+        - Python
+        - Go
+        - Kubernetes
     - from: 2020-08
       to: 2021-01
       location: Paris, France
       title: >
         Ingénieur IA Freelance - **AI Redefined**
       description: |
-        Contribution et coordination de la version initiale de Cogment open source, s’appuyant sur 3 ans de prototypage et de R&D.
+        _Début de poste à AI Redefined comme freelance avant de démménager au Canada_
     - from: 2015-03
       to: 2020-04
       location: Paris, France
       title: >
         Co-fondateur & CTO - [**craft ai**](https://www.craft.ai/)
       description: |
-        - Amorcage et développement l'entreprise, passant de 7 à 20+ employés, levant environ 9M€ de financement.
-        - Direction de la stratégie et la feuille de route produit, technologique et de recherche.
-        - Développement d'une solution SaaS d'IA explicable pour l'analyse de séries temporelles utilisant Rust, Javascript, Python, Kafka, Redis, Kubernetes, Docker, apprentissage artificiel et science des données.
+        - Amorcage et développement l'entreprise, passant de 7 à 20+ employés, levant ~9M€ de financement.
+        - Définition et mise en oeuvre de la stratégie produit, technologique et de recherche pour solution SaaS d'IA explicable pour la prédiction de séries temporelles générant ~1M€ d'ARR.
         - Déploiement du produit dans ~10 projets d'IA pour des clients majeurs tels que [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr) et [Dassault Aviation](https://www.dassault-aviation.com).
+      skills:
+        - Leadership Technique
+        - Gestion de programme
+        - Avant-vente B2B
+        - IA explicable
+        - Machine Learning
+        - Science des données
+        - Python
+        - Rust
+        - Javascript
+        - Kubernetes
+        - Kafka
     - from: 2012-01
       to: 2015-02
       location: Paris, France
@@ -47,9 +68,16 @@ experiences:
         Ingénieur Logiciel Lead & Product Manager - [**MASA
         Group**](https://masasim.com/)
       description: |
-        - Direction d'une équipe d’environ 5 ingénieurs logiciels à Paris et Munich.
-        - Gestion d'un produit d’IA permettant aux non-spécialistes de créer et de contrôler des IA dans des simulations et des jeux vidéo, en prenant en charge les avant-ventes techniques, le développement commercial et les présentations lors de conférences internationales (par exemple, GDC).
-        - Développement d'un moteur de Behavior Tree et de raisonnement spatial utilisant C++, géométrie algorithmique, Game AI, Unity, Ogre3d, VBS2/3.
+        - Direction d'une équipe d’environ 5 ingénieurs logiciels à Paris et Munich travaillant sur un moteur de Behavior Tree et de raisonnement spatial.
+        - Gestion d'un produit permettant à des concepteurs pédagogique et de jeux de créer et de contrôler des agents IA dans des simulations et des jeux vidéo, aboutissant à une propriété intellectuelle clé à l’origine de **craft ai**.
+      skills:
+        - Leadership Technique
+        - Gestion de projet
+        - Game AI
+        - Géométrie algorithmique
+        - Simulation
+        - Qt
+        - C++
     - from: 2010-01
       to: 2011-12
       location: Rennes, France
@@ -57,16 +85,22 @@ experiences:
         Ingénieur logiciel R&D - [**Golaem** (acquis par
         Autodesk)](http://golaem.com/)
       description: |
-        - Développement d'un moteur de navigation pour les foules virtuelles utilisant C++, géométrie algorithmique, Game AI.
+        - Développement d'un moteur de navigation pour les foules virtuelles à partir de prototypes de recherche développés à Inria.
         - Gestion d'un projet de R&D en collaboration avec [Dassault Systèmes](https://www.3ds.com) et [CNRS](https://www.cnrs.fr), pour la population "en temps réel" d'une ville virtuelle en 3D.
+      skills:
+        - Gestion de projet
+        - Game AI
+        - Géométrie algorithmique
+        - Simulation
+        - Qt
+        - C++
     - from: 2009-02
       to: 2009-12
       location: Rennes, France
       title: >
         Ingénieur logiciel R&D - [**Inria**](https://www.inria.fr)
       description: |
-        - Membre de l'équipe-project [Bunraku](https://www.irisa.fr/bunraku),
-        - Développement d'un moteur de simulation 3D et industrialisation d'un moteur de navigation pour les foules virtuelles utilisant C++, Qt, Ogre3d, géométrie algorithmique, Game AI.
+        _Début de poste chez Golaem en tant que membre de l'équipe [Bunraku](https://www.irisa.fr/bunraku)._
     - from: 2006-07
       to: 2009-02
       location: Rennes, France
@@ -74,8 +108,15 @@ experiences:
         Ingénieur logiciel - [**Teamlog** (acquis par
         Open)](https://www.open.global)
       description: |
-        - Développement d'une chaîne d'outils pour la création de villes virtuelles pour [Orange](https://www.orange.fr) utilisant C++, Qt, Open Scene Graph, PostGIS, systèmes d'information géographique (SIG), géométrie algorithmique.
-        - Développement d'un système de contribution des utilisateurs pour [PagesJaunes.fr](https://www.pagesjaunes.fr) utilisant Java/J2E.
+        - Développement d'une chaîne d'outils pour la création de villes virtuelles pour [Orange](https://www.orange.fr).
+        - Développement d'un système de contribution des utilisateurs pour [PagesJaunes.fr](https://www.pagesjaunes.fr).
+      skills:
+        - Systèmes d'information géographique (SIG)
+        - Géométrie algorithmique
+        - Simulation
+        - Qt
+        - C++
+        - Java
   more:
     title: Autres activités
     items:
@@ -91,8 +132,11 @@ experiences:
         title: >
           Scientifique des données (bénévole) - [**APHP**](https://www.aphp.fr)
         description: |
-          - Support d'études épidémiologiques des premiers patients COVID-19 par l'extraction et la préparation de données : Python, PostgreSQL,
-          Apache Spark, science des données.
+          - Support d'études épidémiologiques des premiers patients COVID-19 par l'extraction et la préparation de données.
+        skills:
+          - Science des données
+          - Python
+          - Apache Spark
       - from: 2015-01
         to: 2016-07
         location: Vienne, Autriche
@@ -110,7 +154,7 @@ education:
         **Diplôme d'ingénieur (MEng) en Informatique** - [_INSA de
         Rennes_](https://www.insa-rennes.fr)
       description: |
-        - Programme d'ingénierie de 5 ans, comprenant 2 ans de cours scientifiques et techniques généraux suivis de 3 ans de spécialisation en informatique.
+        Programme d'ingénierie avec une spécialisation en informatique.
     - from: 2005-09
       to: 2006-06
       location: Rennes, France
@@ -118,9 +162,8 @@ education:
         **Master 2 Recherche (MSc) en Intelligence Artificielle** - [_Université
         de Rennes 1_](https://www.univ-rennes.fr)
       description: |
-        - Cursus académique axé sur l'intelligence artificielle, comprenant l'apprentissage artificiel et le raisonnement symbolique.
-        - Travaux de recherche effectués au sein d'[Inria](https://www.inria.fr) dans l'équipe projet [Bunraku](https://www.irisa.fr/bunraku), sous la direction de Fabrice Lamarche.
-        - Développement d'un formalisme de graphe de navigation sémantique et topologique pour la simulation de foules.
+        Cursus académique axé sur l'intelligence artificielle, comprenant l'apprentissage artificiel et le raisonnement symbolique.
+        Membre de l'équipe [Bunraku](https://www.irisa.fr/bunraku) à [Inria](https://www.inria.fr), sous la direction de Fabrice Lamarche.
   moocs:
     title: MOOCS
 peer_review_publications:

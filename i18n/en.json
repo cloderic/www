@@ -1,6 +1,12 @@
 {
   "actions.print": "Print or save to pdf...",
   "actions.saveAtsResume": "Save ATS friendly version...",
+  "contact.address": "Address: ",
+  "contact.email": "Email: ",
+  "contact.linkedin": "LinkedIn: ",
+  "contact.phone": "Phone: ",
+  "contact.website": "Website: ",
   "item.date.fromTo": "from {fromDate} to {toDate}",
-  "item.date.since": "since {fromDate}"
+  "item.date.since": "since {fromDate}",
+  "item.skills": "Skills: "
 }

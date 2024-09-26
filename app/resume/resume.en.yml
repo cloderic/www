@@ -5,11 +5,12 @@ contact:
   address: Montréal, Canada
   linkedIn: https://www.linkedin.com/in/cloderic
 intro: |
-  I am tech leader specialized in **fostering human-AI collaboration**. My projects have enabled artists to direct autonomous characters in movies, helped engineers optimize transportation infrastructure, provided trainees with personalized training simulations, and assisted operators in improving energy infrastructure.
+  I am tech leader specialized in **fostering human-AI collaboration**. My projects have enabled artists to direct autonomous characters in movies, helped engineers optimize energy or transportation infrastructures, and assisted instructor in providing personalized training simulations.
 key_skills:
   - Applied Artificial Intelligence
-  - Technical Leadership
-  - Program Management
+  - Technical leadership
+  - Software architecture
+  - Program management
   - B2B presales & project management
   - Technology transfer
   - Distributed systems
@@ -31,8 +32,8 @@ experiences:
         - Grew and led the research & engineering team from 5 to 16 members.
         - Coordinated collaborations with industry, including with [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [RTE](https://www.rte-france.com/), [NAV CANADA](https://www.navcanada.ca/) and [Renault](https://www.renaultgroup.com/); and academia, including with the [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), and [IRT SystemX](https://www.irt-systemx.fr/).
       skills:
-        - Reinforcement Learning
-        - Deep Learning
+        - Reinforcement learning
+        - Deep learning
         - Generative AI
         - Simulation
         - Python
@@ -58,8 +59,8 @@ experiences:
         - Deployed the product in ~10 AI projects for major clients like [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr), and [Dassault Aviation](https://www.dassault-aviation.com).
       skills:
         - Explainable AI
-        - Machine Learning
-        - Data Science
+        - Machine learning
+        - Data science
         - Python
         - Rust
         - Javascript
@@ -78,7 +79,7 @@ experiences:
         - Managed an AI product enabling instructional & game designers to build AI agents in simulations and video games, leading to key IP at the origin of **craft ai**.
       skills:
         - Game AI
-        - Computational Geometry
+        - Computational geometry
         - Simulation
         - Qt
         - C++
@@ -93,7 +94,7 @@ experiences:
         - Managed a collaborative R&D project with [Dassault Systèmes](https://www.3ds.com) and [CNRS](https://www.cnrs.fr) for the real-time population of a 3D virtual city.
       skills:
         - Game AI
-        - Computational Geometry
+        - Computational geometry
         - Simulation
         - Qt
         - C++
@@ -114,8 +115,8 @@ experiences:
         - Developed a toolchain to create virtual cities for [Orange](https://www.orange.fr).
         - Developed a user contribution system for [PagesJaunes.fr](https://www.pagesjaunes.fr).
       skills:
-        - Geographic Information Systems (GIS)
-        - Computational Geometry
+        - Geographic information systems (GIS)
+        - Computational geometry
         - Simulation
         - Qt
         - C++
@@ -137,7 +138,7 @@ experiences:
         description: |
           - Supported early COVID-19 epidemiological studies by extracting & preparing data.
         skills:
-          - Data Science
+          - Data science
           - Python
           - Apache Spark
       - from: 2015-01

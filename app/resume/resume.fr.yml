@@ -5,10 +5,11 @@ contact:
   address: Montréal, Canada
   linkedIn: https://www.linkedin.com/in/cloderic
 intro: |
-  Je suis un tech leader spécialisé dans la **collaboration entre humains et IAs**. Mes projets ont permis à des artistes de diriger des personnages autonomes dans des films, ont aidé des ingénieurs à optimiser les infrastructures de transport, ont fourni des simulations de formation personnalisées aux étudiants et ont assisté des opérateurs dans l'optimisation des infrastructures énergétiques.
+  Je suis un tech leader spécialisé dans la **collaboration entre humains et IAs**. Mes projets ont permis à des artistes de diriger des personnages autonomes dans des films, ont aidé des ingénieurs à optimiser des infrastructures de transport ou d'énergie, et ont assisté des instructeurs à fournir des simulations de formation personnalisées.
 key_skills:
   - Intelligence artificielle appliquée
   - Leadership technique
+  - Architecture logicielle
   - Gestion de programme
   - Avant-vente & gestion de projets B2B
   - Transfert technologique
@@ -31,9 +32,9 @@ experiences:
         - Recrutement et direction d'une équipe de recherche et d'ingénierie, passant de 5 à 16 membres.
         - Coordination de collaborations industrielles, notamment avec [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [RTE](https://www.rte-france.com/), [NAV CANADA](https://www.navcanada.ca/) & [Renault](https://www.renaultgroup.com/); et académiques, avec notamment l'[Université d'Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), & l'[IRT SystemX](https://www.irt-systemx.fr/).
       skills:
-        - Apprentissage par renforcement
-        - Deep Learning
-        - IA Générative
+        - Apprentissage par renforcement (Reinforcement learning)
+        - Apprentissage profond (Deep learning)
+        - IA générative
         - Simulation
         - Python
         - Go
@@ -58,7 +59,7 @@ experiences:
         - Déploiement du produit dans ~10 projets d'IA pour des clients majeurs tels que [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr) et [Dassault Aviation](https://www.dassault-aviation.com).
       skills:
         - IA explicable
-        - Machine Learning
+        - Apprentissage artificiel (Machine learning)
         - Science des données
         - Python
         - Rust

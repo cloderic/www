@@ -6,8 +6,8 @@ contact:
   linkedIn: https://www.linkedin.com/in/cloderic
 intro: |
   I am tech leader specialized in **fostering human-AI collaboration**. The products I built have:
-    - enabled artists to **direct autonomous characters** in movies, 
-    - helped engineers **optimize energy & transportation infrastructures**, and 
+    - enabled artists to **direct autonomous characters** in movies,
+    - helped engineers **optimize energy & transportation infrastructures**, and
     - assisted instructor in providing **personalized training simulations**.
 key_skills:
   - Applied Artificial Intelligence
@@ -18,6 +18,7 @@ key_skills:
   - Technology transfer
   - Distributed systems
   - Cloud infrastructure
+  - MLOps
   - Full-stack development
   - Written and oral communication
   - French (native)
@@ -93,8 +94,8 @@ experiences:
         R&D Software Engineer - [**Golaem** (acquired by
         Autodesk)](http://golaem.com/)
       description: |
-        - Developed a navigation engine for virtual crowds from research prototypes developed at Inria.
-        - Managed a collaborative R&D project with [Dassault Systèmes](https://www.3ds.com) and [CNRS](https://www.cnrs.fr) for the real-time population of a 3D virtual city.
+        - Took ownership of the navigation engine for virtual crowds, successfully industrializing research prototypes and algorithms developed at Inria.
+        - Applied crowd simulation technology to diverse use cases, including train car evaluation for [SNCF](https://www.groupe-sncf.com), real-time virtual city population with [Dassault Systèmes](https://www.3ds.com) and crowd simulation for a historical documentary with with [Mikros](https://www.technicolor.com/studios/mikros-animation/). This project contributed to the development of the leading crowd simulation product for the animation & VFX market.
       skills:
         - Game AI
         - Computational geometry

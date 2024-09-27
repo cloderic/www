@@ -95,10 +95,7 @@ experiences:
         Autodesk)](http://golaem.com/)
       description: |
         - Prise en charge du moteur de navigation pour les foules virtuelles, industrialisant avec succès des prototypes de recherche et des algorithmes développés à Inria.
-        - Application de la technologie de simulation de foules à divers cas d’utilisation, notamment l’évaluation de voitures de train pour [SNCF](https://www.groupe-sncf.com), 
-        la population en temps réel de villes virtuelles avec [Dassault Systèmes](https://www.3ds.com), et la simulation de foules pour un documentaire historique 
-        avec [Mikros](https://www.technicolor.com/studios/mikros-animation/). Ce dernier projet a contribué au développement du principal produit de simulation 
-        de foules pour le marché de l’animation et des effets visuels.
+        - Application de la technologie de simulation de foules à divers cas d’utilisation, notamment l’évaluation de voitures de train pour [SNCF](https://www.groupe-sncf.com), la population en temps réel de villes virtuelles avec [Dassault Systèmes](https://www.3ds.com), et la simulation de foules pour un documentaire historique avec [Mikros](https://www.technicolor.com/studios/mikros-animation/). Ce dernier projet a contribué au développement du principal produit de simulation de foules pour le marché de l’animation et des effets visuels.
       skills:
         - Game AI
         - Géométrie algorithmique

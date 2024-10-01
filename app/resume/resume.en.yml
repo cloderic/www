@@ -167,11 +167,12 @@ education:
       to: 2006-06
       location: Rennes, France
       title: >
-        **MSc in Artificial Intelligence** - [_Université de Rennes
-        1_](https://www.univ-rennes.fr)
+        **MSc in Artificial Intelligence & Computer Graphics** - [_Université de
+        Rennes 1_](https://www.univ-rennes.fr)
       description: |
-        Academic curriculum focused on Artificial Intelligence, including machine learning and symbolic reasoning. Member
-        of [Inria](https://www.inria.fr)'s [Bunraku](https://www.irisa.fr/bunraku) team, advised by Fabrice Lamarche.
+        Academic curriculum focused on **Artificial Intelligence**, including machine learning and symbolic reasoning, & **Computer Graphics**, including virtual reality and animation.
+
+        Member of [Inria](https://www.inria.fr)'s [Bunraku](https://www.irisa.fr/bunraku) team, advised by Fabrice Lamarche.
   moocs:
     title: MOOCS
 peer_review_publications:

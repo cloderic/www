@@ -167,10 +167,11 @@ education:
       to: 2006-06
       location: Rennes, France
       title: >
-        **Master 2 Recherche (MSc) en Intelligence Artificielle** - [_Université
-        de Rennes 1_](https://www.univ-rennes.fr)
+        **Master 2 Recherche (MSc) en Intelligence Artificielle & synthèse
+        d'images** - [_Université de Rennes 1_](https://www.univ-rennes.fr)
       description: |
-        Cursus académique axé sur l'intelligence artificielle, comprenant l'apprentissage artificiel et le raisonnement symbolique.
+        Cursus académique axé sur l'**intelligence artificielle**, comprenant l'apprentissage artificiel et le raisonnement symbolique & la **synthèse d'image**, comprenant réalité virtuelle et animation.
+
         Membre de l'équipe [Bunraku](https://www.irisa.fr/bunraku) à [Inria](https://www.inria.fr), sous la direction de Fabrice Lamarche.
   moocs:
     title: MOOCS

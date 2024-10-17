@@ -5,10 +5,10 @@ contact:
   address: Montréal, Canada
   linkedIn: https://www.linkedin.com/in/cloderic
 intro: |
-  Je suis un tech leader spécialisé dans la **collaboration entre humains et IAs**. Les produits que j'ai développés ont notamment :
+  Je suis spécialisé dans la **collaboration entre humains et IAs**, avec une main dans le leadership et l’autre dans le développement. Les produits que j'ai développés ont :
     - permis à des artistes de diriger des **personnages autonomes** dans des films,
     - aidé des ingénieurs à **optimiser des infrastructures de transport & d'énergie**, et
-    - assisté des instructeurs à fournir des **simulations de formation personnalisées**.
+    - assisté des instructeurs à mettre en oeuvre des **simulations de formation personnalisées**.
 key_skills:
   - Intelligence artificielle appliquée
   - Leadership technique
@@ -32,9 +32,10 @@ experiences:
       title: >
         VP of Engineering - [**AI Redefined**](https://www.ai-r.com)
       description: |
-        - Direction de la stratégie technologique et de recherche, de [Cogment](https://cogment.ai/), une plateforme d'apprentissage par renforcement multi-agents avec humain dans la boucle, aboutissant à 3 produits commerciaux générant entre ~$1,5M d'ARR et à la publication de plus de 3 articles évalués par les pairs chaque année.
-        - Recrutement et direction d'une équipe de recherche et d'ingénierie, passant de 5 à 16 membres.
-        - Coordination de collaborations industrielles, notamment avec [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [RTE](https://www.rte-france.com/), [NAV CANADA](https://www.navcanada.ca/) & [Renault](https://www.renaultgroup.com/); et académiques, avec notamment l'[Université d'Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), & l'[IRT SystemX](https://www.irt-systemx.fr/).
+        - Direction de l’équipe technique et de recherche distribuée composée de 16 ingénieurs et chercheurs répartis en 3 équipes produit, générant ~$1,5M d'ARR, 9 publications évaluées par des pairs et 3 brevets.
+        - Architecture et développement de [Cogment](https://cogment.ai/), en le faisant évoluer d’un proof of concept technologique à une plateforme MLOps open-core robuste, adoptée en interne et en externe.
+        - Conception et entraînement d'agents IA décisionnels collaborant avec des humains et utilisant l’apprentissage par renforcement profond, les grands modèles de langage et l’IA symbolique pour résoudre des problèmes complexes du monde réel.
+        - Coordination de collaborations industrielles dans des secteurs variés tels que l’aérospatiale et la défense (e.g. [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), et [NAV CANADA](https://www.navcanada.ca/)) ; l’énergie (e.g. [RTE](https://www.rte-france.com/)) ; l'industrie manufacturière (e.g. [Renault](https://www.renaultgroup.com/)) ; et le milieu académique (e.g. l'[Université d'Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), et l'[IRT SystemX](https://www.irt-systemx.fr/)).
       skills:
         - Apprentissage par renforcement (Reinforcement learning)
         - Apprentissage profond (Deep learning)
@@ -59,8 +60,9 @@ experiences:
         Co-fondateur & CTO - [**craft ai**](https://www.craft.ai/)
       description: |
         - Amorçage et développement l'entreprise, passant de 7 à 20+ employés, levant ~9M€ de financement.
-        - Définition et mise en œuvre de la stratégie produit, technologique et de recherche pour solution SaaS d'IA explicable pour la prédiction de séries temporelles générant ~1M€ d'ARR.
-        - Déploiement du produit dans ~10 projets d'IA pour des clients majeurs tels que [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr) et [Dassault Aviation](https://www.dassault-aviation.com).
+        - Direction de l’équipe de développement produit et de recherche, générant ~1M€ d’ARR, et la publication de 5 articles évalués par des pairs.
+        - Architecture et développement d'un SaaS d’IA explicable pour la modélisation et la prévision de séries temporelles, permettant une automatisation et un support décisionnel personnalisé et fiable dans divers secteurs.
+        - Déploiement du produit dans ~10 projets d'IA, principalement dans le secteur de l’énergie, notamment avec [EDF](https://www.edfenergy.com/) et [Total](https://www.totalenergies.fr), pour permettre aux opérateurs et utilisateurs finaux d'optimiser leur consommation.
       skills:
         - IA explicable
         - Apprentissage artificiel (Machine learning)
@@ -79,8 +81,8 @@ experiences:
         Ingénieur Logiciel Lead & Product Manager - [**MASA
         Group**](https://masasim.com/)
       description: |
-        - Direction d'une équipe d’environ 5 ingénieurs logiciels à Paris et Munich travaillant sur un moteur de Behavior Tree et de raisonnement spatial.
-        - Gestion d'un produit permettant à des concepteurs pédagogique et de jeux de créer et de contrôler des agents IA dans des simulations et des jeux vidéo, aboutissant à une propriété intellectuelle clé à l’origine de **craft ai**.
+        - Direction d'une équipe de ~5 ingénieurs logiciels à Paris et Munich travaillant sur un moteur de Behavior Tree et de raisonnement spatial.
+        - Architecture et développement d'un outil de création et d'exécution d'agents IA permettant à des concepteurs pédagogiques et de jeux de créer et de contrôler des agents IA dans des simulations et jeux vidéo, aboutissant à une propriété intellectuelle clé à l’origine de **craft ai**.
       skills:
         - Game AI
         - Géométrie algorithmique
@@ -116,8 +118,8 @@ experiences:
         Ingénieur logiciel - [**Teamlog** (acquis par
         Open)](https://www.open.global)
       description: |
-        - Développement d'une chaîne d'outils pour la création de villes virtuelles pour [Orange](https://www.orange.fr).
-        - Développement d'un système de contribution des utilisateurs pour [PagesJaunes.fr](https://www.pagesjaunes.fr).
+        - Développement d'une chaîne d'outils de création de villes virtuelles pour [Orange](https://www.orange.fr), aboutissant à la recréation numérique, au niveau piéton, de Paris et Barcelone.
+        - Développement d'un système de contribution pour [PagesJaunes.fr](https://www.pagesjaunes.fr), renforçant l’engagement des utilisateurs sur la plateforme.
       skills:
         - Systèmes d'information géographique (SIG)
         - Géométrie algorithmique

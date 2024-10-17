@@ -5,10 +5,10 @@ contact:
   address: Montréal, Canada
   linkedIn: https://www.linkedin.com/in/cloderic
 intro: |
-  I am a tech leader specialized in **fostering human-AI collaboration**. The products I built have:
-    - enabled artists to **direct autonomous characters** in movies,
-    - helped engineers **optimize energy & transportation infrastructures**, and
-    - assisted instructor in providing **personalized training simulations**.
+  I specialize in **human-AI collaboration**, with one hand in leadership and the other in development. The products I built have:
+    - empowered artists to **direct autonomous characters** in movies,
+    - enabled engineers **optimize energy & transportation infrastructures**, and
+    - assisted instructors in delivering **personalized training simulations**.
 key_skills:
   - Applied Artificial Intelligence
   - Technical leadership
@@ -32,13 +32,14 @@ experiences:
       title: >
         VP of Engineering - [**AI Redefined**](https://www.ai-r.com)
       description: |
-        - Directed tech and research strategy for [Cogment](https://cogment.ai/), a multi-agent, human-in-the-loop reinforcement learning platform, leading to 3 commercial products generating ~$1.5M ARR and publishing over 3 peer-reviewed papers annually.
-        - Grew and led the research & engineering team from 5 to 16 members.
-        - Coordinated collaborations with industry, including with [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), [RTE](https://www.rte-france.com/), [NAV CANADA](https://www.navcanada.ca/) and [Renault](https://www.renaultgroup.com/); and academia, including with the [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), and [IRT SystemX](https://www.irt-systemx.fr/).
+        - Directed the technology and research distributed team of 16 engineers and researchers across 3 product teams, generating ~$1.5M ARR, 9 peer-reviewed papers, and 3 patents.
+        - Architected and developed [Cogment](https://cogment.ai/), evolving it from a technological proof of concept into a robust, open-core MLOps platform adopted both internally and externally.
+        - Designed and trained decision-making AI agents collaborating with humans and leveraging deep reinforcement learning, large language models and symbolic AI to solve complex real-world problems.
+        - Forged collaborations across industries including aerospace and defense (e.g. [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), and [NAV CANADA](https://www.navcanada.ca/)) ; energy (e.g. [RTE](https://www.rte-france.com/)) ; manufacturing (e.g. [Renault](https://www.renaultgroup.com/)) ; and academia, (e.g. the [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), and [IRT SystemX](https://www.irt-systemx.fr/)).
       skills:
         - Reinforcement learning
         - Deep learning
-        - Generative AI
+        - Large Language Models
         - Simulation
         - Python
         - Go
@@ -58,9 +59,10 @@ experiences:
       title: >
         Co-founder & CTO - [**craft ai**](https://www.craft.ai/)
       description: |
-        - Cofounded and expanded the company from 7 to 20+ employees, raising ~9M€ in funding.
-        - Defined and operated the product, technology, and research strategy for an explainable AI SaaS for time series forecasting generating ~1M€ ARR.
-        - Deployed the product in ~10 AI projects for major clients like [EDF](https://www.edfenergy.com/), [Total](https://www.totalenergies.fr), and [Dassault Aviation](https://www.dassault-aviation.com).
+        - Cofounded and developed the company from 7 to 20+ employees, securing ~9M€ in funding.
+        - Directed the product develoment and research team generating ~1M€ ARR, and publishing 5 peer-reviewed papers.
+        - Architected and developed an explainable AI SaaS for time series modeling & forecasting, enabling trustworthy personalized decision support and automation across industries.
+        - Deployed the product across ~10 AI projects, primarily in the energy sector, including with [EDF](https://www.edfenergy.com/) and [Total](https://www.totalenergies.fr), helping operators and end-users optimize their consumption.
       skills:
         - Explainable AI
         - Machine learning
@@ -80,7 +82,7 @@ experiences:
         Group**](https://masasim.com/)
       description: |
         - Led a team of ~5 software engineers across Paris and Munich developing a behavior tree and spatial reasoning engine.
-        - Managed an AI product enabling instructional & game designers to build AI agents in simulations and video games, leading to key IP at the origin of **craft ai**.
+        - Architected and developed an AI agent authoring tool and runtime empowering instructional and game designers to build AI agents for simulations and video games, creating key intellectual property that later became the foundation of **craft ai**.
       skills:
         - Game AI
         - Computational geometry
@@ -94,8 +96,8 @@ experiences:
         R&D Software Engineer - [**Golaem** (acquired by
         Autodesk)](http://golaem.com/)
       description: |
-        - Took ownership of the navigation engine for virtual crowds, successfully industrializing research prototypes and algorithms developed at Inria.
-        - Applied crowd simulation technology to diverse use cases, including train car evaluation for [SNCF](https://www.groupe-sncf.com), real-time virtual city population with [Dassault Systèmes](https://www.3ds.com) and crowd simulation for a historical documentary with with [Mikros](https://www.technicolor.com/studios/mikros-animation/). This project contributed to the development of the leading crowd simulation product for the animation & VFX market.
+        - Took ownership of the navigation engine for virtual crowds, industrializing research prototypes and algorithms developed at Inria.
+        - Applied crowd simulation technology to diverse use cases, including train car evaluation for [SNCF](https://www.groupe-sncf.com), real-time virtual city population with [Dassault Systèmes](https://www.3ds.com) and crowd simulation for a historical documentary with [Mikros](https://www.technicolor.com/studios/mikros-animation/), which contributed to developing the leading crowd simulation product for the animation and VFX market.
       skills:
         - Game AI
         - Computational geometry
@@ -116,8 +118,8 @@ experiences:
         Software Engineer - [**Teamlog** (acquired by
               Open)](https://www.open.global)
       description: |
-        - Developed a toolchain to create virtual cities for [Orange](https://www.orange.fr).
-        - Developed a user contribution system for [PagesJaunes.fr](https://www.pagesjaunes.fr).
+        - Developed a toolchain to create virtual cities for [Orange](https://www.orange.fr), resulting in pedestrian-level digital recreation of Paris and Barcelona.
+        - Developed a contribution system for [PagesJaunes.fr](https://www.pagesjaunes.fr), enhancing the platform’s user engagement.
       skills:
         - Geographic information systems (GIS)
         - Computational geometry

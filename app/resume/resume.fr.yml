@@ -32,16 +32,17 @@ experiences:
       title: >
         VP of Engineering - [**AI Redefined**](https://www.ai-r.com)
       description: |
-        - Direction de l’équipe technique et de recherche distribuée composée de 16 ingénieurs et chercheurs répartis en 3 équipes produit, générant ~$1,5M d'ARR, 9 publications évaluées par des pairs et 3 brevets.
-        - Architecture et développement de [Cogment](https://cogment.ai/), en le faisant évoluer d’un proof of concept technologique à une plateforme MLOps open-core robuste, adoptée en interne et en externe.
-        - Conception et entraînement d'agents IA décisionnels collaborant avec des humains et utilisant l’apprentissage par renforcement profond, les grands modèles de langage et l’IA symbolique pour résoudre des problèmes complexes du monde réel.
-        - Coordination de collaborations industrielles dans des secteurs variés tels que l’aérospatiale et la défense (e.g. [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), et [NAV CANADA](https://www.navcanada.ca/)) ; l’énergie (e.g. [RTE](https://www.rte-france.com/)) ; l'industrie manufacturière (e.g. [Renault](https://www.renaultgroup.com/)) ; et le milieu académique (e.g. l'[Université d'Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), et l'[IRT SystemX](https://www.irt-systemx.fr/)).
+        - Recrutement et direction d'une équipe distribuée de 16 ingénieurs et chercheurs, atteignant une croissance annuelle de 40 %. Mise en place d’outils et de processus inspirés des OKR et des méthodes Agile pour aligner les priorités, optimiser l’allocation des ressources et structurer les retours d’expérience, soutenant les objectifs de l’entreprise tout en cultivant une culture d’autonomisation et de collaboration.
+        - Redirection des efforts de l’équipe, passant de prototypes technologiques à des produits d’entreprise en IA, adoptant une approche SaaS en open-core qui a généré ~1,5M$ de revenus récurrents annuels.
+        - Conception et entraînement d’agents décisionnels IA collaborant avec des humains, en exploitant l’apprentissage par renforcement profond, les grands modèles de langage et l’IA symbolique. Mise en place de méthodologies basées sur les données et les preuves pour adresser des problèmes complexes du monde réel, permettant le déploiement réussi de produits IA et contribuant à 9 publications évaluées par des pairs et 3 brevets.
+        - Coordination de collaborations à travers divers secteurs, notamment l’aérospatiale et la défense (e.g. [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), et [NAV CANADA](https://www.navcanada.ca/)) ; l’énergie (e.g. [RTE](https://www.rte-france.com/)) ; l'industrie manufacturière (e.g. [Renault](https://www.renaultgroup.com/)) ; et la recherche académique (e.g. l'[Université d'Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), et l'[IRT SystemX](https://www.irt-systemx.fr/)).
       skills:
         - Apprentissage par renforcement (Reinforcement learning)
         - Apprentissage profond (Deep learning)
         - Grands modèles de langage (LLM)
         - Simulation
         - Python
+        - Javascript
         - Go
         - Kubernetes
         - AWS
@@ -59,10 +60,10 @@ experiences:
       title: >
         Co-fondateur & CTO - [**craft ai**](https://www.craft.ai/)
       description: |
-        - Amorçage et développement l'entreprise, passant de 7 à 20+ employés, levant ~9M€ de financement.
-        - Direction de l’équipe de développement produit et de recherche, générant ~1M€ d’ARR, et la publication de 5 articles évalués par des pairs.
-        - Architecture et développement d'un SaaS d’IA explicable pour la modélisation et la prévision de séries temporelles, permettant une automatisation et un support décisionnel personnalisé et fiable dans divers secteurs.
-        - Déploiement du produit dans ~10 projets d'IA, principalement dans le secteur de l’énergie, notamment avec [EDF](https://www.edfenergy.com/) et [Total](https://www.totalenergies.fr), pour permettre aux opérateurs et utilisateurs finaux d'optimiser leur consommation.
+        - Amorçage et développement l'entreprise, jusqu'à 20+ employés, levant ~9M€ de financement.
+        - Direction des équipes de développement produit et de recherche, gestion des budgets, feuilles de route et ressources, générant ~1M€ d’ARR, et la publication de 5 articles évalués par des pairs.
+        - Architecture et développement d'un SaaS d’IA explicable pour la modélisation et la prévision de séries temporelles, permettant une automatisation et un support décisionnel personnalisé et de confiance dans divers secteurs.
+        - Déploiement du produit dans ~10 projets d'IA, principalement dans le secteur de l’énergie, notamment avec [EDF](https://www.edfenergy.com/) et [Total](https://www.totalenergies.fr), aboutissant à des optimisations opérationnelles significatives pour les utilisateurs finaux.
       skills:
         - IA explicable
         - Apprentissage artificiel (Machine learning)
@@ -81,8 +82,8 @@ experiences:
         Ingénieur Logiciel Lead & Product Manager - [**MASA
         Group**](https://masasim.com/)
       description: |
-        - Direction d'une équipe de ~5 ingénieurs logiciels à Paris et Munich travaillant sur un moteur de Behavior Tree et de raisonnement spatial.
-        - Architecture et développement d'un outil de création et d'exécution d'agents IA permettant à des concepteurs pédagogiques et de jeux de créer et de contrôler des agents IA dans des simulations et jeux vidéo, aboutissant à une propriété intellectuelle clé à l’origine de **craft ai**.
+        - Direction d'une équipe de ~5 ingénieurs logiciels à Paris et Munich, en charge de l'alignement des priorités et l’allocation des ressources, en collaboration avec la direction de l’entreprise, pour atteindre les objectifs des projets.
+        - Architecture et développement d'un outil de création et d'exécution d'agents IA, intégrant des moteurs de behavior trees et de raisonnement spatial. Cet outils permettait à des concepteurs pédagogiques et de jeux de créer et de contrôler des agents IA dans des simulations et jeux vidéo, aboutissant à une propriété intellectuelle clé à l’origine de **craft ai**.
       skills:
         - Game AI
         - Géométrie algorithmique

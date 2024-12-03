@@ -32,10 +32,10 @@ experiences:
       title: >
         VP of Engineering - [**AI Redefined**](https://www.ai-r.com)
       description: |
-        - Directed the technology and research distributed team of 16 engineers and researchers across 3 product teams, generating ~$1.5M ARR, 9 peer-reviewed papers, and 3 patents.
-        - Architected and developed [Cogment](https://cogment.ai/), evolving it from a technological proof of concept into a robust, open-core MLOps platform adopted both internally and externally.
-        - Designed and trained decision-making AI agents collaborating with humans and leveraging deep reinforcement learning, large language models and symbolic AI to solve complex real-world problems.
-        - Forged collaborations across industries including aerospace and defense (e.g. [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), and [NAV CANADA](https://www.navcanada.ca/)) ; energy (e.g. [RTE](https://www.rte-france.com/)) ; manufacturing (e.g. [Renault](https://www.renaultgroup.com/)) ; and academia, (e.g. the [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), and [IRT SystemX](https://www.irt-systemx.fr/)).
+        - Hired and directed a distributed team of 16 engineers and researchers, achieving 40% annual growth. Introduced OKR- and Agile-inspired tools and processes for priority alignment, resource allocation, and feedback, supporting business objectives while fostering a culture of empowerment and collaboration.
+        - Transitioned the team’s focus from technological prototypes to enterprise AI products, adopting an open-core SaaS approach that generated ~$1.5M ARR.
+        - Led the design and training of decision-making AI agents collaborating with humans, leveraging deep reinforcement learning, large language models, and symbolic AI. Applied evidence-based, data-driven methodologies to solve complex real-world problems, enabling successful AI product deployments and contributing to 9 peer-reviewed publications and 3 patents.
+        - Managed collaborations across industries including aerospace and defense (e.g. [Thales](https://www.thalesgroup.com/), [CAE](https://www.cae.com/), and [NAV CANADA](https://www.navcanada.ca/)) ; energy (e.g. [RTE](https://www.rte-france.com/)) ; manufacturing (e.g. [Renault](https://www.renaultgroup.com/)) ; and academia (e.g. the [University of Alberta](https://www.ualberta.ca/), [MILA](https://mila.quebec/), and [IRT SystemX](https://www.irt-systemx.fr/)).
       skills:
         - Reinforcement learning
         - Deep learning
@@ -43,6 +43,7 @@ experiences:
         - Simulation
         - Python
         - Go
+        - Javascript
         - Kubernetes
         - AWS
         - Azure
@@ -59,10 +60,10 @@ experiences:
       title: >
         Co-founder & CTO - [**craft ai**](https://www.craft.ai/)
       description: |
-        - Cofounded and developed the company from 7 to 20+ employees, securing ~9M€ in funding.
-        - Directed the product develoment and research team generating ~1M€ ARR, and publishing 5 peer-reviewed papers.
-        - Architected and developed an explainable AI SaaS for time series modeling & forecasting, enabling trustworthy personalized decision support and automation across industries.
-        - Deployed the product across ~10 AI projects, primarily in the energy sector, including with [EDF](https://www.edfenergy.com/) and [Total](https://www.totalenergies.fr), helping operators and end-users optimize their consumption.
+        - Cofounded and scaled the company to 20+ employees, securing ~9M€ in funding.
+        - Directed product development and research teams, managing budgets, roadmaps, and resources to generate ~1M€ ARR and deliver 5 peer-reviewed papers.
+        - Led the architecture and development of an explainable AI SaaS for time series modeling & forecasting, enabling trustworthy personalized decision support and automation across industries.
+        - Deployed the product across ~10 AI projects, primarily in the energy sector, including with [EDF](https://www.edfenergy.com/) and [Total](https://www.totalenergies.fr), resulting in significant operational optimizations for end-users.
       skills:
         - Explainable AI
         - Machine learning
@@ -81,8 +82,8 @@ experiences:
         Lead Software Engineer & Product Manager - [**MASA
         Group**](https://masasim.com/)
       description: |
-        - Led a team of ~5 software engineers across Paris and Munich developing a behavior tree and spatial reasoning engine.
-        - Architected and developed an AI agent authoring tool and runtime empowering instructional and game designers to build AI agents for simulations and video games, creating key intellectual property that later became the foundation of **craft ai**.
+        - Managed a team of ~5 software engineers across Paris and Munich, aligning priorities and resource allocation with company leadership to meet project goals.
+        - Architected and developed an AI agent authoring tool and runtime, featuring behavior tree & spatial reasoning engines. Empowered instructional and game designers to create AI agents for simulations and video games, creating key intellectual property that later became the foundation of **craft ai**.
       skills:
         - Game AI
         - Computational geometry
@@ -96,8 +97,8 @@ experiences:
         R&D Software Engineer - [**Golaem** (acquired by
         Autodesk)](http://golaem.com/)
       description: |
-        - Took ownership of the navigation engine for virtual crowds, industrializing research prototypes and algorithms developed at Inria.
-        - Applied crowd simulation technology to diverse use cases, including train car evaluation for [SNCF](https://www.groupe-sncf.com), real-time virtual city population with [Dassault Systèmes](https://www.3ds.com) and crowd simulation for a historical documentary with [Mikros](https://www.technicolor.com/studios/mikros-animation/), which contributed to developing the leading crowd simulation product for the animation and VFX market.
+        - Led the development of the navigation engine for virtual crowds, industrializing research prototypes and algorithms developed at Inria.
+        - Delivered diverse applications of crowd simulation technology, including train car evaluation for [SNCF](https://www.groupe-sncf.com), real-time virtual city population with [Dassault Systèmes](https://www.3ds.com) and crowd simulation for a historical documentary with [Mikros](https://www.technicolor.com/studios/mikros-animation/). These efforts contributed to the leading crowd simulation product for the animation and VFX market.
       skills:
         - Game AI
         - Computational geometry

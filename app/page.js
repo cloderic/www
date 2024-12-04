@@ -9,6 +9,7 @@ import Twitter from '../components/logos/twitter';
 import LinkedIn from '../components/logos/linkedIn';
 import SoundCloud from '../components/logos/soundCloud';
 import GoogleScholar from '../components/logos/googleScholar';
+import Bluesky from '../components/logos/bluesky';
 
 export default async function Home() {
   const welcomeMdx = await loadContent('app/content/welcome.mdx');
@@ -28,10 +29,10 @@ export default async function Home() {
           <p className="text-5xl my-2">🧑‍🦱🤝🤖</p>
           <p className="text-blue flex gap-2 my-2">
             <Link
-              href="https://twitter.com/cloderic"
-              title="Clodéric on Twitter"
+              href="https://bsky.app/profile/cloderic.bsky.social"
+              title="Clodéric on Bluesky"
             >
-              <Twitter className="h-6 w-6" />
+              <Bluesky className="h-6 w-6" />
             </Link>
             <Link
               href="https://www.linkedin.com/in/cloderic"
@@ -44,6 +45,12 @@ export default async function Home() {
               title="Clodéric on Google Scholar"
             >
               <GoogleScholar className="h-6 w-6" />
+            </Link>
+            <Link
+              href="https://twitter.com/cloderic"
+              title="Clodéric on Twitter"
+            >
+              <Twitter className="h-6 w-6" />
             </Link>
             <Link
               href="https://soundcloud.com/cloderic"

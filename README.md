@@ -1,3 +1,17 @@
-# https://www.cloderic.com
+### Hi there 👋, I'm Clodéric!
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/040d38d4-905c-477f-b3bf-f86485ce441d/deploy-status)](https://app.netlify.com/sites/cloderic/deploys)
+I'm an AI product engineer & tech leader specializing in human-AI collaboration.
+My work bridges technical leadership and hands-on development, building AI
+systems that:
+
+- Empower artists to direct autonomous characters 🎬
+- Assist engineers in optimizing energy & transportation infrastructures ⚡🚆
+- Enable instructors to deliver personalized training simulations 🎓
+
+🔹 AI, Reinforcement Learning, and Large Language Models
+
+🔹 Software Architecture, Cloud Infrastructure, and MLOps
+
+🔹 Technology Transfer & ProductInnovation
+
+You can learn more about me at [cloderic.com](https://cloderic.com).

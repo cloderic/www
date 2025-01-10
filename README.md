@@ -8,10 +8,16 @@ systems that:
 - Assist engineers in optimizing energy & transportation infrastructures ⚡🚆
 - Enable instructors to deliver personalized training simulations 🎓
 
-🔹 AI, Reinforcement Learning, and Large Language Models
+🔹 Time series modeling, Explainable AI, Reinforcement Learning, Symbolic AI and
+Large Language Models
 
 🔹 Software Architecture, Cloud Infrastructure, and MLOps
 
-🔹 Technology Transfer & ProductInnovation
+🔹 Technology Transfer & Product Innovation
 
-You can learn more about me at [cloderic.com](https://cloderic.com).
+You can learn more about my work at [cloderic.com](https://cloderic.com).
+
+You can contact me on [Bluesky](https://bsky.app/profile/cloderic.bsky.social)
+or [LinkedIn](https://www.linkedin.com/in/cloderic/)
+
+... and don't forget to check my [Soundcloud](https://soundcloud.com/cloderic)!

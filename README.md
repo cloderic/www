@@ -17,7 +17,7 @@ Large Language Models
 
 You can learn more about my work at [cloderic.com](https://cloderic.com).
 
-You can contact me on [Bluesky](https://bsky.app/profile/cloderic.bsky.social)
+You can contact me on [Bluesky](https://bsky.app/profile/cloderic.com)
 or [LinkedIn](https://www.linkedin.com/in/cloderic/)
 
 ... and don't forget to check my [Soundcloud](https://soundcloud.com/cloderic)!

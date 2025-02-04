@@ -29,7 +29,7 @@ export default async function Home() {
           <p className="text-5xl my-2">🧑‍🦱🤝🤖</p>
           <p className="text-blue flex gap-2 my-2">
             <Link
-              href="https://bsky.app/profile/cloderic.bsky.social"
+              href="https://bsky.app/profile/cloderic.com"
               title="Clodéric on Bluesky"
             >
               <Bluesky className="h-6 w-6" />
